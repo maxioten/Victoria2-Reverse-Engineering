@@ -23,7 +23,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 ### 📁 Patches
 - [Patch Registry](Patches/patches.md) — **all currently documented patch targets**, kept separate from vanilla behavior.
 
-### 📁 CheatEngineTable Version
+### 📁 CheatEngineTable 
 - Cheat Engine Table — memory tables, dynamic analysis, and runtime address mapping.
 
 ## Methodology
