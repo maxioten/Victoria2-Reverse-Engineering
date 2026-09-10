@@ -1610,7 +1610,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>292DD6B8</Address>
+      <Address>318EF370-E78</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1224</ID>
@@ -9832,6 +9832,52 @@
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
+      <ID>3367</ID>
+      <Description>"[static] vector: country pointers"</Description>
+      <Options moHideChildren="1" moManualExpandCollapse="1"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <GroupHeader>1</GroupHeader>
+      <Address>v2game.exe+e587e4</Address>
+      <Offsets>
+        <Offset>0</Offset>
+        <Offset>4</Offset>
+      </Offsets>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>3365</ID>
+          <Description>"country_pointers[0]"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3368</ID>
+          <Description>"country_pointers[1]"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3369</ID>
+          <Description>"country_pointers[2]"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3370</ID>
+          <Description>"country_pointers[3]"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+C</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
       <ID>921</ID>
       <Description>"[static] price delta"</Description>
       <ShowAsSigned>0</ShowAsSigned>
@@ -10089,7 +10135,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>40982310-150</Address>
+      <Address>2752D7C8-158</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1381</ID>
@@ -10184,7 +10230,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>2252</ID>
-          <Description>"stockpile good bit flags"</Description>
+          <Description>"stockpile good indices"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>Array of byte</VariableType>
@@ -10225,7 +10271,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1398</ID>
-          <Description>"???"</Description>
+          <Description>"??? ptr"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -10695,6 +10741,13 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1527</ID>
+          <Description>"subsidies"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3362</ID>
           <Description>"???"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
@@ -10713,6 +10766,13 @@
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+208</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3364</ID>
+          <Description>"injected_money"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+210</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>2248</ID>
@@ -10998,7 +11058,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>6E97D220</Address>
+      <Address>46F11A38</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1595</ID>
@@ -11160,14 +11220,15 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1617</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? ptr"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+58</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1618</ID>
-          <Description>"???"</Description>
+          <Description>"country index"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+5C</Address>
