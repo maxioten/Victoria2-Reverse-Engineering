@@ -14,9 +14,11 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [Reverse Engineering Conclusions](Engine/conclusions.md) — consolidated findings, limitations, and unresolved areas.
 
 ### 📁 Economy
-- [Economy & Market](Economy/economy-market.md) — economic manager, supply/demand, prices, stockpiles, distribution, workers, and periodic economic processing.
-- [Stockpiles](Economy/stockpiles.md) — artisan/factory stockpile subtraction and 64-bit good storage.
-- [Factory Construction](Economy/Factory Construction Functions.md) — Checks to perform for manufacturing.
+
+* [Economy & Market](Economy/economy-market.md) — economic manager, supply/demand, prices, stockpiles, distribution, workers, and periodic economic processing.
+* [Stockpiles](Economy/stockpiles.md) — artisan/factory stockpile subtraction and 64-bit good storage.
+* [Factory Construction](Economy/factory-construction.md) — factory construction validation, UI gates, state/type restrictions, and civilization checks.
+
 
 ### 📁 Technology
 - [Technology System](Technology/technology.md) — technology availability, player/AI research paths, civilization gates, and confirmed research patches.
