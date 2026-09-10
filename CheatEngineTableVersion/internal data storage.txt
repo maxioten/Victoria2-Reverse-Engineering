@@ -1,0 +1,556 @@
+- Modifier values are int32 divided by 10^5
+
+good struct (CGoods)
+	total size unknown
+	offset	field							conversion
+	0x04	??? 397							int32
+	0x30	base price						int64/(2^15)
+
+country struct (CCountry : CColonialDistanceTracker)
+	total size unknown
+	offset	field							conversion
+	0x000C	??? 397							int32
+	
+	0x0020	id								int32
+	
+	0x0031	is_great_power					bool (used as byte)
+	
+	0x0044	? (CPop) vector begin			ptr32
+	0x0048	? (CPop) vector end				ptr32
+	0x004C	? (CPop) vector capacit			ptr32
+	
+	0x010C	CColonialDistanceTracker.vtable	ptr32
+	
+	0x0138	sphere market share				int64/(2^15)
+	
+	0x0198	industrial score				int64/(2^15)
+	0x01A0	military score					int64/(2^15)
+	0x01A8	plurality						int32/10^3 (displayed as percentage)
+	0x01AC	revanchism						int32/10^3 (displayed as percentage)
+
+	0x07D0	leadership						int64/(2^15)
+
+	0x0EA0	prestige						int32/10^3
+	
+	0x0E3C	research points					int32/10^3
+
+	0x0E78	cash reserve					int64/(2^15)
+	
+	0x0E88	CBank ptr						ptr32
+	0x0E8C	loan vector begin				ptr32
+	0x0E90	loan vector end					ptr32
+	0x0E94	loan vector capacity			ptr32
+	
+	0x12D0	is_civilised					bool (4 bytes)
+	
+	0x1404	rank							int32
+	
+	0x1418	??? vector begin?				ptr32?
+	0x141C	???	vector end?					ptr32?
+	
+	0x142c	sphere country index			int32
+	
+	0x15A0	suppression						int32/10^3
+	
+	0x15BC	???								byte
+
+loan struct
+	total size unknown
+	offset	field				conversion
+	0x0C	??? 397				int32
+	
+	0x10	interest rate		int64/(2^15)
+	0x18	amount				int64/(2^15)
+
+state struct (CState)
+	total size unknown
+	offset	field							conversion
+	0x004	??? 397							int32
+	0x008	id type (47)					int32
+	0x00C	id								int32
+	
+	0x058	??? (start of member struct?)	ptr32
+	0x05C	country index					int32
+	
+	0x068	???								int32
+	
+	0x258	???								int64/(2^15)
+
+province struct (CMapProvince) (stored seemingly randomly)
+	total size unknown
+	offset	field					conversion
+	0x004	??? 397						int32
+
+	0x024	pops length					int32
+
+	0x058	id							int32
+	0x05C	CProvinceTemplate ptr		ptr32
+	
+	0x188	state ptr					ptr32
+
+	0x1A4	life_rating					int32
+	0x1A8	total pops (display)		uint32
+	0x1AC	total pops copy?			uint32
+
+	0x1B4	total pops copy?			uint32
+	0x1B8	total employed				uint32
+	0x1BC	total clergymen				uint32
+	0x1C0	total poor strata			uint32
+	0x1C4	total middle strata			uint32
+	0x1C8	total upper strata			uint32
+	
+	0x3DC	total pops copy?			uint32
+
+CProvinceTemplate struct
+	total size unknown
+	offset	field		conversion
+	0x04	??? 397		int32
+	
+	0x2C	rgo size	int32
+
+production type struct (CProductionType)
+	total size unknown
+	offset	field									conversion
+	0x004	??? 397									int32
+
+	CGoodsPool
+		0x024	CGoodsPool.vtable						ptr32
+		0x028	??? 397									int32
+		0x02C	input good indices						8 bytes of good indices
+		0x06C	input quantity vector begin				ptr32
+		0x070	input quantity vector end				ptr32
+		0x074	input quantity vector capacity			ptr32
+
+	0x080	output good ptr							ptr32
+
+	0x088	base output								int64/(2^15)
+
+	0x094	??? 397									int32
+	
+	0x0D8	active bonus effects? vector begin		ptr32
+	0x0DC	active bonus effects? vector end		ptr32
+	0x0E0	active bonus effects? vector capacity	ptr32
+
+	CEmployee
+		0x0E8	CEmployee.vtable						ptr32
+		0x0EC	??? 397									int32
+		0x0F0	owner pop type ptr						ptr32
+		0x0F4	???										???
+		0x0F8	owner effect_multiplier					int64/2^15
+		0x100	owner desired amount					int32/10^3
+		0x104	owner effect type						int32 (effect type enum)
+	0x108	departments vector begin				ptr32
+	0x10C	departments vector end					ptr32
+	0x110	departments vector capacity				ptr32
+
+	# stores {pop type ptr, desired amount} see also department
+	0x118	desired amount vector begin				ptr32
+	0x11C	desired amount vector end				ptr32
+	0x120	desired amount vector capacity			ptr32
+
+	0x128	workforce								int32
+
+department struct (CEmployee)
+	total size 32 (0x20)
+	offset	field						conversion
+	0x04	??? 397						int32
+	0x08	pop type ptr				ptr32
+	0x0C	???							???
+	0x10	effect_multiplier			int64/2^15
+	0x18	desired amount				int32/10^3
+	0x1C	effect type					int32 (effect type enum)
+
+effect type enum
+	0	input?
+	1	output
+	2	throughput
+
+rgo struct (CProvinceRGO : CStateEmployment) (stored as rgo[] by province id)
+	total size 176 (0xB0)
+	offset	field								conversion
+	0x00	CProvinceRGO.vtable					ptr32
+	0x04	??? 397								int32
+	0x08	production type ptr					ptr32
+
+	0x10	CStateEmployment.vtable				ptr32
+	0x14	??? 397								int32
+	0x18	??? ptr								ptr32
+	0x1C	province ptr						ptr32
+	0x20	employed pops vector begin			ptr32
+	0x24	employed pops vector end			ptr32
+	0x28	employed pops vector end			ptr32
+
+	0x30	combined input mult?				int64/(2^15)
+	0x38	combined output mult				int64/(2^15)
+	0x40	throughput from workers				int64/(2^15)
+
+	0x50	owner income share					int64/2^15
+	0x58	total employees						uint32
+	
+	#stored as uint32[]
+	0x6C	employees by type vector begin		ptr32
+	0x70	employees by type vector end		ptr32
+	0x74	employees by type vector capacity	ptr32
+
+	0x80	last day income						int64/(10^3 * 2^15)
+	0x88	combined rgo size mult				int64/(2^15)
+
+artisan struct
+	total size unknown
+	offset	field							conversion
+	CGoodsPool
+		0x00	CGoodsPool.vtable				ptr32
+		0x04	??? 397							int32
+		0x08	stockpile good indices			8 bytes of good indices
+		0x48	stockpile vector begin			ptr32
+		0x4C	stockpile vector end			ptr32
+		0x50	stockpile vector capacity		ptr32
+	
+	CGoodsPool
+		0x58	CGoodsPool.vtable				ptr32
+		0x5C	??? 397							int32
+		0x60	input good indices				8 bytes of good indices
+		0xA0	input quantity vector begin		ptr32
+		0xA4	input quantity vector end		ptr32
+		0xA8	input quantity vector capacity	ptr32
+	
+	0xB0	production type ptr				ptr32
+
+	0xB8	last_spending					int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0xC0	current_producing				int64/(2^15)
+	0xC8	percent_afforded				int64/(2^15)
+	0xD0	percent_sold_domestic			int64/(2^15)
+	0xD8	percent_sold_export				int64/(2^15)
+	0xE0	leftover						int64/(2^15)
+	0xE8	throttle						int64/(2^15)
+	0xF0	needs_cost						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0xF8	production_income				int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+
+factory (CStateBuilding) struct
+	total size unknown
+	offset	field								conversion
+	0x000	CStateBuilding.vtable.0				ptr32
+	0x004	???									???
+	0x008	CStateBuilding.vtable.1				ptr32
+	0x00C	??? 397								int32
+
+	0x014	CNullModifier ptr					ptr32
+	0x018	building ptr						ptr32
+	0x01C	state ptr							ptr32
+	0x020	level								int32
+	0x024	priority							int32
+	CGoodsPool
+		0x028	CGoodsPool.vtable					ptr32
+		0x02C	??? 397								int32
+		0x030	stockpile good indices				8 bytes of good indices
+		0x070	stockpile vector begin				ptr32
+		0x074	stockpile vector end				ptr32
+		0x078	stockpile vector capacity			ptr32
+
+	CGoodsPool
+		0x080	CGoodsPool.vtable				ptr32
+		0x084	??? 397								int32
+		0x088	input good indices					8 bytes of good indices
+		0x0C8	input quantity vector begin			ptr32
+		0x0CC	input quantity vector end			ptr32
+		0x0D0	input quantity vector capacity		ptr32
+
+	0x0D8	production yesterday				int64/(2^15)
+	0x0E0	CStateEmployment.vtable				ptr32
+	0x0E4	??? 397								int32
+	0x0E8	state ptr copy?						ptr32
+	0x0EC	??? ptr								ptr32
+	
+	0x0F0	employed pops vector begin			ptr32
+	0x0F4	employed pops vector end			ptr32
+	0x0F8	employed pops vector capacity		ptr32
+
+	0x100	input efficiency					int64/(2^15)
+	0x108	output efficiency					int64/(2^15)
+	0x110	required maintenance goods			int64/(2^15)
+
+	0x128	???									uint32
+
+	0x130	ptr to ??? vector begin				ptr32
+
+	0x13C	employees by type vector begin		ptr32
+	0x140	employees by type vector end		ptr32
+	0x144	employees by type vector capacity	ptr32
+
+	0x150	budget								int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x158	last_spending						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x160	last_income							int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x168	pops_paychecks						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x170	last_investment						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x178	unprofitable_days					int32
+	0x17C	construction_time_left				int32 (days)
+	0x180	is_subsidised						bool (4 bytes)
+	0x184	days_without_input					int32
+	0x188	is_closed							bool (4 bytes)
+	
+	0x190	profit_history[0]					int64/(2^15)
+	0x198	profit_history[1]					int64/(2^15)
+	0x1A0	profit_history[2]					int64/(2^15)
+	0x1A8	profit_history[3]					int64/(2^15)
+	0x1B0	profit_history[4]					int64/(2^15)
+	0x1B8	profit_history[5]					int64/(2^15)
+	0x1C0	profit_history_days					int32
+	0x1C8	profit_history_current				int32
+	
+	0x1D8	subsidies							int64/(2^15)
+	
+	0x1F0	???									int64/(2^15)
+	
+	0x200	leftover							int64/(2^15)
+	0x208	maintenance goods fraction			int64/(2^15)
+	0x210	injected_money						int64/(2^15)
+	
+	0x224	next factory in state ptr			ptr32
+
+employed pop struct (CPopEmployment)
+	total size 16 (0x10)
+	offset	field						conversion
+	0x00	CPopEmployment.vtable		ptr32
+	0x04	??? 397						int32
+	0x08	pop ptr						ptr32
+	0x0C	count employed				int32
+
+building struct (CBuilding)
+	total size unknown
+	offset	field						conversion
+	0x000	CBuilding.vtable			ptr32
+	0x004	??? 397						int32
+	
+	CConstruction/CGoodsPool
+		0x060	CConstruction/CGoodsPool.vtable		ptr32
+		0x064	??? 397								int32
+		0x068	??? good indices					8 bytes of good indices
+		0x06C	??? quantity vector begin			ptr32
+		0x070	??? quantity vector end				ptr32
+		0x074	??? quantity vector capacity		ptr32
+
+	0x0B8	construction time			int32
+	
+	0x0C0	??? 1.0f					float32
+	
+	0x12C	production type ptr			ptr32
+
+strata enum
+	0	poor
+	1	middle
+	2	rich
+
+pop type struct (CPopType)
+	total size unknown
+	offset	field						conversion
+	0x000	CPopType.vtable				ptr32
+	0x004	??? 397						int32
+
+	0x028	id							int32
+
+	0x030	???							???
+	0x034	???							???
+	0x038	sprite						int32
+	0x03C	strata						int32 (strata enum)
+	0x040	???							int32 (bit flags?)
+
+	0x048	leadership					int64/2^15
+	
+	0x060	research_points				int64/2^15
+	0x068	research_optimum			int64/2^15
+
+	CMeanTimeToHappen?
+		0x090	CMeanTimeToHappen.vtable	ptr32
+		0x094	??? 397						int32
+		0x098	???							int32
+		0x09C	??? vector begin			ptr32
+		0x0A0	??? vector end				ptr32
+		0x0A4	??? vector capacity			ptr32
+		0x0A8	???							???
+	
+	CMeanTimeToHappen?
+		0x0AC	CMeanTimeToHappen.vtable	ptr32
+		0x0B0	??? 397						int32
+		0x0B4	???							int32
+		0x0B8	??? vector begin			ptr32
+		0x0BC	??? vector end				ptr32
+		0x0C0	??? vector capacity			ptr32
+		0x0C4	???							???
+	
+	0x3D9	???							byte
+
+POP struct (CPop) (stored as linked list)
+	total size 680 (0x2A8)
+	offset	field						conversion
+	0x000	CPop.vtable					ptr32
+	0x004	??? 397						int32
+	0x008	id type (46)				int32
+	0x00C	id							int32
+	0x010	???							bool (4 bytes)
+
+	0x030	???							int64?
+	0x038	???							byte
+
+	0x04C	is_accepted_culture			bool (4 bytes)
+
+	0x058	size						int32
+	0x05C	previous size				int32
+	0x060	employed count				int32
+	0x064	province ptr				ptr32
+	0x068	pop type ptr				ptr32
+	0x06C	culture ptr					ptr32
+	0x070	religion ptr				ptr32
+	CDataSpread<fpml::fixed_point<__int64,48,15>,int,100>
+		0x074	CDataSpread.vtable			ptr32
+		0x078	??? 397						int32
+		0x07C	ideology vector begin		ptr32
+		0x080	ideology vector end			ptr32
+		0x084	ideology vector capacity	ptr32
+		0x088	???							???
+		0x08C	??? vector begin			ptr32
+		0x090	??? vector end				ptr32
+		0x094	??? vector capacity			ptr32
+		0x098	???							???
+
+	CDataSpread<fpml::fixed_point<__int64,48,15>,int,100>
+		0x09C	CDataSpread.vtable			ptr32
+		0x0A0	??? 397						int32
+		0x0A4	issue vector begin			ptr32
+		0x0A8	issue vector end			ptr32
+		0x0AC	issue vector capacity		ptr32
+		0x0B0	???							???
+		0x0B4	??? vector begin			ptr32
+		0x0B8	??? vector end				ptr32
+		0x0BC	??? vector capacity			ptr32
+		0x0C0	???							???
+
+	CDataSpread<fpml::fixed_point<__int64,48,15>,int,100>
+		0x0C4	CDataSpread.vtable			ptr32
+		0x0C8	??? 397						int32
+		0x0CC	??? vector begin			ptr32
+		0x0D0	??? vector end				ptr32
+		0x0D4	??? vector capacity			ptr32
+		0x0D8	???							???
+		0x0DC	??? vector begin			ptr32
+		0x0E0	??? vector end				ptr32
+		0x0E4	??? vector capacity			ptr32
+		0x0E8	???							???
+
+	CDataSpread<fpml::fixed_point<__int64,48,15>,int,100>
+		0x0EC	CDataSpread.vtable			ptr32
+		0x0F0	??? 397						int32
+		0x0F4	??? vector begin			ptr32
+		0x0F8	??? vector end				ptr32
+		0x0FC	??? vector capacity			ptr32
+		0x100	???							???
+		0x104	??? vector begin			ptr32
+		0x108	??? vector end				ptr32
+		0x10C	??? vector capacity			ptr32
+		0x110	???							???
+
+	0x114	???							???
+	0x118	consciousness				int64/2^15
+	0x120	militancy					int64/2^15
+	0x128	literacy					int64/2^15 (displayed as percentage)
+	0x130	life needs met				int64/2^15 (displayed as percentage)
+	0x138	everyday needs met			int64/2^15 (displayed as percentage)
+	0x140	luxury needs met			int64/2^15 (displayed as percentage)
+
+	size change
+		0x158	natural growth			int32
+		0x15C	internal migration		int32
+		0x160	external migration		int32
+		0x164	new employment			int32
+		0x168	cultural assimilation	int32
+		0x16C	religious conversion	int32
+		0x170	colonial emigration		int32
+		0x174	external emigration		int32
+		0x178	internal emigration		int32
+
+	0x180	money (save)				int64/2^15
+	
+	0x1A0	???							???
+	0x1A4	???							???
+	0x1A8	???							???
+
+	0x1B0	con_factor (save)			int64/2^15
+	
+	0x1C8	militancy gain?				int64/2^15
+
+	0x1D0	???							int32 (bit flags?)
+		artisan	01010000
+	0x1D4	artisan ptr					ptr32
+
+	money
+		0x1D8	Needs					int64/(10^3 * 2^15)
+		0x1E0	Welfare					int64/(10^3 * 2^15)
+		0x1E8	Salary					int64/(10^3 * 2^15)
+		0x1F0	Expenses				int64/(10^3 * 2^15)
+		0x1F8	event money				int64/(10^3 * 2^15)
+		0x200	Projects				int64/(10^3 * 2^15)
+		0x208	deposited in bank		int64/(10^3 * 2^15)
+		0x210	Saving Interest			int64/(10^3 * 2^15)
+		0x218	Daily income			int64/(10^3 * 2^15)
+		0x220	??? ptr					ptr32
+
+		0x250	savings in bank			int64/(10^3 * 2^15)
+
+	0x258	random (save)				int32
+	
+	0x260	???							int64?
+	
+	0x274	??? ptr						ptr32
+	0x278	previous pop pointer		ptr32
+	0x27C	next pop pointer			ptr32
+
+army struct
+	total size unknown
+	offset	field				conversion
+	0x00C	??? 397				int32
+	0x010	id type (40)		int32
+	0x014	id					int32
+	0x018	??? 1				int32
+	
+	0x02C	function ptr		ptr32
+
+	0x038	function ptr		ptr32
+
+	0x040	regiment count		int32
+	
+	0x060	function ptr?		ptr32
+
+	0x0B0	supply rate			int32/10^3
+	
+	0x0C0	used as arg_4h_00	uint32
+	0x0C4	used for iVar6		int32
+	
+	0x0DC	province ptr		ptr32
+	
+	if name.length < 16
+		0x114	name 			string
+	else
+		0x114	name ptr		ptr32
+
+regiment type struct
+	total size unknown
+	offset	field				conversion
+	0x28	icon				int32
+
+regiment struct
+	total size unknown
+	offset	field				conversion
+	0x04	??? 397				int32
+	0x08	id type (40)		int32
+	0x0C	id					int32
+
+	0x30	pop ptr				ptr32
+	0x34	experience			int32/10^3
+	0x38	regiment type ptr	ptr32
+	0x3C	strength			int32
+	0x40	organisation		int32/10^3
+
+ship struct
+	total size unknown
+	offset	field				conversion
+	0x3C	strength			int32/10^3
+	0x40	organisation		int32/10^3

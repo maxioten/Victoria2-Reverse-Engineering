@@ -1,0 +1,85 @@
+[0x00485d53]> pdf
+  ;-- pop_invest_in_projects:
+/ ??pop_invest_in_projects(int32_t arg_4h, int32_t arg_8h, int32_t arg_ch, int32_t arg_10h);
+| ; var int32_t var_ch @ stack - 0xc
+| ; var int32_t var_8h @ stack - 0x8
+| ; arg int32_t arg_4h @ stack + 0x4
+| ; arg int32_t arg_8h @ stack + 0x8
+| ; arg int32_t arg_ch @ stack + 0xc
+| ; arg int32_t arg_10h @ stack + 0x10
+| 0x00485d50      push    ebp
+| 0x00485d51      mov     ebp, esp
+| 0x00485d53      fld     qword [0xe45a70] ; ~33.083D = ~ 0.001fp
+| 0x00485d59      sub     esp, 0x0c
+| 0x00485d5c      push    ebx
+| 0x00485d5d      mov     ebx, dword [ebp+0x08]
+| 0x00485d60      push    esi
+| 0x00485d61      push    edi
+| 0x00485d62      mov     edi, eax ; edi = eax = pop_ptr (from caller)
+| 0x00485d64      mov     esi, dword [edi+0x184]
+| 0x00485d6a      mov     dword [ebx], 0x00
+| 0x00485d70      mov     dword [ebx+0x04], 0x00
+| 0x00485d77      call    flirt.ftol2
+| 0x00485d7c      cmp     edx, esi
+| 0x00485d7e      jnle    0x485e33
+| 0x00485d84      jl      0x485d92
+| 0x00485d86      cmp     eax, dword [edi+0x180] ; [edi+0x180 & edi+0x184] = pop.money
+| 0x00485d8c      jnb     0x485e33
+| 0x00485d92      mov     eax, dword [ebp+0x14]
+| 0x00485d95      mov     ecx, dword [ebp+0x10]
+| 0x00485d98      push    eax
+| 0x00485d99      mov     eax, dword [edi+0x180] ; [edi+0x180 & edi+0x184] = pop.money
+| 0x00485d9f      push    ecx      ; LPTIME_ZONE_INFORMATION **arg_ch
+| 0x00485da0      push    esi      ; LPTIME_ZONE_INFORMATION *arg_10h
+| 0x00485da1      push    eax      ; LPTIME_ZONE_INFORMATION arg_8h
+| 0x00485da2      call    flirt.allmul
+| 0x00485da7      shrd    eax, edx, 0x0f
+| 0x00485dab      sar     edx, 0x0f
+| 0x00485dae      sub     esp, 0x08
+| 0x00485db1      mov     ecx, esp
+| 0x00485db3      mov     dword [ebp-0x08], eax
+| ;-- pe_00485db6:
+| 0x00485db6      neg     eax      ; RELOC 3 pe_00485db6 @ 0x00000000
+| 0x00485db8      mov     dword [ebp-0x04], edx
+| 0x00485dbb      adc     edx, 0x00
+| 0x00485dbe      mov     dword [ecx], 0x00
+| 0x00485dc4      neg     edx
+| 0x00485dc6      mov     dword [ecx], eax ; int32_t arg_8h
+| 0x00485dc8      mov     dword [ecx+0x04], 0x00
+| 0x00485dcf      mov     esi, 0x05 ; esi 0x05 = pop money stats[5] = projects
+| 0x00485dd4      mov     eax, edi ; eax = edi = pop_ptr
+| 0x00485dd6      mov     dword [ecx+0x04], edx ; int32_t arg_4h
+| 0x00485dd9      call    pop_update_money_stat_esi
+| 0x00485dde      mov     edx, dword [ebp-0x08]
+| 0x00485de1      add     dword [ebx], edx
+| 0x00485de3      mov     eax, dword [ebp-0x04]
+| 0x00485de6      mov     edx, dword [edi+0x250] ; [edi+0x250 & edi+0x254] = pop.savings_in_bank
+| 0x00485dec      adc     dword [ebx+0x04], eax
+| 0x00485def      mov     eax, dword [edi+0x254]
+| 0x00485df5      cmp     dword [data.0125b9f4], eax ; 0x125b9f4
+| 0x00485dfb      jnle    0x485e33
+| 0x00485dfd      jl      0x485e07
+| 0x00485dff      cmp     dword [data.0125b9f0], edx ; 0x125b9f0
+| 0x00485e05      jnb     0x485e33
+| 0x00485e07      mov     ecx, dword [ebp+0x0c]
+| 0x00485e0a      mov     byte [ecx], 0x01
+| 0x00485e0d      sub     esp, 0x08
+| 0x00485e10      mov     ecx, esp
+| 0x00485e12      mov     dword [ecx], edx ; int32_t arg_ch
+| 0x00485e14      mov     dword [ecx+0x04], eax ; int32_t arg_4h
+| 0x00485e17      mov     edx, dword [edi+0x64]
+| 0x00485e1a      mov     eax, dword [edx+0x188]
+| 0x00485e20      lea     ecx, dword [ebp-0x08]
+| 0x00485e23      push    ecx      ; int32_t arg_8h
+| 0x00485e24      call    update_pop_bank
+| 0x00485e29      mov     edx, dword [eax]
+| 0x00485e2b      add     dword [ebx], edx
+| 0x00485e2d      mov     eax, dword [eax+0x04]
+| 0x00485e30      adc     dword [ebx+0x04], eax
+| 0x00485e33      pop     edi
+| 0x00485e34      pop     esi
+| 0x00485e35      mov     eax, ebx ; RELOC 3 pe_00485e36 @ 0x00000000
+| 0x00485e37      pop     ebx
+| 0x00485e38      mov     esp, ebp
+| 0x00485e3a      pop     ebp
+\ 0x00485e3b      ret
