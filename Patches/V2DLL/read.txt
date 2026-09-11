@@ -1,0 +1,15 @@
+V2DLL is a utility by balticsprott (me) that makes possible a handful of things that were considered impossible/hard to implement before, and even make some previously existing .exe patches simpler to use - by reverse engineering. This is meant to be easy-for-use for other modders, so I'm not going into much detail here. If you want more insight, or add some custom patches, or perhaps investigate v2dll under the hood to use for your own work - check the source code.
+
+It was made for my mod - https://github.com/artyom-kuznetsov/BDSM_Mod-Victoria2
+Since, it has some mod-specific features. But most of them can be reused for any other mod.
+Almost all of this was tested in MP - no stability effects noticed.
+
+How to install V2DLL
+Put all the files from V2DLL folder into the same folder where you have v2game.exe and lua51.dll
+Tweak v2dll_settings.ini for your liking - every patch is optional (some of them have to be ran in tandem though).
+Launch the game as usual, with any mod you like.
+How does it work?
+Vanilla file lua51.dll is replaced by a brand new file, where the patches are coded.
+The old file must still remain in the folder under name "lua51_real.dll" - it's being called by the new file, so no vanilla code is lost and the game can still run.
+
+credits: https://github.com/artyom-kuznetsov/BDSM_Mod-Victoria2/tree/balticsprott_V2DLL
