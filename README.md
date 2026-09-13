@@ -6,6 +6,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 
 ### 📁 Engine
 - [Engine Structure](Engine/engine-structure.md) — main loop, subsystem relationships, console, events, rendering, loans, and general engine architecture.
+- [Checksum](Engine/checksum.md) — how the game calculates the checksum.
 - [Game Speed System](Engine/game-speed.md) — speed index, update throttle, temporal processing, and B28 mapping.
 - [RNG System](Engine/rng.md) — random-number list and Mersenne Twister regeneration path.
 - [Loading & Initialization](Engine/loading-initialization.md) — game-load finalization, state initialization, subsystem startup, and gameplay entry.
