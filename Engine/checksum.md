@@ -35,8 +35,8 @@ VA: 0x006377A0
 The relevant call chain is:
 
 ``` text
-InitializeHistoryDatabase
-    └── LoadHistoryDirectoryRecursive
+InitializeHistoryDatabase (006377a0)
+    └── LoadHistoryDirectoryRecursive (009da4b0)
           └── FUN_009DA400 (CalculateFileChecksum)
                 └── FUN_009939A0 (CalculateFileStreamChecksum)
 ```
