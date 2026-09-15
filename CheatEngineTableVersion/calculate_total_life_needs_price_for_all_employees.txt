@@ -1,0 +1,53 @@
+[0x004ef1b0]> pdf
+/ calculate_total_life_needs_price_for_all_employees();
+| ; var int32_t var_8h @ stack - 0x8
+| 0x004ef1b0      push    ebp
+| 0x004ef1b1      mov     ebp, esp
+| 0x004ef1b3      push    ecx
+| 0x004ef1b4      mov     eax, dword [ecx+0x14] ; [ecx+0x14] = CStateEmployment.employed_pops_vector_end
+| 0x004ef1b7      sub     eax, dword [ecx+0x10] ; [ecx+0x10] = CStateEmployment.employed_pops_vector_begin
+| 0x004ef1ba      push    ebx
+| 0x004ef1bb      sar     eax, 0x04
+| 0x004ef1be      push    edi
+| 0x004ef1bf      mov     dword [esi], 0x00; RELOC 3 pe_004ef1c4 @ 0x00000000 ; [esi & esi+0x04] = life_needs_prices_running_total
+| 0x004ef1c5      mov     dword [esi+0x04], 0x00
+| 0x004ef1cc      test    eax, eax
+| 0x004ef1ce      jle     0x4ef230
+| 0x004ef1d0      mov     edi, dword [ecx+0x10] ; [ecx+0x10] = CStateEmployment.employed_pops_vector_begin
+| 0x004ef1d3      add     edi, 0x08 ; [ecx+0x10]+0x08 = CStateEmployment.employed_pops[0].pop_ptr
+| 0x004ef1d6      mov     dword [ebp-0x04], eax
+| 0x004ef1d9      lea     esp, dword [esp]
+| 0x004ef1e0      mov     eax, dword [edi] ; [edi] = CStateEmployment.employed_pops[0].pop_ptr
+| 0x004ef1e2      mov     ebx, dword [eax+0x68] ; [eax+0x68] = employed_pop.pop_type_ptr
+| 0x004ef1e5      cmp     byte [ebx+0x3d9], 0x00 ; [ebx+0x3d9] = employed_pop.pop_type.is_slave
+| 0x004ef1ec      jnz     0x4ef228
+| 0x004ef1ee      mov     eax, dword [edi+0x04] ; [edi+0x04] = employed_pop.count_employed
+| 0x004ef1f1      cdq
+| 0x004ef1f2      shld    edx, eax, 0x1e
+| 0x004ef1f6      push    0x00
+| 0x004ef1f8      push    0xc3500000 ; LARGE_INTEGER *arg_ch ; 2^15 * 10^5
+| 0x004ef1fd      shl     eax, 0x1e
+| 0x004ef200      push    edx      ; uint_least32_t arg_10h
+| 0x004ef201      push    eax      ; uint_least32_t arg_8h
+| 0x004ef202      call    flirt.alldiv; RELOC 3 pe_004ef206 @ 0x00000000
+| 0x004ef207      mov     ecx, dword [ebx+0x324]
+| 0x004ef20d      push    ecx
+| 0x004ef20e      mov     ecx, dword [ebx+0x320] ; [ebx+0x320 & ebx+0x324] = employed_pop.pop_type.life_needs_price
+| 0x004ef214      push    ecx      ; LPTIME_ZONE_INFORMATION **arg_ch
+| 0x004ef215      push    edx      ; LPTIME_ZONE_INFORMATION *arg_10h
+| 0x004ef216      push    eax      ; LPTIME_ZONE_INFORMATION arg_8h
+| 0x004ef217      call    flirt.allmul
+| 0x004ef21c      shrd    eax, edx, 0x0f
+| 0x004ef220      sar     edx, 0x0f
+| 0x004ef223      add     dword [esi], eax
+| 0x004ef225      adc     dword [esi+0x04], edx
+| 0x004ef228      add     edi, 0x10 ; 16 ; edi+0x10 = next employed_pop
+| 0x004ef22b      dec     dword [ebp-0x04]
+| ;-- pe_004ef22e:
+| 0x004ef22e      jnz     pe_004ef22e; RELOC 3 pe_004ef22e @ 0x00000000
+| 0x004ef230      pop     edi
+| 0x004ef231      mov     eax, esi
+| 0x004ef233      pop     ebx
+| 0x004ef234      mov     esp, ebp
+| 0x004ef236      pop     ebp
+\ 0x004ef237      ret

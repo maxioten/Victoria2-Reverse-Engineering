@@ -15183,7 +15183,7 @@
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>+0</Address>
+          <Address>+4*0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>3368</ID>
@@ -15191,7 +15191,7 @@
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>+4</Address>
+          <Address>+4*1</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>3369</ID>
@@ -15199,7 +15199,7 @@
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>+8</Address>
+          <Address>+4*2</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>3370</ID>
@@ -15207,7 +15207,7 @@
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>+C</Address>
+          <Address>+4*3</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>3376</ID>
@@ -15215,7 +15215,7 @@
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>+10</Address>
+          <Address>+4*4</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -15225,7 +15225,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>23A977E8</Address>
+      <Address>2559EE18</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>922</ID>
@@ -15333,11 +15333,11 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>2567D348</Address>
+      <Address>2E174548</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1224</ID>
-          <Description>"??? (first)"</Description>
+          <Description>"CCountry.vtable"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -15391,11 +15391,14 @@
           <Address>+18</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1241</ID>
-          <Description>"???"</Description>
-          <ShowAsHex>1</ShowAsHex>
+          <ID>5739</ID>
+          <Description>"tag"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
+          <VariableType>String</VariableType>
+          <Length>4</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
           <Address>+1C</Address>
         </CheatEntry>
         <CheatEntry>
@@ -15646,15 +15649,170 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1266</ID>
-          <Description>"??? vector begin"</Description>
+          <Description>"CTaxSetting by strata vector begin"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+A0</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5986</ID>
+              <Description>"struct: CTaxSetting - poor"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>5987</ID>
+                  <Description>"CTaxSetting.vtable"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5988</ID>
+                  <Description>"??? 397"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5989</ID>
+                  <Description>"country ptr"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5990</ID>
+                  <Description>"???"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5991</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5980</ID>
+              <Description>"struct: CTaxSetting - middle"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+4</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>5981</ID>
+                  <Description>"CTaxSetting.vtable"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5982</ID>
+                  <Description>"??? 397"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5983</ID>
+                  <Description>"country ptr"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5984</ID>
+                  <Description>"???"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5985</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5974</ID>
+              <Description>"struct: CTaxSetting - rich"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+8</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>5975</ID>
+                  <Description>"CTaxSetting.vtable"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5976</ID>
+                  <Description>"??? 397"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5977</ID>
+                  <Description>"country ptr"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5978</ID>
+                  <Description>"???"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5979</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>1267</ID>
-          <Description>"??? vector end"</Description>
+          <Description>"CTaxSetting by strata vector end"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -15662,7 +15820,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1268</ID>
-          <Description>"??? vector capacity"</Description>
+          <Description>"CTaxSetting by strata vector capacity"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -16154,11 +16312,11 @@
           <Address>+7D0</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1336</ID>
-          <Description>"prestige"</Description>
+          <ID>5893</ID>
+          <Description>"???"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>+EA0</Address>
+          <Address>+BCC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1625</ID>
@@ -16166,6 +16324,20 @@
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+E3C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5895</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+E44</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1336</ID>
+          <Description>"prestige"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+EA0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1341</ID>
@@ -16207,6 +16379,247 @@
           <Address>+E94</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>5923</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+1230</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5949</ID>
+          <Description>"vector: spending sliders"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>+1234</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5950</ID>
+              <Description>"struct: CEducationSetting"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>5951</ID>
+                  <Description>"CEducationSetting.vtable"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5952</ID>
+                  <Description>"??? 397"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5953</ID>
+                  <Description>"country ptr"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5954</ID>
+                  <Description>"???"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5955</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5956</ID>
+              <Description>"struct: CAdministrationSettings"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+4</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>5957</ID>
+                  <Description>"CAdministrationSettings.vtable"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5958</ID>
+                  <Description>"??? 397"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5959</ID>
+                  <Description>"country ptr"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5960</ID>
+                  <Description>"???"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5961</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5962</ID>
+              <Description>"struct: CSocialSpending"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+8</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>5963</ID>
+                  <Description>"CAdministrationSettings.vtable"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5964</ID>
+                  <Description>"??? 397"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5965</ID>
+                  <Description>"country ptr"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5966</ID>
+                  <Description>"???"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5967</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5968</ID>
+              <Description>"struct: CMilitarySpending"</Description>
+              <Options moHideChildren="1" moManualExpandCollapse="1"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <GroupHeader>1</GroupHeader>
+              <Address>+C</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>5969</ID>
+                  <Description>"CTaxSetting.vtable"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+0</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5970</ID>
+                  <Description>"??? 397"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+4</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5971</ID>
+                  <Description>"country ptr"</Description>
+                  <ShowAsHex>1</ShowAsHex>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+8</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5972</ID>
+                  <Description>"???"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>+C</Address>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>5973</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>1</ShowAsSigned>
+                  <VariableType>8 Bytes</VariableType>
+                  <Address>+10</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5921</ID>
+          <Description>"vector: spending sliders copy?"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+1238</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5922</ID>
+          <Description>"vector: spending sliders copy?"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+123C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5924</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+1240</Address>
+        </CheatEntry>
+        <CheatEntry>
           <ID>2432</ID>
           <Description>"is_civilised"</Description>
           <ShowAsSigned>1</ShowAsSigned>
@@ -16221,7 +16634,7 @@
           <Address>+1404</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>2437</ID>
+          <ID>5918</ID>
           <Description>"??? vector begin"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
@@ -16229,7 +16642,7 @@
           <Address>+1418</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>2441</ID>
+          <ID>5919</ID>
           <Description>"??? vector end"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
@@ -16237,7 +16650,7 @@
           <Address>+141C</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>2442</ID>
+          <ID>5920</ID>
           <Description>"??? vector capacity"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
@@ -16276,63 +16689,117 @@
           <Address>+1588</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>5897</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+149C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5890</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+1568</Address>
+        </CheatEntry>
+        <CheatEntry>
           <ID>1339</ID>
           <Description>"suppression"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+15A0</Address>
         </CheatEntry>
+        <CheatEntry>
+          <ID>5896</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+15BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5892</ID>
+          <Description>"colonial maintenance"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+15C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5891</ID>
+          <Description>"colonial points total"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+15C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5894</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+15C8</Address>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>1343</ID>
-      <Description>"struct: loan"</Description>
+      <ID>5795</ID>
+      <Description>"struct: loan (CCreditor)"</Description>
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>6E647F30-18</Address>
+      <Address>73131F28</Address>
       <CheatEntries>
         <CheatEntry>
-          <ID>1342</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ID>5796</ID>
+          <Description>"CCreditor.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+0</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1345</ID>
-          <Description>"???"</Description>
+          <ID>5797</ID>
+          <Description>"??? 397"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+4</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1346</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
+          <ID>5798</ID>
+          <Description>"country tag (for flag)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>String</VariableType>
+          <Length>4</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
           <Address>+8</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1347</ID>
-          <Description>"???"</Description>
+          <ID>5799</ID>
+          <Description>"country index (for text)"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+C</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1348</ID>
+          <ID>5800</ID>
           <Description>"interest rate"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+10</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1344</ID>
+          <ID>5801</ID>
           <Description>"amount"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+18</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5802</ID>
+          <Description>"is paying interest"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+20</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -16342,7 +16809,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>34BABA40</Address>
+      <Address>46F4CAF0</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1595</ID>
@@ -16474,7 +16941,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1613</ID>
-          <Description>"??? vector begin"</Description>
+          <Description>"province ids vector begin"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -16482,7 +16949,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1614</ID>
-          <Description>"??? vector end"</Description>
+          <Description>"province ids vector end"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -16490,7 +16957,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1615</ID>
-          <Description>"??? vector capacity"</Description>
+          <Description>"province ids vector capacity"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -16554,6 +17021,332 @@
           <Address>+70</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>5752</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+74</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5753</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+78</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5754</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+7C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5755</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5756</ID>
+          <Description>"is colony ready to upgrade 0=not a colony, 1=ready, 2=not ready"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5757</ID>
+          <Description>"CModifier/CSetCountryControllerCommand.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+88</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5758</ID>
+          <Description>"??? 397"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+8C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5759</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+90</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5760</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+94</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5761</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+98</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5762</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+9C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5763</ID>
+          <Description>"??? vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5764</ID>
+          <Description>"??? vector end"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+A4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5765</ID>
+          <Description>"??? vector capacity"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5766</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+AC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5767</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5768</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5769</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5770</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5771</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5772</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5773</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5774</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+CC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5775</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5776</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+D4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5777</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5778</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+DC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5779</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5780</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+E4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5781</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+E8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5782</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+EC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5783</ID>
+          <Description>"ideology (votes?) vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5784</ID>
+          <Description>"ideology (votes?) vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5785</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+F8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5786</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+FC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5787</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+100</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5788</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+104</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5789</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+108</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5790</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+10C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5791</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+110</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5792</ID>
+          <Description>"??? per pop type vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+114</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5749</ID>
+          <Description>"pop sizes by type vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+118</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5750</ID>
+          <Description>"pop sizes by type vector end"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+11C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5751</ID>
+          <Description>"pop sizes by type vector capacity"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+120</Address>
+        </CheatEntry>
+        <CheatEntry>
           <ID>3379</ID>
           <Description>"savings"</Description>
           <ShowAsSigned>1</ShowAsSigned>
@@ -16568,12 +17361,13 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>28B20DE8</Address>
+      <Address>307422D8</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>411</ID>
-          <Description>"??? (first)"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"CMapProvince.vtable.0"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+0</Address>
         </CheatEntry>
@@ -16586,50 +17380,57 @@
         </CheatEntry>
         <CheatEntry>
           <ID>414</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"CMapProvince.vtable.1"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>415</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>416</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+10</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>417</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+14</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>418</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? vector end"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+18</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>419</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? vector capacity"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>420</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+20</Address>
         </CheatEntry>
@@ -16643,14 +17444,16 @@
         <CheatEntry>
           <ID>422</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+28</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>423</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2C</Address>
         </CheatEntry>
@@ -16678,7 +17481,8 @@
         <CheatEntry>
           <ID>427</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+3C</Address>
         </CheatEntry>
@@ -16699,7 +17503,8 @@
         <CheatEntry>
           <ID>430</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+48</Address>
         </CheatEntry>
@@ -16720,7 +17525,8 @@
         <CheatEntry>
           <ID>433</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+54</Address>
         </CheatEntry>
@@ -16741,8 +17547,9 @@
         </CheatEntry>
         <CheatEntry>
           <ID>436</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"CProvinceHistory.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+60</Address>
         </CheatEntry>
@@ -16756,14 +17563,15 @@
         <CheatEntry>
           <ID>438</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+68</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>439</ID>
+          <ID>5803</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+6C</Address>
         </CheatEntry>
@@ -16784,7 +17592,8 @@
         <CheatEntry>
           <ID>442</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+78</Address>
         </CheatEntry>
@@ -16798,14 +17607,16 @@
         <CheatEntry>
           <ID>444</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+80</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>445</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"CProvinceModifier.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+84</Address>
         </CheatEntry>
@@ -16819,14 +17630,16 @@
         <CheatEntry>
           <ID>447</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+8C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>448</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+90</Address>
         </CheatEntry>
@@ -16840,7 +17653,8 @@
         <CheatEntry>
           <ID>450</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+98</Address>
         </CheatEntry>
@@ -16871,7 +17685,8 @@
         <CheatEntry>
           <ID>454</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+A8</Address>
         </CheatEntry>
@@ -16885,14 +17700,16 @@
         <CheatEntry>
           <ID>456</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+B0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>457</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+B4</Address>
         </CheatEntry>
@@ -16920,7 +17737,8 @@
         <CheatEntry>
           <ID>461</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+C4</Address>
         </CheatEntry>
@@ -16948,7 +17766,8 @@
         <CheatEntry>
           <ID>465</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+D4</Address>
         </CheatEntry>
@@ -16976,28 +17795,32 @@
         <CheatEntry>
           <ID>469</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+E4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>470</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+E8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>471</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+EC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>472</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+F0</Address>
         </CheatEntry>
@@ -17011,21 +17834,24 @@
         <CheatEntry>
           <ID>474</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+F8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>475</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+FC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>476</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+100</Address>
         </CheatEntry>
@@ -17039,7 +17865,8 @@
         <CheatEntry>
           <ID>478</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+108</Address>
         </CheatEntry>
@@ -17091,14 +17918,16 @@
         <CheatEntry>
           <ID>485</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+124</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>486</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+128</Address>
         </CheatEntry>
@@ -17112,7 +17941,8 @@
         <CheatEntry>
           <ID>488</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+130</Address>
         </CheatEntry>
@@ -17150,7 +17980,8 @@
         <CheatEntry>
           <ID>494</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+144</Address>
         </CheatEntry>
@@ -17181,28 +18012,32 @@
         <CheatEntry>
           <ID>498</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+154</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>499</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+158</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>500</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+15C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>501</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+160</Address>
         </CheatEntry>
@@ -17216,28 +18051,32 @@
         <CheatEntry>
           <ID>503</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+168</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>504</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+16C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>505</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+170</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>506</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+174</Address>
         </CheatEntry>
@@ -17251,7 +18090,8 @@
         <CheatEntry>
           <ID>493</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+144</Address>
         </CheatEntry>
@@ -17282,28 +18122,32 @@
         <CheatEntry>
           <ID>511</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+154</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>512</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+158</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>513</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+15C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>514</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+160</Address>
         </CheatEntry>
@@ -17324,21 +18168,24 @@
         <CheatEntry>
           <ID>517</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+16C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>518</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+170</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>519</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+174</Address>
         </CheatEntry>
@@ -17352,7 +18199,8 @@
         <CheatEntry>
           <ID>521</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+17C</Address>
         </CheatEntry>
@@ -17381,7 +18229,8 @@
         <CheatEntry>
           <ID>525</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+18C</Address>
         </CheatEntry>
@@ -17496,105 +18345,120 @@
         <CheatEntry>
           <ID>637</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1CC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>638</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1D0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>639</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1D4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>640</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1D8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>641</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1DC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>642</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1E0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>643</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1E4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>644</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1E8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>645</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1EC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>646</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>647</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1F4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>648</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1F8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>649</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1FC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>650</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+200</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>651</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+204</Address>
         </CheatEntry>
@@ -17786,7 +18650,8 @@
         <CheatEntry>
           <ID>679</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+270</Address>
         </CheatEntry>
@@ -17817,7 +18682,8 @@
         <CheatEntry>
           <ID>683</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+280</Address>
         </CheatEntry>
@@ -17869,49 +18735,56 @@
         <CheatEntry>
           <ID>690</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+29C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>691</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2A0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>692</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2A4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>693</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2A8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>694</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? vector end"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2AC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>695</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? vector capacity"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2B0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>696</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2B4</Address>
         </CheatEntry>
@@ -17924,14 +18797,15 @@
         </CheatEntry>
         <CheatEntry>
           <ID>698</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"CStaticModifier.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2BC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>699</ID>
-          <Description>"???"</Description>
+          <Description>"??? 397"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2C0</Address>
@@ -17960,7 +18834,8 @@
         <CheatEntry>
           <ID>703</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2D0</Address>
         </CheatEntry>
@@ -17991,7 +18866,8 @@
         <CheatEntry>
           <ID>707</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2E0</Address>
         </CheatEntry>
@@ -18005,35 +18881,40 @@
         <CheatEntry>
           <ID>709</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2E8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>710</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2EC</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>711</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>712</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2F4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>713</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+2F8</Address>
         </CheatEntry>
@@ -18054,7 +18935,8 @@
         <CheatEntry>
           <ID>716</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+304</Address>
         </CheatEntry>
@@ -18068,37 +18950,281 @@
         <CheatEntry>
           <ID>718</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+30C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>719</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+310</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>720</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+314</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>721</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+318</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>722</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+31C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5804</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+320</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5805</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+324</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5806</ID>
+          <Description>"CFlags.vtable.0"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+328</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5807</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+32C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5808</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+330</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5809</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+334</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5810</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+338</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5811</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+33C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5812</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+340</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5813</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+344</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5814</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+348</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5815</ID>
+          <Description>"CFlags.vtable.1"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+34C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5816</ID>
+          <Description>"??? 397"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+350</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5817</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+354</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5818</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+358</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5819</ID>
+          <Description>"CUniqueUnitName.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+35C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5820</ID>
+          <Description>"??? 397"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+360</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5821</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+364</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5822</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+368</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5823</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+36C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5824</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+370</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5825</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+374</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5826</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+378</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5827</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+37C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5828</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+380</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5829</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+384</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5830</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+388</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5831</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+38C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5832</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+390</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5833</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+394</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5834</ID>
+          <Description>"???"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+398</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5835</ID>
+          <Description>"??? (last or out of bounds?)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+39C</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -18108,33 +19234,36 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>28DFACE0</Address>
+      <Address>29934038</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>838</ID>
-          <Description>"??? (first)"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"CProvinceTemplate.vtable.0"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>840</ID>
-          <Description>"???"</Description>
+          <Description>"??? 397"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>841</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"CProvinceTemplate.vtable.1"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>842</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+C</Address>
         </CheatEntry>
@@ -18148,14 +19277,16 @@
         <CheatEntry>
           <ID>844</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+14</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>845</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+18</Address>
         </CheatEntry>
@@ -18169,14 +19300,16 @@
         <CheatEntry>
           <ID>847</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+20</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>848</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+24</Address>
         </CheatEntry>
@@ -18197,7 +19330,8 @@
         <CheatEntry>
           <ID>853</ID>
           <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+30</Address>
         </CheatEntry>
@@ -18208,6 +19342,361 @@
           <VariableType>4 Bytes</VariableType>
           <Address>+34</Address>
         </CheatEntry>
+        <CheatEntry>
+          <ID>5836</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+38</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5837</ID>
+          <Description>"CMapPoint.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+3C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5838</ID>
+          <Description>"??? 397"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+40</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5839</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+44</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5840</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+48</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5841</ID>
+          <Description>"CMapPoint.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+4C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5842</ID>
+          <Description>"??? 397"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+50</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5843</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+54</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5844</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+58</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5845</ID>
+          <Description>"CMapPoint.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+5C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5846</ID>
+          <Description>"??? 397"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+60</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5847</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+64</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5848</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+68</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5849</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+6C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5850</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+70</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5851</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+74</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5852</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+78</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5853</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+7C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5854</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+80</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5855</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+84</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5856</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+88</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5857</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+8C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5858</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+90</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5859</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+94</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5860</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+98</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5861</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+9C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5862</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+A0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5863</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+A4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5864</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5865</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+AC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5866</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+B0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5867</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+B4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5868</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+B8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5869</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+BC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5870</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5871</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+C4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5872</ID>
+          <Description>"??? vector begin"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+C8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5873</ID>
+          <Description>"??? vector end"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+CC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5874</ID>
+          <Description>"??? vector capacity"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+D0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5875</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+D4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5876</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+D8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5877</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+DC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5878</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5885</ID>
+          <Description>"name (std::string)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>+E4</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5886</ID>
+              <Description>"text (size &gt; 15)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>24</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5887</ID>
+              <Description>"text (size &lt; 16)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>15</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5888</ID>
+              <Description>"size"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5889</ID>
+              <Description>"capacity"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
@@ -18216,7 +19705,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>28978EE0</Address>
+      <Address>34B11588</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>761</ID>
@@ -18234,53 +19723,55 @@
           <Address>+4</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>764</ID>
-          <Description>"???"</Description>
-          <ShowAsHex>1</ShowAsHex>
+          <ID>5714</ID>
+          <Description>"name (std::string)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+8</Address>
+          <GroupHeader>1</GroupHeader>
+          <Address>+08</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>764</ID>
+              <Description>"text (size &gt; 15)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>24</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5715</ID>
+              <Description>"text (size &lt; 16)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>15</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5716</ID>
+              <Description>"size"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5717</ID>
+              <Description>"capacity"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>765</ID>
-          <Description>"???"</Description>
-          <ShowAsHex>1</ShowAsHex>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+C</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>766</ID>
-          <Description>"???"</Description>
-          <ShowAsHex>1</ShowAsHex>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+10</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>770</ID>
-          <Description>"???"</Description>
-          <ShowAsHex>1</ShowAsHex>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+14</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>771</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+18</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>772</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+1C</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>773</ID>
+          <ID>5718</ID>
           <Description>"???"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
@@ -18584,7 +20075,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>830</ID>
-          <Description>"owner effect type (0=input?, 1=output, 2=throughput)"</Description>
+          <Description>"owner effect type (0=input, 1=output, 2=throughput)"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+104</Address>
@@ -18668,7 +20159,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>2864AAE8</Address>
+      <Address>28CB85A8+20</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1895</ID>
@@ -18730,7 +20221,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>2AC610F0-80</Address>
+      <Address>2AB44040-80</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>723</ID>
@@ -18757,8 +20248,9 @@
         </CheatEntry>
         <CheatEntry>
           <ID>726</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"output good ptr"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+C</Address>
         </CheatEntry>
@@ -18779,7 +20271,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>729</ID>
-          <Description>"??? ptr"</Description>
+          <Description>"state ptr (always null)"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+18</Address>
@@ -18825,7 +20317,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>735</ID>
-          <Description>"combined input mult?"</Description>
+          <Description>"combined input mult (always 1fp)"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+30</Address>
@@ -18839,7 +20331,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>739</ID>
-          <Description>"throughput from workers"</Description>
+          <Description>"combined throughput mult"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+40</Address>
@@ -18848,15 +20340,8 @@
           <ID>741</ID>
           <Description>"???"</Description>
           <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
+          <VariableType>8 Bytes</VariableType>
           <Address>+48</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>742</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+4C</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>743</ID>
@@ -18881,8 +20366,9 @@
         </CheatEntry>
         <CheatEntry>
           <ID>747</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
+          <Description>"??? ptr"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+60</Address>
         </CheatEntry>
@@ -19186,7 +20672,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>43FE5C80-150</Address>
+      <Address>4802FC80-150</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1381</ID>
@@ -19377,7 +20863,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1409</ID>
-          <Description>"produces"</Description>
+          <Description>"production yesterday"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+D8</Address>
@@ -19399,7 +20885,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1454</ID>
-          <Description>"state ptr copy?"</Description>
+          <Description>"state ptr"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -19407,7 +20893,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1455</ID>
-          <Description>"???"</Description>
+          <Description>"province ptr (always null)"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+EC</Address>
@@ -19446,21 +20932,21 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1414</ID>
-          <Description>"input efficiency"</Description>
+          <Description>"combined input mult"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+100</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1415</ID>
-          <Description>"output efficiency"</Description>
+          <Description>"combined output mult"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+108</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1416</ID>
-          <Description>"required maintenance goods"</Description>
+          <Description>"combined throughput mult"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+110</Address>
@@ -19474,15 +20960,14 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1418</ID>
-          <Description>"???"</Description>
+          <Description>"owner income share"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+120</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1419</ID>
-          <Description>"???"</Description>
-          <ShowAsHex>1</ShowAsHex>
+          <Description>"total employees"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+128</Address>
@@ -19497,7 +20982,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1461</ID>
-          <Description>"ptr to ??? vector begin"</Description>
+          <Description>"??? ptr"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -19711,7 +21196,21 @@
           <Description>"???"</Description>
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
+          <Address>+1E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5744</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
           <Address>+1F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5745</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1F8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>2245</ID>
@@ -19733,6 +21232,27 @@
           <ShowAsSigned>1</ShowAsSigned>
           <VariableType>8 Bytes</VariableType>
           <Address>+210</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5746</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+218</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5747</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+21C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5748</ID>
+          <Description>"???"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+220</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>2248</ID>
@@ -19790,7 +21310,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>2571E9D8</Address>
+      <Address>256E2788</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1626</ID>
@@ -19852,47 +21372,52 @@
           <Address>+1C</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1635</ID>
-          <Description>"???"</Description>
-          <ShowAsHex>1</ShowAsHex>
+          <ID>5719</ID>
+          <Description>"name (std::string)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
+          <GroupHeader>1</GroupHeader>
           <Address>+20</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1636</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+24</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1645</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+28</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1646</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+2C</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1647</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+30</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1648</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+34</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5720</ID>
+              <Description>"text (size &gt; 15)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>24</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5721</ID>
+              <Description>"text (size &lt; 16)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>15</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5723</ID>
+              <Description>"size"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5724</ID>
+              <Description>"capacity"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>1649</ID>
@@ -19911,21 +21436,23 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1651</ID>
-          <Description>"???"</Description>
+          <Description>"CEmployee.vtable"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+40</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1652</ID>
-          <Description>"???"</Description>
+          <Description>"??? 397"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+44</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1653</ID>
-          <Description>"???"</Description>
+          <Description>"employee pop type ptr"</Description>
+          <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+48</Address>
@@ -19939,28 +21466,21 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1655</ID>
-          <Description>"???"</Description>
+          <Description>"employee effect_multiplier"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
+          <VariableType>8 Bytes</VariableType>
           <Address>+50</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1656</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+54</Address>
-        </CheatEntry>
-        <CheatEntry>
           <ID>1657</ID>
-          <Description>"???"</Description>
+          <Description>"employee desired amount"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+58</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>1658</ID>
-          <Description>"???"</Description>
+          <Description>"employee effect type"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+5C</Address>
@@ -19982,7 +21502,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1661</ID>
-          <Description>"??? good indices"</Description>
+          <Description>"construction good indices"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>Array of byte</VariableType>
@@ -19991,7 +21511,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1677</ID>
-          <Description>"??? vector begin"</Description>
+          <Description>"construction goods vector begin"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -19999,7 +21519,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1678</ID>
-          <Description>"??? vector end"</Description>
+          <Description>"construction goods vector end"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -20007,7 +21527,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>1679</ID>
-          <Description>"??? vector capacity"</Description>
+          <Description>"construction goods vector capacity"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -20239,7 +21759,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>24D1AF78</Address>
+      <Address>28D37C48</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>2190</ID>
@@ -20257,52 +21777,58 @@
           <Address>+4</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>2192</ID>
+          <ID>5726</ID>
+          <Description>"name (std::string)"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <GroupHeader>1</GroupHeader>
+          <Address>+08</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5727</ID>
+              <Description>"text (size &gt; 15)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>24</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5728</ID>
+              <Description>"text (size &lt; 16)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>15</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5730</ID>
+              <Description>"size"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5731</ID>
+              <Description>"capacity"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5732</ID>
           <Description>"???"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+8</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>2193</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+C</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>2194</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+10</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>2195</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+14</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>2196</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+18</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>2197</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+1C</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>2198</ID>
-          <Description>"???"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+20</Address>
         </CheatEntry>
@@ -20656,6 +22182,20 @@
           <VariableType>4 Bytes</VariableType>
           <Address>+E4</Address>
         </CheatEntry>
+        <CheatEntry>
+          <ID>5740</ID>
+          <Description>"life needs price"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+320</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5743</ID>
+          <Description>"is slave"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Byte</VariableType>
+          <Address>+3d9</Address>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
@@ -20664,7 +22204,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>3FBF98F8-180</Address>
+      <Address>43C3225C-4</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1074</ID>
@@ -22025,23 +23565,52 @@
           <Address>+110</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>402</ID>
-          <Description>"name ptr"</Description>
-          <ShowAsHex>1</ShowAsHex>
+          <ID>5733</ID>
+          <Description>"name (std::string)"</Description>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
+          <GroupHeader>1</GroupHeader>
           <Address>+114</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1364</ID>
-          <Description>"name"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>String</VariableType>
-          <Length>15</Length>
-          <Unicode>0</Unicode>
-          <CodePage>0</CodePage>
-          <ZeroTerminate>1</ZeroTerminate>
-          <Address>+114</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5734</ID>
+              <Description>"text (size &gt; 15)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>24</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5735</ID>
+              <Description>"text (size &lt; 16)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>15</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5737</ID>
+              <Description>"size"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>5738</ID>
+              <Description>"capacity"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+14</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -27641,6 +29210,15 @@
         <Element Offset="636" Vartype="Pointer" Bytesize="4" OffsetHex="0000027C" Description="next pop pointer" DisplayMethod="unsigned integer"/>
         <Element Offset="640" Vartype="4 Bytes" Bytesize="4" RLECount="8" OffsetHex="00000280" DisplayMethod="unsigned integer"/>
         <Element Offset="672" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000002A0" DisplayMethod="hexadecimal"/>
+      </Elements>
+    </Structure>
+    <Structure Name="std::string" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="String" Bytesize="12" OffsetHex="00000000" DisplayMethod="unsigned integer"/>
+        <Element Offset="12" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000000C" DisplayMethod="unsigned integer"/>
+        <Element Offset="16" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000010" Description="size" DisplayMethod="signed integer"/>
+        <Element Offset="20" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000014" Description="capacity" DisplayMethod="signed integer"/>
+        <Element Offset="24" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000018" DisplayMethod="unsigned integer"/>
       </Elements>
     </Structure>
   </Structures>

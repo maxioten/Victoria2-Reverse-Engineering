@@ -8,85 +8,205 @@ good struct (CGoods)
 
 country struct (CCountry : CColonialDistanceTracker)
 	total size unknown
-	offset	field							conversion
-	0x000C	??? 397							int32
+	offset	field								conversion
+	0x0000	CCountry.vtable						ptr32
+	0x0004	??? 397								int32
 	
-	0x0020	id								int32
+	0x001C	tag									string (4 chars)
+	0x0020	id									int32
 	
-	0x0031	is_great_power					bool (used as byte)
+	0x0031	is_great_power						bool (used as byte)
 	
-	0x0044	? (CPop) vector begin			ptr32
-	0x0048	? (CPop) vector end				ptr32
-	0x004C	? (CPop) vector capacit			ptr32
+	0x0044	? (CPop) vector begin				ptr32
+	0x0048	? (CPop) vector end					ptr32
+	0x004C	? (CPop) vector capacity			ptr32
 	
-	0x010C	CColonialDistanceTracker.vtable	ptr32
+	0x00A0	CTaxSetting by strata vector begin	ptr32
+	0x00A4	CTaxSetting by strata vector end		ptr32
+	0x00A8	CTaxSetting by strata vector capacity	ptr32
 	
-	0x0138	sphere market share				int64/(2^15)
+	0x010C	CColonialDistanceTracker.vtable		ptr32
 	
-	0x0198	industrial score				int64/(2^15)
-	0x01A0	military score					int64/(2^15)
-	0x01A8	plurality						int32/10^3 (displayed as percentage)
-	0x01AC	revanchism						int32/10^3 (displayed as percentage)
+	0x0138	sphere market share					int64/(2^15)
+	
+	0x016C	???									int32?
+	0x0170	???									int32?
+	
+	0x0198	industrial score					int64/(2^15)
+	0x01A0	military score						int64/(2^15)
+	0x01A8	plurality							int32/10^3 (displayed as percentage)
+	0x01AC	revanchism							int32/10^3 (displayed as percentage)
+	
+	0x0680	war exhaustion						int32/10^3 (displayed as percentage)
 
-	0x07D0	leadership						int64/(2^15)
+	0x07D0	leadership							int64/(2^15)
+	
+	0x0BCC	???									int32?
+	
+	0x0E3C	research points						int32/10^3
+	
+	0x0E44	???									int32?
 
-	0x0EA0	prestige						int32/10^3
-	
-	0x0E3C	research points					int32/10^3
+	0x0E78	cash reserve						int64/(2^15)
 
-	0x0E78	cash reserve					int64/(2^15)
+	0x0EA0	prestige							int32/10^3
 	
-	0x0E88	CBank ptr						ptr32
-	0x0E8C	loan vector begin				ptr32
-	0x0E90	loan vector end					ptr32
-	0x0E94	loan vector capacity			ptr32
+	0x0E88	CBank ptr							ptr32
+	0x0E8C	loan vector begin					ptr32
+	0x0E90	loan vector end						ptr32
+	0x0E94	loan vector capacity				ptr32
 	
-	0x12D0	is_civilised					bool (4 bytes)
+	0xF7C	??? byte vector begin				ptr32
 	
-	0x1404	rank							int32
+	0xFBC	??? ptr								ptr32
 	
-	0x1418	??? vector begin?				ptr32?
-	0x141C	???	vector end?					ptr32?
+	0x118C	??? byte vector begin				ptr32
 	
-	0x142c	sphere country index			int32
+	0x11D0	???									int32?
 	
-	0x15A0	suppression						int32/10^3
+	0x1234	vector: spending sliders			ptr32
+	0x1238	vector: spending sliders copy?		ptr32
+	0x123C	vector: spending sliders copy?		ptr32
 	
-	0x15BC	???								byte
+	0x1244	start of ??? struct					???
+	
+	0x128c	???									???
+	0x1290	???									???
+	
+	0x12D0	is_civilised						bool (4 bytes)
+	
+	0x1404	rank								int32
+	
+	0x1418	??? vector begin?					ptr32?
+	0x141C	???	vector end?						ptr32?
+	
+	0x142C	sphere country index				int32
+	
+	0x149C	???									???
+	
+	0x1568	???									byte
+	
+	0x15A0	suppression							int32/10^3
+	
+	0x15BC	???									byte
+	0x15C0	colonial maintenance				int32
+	0x15C4	colonial points total				int32
+	0x15C8	???									int32
 
-loan struct
+CTaxSetting struct
 	total size unknown
-	offset	field				conversion
-	0x0C	??? 397				int32
-	
-	0x10	interest rate		int64/(2^15)
-	0x18	amount				int64/(2^15)
+	offset	field							conversion
+	0x00	CTaxSetting.vtable				ptr32
+	0x04	??? 397							int32
+	0x08	???								???
+	0x0C	country ptr						ptr32
+	0x10	value							int64/(2^15)
+
+spending settings vector
+	total size unknown
+	offset	field							conversion
+	0x00	CEducationSetting				ptr32
+	0x04	CAdministrationSettings			ptr32
+	0x08	CSocialSpending					ptr32
+	0x0C	CMilitarySpending				ptr32
+
+	CEducationSetting struct
+		total size unknown
+		offset	field							conversion
+		0x00	CEducationSetting.vtable		ptr32
+		0x04	??? 397							int32
+		0x08	???								???
+		0x0C	???								???
+		0x10	value							int64/(2^15)
+
+	CAdministrationSettings struct
+		total size unknown
+		offset	field							conversion
+		0x00	CAdministrationSettings.vtable	ptr32
+		0x04	??? 397							int32
+		0x08	???								???
+		0x0C	???								???
+		0x10	value							int64/(2^15)
+
+	CSocialSpending struct
+		total size unknown
+		offset	field							conversion
+		0x00	CSocialSpending.vtable			ptr32
+		0x04	??? 397							int32
+		0x08	???								???
+		0x0C	???								???
+		0x10	value							int64/(2^15)
+
+	CMilitarySpending struct
+		total size unknown
+		offset	field							conversion
+		0x00	CMilitarySpending.vtable		ptr32
+		0x04	??? 397							int32
+		0x08	???								???
+		0x0C	???								???
+		0x10	value							int64/(2^15)
+
+loan struct (CCreditor)
+	total size unknown
+	offset	field							conversion
+	0x00	CCreditor.vtable				ptr32
+	0x04	??? 397							int32
+	0x08	country tag (for flag)			string (4 chars)
+	0x0C	country index (for text)		int32
+	0x10	interest rate					int64/(2^15)
+	0x18	amount							int64/(2^15)
+	0x20	is paying interest				bool? (4 bytes)
 
 state struct (CState)
 	total size unknown
-	offset	field							conversion
-	0x004	??? 397							int32
-	0x008	id type (47)					int32
-	0x00C	id								int32
+	offset	field								conversion
+	0x004	??? 397								int32
+	0x008	id type (47)						int32
+	0x00C	id									int32
 	
-	0x058	??? (start of member struct?)	ptr32
-	0x05C	country index					int32
+	0x048	province ids vector begin			ptr32
+	0x04C	province ids vector end				ptr32
+	0x050	province ids vector capacity		ptr32
 	
-	0x068	???								int32
+	0x058	??? (start of member struct?)		ptr32
+	0x05C	country index						int32
 	
-	0x258	???								int64/(2^15)
+	0x068	???									int32
+	
+	0x070	ideology (votes?) vector begin		ptr32
+	0x074	ideology (votes?) vector begin		ptr32
+	
+	0x084	is colony ready to upgrade			int32
+		0=not a colony, 1=ready, 2=not ready
+	0x088	CModifier/CSetCountryControllerCommand.vtable	ptr32
+	0x08C	??? 397								int32
+	
+	0x114	??? per pop type vector begin		ptr32
+	0x118	pop sizes by type vector begin		ptr32
+	0x11C	pop sizes by type vector end		ptr32
+	0x120	pop sizes by type vector capacity	ptr32
+	
+	0x258	???									int64/(2^15)
 
 province struct (CMapProvince) (stored seemingly randomly)
-	total size unknown
+	total size unknown at maximum 928 (0x3A0)
 	offset	field					conversion
+	0x000	CMapProvince.vtable.0		ptr32
 	0x004	??? 397						int32
+	0x008	CMapProvince.vtable.1		ptr32
 
 	0x024	pops length					int32
 
 	0x058	id							int32
 	0x05C	CProvinceTemplate ptr		ptr32
+	0x060	CProvinceHistory.vtable		ptr32
+	
+	0x084	CProvinceModifier.vtable	ptr32
+	0x088	??? 397						int32
 	
 	0x188	state ptr					ptr32
+	
+	0x194	???							int32?
 
 	0x1A4	life_rating					int32
 	0x1A8	total pops (display)		uint32
@@ -99,27 +219,56 @@ province struct (CMapProvince) (stored seemingly randomly)
 	0x1C4	total middle strata			uint32
 	0x1C8	total upper strata			uint32
 	
-	0x3DC	total pops copy?			uint32
+	0x2BC	CStaticModifier.vtable		ptr32
+	0x2C0	??? 397						int32
+	
+	0x328	CFlags.vtable.0				ptr32
+	
+	0x34C	CFlags.vtable.1				ptr32
+	0x350	??? 397						int32
+	
+	0x35C	CUniqueUnitName.vtable		ptr32
+	0x360	??? 397						int32
 
 CProvinceTemplate struct
 	total size unknown
-	offset	field		conversion
-	0x04	??? 397		int32
+	offset	field						conversion
+	0x000	CProvinceTemplate.vtable.0	ptr32
+	0x004	??? 397						int32
+	0x00C	CProvinceTemplate.vtable.1	ptr32
 	
-	0x2C	rgo size	int32
+	0x02C	rgo size					int32
+	
+	0x03C	CMapPoint.vtable			ptr32
+	0x040	??? 397						int32
+	
+	0x04C	CMapPoint.vtable			ptr32
+	0x050	??? 397						int32
+	
+	0x05C	CMapPoint.vtable			ptr32
+	0x060	??? 397						int32
+
+	std::string
+		0xE4	name						size < 16 ? string[15] : string_ptr
+		0xF4	name.size					int32
+		0xF8	name.capacity				int32
 
 production type struct (CProductionType)
 	total size unknown
 	offset	field									conversion
 	0x004	??? 397									int32
-
+	std::string
+		0x008	name								size < 16 ? string[15] : string_ptr
+		0x018	name.size							int32
+		0x01C	name.capacity						int32
+	0x020	???										???
 	CGoodsPool
-		0x024	CGoodsPool.vtable						ptr32
-		0x028	??? 397									int32
-		0x02C	input good indices						8 bytes of good indices
-		0x06C	input quantity vector begin				ptr32
-		0x070	input quantity vector end				ptr32
-		0x074	input quantity vector capacity			ptr32
+		0x024	CGoodsPool.vtable					ptr32
+		0x028	??? 397								int32
+		0x02C	input good indices					8 bytes of good indices
+		0x06C	input quantity vector begin			ptr32
+		0x070	input quantity vector end			ptr32
+		0x074	input quantity vector capacity		ptr32
 
 	0x080	output good ptr							ptr32
 
@@ -132,13 +281,13 @@ production type struct (CProductionType)
 	0x0E0	active bonus effects? vector capacity	ptr32
 
 	CEmployee
-		0x0E8	CEmployee.vtable						ptr32
-		0x0EC	??? 397									int32
-		0x0F0	owner pop type ptr						ptr32
-		0x0F4	???										???
-		0x0F8	owner effect_multiplier					int64/2^15
-		0x100	owner desired amount					int32/10^3
-		0x104	owner effect type						int32 (effect type enum)
+		0x0E8	CEmployee.vtable					ptr32
+		0x0EC	??? 397								int32
+		0x0F0	owner pop type ptr					ptr32
+		0x0F4	???									???
+		0x0F8	owner effect_multiplier				int64/2^15
+		0x100	owner desired amount				int32/10^3
+		0x104	owner effect type					int32 (effect type enum)
 	0x108	departments vector begin				ptr32
 	0x10C	departments vector end					ptr32
 	0x110	departments vector capacity				ptr32
@@ -161,43 +310,47 @@ department struct (CEmployee)
 	0x1C	effect type					int32 (effect type enum)
 
 effect type enum
-	0	input?
+	0	input
 	1	output
 	2	throughput
 
 rgo struct (CProvinceRGO : CStateEmployment) (stored as rgo[] by province id)
 	total size 176 (0xB0)
-	offset	field								conversion
-	0x00	CProvinceRGO.vtable					ptr32
-	0x04	??? 397								int32
-	0x08	production type ptr					ptr32
+	offset	field									conversion
+	0x00	CProvinceRGO.vtable						ptr32
+	0x04	??? 397									int32
+	0x08	production type ptr						ptr32
+	0x0C	output good ptr							ptr32
+	CStateEmployment
+		0x10	CStateEmployment.vtable				ptr32
+		0x14	??? 397								int32
+		0x18	state ptr (always null)				ptr32
+		0x1C	province ptr						ptr32
+		0x20	employed pops vector begin			ptr32
+		0x24	employed pops vector end			ptr32
+		0x28	employed pops vector end			ptr32
+		0x2C	??? 0								int32?
+		0x30	combined input mult					int64/(2^15)
+		0x38	combined output mult				int64/(2^15)
+		0x40	combined throughput mult			int64/(2^15)
+		0x48	???									int64?
+		0x50	owner income share					int64/2^15
+		0x58	total employees						uint32
+		0x5C	???									???
+		0x60	??? ptr								ptr32
+		0x64	???									???
+		0x68	???									???
+		#stored as uint32[]
+		0x6C	employees by type vector begin		ptr32
+		0x70	employees by type vector end		ptr32
+		0x74	employees by type vector capacity	ptr32
 
-	0x10	CStateEmployment.vtable				ptr32
-	0x14	??? 397								int32
-	0x18	??? ptr								ptr32
-	0x1C	province ptr						ptr32
-	0x20	employed pops vector begin			ptr32
-	0x24	employed pops vector end			ptr32
-	0x28	employed pops vector end			ptr32
-
-	0x30	combined input mult?				int64/(2^15)
-	0x38	combined output mult				int64/(2^15)
-	0x40	throughput from workers				int64/(2^15)
-
-	0x50	owner income share					int64/2^15
-	0x58	total employees						uint32
-	
-	#stored as uint32[]
-	0x6C	employees by type vector begin		ptr32
-	0x70	employees by type vector end		ptr32
-	0x74	employees by type vector capacity	ptr32
-
-	0x80	last day income						int64/(10^3 * 2^15)
-	0x88	combined rgo size mult				int64/(2^15)
+	0x80	last day income							int64/(10^3 * 2^15)
+	0x88	combined rgo size mult					int64/(2^15)
 
 artisan struct
 	total size unknown
-	offset	field							conversion
+	offset	field								conversion
 	CGoodsPool
 		0x00	CGoodsPool.vtable				ptr32
 		0x04	??? 397							int32
@@ -214,31 +367,31 @@ artisan struct
 		0xA4	input quantity vector end		ptr32
 		0xA8	input quantity vector capacity	ptr32
 	
-	0xB0	production type ptr				ptr32
+	0xB0	production type ptr					ptr32
 
-	0xB8	last_spending					int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
-	0xC0	current_producing				int64/(2^15)
-	0xC8	percent_afforded				int64/(2^15)
-	0xD0	percent_sold_domestic			int64/(2^15)
-	0xD8	percent_sold_export				int64/(2^15)
-	0xE0	leftover						int64/(2^15)
-	0xE8	throttle						int64/(2^15)
-	0xF0	needs_cost						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
-	0xF8	production_income				int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0xB8	last_spending						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0xC0	current_producing					int64/(2^15)
+	0xC8	percent_afforded					int64/(2^15)
+	0xD0	percent_sold_domestic				int64/(2^15)
+	0xD8	percent_sold_export					int64/(2^15)
+	0xE0	leftover							int64/(2^15)
+	0xE8	throttle							int64/(2^15)
+	0xF0	needs_cost							int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0xF8	production_income					int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
 
 factory (CStateBuilding) struct
 	total size unknown
-	offset	field								conversion
-	0x000	CStateBuilding.vtable.0				ptr32
-	0x004	???									???
-	0x008	CStateBuilding.vtable.1				ptr32
-	0x00C	??? 397								int32
-
-	0x014	CNullModifier ptr					ptr32
-	0x018	building ptr						ptr32
-	0x01C	state ptr							ptr32
-	0x020	level								int32
-	0x024	priority							int32
+	offset	field									conversion
+	0x000	CStateBuilding.vtable.0					ptr32
+	0x004	???										???
+	0x008	CStateBuilding.vtable.1					ptr32
+	0x00C	??? 397									int32
+	0x010	???										int32?
+	0x014	CNullModifier ptr						ptr32
+	0x018	building type ptr						ptr32
+	0x01C	state ptr								ptr32
+	0x020	level									int32
+	0x024	priority								int32
 	CGoodsPool
 		0x028	CGoodsPool.vtable					ptr32
 		0x02C	??? 397								int32
@@ -246,66 +399,73 @@ factory (CStateBuilding) struct
 		0x070	stockpile vector begin				ptr32
 		0x074	stockpile vector end				ptr32
 		0x078	stockpile vector capacity			ptr32
-
+	0x07C	???										int32?
 	CGoodsPool
-		0x080	CGoodsPool.vtable				ptr32
+		0x080	CGoodsPool.vtable					ptr32
 		0x084	??? 397								int32
 		0x088	input good indices					8 bytes of good indices
 		0x0C8	input quantity vector begin			ptr32
 		0x0CC	input quantity vector end			ptr32
 		0x0D0	input quantity vector capacity		ptr32
-
-	0x0D8	production yesterday				int64/(2^15)
-	0x0E0	CStateEmployment.vtable				ptr32
-	0x0E4	??? 397								int32
-	0x0E8	state ptr copy?						ptr32
-	0x0EC	??? ptr								ptr32
-	
-	0x0F0	employed pops vector begin			ptr32
-	0x0F4	employed pops vector end			ptr32
-	0x0F8	employed pops vector capacity		ptr32
-
-	0x100	input efficiency					int64/(2^15)
-	0x108	output efficiency					int64/(2^15)
-	0x110	required maintenance goods			int64/(2^15)
-
-	0x128	???									uint32
-
-	0x130	ptr to ??? vector begin				ptr32
-
-	0x13C	employees by type vector begin		ptr32
-	0x140	employees by type vector end		ptr32
-	0x144	employees by type vector capacity	ptr32
-
-	0x150	budget								int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
-	0x158	last_spending						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
-	0x160	last_income							int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
-	0x168	pops_paychecks						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
-	0x170	last_investment						int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
-	0x178	unprofitable_days					int32
-	0x17C	construction_time_left				int32 (days)
-	0x180	is_subsidised						bool (4 bytes)
-	0x184	days_without_input					int32
-	0x188	is_closed							bool (4 bytes)
-	
-	0x190	profit_history[0]					int64/(2^15)
-	0x198	profit_history[1]					int64/(2^15)
-	0x1A0	profit_history[2]					int64/(2^15)
-	0x1A8	profit_history[3]					int64/(2^15)
-	0x1B0	profit_history[4]					int64/(2^15)
-	0x1B8	profit_history[5]					int64/(2^15)
-	0x1C0	profit_history_days					int32
-	0x1C8	profit_history_current				int32
-	
-	0x1D8	subsidies							int64/(2^15)
-	
-	0x1F0	???									int64/(2^15)
-	
-	0x200	leftover							int64/(2^15)
-	0x208	maintenance goods fraction			int64/(2^15)
-	0x210	injected_money						int64/(2^15)
-	
-	0x224	next factory in state ptr			ptr32
+	0x0D4	???										int32?
+	0x0D8	production yesterday					int64/(2^15)
+	CStateEmployment
+		0x0E0	CStateEmployment.vtable				ptr32
+		0x0E4	??? 397								int32
+		0x0E8	state ptr							ptr32
+		0x0EC	province ptr (always null)			ptr32
+		0x0F0	employed pops vector begin			ptr32
+		0x0F4	employed pops vector end			ptr32
+		0x0F8	employed pops vector capacity		ptr32
+		0x0FC	??? 0								int32?
+		0x100	combined input mult					int64/(2^15)
+		0x108	combined output mult				int64/(2^15)
+		0x110	combined throughput mult			int64/(2^15)
+		0x118	???									int64?
+		0x120	owner income share					int64/(2^15)
+		0x128	total employees						uint32
+		0x12C	???									int32?
+		0x130	??? ptr								ptr32
+		0x134	???									???
+		0x138	???									???
+		#stored as uint32[]
+		0x13C	employees by type vector begin		ptr32
+		0x140	employees by type vector end		ptr32
+		0x144	employees by type vector capacity	ptr32
+	0x148	???										int32?
+	0x14C	???										int32?
+	0x150	budget									int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x158	last_spending							int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x160	last_income								int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x168	pops_paychecks							int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x170	last_investment							int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
+	0x178	unprofitable_days						int32
+	0x17C	construction_time_left					int32 (days)
+	0x180	is_subsidised							bool (4 bytes)
+	0x184	days_without_input						int32
+	0x188	is_closed								bool (4 bytes)
+	0x18C	???										int32?
+	0x190	profit_history[0]						int64/(2^15)
+	0x198	profit_history[1]						int64/(2^15)
+	0x1A0	profit_history[2]						int64/(2^15)
+	0x1A8	profit_history[3]						int64/(2^15)
+	0x1B0	profit_history[4]						int64/(2^15)
+	0x1B8	profit_history[5]						int64/(2^15)
+	0x1C0	profit_history_days						int32
+	0x1C8	profit_history_current					int32
+	0x1D0	???										int64?
+	0x1D8	subsidies								int64/(2^15)
+	0x1E0	???										int64/(2^15)
+	0x1E8	???										int64/(2^15)
+	0x1F0	???										int64/(2^15)
+	0x1F8	???										int64?
+	0x200	leftover								int64/(2^15)
+	0x208	maintenance goods fraction				int64/(2^15)
+	0x210	injected_money							int64/(2^15)
+	0x218	???										int32?
+	0x21C	???										int32?
+	0x220	???										int32?
+	0x224	next factory in state ptr				ptr32
 
 employed pop struct (CPopEmployment)
 	total size 16 (0x10)
@@ -315,19 +475,32 @@ employed pop struct (CPopEmployment)
 	0x08	pop ptr						ptr32
 	0x0C	count employed				int32
 
-building struct (CBuilding)
+building type struct (CBuilding)
 	total size unknown
 	offset	field						conversion
 	0x000	CBuilding.vtable			ptr32
 	0x004	??? 397						int32
 	
-	CConstruction/CGoodsPool
-		0x060	CConstruction/CGoodsPool.vtable		ptr32
-		0x064	??? 397								int32
-		0x068	??? good indices					8 bytes of good indices
-		0x06C	??? quantity vector begin			ptr32
-		0x070	??? quantity vector end				ptr32
-		0x074	??? quantity vector capacity		ptr32
+	std::string
+		0x020	name						size < 16 ? string[15] : string_ptr
+		0x030	name.size					int32
+		0x034	name.capacity				int32
+	
+	CEmployee
+		0x040	CEmployee.vtable						ptr32
+		0x044	??? 397									int32
+		0x048	employee pop type ptr					ptr32
+		0x04C	???										???
+		0x050	employee effect_multiplier				int64/2^15
+		0x058	employee desired amount					int32/10^3
+		0x05C	employee effect type					int32 (effect type enum)
+	CGoodsPool
+		0x060	CGoodsPool.vtable						ptr32
+		0x064	??? 397									int32
+		0x068	construction good indices				8 bytes of good indices
+		0x0A8	construction goods vector begin			ptr32
+		0x0AC	construction goods vector end			ptr32
+		0x0B0	construction goods vector capacity		ptr32
 
 	0x0B8	construction time			int32
 	
@@ -345,7 +518,12 @@ pop type struct (CPopType)
 	offset	field						conversion
 	0x000	CPopType.vtable				ptr32
 	0x004	??? 397						int32
-
+	std::string
+		0x008	name						size < 16 ? string[15] : string_ptr
+		0x018	name.size					int32
+		0x01C	name.capacity				int32
+	0x020	???							???
+	0x024	???							???
 	0x028	id							int32
 
 	0x030	???							???
@@ -377,7 +555,9 @@ pop type struct (CPopType)
 		0x0C0	??? vector capacity			ptr32
 		0x0C4	???							???
 	
-	0x3D9	???							byte
+	0x320	life needs price				int64/(10^3 * 2^15)
+	
+	0x3D9	is slave						bool (byte)
 
 POP struct (CPop) (stored as linked list)
 	total size 680 (0x2A8)
@@ -526,10 +706,10 @@ army struct
 	
 	0x0DC	province ptr		ptr32
 	
-	if name.length < 16
-		0x114	name 			string
-	else
-		0x114	name ptr		ptr32
+	std::string
+		0x114	name						size < 16 ? string[15] : string_ptr
+		0x124	name.size					int32
+		0x128	name.capacity				int32
 
 regiment type struct
 	total size unknown
