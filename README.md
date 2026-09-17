@@ -25,8 +25,13 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 ### 📁 Technology
 - [Technology System](Technology/technology.md) — technology availability, player/AI research paths, civilization gates, and confirmed research patches.
 
+### 📁 AI
+
+- [National Focus AI](Technology/Ai_national_focus.md) — The factors that lead the AI ​​to focus national attention on its country (soldiers, capital, etc.)
+- [Relations AI](Technology/Ai_relations.md) — Factors influencing an AI to accept an alliance, military access, etc
+
 ### 📁 Patches
-- [Patch Registry](Patches/patches.md) — **all currently documented patch targets**, kept separate from vanilla behavior.
+- [Patch Registry](Patch/patch.md) — **all currently documented patch targets**, kept separate from vanilla behavior.
 
 ### 📁 CheatEngineTable 
 - Cheat Engine Table — memory tables, dynamic analysis, and runtime address mapping.

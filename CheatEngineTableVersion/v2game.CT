@@ -15179,7 +15179,7 @@
       <CheatEntries>
         <CheatEntry>
           <ID>3365</ID>
-          <Description>"country_pointers[0]"</Description>
+          <Description>"country_pointers[0] NULL"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -15187,7 +15187,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>3368</ID>
-          <Description>"country_pointers[1]"</Description>
+          <Description>"country_pointers[1] REB"</Description>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -15333,7 +15333,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>2E174548</Address>
+      <Address>2EB6DBA0</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1224</ID>
@@ -16333,13 +16333,6 @@
           <Address>+E44</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>1336</ID>
-          <Description>"prestige"</Description>
-          <ShowAsSigned>1</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>+EA0</Address>
-        </CheatEntry>
-        <CheatEntry>
           <ID>1341</ID>
           <Description>"cash reserve"</Description>
           <ShowAsSigned>1</ShowAsSigned>
@@ -16347,12 +16340,54 @@
           <Address>+E78</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>3380</ID>
-          <Description>"CBank ptr"</Description>
-          <ShowAsHex>1</ShowAsHex>
+          <ID>6008</ID>
+          <Description>"struct: CBank"</Description>
+          <Options moHideChildren="1" moManualExpandCollapse="1"/>
           <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
+          <GroupHeader>1</GroupHeader>
           <Address>+E88</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>6009</ID>
+              <Description>"CBank.vtable"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+0</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6010</ID>
+              <Description>"??? 397"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6011</ID>
+              <Description>"country ptr"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6012</ID>
+              <Description>"???"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>+C</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6013</ID>
+              <Description>"savings"</Description>
+              <ShowAsSigned>1</ShowAsSigned>
+              <VariableType>8 Bytes</VariableType>
+              <Address>+10</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>1311</ID>
@@ -16379,6 +16414,13 @@
           <Address>+E94</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>1336</ID>
+          <Description>"prestige"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>+EA0</Address>
+        </CheatEntry>
+        <CheatEntry>
           <ID>5923</ID>
           <Description>"???"</Description>
           <ShowAsHex>1</ShowAsHex>
@@ -16392,6 +16434,9 @@
           <ShowAsSigned>0</ShowAsSigned>
           <GroupHeader>1</GroupHeader>
           <Address>+1234</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
           <CheatEntries>
             <CheatEntry>
               <ID>5950</ID>
@@ -16665,6 +16710,48 @@
           <Address>+142c</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>5996</ID>
+          <Description>"army spending ratio"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1448</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5997</ID>
+          <Description>"navy spending ratio"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1450</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5998</ID>
+          <Description>"construction spending ratio"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1458</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5999</ID>
+          <Description>"min army spending ratio"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1460</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6000</ID>
+          <Description>"min navy spending ratio"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1468</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6001</ID>
+          <Description>"min construction spending ratio"</Description>
+          <ShowAsSigned>1</ShowAsSigned>
+          <VariableType>8 Bytes</VariableType>
+          <Address>+1470</Address>
+        </CheatEntry>
+        <CheatEntry>
           <ID>2440</ID>
           <Description>"??? vector begin"</Description>
           <ShowAsHex>1</ShowAsHex>
@@ -16809,7 +16896,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>46F4CAF0</Address>
+      <Address>4407D720</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>1595</ID>
@@ -17361,7 +17448,7 @@
       <Options moHideChildren="1" moManualExpandCollapse="1"/>
       <ShowAsSigned>0</ShowAsSigned>
       <GroupHeader>1</GroupHeader>
-      <Address>307422D8</Address>
+      <Address>2CD3C2F0</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>411</ID>
