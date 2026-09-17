@@ -27,8 +27,8 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 
 ### 📁 AI
 
-- [National Focus AI](Technology/Ai_national_focus.md) — The factors that lead the AI ​​to focus national attention on its country (soldiers, capital, etc.)
-- [Relations AI](Technology/Ai_relations.md) — Factors influencing an AI to accept an alliance, military access, etc
+- [National Focus AI](AI/Ai_national_focus.md) — The factors that lead the AI ​​to focus national attention on its country (soldiers, capital, etc.)
+- [Relations AI](AI/Ai_relations.md) — Factors influencing an AI to accept an alliance, military access, etc
 
 ### 📁 Patches
 - [Patch Registry](Patch/patch.md) — **all currently documented patch targets**, kept separate from vanilla behavior.
