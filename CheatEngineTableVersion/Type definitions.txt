@@ -1,0 +1,60 @@
+struct FixedPoint64_15 { uint32_t low; int32_t high; }
+
+struct std_vector_unknown { void* begin; void* end; void* capacity; }
+struct std_vector_FixedPoint64_15 { FixedPoint64_15* begin; FixedPoint64_15* end; FixedPoint64_15* capacity; }
+struct std_vector_CGoodsPool { CGoodsPool* begin; CGoodsPool* end; CGoodsPool* capacity; }
+
+struct CGoodsPool { void* vtable; uint32_t unknown_0x04; uint8_t good_indices[64]; std_vector_FixedPoint64_15 values; uint32_t unknown_0x54; }
+
+struct CWorldMarket {
+	void* vtable;
+	uint32_t unknown_0x04;
+	CGoodsPool supply_pool_0x08;
+	CGoodsPool unknown_CGoodsPool_0x60;
+	CGoodsPool actual_sold_world_0xB8;
+	std_vector_CGoodsPool actual_sold_domestic_per_country_0x110;
+	uint32_t unknown_0x11C;
+	CGoodsPool worldmarket_pool_0x120;
+	CGoodsPool demand_in_save_0x178;
+	CGoodsPool real_demand_in_save_0x1D0;
+	CGoodsPool demand_in_UI_0x228;
+	CGoodsPool price_pool_0x280;
+	CGoodsPool price_pool_yesterday_0x2D8;
+	CGoodsPool* unknown_CGoodsPool_ptr_0x330;
+	CGoodsPool* unknown_CGoodsPool_ptr_0x334;
+	uint32_t unknown_0x338;
+	uint32_t unknown_0x33C;
+	uint32_t unknown_0x340;
+	CGoodsPool unknown_CGoodsPool_0x344;
+	CGoodsPool unknown_CGoodsPool_0x39C;
+	std_vector_CGoodsPool exported_per_country_0x3F4;
+	uint32_t unknown_0x400;
+	std_vector_CGoodsPool unknown_CGoodsPool_per_country_0x404;
+	uint32_t unknown_0x410;
+	std_vector_CGoodsPool unknown_CGoodsPool_per_country_0x414;
+	uint32_t unknown_0x420;
+	std_vector_CGoodsPool unknown_CGoodsPool_per_country_0x424;
+	uint32_t unknown_0x430;
+	CGoodsPool actual_sold_0x434;
+	std_vector_CGoodsPool actual_sold_domestic_per_country_0x4E4;
+	uint32_t unknown_0x4F0;
+	CGoodsPool actual_sold_world_0x4F4;
+	CGoodsPool unknown_CGoodsPool_0x54C;
+	CGoodsPool unknown_CGoodsPool_0x664;
+	CGoodsPool unknown_CGoodsPool_0x6BC;
+	std_vector_CGoodsPool unknown_CGoodsPool_per_pop_type_0x714;
+	uint32_t unknown_0x720;
+	CGoodsPool available_in_common_market_0x724;
+	CGoodsPool available_in_common_market_yesterday_0x77C;
+	std_vector_CGoodsPool saved_country_supply_per_country_0x7D4;
+	uint32_t unknown_0x7E0;
+	std_vector_unknown unknown_vector_0x7E4;
+	uint32_t unknown_0x7F0;
+	std_vector_FixedPoint64_15 unknown_FixedPoint64_15_per_country_0x7F4;
+	uint32_t unknown_0x800;
+	std_vector_unknown unknown_vector_0x804;
+	uint32_t unknown_0x810;
+	std_vector_CGoodsPool unknown_CGoodsPool_per_country_0x814;
+	uint32_t unknown_0x820;
+	std_vector_CGoodsPool unknown_CGoodsPool_per_11_0x824;
+}

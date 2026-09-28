@@ -10,6 +10,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [Event](Engine/Event_System.md) — How the game creates and manages events
 - [Game Speed System](Engine/game-speed.md) — speed index, update throttle, temporal processing, and B28 mapping.
 - [RNG System](Engine/rng.md) — random-number list and Mersenne Twister regeneration path.
+- [Country Daily Update](Engine/Country_Daily_Update.md) — How (developing) countries work.
 - [Loading & Initialization](Engine/loading-initialization.md) — game-load finalization, state initialization, subsystem startup, and gameplay entry.
 - [Buttons & Callbacks](Engine/buttons.md) — identified UI/button callbacks and their confidence levels.
 - [Utility Functions](Engine/utilities.md) — renamed/reconstructed helper functions.
