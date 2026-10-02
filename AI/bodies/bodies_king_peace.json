@@ -1,0 +1,1808 @@
+[
+ {
+  "va": "0x844050",
+  "end": "0x84413B",
+  "size": 235,
+  "calls": [
+   "0x834150"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0x10624DD3"
+  ],
+  "role": "King query helper: const 0x3E8 + [esi+0x10]/[esi+0x14] pair into 0x834150.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x844140",
+  "end": "0x84420F",
+  "size": 207,
+  "calls": [
+   "0x834150"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0x10624DD3"
+  ],
+  "role": "Variant of 0x844050: same 0x834150 call with 0x3E8, negated result.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x844210",
+  "end": "0x845AC5",
+  "size": 6325,
+  "calls": [
+   "0x85FA60",
+   "0x42BB00",
+   "0x969F90",
+   "0x401000",
+   "0xB31C00",
+   "0x92E270",
+   "0x4A0E80",
+   "0x85B8C0",
+   "0x85B9B0",
+   "0x85B910",
+   "0x85B880",
+   "0x534A50",
+   "0x92EDE0",
+   "0x85FFC0",
+   "0x5DB9B0",
+   "0x5DCBD0",
+   "0xAC02A0",
+   "0x43A5B0",
+   "0x5DC0A0",
+   "0x43A5E0",
+   "0xAC9F20",
+   "0x9315A0",
+   "0x848540",
+   "0x9311F0",
+   "0x92D400",
+   "0x90A800",
+   "0x94BD40",
+   "0x845AD0",
+   "0x92EFF0",
+   "0x9500E0",
+   "0x4FB7D0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0x12587E4",
+   "0x1428",
+   "0x142C",
+   "0x12E8",
+   "0x28000",
+   "0x12588E8",
+   "0x125870C",
+   "0x10624DD3",
+   "0x1317D64",
+   "0x12586DC",
+   "0x1317D08",
+   "0x1317CC4",
+   "0x1317D84",
+   "0xFFFFFFFF",
+   "0x189373",
+   "0x39580D",
+   "0x12D0",
+   "0x1404",
+   "0x1400",
+   "0xFFFFD8F0",
+   "0x1430",
+   "0x1388",
+   "0x1258720"
+  ],
+  "role": "Tag-gated strategic scan: 0x85FA60 gate on +0x364 handle, +0xCF8/+0xCFC war gates, minister-table fan-out.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x845ad0",
+  "end": "0x8465A0",
+  "size": 2768,
+  "calls": [
+   "0x42BB00",
+   "0x9387C0",
+   "0x936FC0",
+   "0x401000",
+   "0xB31C00",
+   "0xAC02A0",
+   "0xAC9F20",
+   "0x8A8650",
+   "0x93C280",
+   "0x92EDE0",
+   "0xAAE9AF",
+   "0x90CCA0",
+   "0x90D9D0",
+   "0x90CD00",
+   "0xAAE91B",
+   "0x94BDB0",
+   "0x846C40",
+   "0x8465A0",
+   "0x846830",
+   "0x846A70",
+   "0x9500E0",
+   "0x42CA20",
+   "0x951920",
+   "0x9885D0",
+   "0x4F97A0",
+   "0x94C240",
+   "0x4015B0",
+   "0x9CD680",
+   "0x987D20",
+   "0x989050",
+   "0x418E30",
+   "0x455470",
+   "0x401280",
+   "0x401650",
+   "0x408AD0",
+   "0x9B7610",
+   "0x424B60"
+  ],
+  "strings": [
+   "ai_foreignminister.cpp",
+   " against ",
+   "(NORMAL) ",
+   "(RANDOM) "
+  ],
+  "consts": [
+   "0xFFFFFFF8",
+   "0xBABA5F",
+   "0xFFFFFFC0",
+   "0x12586DC",
+   "0x10624DD3",
+   "0xFFFFFFFF",
+   "0x189373",
+   "0x39580D",
+   "0x12588E8",
+   "0x131ACAC",
+   "0x12587E4",
+   "0x2D2D2D",
+   "0xFFFFFFFC",
+   "0x1430",
+   "0x12D0",
+   "0x186A0",
+   "0xE268B4",
+   "0x1680",
+   "0xDF9638",
+   "0xE26C9C",
+   "0xE26CA8",
+   "0x168B",
+   "0xE26CB4"
+  ],
+  "role": "SEH relation-row orchestrator driving peace-text builders + probe 0x846C40; asserts ai_foreignminister.cpp.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8465a0",
+  "end": "0x84682E",
+  "size": 654,
+  "calls": [
+   "0x8A8650",
+   "0x846C40",
+   "0x93C6F0",
+   "0x93C7C0",
+   "0x847B60"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12588E8",
+   "0x2D2D2D",
+   "0x12587E4",
+   "0xFFFFFFFC"
+  ],
+  "role": "Best-score peace-text scan: 0x8A8650 pair, 0x846C40 probe, 0x93C6F0/0x93C7C0 filters, 0x847B60 builder, max-store.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x846830",
+  "end": "0x84698A",
+  "size": 346,
+  "calls": [
+   "0x8A8650",
+   "0x93C6F0",
+   "0x846C40"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12588E8",
+   "0x2D2D2D"
+  ],
+  "role": "Peace-text buffer init variant: 0x8A8650 x2 plus consts 0x2D2D2D/0xADC.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x846990",
+  "end": "0x846A6C",
+  "size": 220,
+  "calls": [
+   "0x93C7C0",
+   "0x936FC0",
+   "0xAC9F20"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0x18000"
+  ],
+  "role": "Bounded index loop over +0xDA8/+0xDAC with tag lookups via 0x93C7C0/0x936FC0/0xAC9F20.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x846a70",
+  "end": "0x846C39",
+  "size": 457,
+  "calls": [
+   "0x8A8650",
+   "0x93C7C0",
+   "0x846990",
+   "0x847B60"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0xFFFFFFFC",
+   "0x12588E8",
+   "0x2D2D2D"
+  ],
+  "role": "Peace-text buffer init variant: 0x8A8650 x2 plus 0x846990 index loop.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x846c40",
+  "end": "0x847A63",
+  "size": 3619,
+  "calls": [
+   "0x5DBA20",
+   "0x5DC2A0",
+   "0xAC9F20",
+   "0xAC02A0",
+   "0x847B60",
+   "0x401000",
+   "0xB31C00",
+   "0x47DEC0",
+   "0x4FB6F0",
+   "0x40B360",
+   "0x408AD0",
+   "0x8485F0",
+   "0x534A50",
+   "0x53D640",
+   "0x408D50",
+   "0x43A620"
+  ],
+  "strings": [
+   "europe",
+   "africa"
+  ],
+  "consts": [
+   "0x12587E4",
+   "0x12588E8",
+   "0xFFFFFFFC",
+   "0x1428",
+   "0x142C",
+   "0xC350",
+   "0x4E20",
+   "0x2710",
+   "0x1388",
+   "0x186A0",
+   "0xF4240",
+   "0xFFFFF75E",
+   "0x1317CB8",
+   "0x1F40000",
+   "0x320000",
+   "0xFFFF8000",
+   "0x640000",
+   "0x29C55C0",
+   "0x2AAAAAAB",
+   "0x10624DD3",
+   "0xDF26D0",
+   "0xDF9B6C",
+   "0xFFFFFFFF",
+   "0x189373",
+   "0x39580D"
+  ],
+  "role": "Switched range probe over +0x9D8/+0x9DC elements (jump table @0x847A64); refs europe/africa.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x847b60",
+  "end": "0x8483D5",
+  "size": 2165,
+  "calls": [
+   "0xAAE9AF",
+   "0x561080",
+   "0x4A0E80",
+   "0xAC9F20",
+   "0xAC02A0",
+   "0x4DADA0",
+   "0x4DADF0",
+   "0xAAE91B",
+   "0x4DC340"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB90C49",
+   "0xFFFFFFFC",
+   "0x12588E8",
+   "0x1258728",
+   "0x12587E4",
+   "0x12D0",
+   "0x38E38E39",
+   "0xFFFFFFEC",
+   "0x1258A20",
+   "0x12587E8",
+   "0x12587EC",
+   "0xFFFFFFFF",
+   "0x125870C",
+   "0x2710",
+   "0xB71B0",
+   "0x1317D08",
+   "0x189373",
+   "0x39580D",
+   "0x10624DD3",
+   "0x68DB8BAD",
+   "0x1388",
+   "0x125CE80",
+   "0x125CEAC",
+   "0x55555556",
+   "0x84809B"
+  ],
+  "role": "Sorted-merge walker over [ecx+0x48/0x4C] lists; computed jump table @0x8483D8.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8483f0",
+  "end": "0x848537",
+  "size": 327,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0x12588E8",
+   "0x29C55C0",
+   "0xF1027C",
+   "0x2AAAAAAB",
+   "0x12587E4"
+  ],
+  "role": "Scaled-index peace valuator: +0xAEC guard with xmm-zero exit, double divide/multiply index math, +0xBE8 row fetch.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x848540",
+  "end": "0x8485E6",
+  "size": 166,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0x12587E4",
+   "0x12588E8"
+  ],
+  "role": "War-state branch on [edx+0xE4C] with +0xE44 object fetch; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8485f0",
+  "end": "0x8486AD",
+  "size": 189,
+  "calls": [
+   "0x92F630",
+   "0xAC02A0",
+   "0xAC9F20"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0x12586DC"
+  ],
+  "role": "Peace lookup via 0x92F630 on +0xBE8 object; posts 0xAC02A0/0xAC9F20.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8486b0",
+  "end": "0x8486D4",
+  "size": 36,
+  "calls": [
+   "0x848830"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8"
+  ],
+  "role": "Forwarder packing five count args then E8-calling 0x848830 with add-esp cleanup and ret.",
+  "status": "trampoline"
+ },
+ {
+  "va": "0x8486e0",
+  "end": "0x848821",
+  "size": 321,
+  "calls": [
+   "0x848930",
+   "0x8486E0",
+   "0x8491A0",
+   "0x8490B0",
+   "0x849120"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0x51EB851F"
+  ],
+  "role": "Recursive range dispatcher (self-call) fanning to 0x848930/0x8491A0/0x8490B0/0x849120.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x848830",
+  "end": "0x84892B",
+  "size": 251,
+  "calls": [
+   "0x848B40",
+   "0x848830",
+   "0x8494D0",
+   "0x849310",
+   "0x849460"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8"
+  ],
+  "role": "Mid-size range splitter dispatching 0x848B40/0x8494D0/0x849310/0x849460 (+self).",
+  "status": "mapped"
+ },
+ {
+  "va": "0x848930",
+  "end": "0x848B38",
+  "size": 520,
+  "calls": [
+   "0x849000",
+   "0x849680"
+  ],
+  "strings": [],
+  "consts": [
+   "0x51EB851F"
+  ],
+  "role": "Binary-split setup via 0x849000 probe plus 0x849680 comparator.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x848b40",
+  "end": "0x848FF2",
+  "size": 1202,
+  "calls": [
+   "0x849240",
+   "0x936FC0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Recursive bisection step via 0x849240 plus 0x936FC0 row fetch.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849000",
+  "end": "0x8490AC",
+  "size": 172,
+  "calls": [
+   "0x849720"
+  ],
+  "strings": [],
+  "consts": [
+   "0x51EB851F"
+  ],
+  "role": "Upper-bound probe delegating to shared 0x849720 comparator.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8490b0",
+  "end": "0x849116",
+  "size": 102,
+  "calls": [
+   "0x849680",
+   "0x8497A0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x51EB851F"
+  ],
+  "role": "Count-from-span helper via 0x849680 plus 0x8497A0 loop.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849120",
+  "end": "0x8491A0",
+  "size": 128,
+  "calls": [
+   "0x849680",
+   "0x8497A0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x51EB851F"
+  ],
+  "role": "Two-probe copy/compare via 0x849680 plus 0x8497A0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8491a0",
+  "end": "0x849232",
+  "size": 146,
+  "calls": [
+   "0x849680",
+   "0x849B60"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Single-step advance compare via 0x849680 plus 0x849B60 tail block.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849240",
+  "end": "0x849302",
+  "size": 194,
+  "calls": [
+   "0x849810"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Bisect core with +0xBE8/+0x34 peace-row fetch via 0x849810.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849310",
+  "end": "0x84945D",
+  "size": 333,
+  "calls": [
+   "0x936FC0",
+   "0x849C20"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Linear-scan setup via 0x936FC0 plus binary address calc 0x849C20.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849460",
+  "end": "0x8494C4",
+  "size": 100,
+  "calls": [
+   "0x849970"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8"
+  ],
+  "role": "Small-span align check plus indexed peace-row calc via 0x849970.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8494d0",
+  "end": "0x849715",
+  "size": 581,
+  "calls": [
+   "0x936FC0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Range-equality early-out + 0x936FC0 lookup; embeds 0x849680 comparator entry + copy stub.",
+  "status": "mapped",
+  "smda_note": "smda coverage shorter (cold block); no interior ret+prologue split; end kept"
+ },
+ {
+  "va": "0x849720",
+  "end": "0x84979E",
+  "size": 126,
+  "calls": [
+   "0x849680"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Multi-probe merge/compare via shared 0x849680 comparator.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8497a0",
+  "end": "0x84980F",
+  "size": 111,
+  "calls": [
+   "0x849680",
+   "0x849A60"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Adjacent-pair loop compare via 0x849680 plus midpoint helper 0x849A60.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849810",
+  "end": "0x849964",
+  "size": 340,
+  "calls": [
+   "0x936FC0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Cross-table peace fetch (+0xBE8/+0x34) combined via 0x936FC0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849970",
+  "end": "0x849A59",
+  "size": 233,
+  "calls": [
+   "0x936FC0",
+   "0x849C20"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Indexed peace-row address calc via 0x936FC0 plus 0x849C20.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849a60",
+  "end": "0x849C18",
+  "size": 440,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Midpoint insert helper; tail-jmps shared 0x849680; owns 0x849B60 compare block.",
+  "status": "mapped",
+  "smda_note": "smda coverage shorter (cold block); no interior ret+prologue split; end kept"
+ },
+ {
+  "va": "0x849c20",
+  "end": "0x849D34",
+  "size": 276,
+  "calls": [
+   "0x936FC0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Binary-search address calc via 0x936FC0 plus prologue-less micro-stubs.",
+  "status": "mapped",
+  "smda_note": "smda coverage shorter (cold block); no interior ret+prologue split; end kept"
+ },
+ {
+  "va": "0x849d40",
+  "end": "0x849D5C",
+  "size": 28,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float clamp setter: max([ebp+8],0.0) stored to [ecx+0xC]; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849d60",
+  "end": "0x849D97",
+  "size": 55,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xE27B50",
+   "0xE27C04"
+  ],
+  "role": "Float-clamp ctor: clamps xmm0>=0 into [eax+0xC]; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849da0",
+  "end": "0x849E28",
+  "size": 136,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xE27B50",
+   "0xE27C28"
+  ],
+  "role": "Float-pair ctor (ret 8) plus two prologue-less accessor stubs.",
+  "status": "mapped",
+  "smda_note": "smda coverage shorter (cold block); no interior ret+prologue split; end kept"
+ },
+ {
+  "va": "0x849e30",
+  "end": "0x849ec9",
+  "size": 153,
+  "calls": [
+   "0xAAE91B",
+   "0xAAEAC2"
+  ],
+  "strings": [],
+  "consts": [
+   "0x849E90"
+  ],
+  "role": "List teardown via 0xAAE91B/0xAAEAC2 plus micro-getters.",
+  "status": "mapped",
+  "smda_fix": "end corrected (swallowed trailing getter)"
+ },
+ {
+  "va": "0x849f50",
+  "end": "0x849F87",
+  "size": 55,
+  "calls": [
+   "0x5F2AE0"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Linked-list find-or-null at +0x1DC via 0x5F2AE0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849f90",
+  "end": "0x849FC7",
+  "size": 55,
+  "calls": [
+   "0x5F2AE0"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Linked-list find-or-null at +0x1EC via 0x5F2AE0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x849fd0",
+  "end": "0x84a059",
+  "size": 137,
+  "calls": [
+   "0x84AF00",
+   "0x825E50"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27924"
+  ],
+  "role": "Bundled cluster: 0x84AF00 gate stub + 0x849FF0 node-init (0xE27924 via 0x825E50) + getters.",
+  "status": "mapped",
+  "smda_fix": "end corrected (swallowed trailing getter)"
+ },
+ {
+  "va": "0x84a080",
+  "end": "0x84A0A1",
+  "size": 33,
+  "calls": [
+   "0x84A0B0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Init wrapper: calls 0x84A0B0 then conditional 0xAAE91B delete.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84a150",
+  "end": "0x84A345",
+  "size": 501,
+  "calls": [
+   "0x825E50",
+   "0xAAD56B",
+   "0xAB6E30",
+   "0xAAEB25",
+   "0x852A90"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB42D99",
+   "0xE27714",
+   "0x849E90",
+   "0x84A380"
+  ],
+  "role": "SKIP: CAIKing ctor (vtable 0xE27714 store), fully documented.",
+  "status": "skip"
+ },
+ {
+  "va": "0x84a350",
+  "end": "0x84A390",
+  "size": 64,
+  "calls": [
+   "0x84A390",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Vtable-init wrapper (0x84A390 + conditional delete) plus zeroing stub.",
+  "status": "mapped",
+  "smda_note": "smda coverage shorter (cold block); no interior ret+prologue split; end kept"
+ },
+ {
+  "va": "0x84a390",
+  "end": "0x84A5B8",
+  "size": 552,
+  "calls": [
+   "0xAAE91B",
+   "0xAAEAC2",
+   "0x849E30",
+   "0x57AFC0",
+   "0xAAEA59",
+   "0x825EC0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB42CE9",
+   "0xE27714",
+   "0x12588E8",
+   "0x849E90",
+   "0xFFFFFFFF"
+  ],
+  "role": "SEH array-ctor at +0x23C clearing slots, vtable 0xE27714.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84a5c0",
+  "end": "0x84AA7B",
+  "size": 1211,
+  "calls": [
+   "0xAAE9AF",
+   "0x849FF0",
+   "0x825E50",
+   "0x833650",
+   "0x859D30",
+   "0x84ACA0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0x12587E4",
+   "0xFFFFFFFF",
+   "0xE282D4",
+   "0xE27CCC",
+   "0xE286C4",
+   "0x12588E8",
+   "0xE2657C",
+   "0xE284DC"
+  ],
+  "role": "Peace-plan builder: allocs/links condition nodes, 4x 0x859D30, runs 0x84ACA0 committer.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84aa80",
+  "end": "0x84AC47",
+  "size": 455,
+  "calls": [
+   "0x825FD0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0x1318C50",
+   "0x1318C40",
+   "0x1318C80",
+   "0x1318C70",
+   "0x12587E4"
+  ],
+  "role": "Global-list unlink (4 lists) plus accumulator reset and army-list prune.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84ac50",
+  "end": "0x84ACA0",
+  "size": 80,
+  "calls": [
+   "0x4E9470"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "King-armies matcher: walks [eax+0x214], vcall +0xCC, 0x4E9470 test per node.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84aca0",
+  "end": "0x84AEFC",
+  "size": 604,
+  "calls": [
+   "0x84AC50",
+   "0x82C4D0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Matcher-then-commit driver: +0x7B4 context, 0x84AC50 per node, commits via 0x82C4D0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84af00",
+  "end": "0x84AF6D",
+  "size": 109,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Two-phase peace-gate latch (+0x23A/+0x23B) on tag/state/dirty checks; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84af70",
+  "end": "0x84AFC6",
+  "size": 86,
+  "calls": [
+   "0x5F2AE0"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "King-armies membership test: vcall +0x104, walks [edi+0x214], +0x120 dispatch.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84afd0",
+  "end": "0x84B026",
+  "size": 86,
+  "calls": [
+   "0x5F2AE0"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Near-twin of 0x84AF70; identical except final vcall +0x118 (vs +0x120).",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x84b030",
+  "end": "0x84B03B",
+  "size": 11,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Vtable jmp-thunk: jmp [eax+0x6C]; no ret.",
+  "status": "trampoline"
+ },
+ {
+  "va": "0x84b040",
+  "end": "0x84B04B",
+  "size": 11,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Vtable jmp-thunk: jmp [eax+0x70]; no ret.",
+  "status": "trampoline"
+ },
+ {
+  "va": "0x84b050",
+  "end": "0x84B09D",
+  "size": 77,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Dirty-flag setter for +0x238 with [eax+0x144] validation; no direct calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84b0a0",
+  "end": "0x84B0ED",
+  "size": 77,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Dirty-flag setter for +0x239, same shape as 0x84B050.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84b0f0",
+  "end": "0x84B59B",
+  "size": 1195,
+  "calls": [
+   "0x851AD0",
+   "0x9C1D40",
+   "0x4E9470",
+   "0xAAE91B",
+   "0x534A50",
+   "0x4D61D0",
+   "0x84ACA0",
+   "0x5CC3E0",
+   "0x8500A0",
+   "0x851BD0",
+   "0x84DFC0",
+   "0xAB047B",
+   "0x84D1D0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0xFFFFFFFF",
+   "0x1268",
+   "0x1258A94",
+   "0x1258A98",
+   "0x12587E4",
+   "0x12588E8",
+   "0xFFFF3CB0"
+  ],
+  "role": "SKIP: CAIKing::Execute anti-rebel executor, fully documented.",
+  "status": "skip"
+ },
+ {
+  "va": "0x84b5a0",
+  "end": "0x84B68B",
+  "size": 235,
+  "calls": [
+   "0xAAE9AF",
+   "0x84AF00",
+   "0x5F2AE0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4"
+  ],
+  "role": "Peace-target linker: appends target to +0x200 list on tag match, latches 0x84AF00.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84b690",
+  "end": "0x84B807",
+  "size": 375,
+  "calls": [
+   "0x424930",
+   "0x851440",
+   "0x40B340",
+   "0x827F30",
+   "0x84EF30"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0x12588E8",
+   "0x12587E4"
+  ],
+  "role": "Slot-9 tick updater: 1/15-gated 0x851440, +0x1C8 accumulator, army sweeps, 8x 0x84EF30.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84b810",
+  "end": "0x84B831",
+  "size": 33,
+  "calls": [
+   "0x85A6F0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Init wrapper: calls 0x85A6F0 then conditional 0xAAE91B delete.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84b840",
+  "end": "0x84BD5A",
+  "size": 1306,
+  "calls": [
+   "0x51B040"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0x2D2D2D",
+   "0xFFFFFFF8",
+   "0xFFFFFFFC",
+   "0x38E38E39",
+   "0x12588E8"
+  ],
+  "role": "Float-init plus list guard; tag-pair predicate via 0x51B040.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84bd60",
+  "end": "0x84C463",
+  "size": 1795,
+  "calls": [
+   "0xAAE9AF",
+   "0x549920",
+   "0xAAE91B",
+   "0x93D080",
+   "0x851130",
+   "0x84B840",
+   "0x853E20"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB4AC33",
+   "0x12587E4",
+   "0x12588E8",
+   "0xFFFFFFFF",
+   "0xE27B34"
+  ],
+  "role": "SEH bounded pass over [esi+0x70/0x74]: REB-filtered rows, node lists, 0x851130/0x84B840 scoring.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84c470",
+  "end": "0x84D172",
+  "size": 3330,
+  "calls": [
+   "0x409350",
+   "0xAAE9AF",
+   "0x576FE0",
+   "0x57AB10",
+   "0x57B0A0",
+   "0xAAE91B",
+   "0x50E450",
+   "0x4CA000",
+   "0x6E0260",
+   "0x55DDA0",
+   "0xAC0440",
+   "0x6E0700",
+   "0xB31C36",
+   "0xAC02A0",
+   "0xAC9F20",
+   "0x4D5D10",
+   "0x445600"
+  ],
+  "strings": [
+   "nationalism_n_imperialism"
+  ],
+  "consts": [
+   "0xB4FC4F",
+   "0x12587E4",
+   "0xE276F0",
+   "0x125EADC",
+   "0xFFFFFFFF",
+   "0x12588E8",
+   "0x12586DC",
+   "0x12E8",
+   "0xFFFFFC18",
+   "0xFFFFFFFC",
+   "0x1544",
+   "0x189373",
+   "0x39580D",
+   "0x10624DD3",
+   "0x1F40000",
+   "0x12D0",
+   "0xDEDA5C",
+   "0xFFFF",
+   "0xDED94D",
+   "0xE00EDC",
+   "0xE6FB20",
+   "0xDD8CFC"
+  ],
+  "role": "SEH peace-text composer: 0xE276F0-format builders, 0x3E8-scaled posts; noreturn cold tail.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84d1d0",
+  "end": "0x84DFBF",
+  "size": 3567,
+  "calls": [
+   "0x4CD4C0",
+   "0x4CB370",
+   "0xAAE9AF",
+   "0x58A0B0",
+   "0x4D1E40",
+   "0x4D5D10",
+   "0x584E90",
+   "0x401000",
+   "0xB31C00",
+   "0xAC02A0",
+   "0x5853E0",
+   "0x84C470",
+   "0x4CD300",
+   "0x4CD1D0",
+   "0x9B7610",
+   "0x589D40",
+   "0x589840",
+   "0x4CB450",
+   "0x85FBC0",
+   "0x4BBD60",
+   "0xAC9F20",
+   "0xAB047B"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB52C22",
+   "0x12588E8",
+   "0x12587E4",
+   "0x1404",
+   "0x12586DC",
+   "0x10624DD3",
+   "0x125870C",
+   "0x2A8C",
+   "0x2A88",
+   "0x15C4",
+   "0x15C0",
+   "0x14A4",
+   "0xFFFFFFFF",
+   "0x12586F1",
+   "0x149C",
+   "0x7530",
+   "0x1388",
+   "0xFFF0BDC0",
+   "0xFFFFFFFC",
+   "0xC350",
+   "0x38E38E39",
+   "0x2710",
+   "0x1258728",
+   "0x189373",
+   "0x39580D"
+  ],
+  "role": "Rand-gated Execute helper chaining 0x84C470 composer plus 0x85FBC0 pair.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84dfc0",
+  "end": "0x84E735",
+  "size": 1909,
+  "calls": [
+   "0x84BD60",
+   "0xAAE9AF",
+   "0x853E20",
+   "0x48F070",
+   "0x82DA90",
+   "0x828E30",
+   "0x828AB0",
+   "0x828BB0",
+   "0x4A0E80",
+   "0x49B7F0",
+   "0x82C4D0",
+   "0x8601B0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB4FBE8",
+   "0x12587E4",
+   "0x2D2D2D",
+   "0xFFFFFFF8",
+   "0x12588E8",
+   "0xE27B34",
+   "0x125870C",
+   "0x12D0"
+  ],
+  "role": "SKIP: Execute worker (threat-gate 0x82DA90, commit 0x82C4D0), documented.",
+  "status": "skip"
+ },
+ {
+  "va": "0x84e740",
+  "end": "0x84E9E4",
+  "size": 676,
+  "calls": [
+   "0x48F070",
+   "0x5DC590"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12588E8",
+   "0xFFFFFFF8",
+   "0x12587E4",
+   "0x125870C",
+   "0x2238"
+  ],
+  "role": "Peace-row scan via +0xACC table (+0x110/+0x34 guard) and 0x48F070 area check.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84e9f0",
+  "end": "0x84EF2D",
+  "size": 1341,
+  "calls": [
+   "0xAC9F20",
+   "0xAC02A0",
+   "0x4E9B90",
+   "0x401030",
+   "0x40B340",
+   "0xB31C00",
+   "0x7B94A0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0x12588E8",
+   "0x10624DD3",
+   "0x55555556",
+   "0xFFFFD8F0",
+   "0x38E38E39",
+   "0x540BE400",
+   "0x125870C",
+   "0x2AA4",
+   "0x2ABC",
+   "0x55555555"
+  ],
+  "role": "Triple-posting scorer: 0x7D0/0x3E8-scaled 0xAC9F20/0xAC02A0 plus 0x4E9B90/0x7B94A0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84ef30",
+  "end": "0x84F162",
+  "size": 562,
+  "calls": [
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Element applier: clears [eax+edi+0x234], walks [ebx+0xBC] via vcall.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f170",
+  "end": "0x84F251",
+  "size": 225,
+  "calls": [
+   "0xAAE9AF",
+   "0x9B3C80"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Float-ordered row insert-or-flag: comisd on +0x6C pair, 0x9B3C80/0xAAE9AF paths.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f260",
+  "end": "0x84F2F7",
+  "size": 151,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27B74"
+  ],
+  "role": "Float-gated node factory (vcall +0x15C) delegating placement to 0x84F170.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f300",
+  "end": "0x84F392",
+  "size": 146,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27B98"
+  ],
+  "role": "Float-gated node factory (vcall +0x168) delegating placement to 0x84F170.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f3a0",
+  "end": "0x84F432",
+  "size": 146,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27BBC"
+  ],
+  "role": "Float-gated node factory (vcall +0x174) delegating placement to 0x84F170.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f440",
+  "end": "0x84F4D8",
+  "size": 152,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27BE0"
+  ],
+  "role": "Float-gated node factory (vcall +0x180) delegating placement to 0x84F170.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f4e0",
+  "end": "0x84F578",
+  "size": 152,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27B50",
+   "0xE27C04"
+  ],
+  "role": "0x18-alloc float-clamp node (kind 4) via 0x84F170 plus 0xAAE9AF.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f580",
+  "end": "0x84F620",
+  "size": 160,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27B50",
+   "0xE27C28"
+  ],
+  "role": "0x18-alloc float-clamp node (kind 5) via 0x84F170 plus 0xAAE9AF.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f620",
+  "end": "0x84F6A7",
+  "size": 135,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27C4C"
+  ],
+  "role": "0x14-alloc const-float node (kind 6) via 0x84F170 plus 0xAAE9AF.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f6b0",
+  "end": "0x84F737",
+  "size": 135,
+  "calls": [
+   "0xAAE9AF",
+   "0x84F170"
+  ],
+  "strings": [],
+  "consts": [
+   "0xE27C70"
+  ],
+  "role": "0x14-alloc const-float node (kind 7) via 0x84F170 plus 0xAAE9AF.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f740",
+  "end": "0x84F7BE",
+  "size": 126,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float accumulator add on +0x1C8; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f7c0",
+  "end": "0x84F81E",
+  "size": 94,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float sub on +0x1C8 then +0xE8 vcall notify plus +0x140 observer loop via +0x15C.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f820",
+  "end": "0x84F84A",
+  "size": 42,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float accumulator sub on +0x1D0; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f850",
+  "end": "0x84F899",
+  "size": 73,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float accumulator add on +0x1D4 with dirty flag 0x236; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f8a0",
+  "end": "0x84F8CA",
+  "size": 42,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float accumulator sub on +0x1D4; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f8d0",
+  "end": "0x84F919",
+  "size": 73,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float accumulator add on +0x1D8 with dirty flag 0x237; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f920",
+  "end": "0x84F94A",
+  "size": 42,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Float accumulator sub on +0x1D8; no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f950",
+  "end": "0x84F97E",
+  "size": 46,
+  "calls": [
+   "0x826530"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "0x826530 notify with discarded result, +0x3C-gated 0x238 dirty setter; always returns 1.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f980",
+  "end": "0x84F9AE",
+  "size": 46,
+  "calls": [
+   "0x826530"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Predicate via 0x826530 plus dirty flag 0x239 setter.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f9b0",
+  "end": "0x84F9C5",
+  "size": 21,
+  "calls": [],
+  "strings": [],
+  "consts": [],
+  "role": "Equality predicate ([edx+0x324]==ecx); no calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84f9d0",
+  "end": "0x84FA8F",
+  "size": 191,
+  "calls": [
+   "0xAAE9AF",
+   "0x9B3C80"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "List search at +0x13C via 0xAAE9AF/0x9B3C80.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84fa90",
+  "end": "0x84FB21",
+  "size": 145,
+  "calls": [
+   "0x5F2AE0"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Guarded list walk at +0x13C/+0x74 via 0x5F2AE0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84fb30",
+  "end": "0x84FBA3",
+  "size": 115,
+  "calls": [
+   "0xAAE9AF"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "0x10-alloc link node via 0xAAE9AF on [esi+0xAC] miss.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84fbb0",
+  "end": "0x84FC5E",
+  "size": 174,
+  "calls": [
+   "0xAAE9AF",
+   "0x57DB30"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB9F88B",
+   "0xFFFFFFFF",
+   "0x12588E8"
+  ],
+  "role": "SEH 0x60-alloc builder (push-1 variant) via 0xAAE9AF plus 0x57DB30.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84fc60",
+  "end": "0x84FD0E",
+  "size": 174,
+  "calls": [
+   "0xAAE9AF",
+   "0x57DB30"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB9F88B",
+   "0xFFFFFFFF",
+   "0x12588E8"
+  ],
+  "role": "SEH 0x60-alloc builder (push-0 variant) via 0xAAE9AF plus 0x57DB30.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84fd10",
+  "end": "0x84FE92",
+  "size": 386,
+  "calls": [
+   "0x9C1D40",
+   "0x5CC3E0",
+   "0x5F2AE0",
+   "0xAAE9AF",
+   "0x5E1EE0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0xB4BC6B",
+   "0x1258A94",
+   "0x1268",
+   "0x1258A98",
+   "0xFFFFFFFF",
+   "0x12588E8"
+  ],
+  "role": "Tag-gated node factory: 0x9C1D40 resolve, 0x5CC3E0 eligibility, 0x5F2AE0 dedup, 0x5E1EE0 finalize.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x84fea0",
+  "end": "0x85009C",
+  "size": 508,
+  "calls": [
+   "0xAAE9AF"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB3EAA9",
+   "0x38E38E39",
+   "0x12588E8",
+   "0x12587E4",
+   "0x125870C",
+   "0x2238"
+  ],
+  "role": "SEH counted-divide scan with REB filters; 0x10-alloc via 0xAAE9AF.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8500a0",
+  "end": "0x850B15",
+  "size": 2677,
+  "calls": [
+   "0x57AAB0",
+   "0x5946A0",
+   "0x4E94A0",
+   "0xAAE9AF",
+   "0x5DB9B0",
+   "0x9A63F0",
+   "0x51B040",
+   "0x5CC3E0",
+   "0x852A00",
+   "0x5DF690",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB52BD3",
+   "0x12587E4",
+   "0x38E38E39",
+   "0x12588E8",
+   "0x125870C",
+   "0x2238"
+  ],
+  "role": "Execute pre-pass: 0x57AAB0/0x5946A0/0x4E94A0 builders, 0x5CC3E0 gate, ministers 0x852A00 call.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x850b20",
+  "end": "0x851129",
+  "size": 1545,
+  "calls": [
+   "0x48E120",
+   "0x4A0E80"
+  ],
+  "strings": [],
+  "consts": [
+   "0x125870C",
+   "0x12587E4",
+   "0x38E38E39",
+   "0x12588E8",
+   "0xFFFFFFF8"
+  ],
+  "role": "Dual-path rebel-aware target dispatcher: 0x48E120 plus 0x4A0E80 per tag source.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x851130",
+  "end": "0x851437",
+  "size": 775,
+  "calls": [
+   "0xAAE9AF",
+   "0x51B040"
+  ],
+  "strings": [],
+  "consts": [
+   "0x12587E4",
+   "0x12588E8"
+  ],
+  "role": "Tag-chain walker with +0xEC vcall loop; allocs via 0xAAE9AF, predicate 0x51B040.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x851440",
+  "end": "0x851AD0",
+  "size": 1680,
+  "calls": [
+   "0x5DB9E0",
+   "0x84E9F0",
+   "0x7B94A0",
+   "0xAAE91B",
+   "0x4A0E80",
+   "0xAAE480",
+   "0xAAE9AF",
+   "0x827C00"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0xB4FBD0",
+   "0x12587E4",
+   "0xFFFFFFFC",
+   "0x12588E8",
+   "0x125870C"
+  ],
+  "role": "SEH army-context loader (+0x7B4) feeding 0x84E9F0 scorer and 0x827C00.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x851ad0",
+  "end": "0x851BC4",
+  "size": 244,
+  "calls": [
+   "0x9C1D40",
+   "0x853DB0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xFFFFFFF8",
+   "0x1258A94",
+   "0x1268",
+   "0x1258A98"
+  ],
+  "role": "Ratio/divide helper: +0x1DC node, scaled index via 0x9C1D40 plus 0x853DB0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x851bd0",
+  "end": "0x8529F5",
+  "size": 3621,
+  "calls": [
+   "0x48F070",
+   "0x4E0AC0",
+   "0x82E190",
+   "0xAAE9AF",
+   "0xAC9F20",
+   "0xAC02A0",
+   "0x9A63F0",
+   "0x4A0E80",
+   "0x82DC50",
+   "0xAAE91B",
+   "0x828F90"
+  ],
+  "strings": [],
+  "consts": [
+   "0xB4FB9B",
+   "0x12587E4",
+   "0x12588E8",
+   "0x10624DD3",
+   "0x55555556",
+   "0xFFFFFFFF",
+   "0x125870C",
+   "0x2238"
+  ],
+  "role": "Big SEH Execute sub-pass: 0x48F070 area checks, float posts, 0x828F90 tail.",
+  "status": "mapped"
+ }
+]

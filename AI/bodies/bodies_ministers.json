@@ -1,0 +1,1778 @@
+[
+ {
+  "va": "0x852a00",
+  "end": "0x852A85",
+  "size": 136,
+  "calls": [
+   "0x826AA0",
+   "0x849E90"
+  ],
+  "strings": [],
+  "consts": [
+   "0x1c",
+   "0xacc",
+   "0x24",
+   "0x20",
+   "0x18",
+   "0x14",
+   "0x10",
+   "0xc",
+   "0xa0"
+  ],
+  "role": "SEH per-country record builder via 0x826AA0/0x849E90, stores slot 0xA0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x852c20",
+  "end": "0x852CE9",
+  "size": 204,
+  "calls": [
+   "0x826860"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x15c",
+   "0x1c",
+   "0x3c",
+   "0xf0",
+   "0xe8",
+   "0xf4",
+   "0x1e8"
+  ],
+  "role": "Float-scored target evaluator; slot-0x15C compare, 0x3C-gated 0xE8/0xF0/0xF4 chain.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x852cf0",
+  "end": "0x852DDB",
+  "size": 238,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x168",
+   "0x1c",
+   "0x170",
+   "0x16c",
+   "0x3c",
+   "0xf0",
+   "0xe8",
+   "0xf4",
+   "0x1f0"
+  ],
+  "role": "Twin float evaluator on slot 0x168 with 0x3C gate and 0xE8/F0/F4/0x1F0 chain.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x852de0",
+  "end": "0x852ECB",
+  "size": 238,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x174",
+   "0x1c",
+   "0x17c",
+   "0x178",
+   "0x3c",
+   "0xf0",
+   "0xe8",
+   "0xf4",
+   "0x1ec"
+  ],
+  "role": "Twin evaluator, slot 0x174 variant of same float-compare shape.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x852ed0",
+  "end": "0x852FBB",
+  "size": 238,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x180",
+   "0x1c",
+   "0x188",
+   "0x184",
+   "0x3c",
+   "0xf0",
+   "0xe8",
+   "0xf4",
+   "0x1f4"
+  ],
+  "role": "Twin evaluator, slot 0x180 variant of same float-compare shape.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x852fc0",
+  "end": "0x8534E1",
+  "size": 1316,
+  "calls": [
+   "0x5CF180",
+   "0x48F070",
+   "0x4A0E80",
+   "0x4E0AC0",
+   "0x401000",
+   "0xB31C00"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0x1c",
+   "0x3c",
+   "0xc",
+   "0x34",
+   "0x20",
+   "0x38",
+   "0x7b4",
+   "0x10",
+   "0x68",
+   "0x6c",
+   "0xe8"
+  ],
+  "role": "Score-table fill pass into static table 0x13F2010 via float merges.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8534f0",
+  "end": "0x853B20",
+  "size": 1587,
+  "calls": [
+   "0xAAE9AF",
+   "0x5CF180",
+   "0x5D05F0",
+   "0x4A0E80",
+   "0x401000",
+   "0xB31C00"
+  ],
+  "strings": [],
+  "consts": [
+   "0x18",
+   "0x3c",
+   "0x34",
+   "0x38",
+   "0x7b4",
+   "0x10",
+   "0x68",
+   "0x6c",
+   "0xc",
+   "0x64",
+   "0x144",
+   "0x1b4"
+  ],
+  "role": "Best-score merge pass over triple float tables 0x13F1CF0/CF8/D00.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x853b30",
+  "end": "0x853C7A",
+  "size": 333,
+  "calls": [
+   "0x4A0E80",
+   "0x826720"
+  ],
+  "strings": [],
+  "consts": [
+   "0x10",
+   "0xe8",
+   "0x1c0",
+   "0xc",
+   "0x58",
+   "0x110",
+   "0x14",
+   "0x1c8"
+  ],
+  "role": "Guarded virtual-dispatch evaluator on slot 0x1C0 via 0x826720.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x853c80",
+  "end": "0x853DA9",
+  "size": 300,
+  "calls": [
+   "0x4A0E80",
+   "0x826800"
+  ],
+  "strings": [],
+  "consts": [
+   "0x10",
+   "0xe8",
+   "0x1cc",
+   "0x110",
+   "0xc",
+   "0x58",
+   "0x1d4"
+  ],
+  "role": "Twin guarded evaluator on slot 0x1CC via 0x826800.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x853db0",
+  "end": "0x853E0E",
+  "size": 97,
+  "calls": [
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Generic intrusive-list clearer freeing nodes via 0xAAE91B.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x853e20",
+  "end": "0x853EE0",
+  "size": 195,
+  "calls": [
+   "0x9E6CC0",
+   "0xAAE9AF"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x10"
+  ],
+  "role": "Ordered insert into [edx+0xC]-keyed list; fallback 0x9E6CC0; 0x10-nodes.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x853ef0",
+  "end": "0x853F3B",
+  "size": 78,
+  "calls": [
+   "0xAAE91B",
+   "0x825EC0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x6c",
+   "0x70",
+   "0x74"
+  ],
+  "role": "CAINationalFocus scalar dtor; frees +0x6C chain, base 0x825EC0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x853f40",
+  "end": "0x853F89",
+  "size": 74,
+  "calls": [
+   "0x859D30",
+   "0x9B7610"
+  ],
+  "strings": [],
+  "consts": [
+   "0xf0",
+   "0x3c",
+   "0x21",
+   "0xb4",
+   "0x30"
+  ],
+  "role": "Minister init: virtual-0xF0 probe, flag +0x3C, queue id 0x21, RNG timer.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x853fc0",
+  "end": "0x854616",
+  "size": 1623,
+  "calls": [
+   "0x409350",
+   "0x55DD40",
+   "0x4015B0",
+   "0x987D50",
+   "0x418E30",
+   "0x401280",
+   "0x987AC0",
+   "0xAAD52D",
+   "0xAAE91B",
+   "0x854620",
+   "0x563FB0",
+   "0x564770",
+   "0xAAE9AF",
+   "0x854920",
+   "0x584340"
+  ],
+  "strings": [
+   "ai_national_focus.cpp",
+   "Recalc national focus for "
+  ],
+  "consts": [
+   "0xfffffff8",
+   "0x148",
+   "0x30",
+   "0xb0c",
+   "0x29c55c0",
+   "0x2aaaaaab",
+   "0x1f",
+   "0x68",
+   "0x15",
+   "0x64",
+   "0x78",
+   "0xf"
+  ],
+  "role": "NationalFocus Execute: day-gated province scoring loop and helpers.",
+  "status": "skip"
+ },
+ {
+  "va": "0x854620",
+  "end": "0x85491B",
+  "size": 764,
+  "calls": [
+   "0x565B70",
+   "0xAC0440",
+   "0x4BBD60",
+   "0x564770",
+   "0xAC9F20",
+   "0xAC02A0",
+   "0x854A80",
+   "0x854C60"
+  ],
+  "strings": [],
+  "consts": [
+   "0x44",
+   "0xc",
+   "0x28",
+   "0x2a8c",
+   "0x2a88",
+   "0x30",
+   "0x2c",
+   "0x24",
+   "0x10",
+   "0x18",
+   "0x1c",
+   "0x14"
+  ],
+  "role": "NatFocus helper-A: list-driven rescoring with fixed-point scaling.",
+  "status": "skip"
+ },
+ {
+  "va": "0x854920",
+  "end": "0x854A70",
+  "size": 339,
+  "calls": [
+   "0x564770",
+   "0xAAE9AF",
+   "0x584A30"
+  ],
+  "strings": [],
+  "consts": [
+   "0x1c",
+   "0x10",
+   "0x5f5e100",
+   "0x14",
+   "0xc",
+   "0x34",
+   "0xbf0",
+   "0x6c",
+   "0x28",
+   "0x38",
+   "0x5c",
+   "0xacc"
+  ],
+  "role": "NatFocus helper-B: single-target picker plus node construction.",
+  "status": "skip"
+ },
+ {
+  "va": "0x854b80",
+  "end": "0x854C40",
+  "size": 195,
+  "calls": [
+   "0xAAD3AD",
+   "0x7D8AF0",
+   "0x855000",
+   "0xAAE91B"
+  ],
+  "strings": [
+   "vector<T> too long"
+  ],
+  "consts": [
+   "0x10",
+   "0x15555555",
+   "0x2aaaaaab",
+   "0x1f",
+   "0x14",
+   "0xc"
+  ],
+  "role": "Vector grow with 0x15555555 overflow guard; 12-byte copy helper.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x854c60",
+  "end": "0x854D8E",
+  "size": 303,
+  "calls": [
+   "0x854D90",
+   "0x854C60",
+   "0x8552B0",
+   "0x855100",
+   "0x8551F0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x2aaaaaab",
+   "0x1f",
+   "0x20",
+   "0x10",
+   "0x14"
+  ],
+  "role": "Introsort dispatcher on 12-byte elements; insertion, heap, partition paths.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x854d90",
+  "end": "0x854FF1",
+  "size": 610,
+  "calls": [
+   "0x855040"
+  ],
+  "strings": [],
+  "consts": [
+   "0x58",
+   "0xc",
+   "0x10",
+   "0x2aaaaaab",
+   "0x14",
+   "0x1f",
+   "0x24",
+   "0x20",
+   "0x30",
+   "0x2c",
+   "0x1c",
+   "0x18"
+  ],
+  "role": "Quicksort partition driving comparator 0x855040 over 12-byte elements.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855000",
+  "end": "0x855030",
+  "size": 49,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xc"
+  ],
+  "role": "12-byte block copy loop, call-free.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855040",
+  "end": "0x8550F0",
+  "size": 177,
+  "calls": [
+   "0x855370"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x2aaaaaab",
+   "0x1f",
+   "0x28",
+   "0x10",
+   "0x20"
+  ],
+  "role": "Range-size dispatcher (threshold 0x28) onto step routine 0x855370.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855100",
+  "end": "0x8551ED",
+  "size": 238,
+  "calls": [
+   "0x855490"
+  ],
+  "strings": [],
+  "consts": [
+   "0x18",
+   "0x2aaaaaab",
+   "0x1f",
+   "0x14",
+   "0xc",
+   "0x10"
+  ],
+  "role": "Heap-build pass over 12-byte elements via sift 0x855490.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x8551f0",
+  "end": "0x8552A3",
+  "size": 180,
+  "calls": [
+   "0x855400"
+  ],
+  "strings": [],
+  "consts": [
+   "0x10",
+   "0x2aaaaaab",
+   "0x1f",
+   "0xfffffff8",
+   "0xc"
+  ],
+  "role": "Heap-extract loop over 12-byte elements via step 0x855400.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x8552b0",
+  "end": "0x855369",
+  "size": 186,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x14",
+   "0x20",
+   "0x10"
+  ],
+  "role": "Insertion sort on 12-byte elements, call-free.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855370",
+  "end": "0x8553FA",
+  "size": 139,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xc"
+  ],
+  "role": "Compare-swap step on 12-byte elements, call-free.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855400",
+  "end": "0x855487",
+  "size": 136,
+  "calls": [
+   "0x855490"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc"
+  ],
+  "role": "Sift-down step on 12-byte heap via primitive 0x855490.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855490",
+  "end": "0x8554F2",
+  "size": 99,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xc"
+  ],
+  "role": "Heap sift primitive with tripled-index addressing, call-free.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855500",
+  "end": "0x85551A",
+  "size": 29,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0x6c",
+   "0xac"
+  ],
+  "role": "Float member setter: [ecx+0x6C] constant, [ecx+0xAC] argument.",
+  "status": "shared-helper"
+ },
+ {
+  "va": "0x855520",
+  "end": "0x855544",
+  "size": 39,
+  "calls": [
+   "0x825EC0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "CAIMilitaryPlan scalar dtor; vtable 0xE27EB4, base 0x825EC0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8555a0",
+  "end": "0x8555D4",
+  "size": 55,
+  "calls": [
+   "0x5F2AE0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xb0"
+  ],
+  "role": "Lookup-or-dispatch over [ecx+0xB0] list via 0x5F2AE0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8555f0",
+  "end": "0x85560E",
+  "size": 33,
+  "calls": [
+   "0x855620",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Delegating wrapper: uninventoried 0x855620 dispatch plus conditional free.",
+  "status": "trampoline"
+ },
+ {
+  "va": "0x855670",
+  "end": "0x8556B6",
+  "size": 71,
+  "calls": [
+   "0x859D30"
+  ],
+  "strings": [],
+  "consts": [
+   "0x30",
+   "0xb0c",
+   "0x3c",
+   "0x70",
+   "0xf0",
+   "0xf"
+  ],
+  "role": "Minister init: timer=1, flag +0x3C, queue id 0xF, RNG timer.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x855720",
+  "end": "0x855732",
+  "size": 21,
+  "calls": [
+   "0x826530"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "Always-true wrapper around 0x826530; returns 1.",
+  "status": "trampoline"
+ },
+ {
+  "va": "0x855740",
+  "end": "0x855775",
+  "size": 56,
+  "calls": [
+   "0x823890"
+  ],
+  "strings": [],
+  "consts": [
+   "0x144",
+   "0xdc",
+   "0x58",
+   "0xe8",
+   "0x210",
+   "0x78"
+  ],
+  "role": "Guarded dispatch: [eax+0x144]==ecx then virtual-0xE8 plus 0x823890.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x855780",
+  "end": "0x855943",
+  "size": 452,
+  "calls": [
+   "0x826AA0",
+   "0x849E90",
+   "0x5DC180",
+   "0x401000",
+   "0xB31C00",
+   "0x824F30"
+  ],
+  "strings": [],
+  "consts": [
+   "0x20",
+   "0x1b4",
+   "0xec",
+   "0x74",
+   "0xdc",
+   "0x58",
+   "0xac",
+   "0x2c",
+   "0x28",
+   "0x24",
+   "0x1c",
+   "0x10"
+  ],
+  "role": "Filtered enumerator via virtual-0x1B4 building records with 0x826AA0/0x849E90.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x855950",
+  "end": "0x855974",
+  "size": 39,
+  "calls": [
+   "0x825EC0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "CAIPoliticsMinister scalar dtor; vtable 0xE282D4, base 0x825EC0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x855980",
+  "end": "0x855A8B",
+  "size": 268,
+  "calls": [
+   "0x9B7610",
+   "0x855A90",
+   "0x856470"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0xc",
+   "0xb4",
+   "0x10",
+   "0x78787879",
+   "0x1f",
+   "0xa",
+   "0x30",
+   "0xb0c",
+   "0x29c55c0",
+   "0x2aaaaaab",
+   "0x14"
+  ],
+  "role": "Politics Execute: tick timer plus month-gated brain and main pass.",
+  "status": "skip"
+ },
+ {
+  "va": "0x855a90",
+  "end": "0x855BA2",
+  "size": 275,
+  "calls": [
+   "0x855ED0",
+   "0x855BB0",
+   "0x541B90",
+   "0xAAE9AF",
+   "0x588BB0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x34",
+   "0x38",
+   "0x18",
+   "0x12d0",
+   "0x850",
+   "0x860",
+   "0x44",
+   "0x10",
+   "0x14",
+   "0xffffffff",
+   "0xcdc"
+  ],
+  "role": "Politics brain: uncivilized gate plus civilized phase dispatch.",
+  "status": "skip"
+ },
+ {
+  "va": "0x855bb0",
+  "end": "0x855D09",
+  "size": 346,
+  "calls": [
+   "0x542BC0",
+   "0x543470",
+   "0x855D10",
+   "0x547100",
+   "0x547030"
+  ],
+  "strings": [],
+  "consts": [
+   "0x18",
+   "0x34",
+   "0xc",
+   "0x10",
+   "0x38",
+   "0x870",
+   "0x880"
+  ],
+  "role": "Politics count fetch 0x542BC0/0x543470 plus flag-ordered sub-phase calls.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x855d10",
+  "end": "0x855EC5",
+  "size": 440,
+  "calls": [
+   "0x525D90",
+   "0xAAE9AF",
+   "0x591BE0",
+   "0x5262C0",
+   "0x5910D0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x34",
+   "0x38",
+   "0x18",
+   "0x10",
+   "0x14",
+   "0x54",
+   "0x4c",
+   "0xffffffff",
+   "0xcdc",
+   "0x44"
+  ],
+  "role": "Politics sub-phase: validator pair plus order ctors, flag-ordered.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x855ed0",
+  "end": "0x85646A",
+  "size": 1437,
+  "calls": [
+   "0xAAE9AF",
+   "0x9747A0",
+   "0xAC02A0",
+   "0x969F90",
+   "0xB31C36",
+   "0xAC0440",
+   "0xAB6E30",
+   "0x525A20",
+   "0x525BE0",
+   "0x409350"
+  ],
+  "strings": [],
+  "consts": [
+   "0x5c",
+   "0x34",
+   "0x38",
+   "0x64",
+   "0x14",
+   "0x1d8",
+   "0x40",
+   "0xffffffff",
+   "0x1c",
+   "0x60",
+   "0xf",
+   "0x1f40000"
+  ],
+  "role": "Politics phase-U: scored table fill with validators 0x525A20/0x525BE0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x856470",
+  "end": "0x856926",
+  "size": 1209,
+  "calls": [
+   "0x4D61D0",
+   "0xAAE9AF",
+   "0x9747A0",
+   "0x974850",
+   "0x58D450",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0x54",
+   "0x34",
+   "0x38",
+   "0x50",
+   "0xbd0",
+   "0xc",
+   "0x5c",
+   "0x48",
+   "0x60",
+   "0x58",
+   "0x83c",
+   "0x24"
+  ],
+  "role": "Politics main pass: factory builds plus scored request enqueue.",
+  "status": "skip"
+ },
+ {
+  "va": "0x856930",
+  "end": "0x856954",
+  "size": 39,
+  "calls": [
+   "0x825EC0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "CAIProductionMinister scalar dtor; vtable 0xE284DC, base 0x825EC0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8569a0",
+  "end": "0x857193",
+  "size": 2036,
+  "calls": [
+   "0x9B7610",
+   "0x4DAD40",
+   "0xAAE9AF",
+   "0x4DADA0",
+   "0x4DADF0",
+   "0xAAE91B",
+   "0xAAD56B",
+   "0xAB6E30",
+   "0xAC9F20",
+   "0xAC02A0",
+   "0x9B7700",
+   "0x858560",
+   "0x858460",
+   "0x858670",
+   "0x8582D0",
+   "0x8589B0",
+   "0x859180",
+   "0x8571A0",
+   "0x57CC60"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0x28",
+   "0xb4",
+   "0x78787879",
+   "0x1f",
+   "0xa",
+   "0x30",
+   "0xb0c",
+   "0x29c55c0",
+   "0x2aaaaaab",
+   "0xc",
+   "0x20"
+  ],
+  "role": "Production Execute: day gate plus six gated phase calls.",
+  "status": "skip"
+ },
+ {
+  "va": "0x8571a0",
+  "end": "0x857427",
+  "size": 650,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0x20",
+   "0xbcc",
+   "0x10",
+   "0xc",
+   "0x12c",
+   "0x24",
+   "0x1c",
+   "0x138",
+   "0x58",
+   "0x14",
+   "0x2fc"
+  ],
+  "role": "Call-free integer scorer with multiply/divide scaling and validity gates.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x857430",
+  "end": "0x85752D",
+  "size": 256,
+  "calls": [
+   "0xAAE9AF",
+   "0x4DADA0",
+   "0x4DC340",
+   "0x8571A0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0x10",
+   "0x14",
+   "0xffffd8f0",
+   "0x3c",
+   "0xc",
+   "0x24",
+   "0x28",
+   "0xffffffff",
+   "0x1c"
+  ],
+  "role": "Allocator-backed candidate enumerator scoring each via 0x8571A0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x857530",
+  "end": "0x8577A3",
+  "size": 630,
+  "calls": [
+   "0x4D04B0",
+   "0xAC02A0",
+   "0xAC9F20",
+   "0x401000",
+   "0xB31C00"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0x30",
+   "0xc",
+   "0x12c",
+   "0x128",
+   "0xf0",
+   "0x1c",
+   "0x28",
+   "0x10",
+   "0xe44",
+   "0x14",
+   "0x18"
+  ],
+  "role": "Fixed-point scorer with allmul/alldiv and float conversion.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8577b0",
+  "end": "0x857E52",
+  "size": 1701,
+  "calls": [
+   "0x50E450",
+   "0x51F2E0",
+   "0x4DA850",
+   "0x4DAB20",
+   "0x511EF0",
+   "0x5C5C80",
+   "0xB31C00",
+   "0x4A0E80",
+   "0x47E3E0",
+   "0xAC9F20",
+   "0x9B7700"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc0",
+   "0x34",
+   "0x28",
+   "0x38",
+   "0x14",
+   "0xe44",
+   "0x20",
+   "0x1c",
+   "0x24",
+   "0x48",
+   "0x4c",
+   "0x18"
+  ],
+  "role": "Large candidate enumerator and scorer over +0xE44 lists with RNG.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x857e60",
+  "end": "0x8580D1",
+  "size": 628,
+  "calls": [
+   "0x511E70",
+   "0x50E450"
+  ],
+  "strings": [],
+  "consts": [
+   "0x38",
+   "0x20",
+   "0x34",
+   "0x2c",
+   "0x9d8",
+   "0x14",
+   "0x1c",
+   "0x9dc",
+   "0xacc",
+   "0x188",
+   "0x84",
+   "0xc"
+  ],
+  "role": "Candidate validator scan: +0x9D8 deltas, +0xBE4, flag 0x2A checks.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8580e0",
+  "end": "0x8582C8",
+  "size": 491,
+  "calls": [
+   "0x4DA850",
+   "0x47E3E0",
+   "0xAC9F20",
+   "0x511EF0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x4c",
+   "0x34",
+   "0x38",
+   "0x48",
+   "0xc",
+   "0x18",
+   "0xe44",
+   "0x1c",
+   "0x14",
+   "0x10",
+   "0xacc",
+   "0x78"
+  ],
+  "role": "Per-candidate check with early exit; container plus fixed-point math.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8582d0",
+  "end": "0x85845E",
+  "size": 399,
+  "calls": [
+   "0x8580E0",
+   "0x4DA790",
+   "0x561BD0",
+   "0xAAE904",
+   "0x561C40",
+   "0xAC9F20",
+   "0xAAE9AF",
+   "0x57B560"
+  ],
+  "strings": [],
+  "consts": [
+   "0x1c",
+   "0x38",
+   "0x20",
+   "0x34",
+   "0x18",
+   "0x1184",
+   "0x78",
+   "0xffffffff",
+   "0x18000",
+   "0xf",
+   "0x28",
+   "0xe78"
+  ],
+  "role": "Per-unit validation on slot +0x78 via 0x8580E0; lazy singleton init.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x858460",
+  "end": "0x858559",
+  "size": 250,
+  "calls": [
+   "0x8577B0",
+   "0x4DA790",
+   "0xAAE9AF",
+   "0x57B560"
+  ],
+  "strings": [],
+  "consts": [
+   "0x14",
+   "0x34",
+   "0x38",
+   "0x18",
+   "0x1184",
+   "0x80",
+   "0x20",
+   "0xe78",
+   "0xe7c",
+   "0x58",
+   "0xffffffff",
+   "0xb24"
+  ],
+  "role": "Slot-phase on +0x80 via setup 0x8577B0 and shared tail 0x4DA790.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x858560",
+  "end": "0x858664",
+  "size": 261,
+  "calls": [
+   "0x857E60",
+   "0x4DA790",
+   "0xAAE9AF",
+   "0x57B560"
+  ],
+  "strings": [],
+  "consts": [
+   "0x14",
+   "0x34",
+   "0x38",
+   "0x18",
+   "0x1184",
+   "0x7c",
+   "0x20",
+   "0xe7c",
+   "0xe78",
+   "0x10",
+   "0xf",
+   "0x58"
+  ],
+  "role": "Twin slot-phase on +0x7C via setup 0x857E60; mirrored thresholds.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x858670",
+  "end": "0x8589AA",
+  "size": 829,
+  "calls": [
+   "0x857430",
+   "0x857530",
+   "0x4DA720",
+   "0xAAE9AF",
+   "0x57C080",
+   "0x4DA800",
+   "0x57C130",
+   "0x52DCD0",
+   "0x5827F0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0x28",
+   "0x34",
+   "0x24",
+   "0x38",
+   "0x2c",
+   "0x14",
+   "0x1b",
+   "0x20",
+   "0xffffffff",
+   "0x6e",
+   "0xe"
+  ],
+  "role": "Enumerator-pair phase with [ebx+0x6E] gate and 0x5827F0 build.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x8589b0",
+  "end": "0x858D7B",
+  "size": 974,
+  "calls": [
+   "0x858D90",
+   "0x857430",
+   "0x857530",
+   "0x561BD0",
+   "0xAAE904",
+   "0x561C40",
+   "0x4DA720",
+   "0x48B5D0",
+   "0x43A620",
+   "0xAAE9AF",
+   "0x57C080",
+   "0x4DA800",
+   "0x57C130",
+   "0x52DCD0",
+   "0x5827F0",
+   "0x8582D0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xffffffc0",
+   "0x68",
+   "0x34",
+   "0x10",
+   "0x1b",
+   "0x28",
+   "0xffffffff",
+   "0x6e",
+   "0xe",
+   "0x18",
+   "0x20",
+   "0x60"
+  ],
+  "role": "Batched phase chaining 0x858D90, enumerators, and 0x8582D0 tail.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x858d90",
+  "end": "0x85917A",
+  "size": 1005,
+  "calls": [
+   "0x85EE00",
+   "0x5404A0",
+   "0x401000",
+   "0xB31C00",
+   "0xAC02A0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x60",
+   "0x34",
+   "0x54",
+   "0x38",
+   "0xe64",
+   "0x50",
+   "0x1c",
+   "0x44",
+   "0x20",
+   "0x9dc",
+   "0x9d8",
+   "0x14"
+  ],
+  "role": "Capacity and delta precompute feeding batched phase 0x8589B0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859180",
+  "end": "0x85953D",
+  "size": 960,
+  "calls": [
+   "0x4A5020",
+   "0xA513F0",
+   "0xAC02A0",
+   "0xB31C36",
+   "0x53EC70",
+   "0x408D50",
+   "0xAC9F20",
+   "0xAAE9AF",
+   "0x588650",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0x6c",
+   "0x74",
+   "0x70",
+   "0x34",
+   "0x3c",
+   "0x38",
+   "0xe44",
+   "0x18",
+   "0x244",
+   "0x1c8",
+   "0x14",
+   "0x10"
+  ],
+  "role": "Per-item type-switched loop over +0xE44 list on +0x244 dispatch.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859560",
+  "end": "0x859584",
+  "size": 39,
+  "calls": [
+   "0x825EC0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [],
+  "role": "CAIResearch scalar dtor; vtable 0xE286C4, base 0x825EC0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859590",
+  "end": "0x8595D9",
+  "size": 74,
+  "calls": [
+   "0x859D30",
+   "0x9B7610"
+  ],
+  "strings": [],
+  "consts": [
+   "0xf0",
+   "0x3c",
+   "0x20",
+   "0xb4",
+   "0x30"
+  ],
+  "role": "Research init: flag +0x3C, queue id 0x20, RNG-derived timer.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859610",
+  "end": "0x859700",
+  "size": 241,
+  "calls": [
+   "0x859710"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x30",
+   "0xb0c",
+   "0x29c55c0",
+   "0x2aaaaaab",
+   "0x1f",
+   "0x68",
+   "0x34",
+   "0x38",
+   "0x4cc"
+  ],
+  "role": "Research Execute: yearly gate into research brain 0x859710.",
+  "status": "skip"
+ },
+ {
+  "va": "0x859710",
+  "end": "0x859D24",
+  "size": 1559,
+  "calls": [
+   "0x8A8650",
+   "0xAAE9AF",
+   "0x576FE0",
+   "0x57AB10",
+   "0x9BEEB0",
+   "0x57A4C0",
+   "0x569920",
+   "0xA513F0",
+   "0x56BC50",
+   "0x576D10",
+   "0xAAE91B",
+   "0xAC02A0",
+   "0x401000",
+   "0xB31C00",
+   "0xAC9F20",
+   "0x7B94A0",
+   "0x9B7700",
+   "0x58AD00"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0xa8",
+   "0x34",
+   "0x60",
+   "0x38",
+   "0x12d0",
+   "0x24",
+   "0x28",
+   "0x2c",
+   "0x6c",
+   "0xc0",
+   "0xb0c"
+  ],
+  "role": "Research brain: snapshot, scoring, weighted technology pick.",
+  "status": "skip"
+ },
+ {
+  "va": "0x859d30",
+  "end": "0x859DC6",
+  "size": 151,
+  "calls": [
+   "0xAAE9AF"
+  ],
+  "strings": [],
+  "consts": [
+   "0x10",
+   "0xc"
+  ],
+  "role": "Indexed intrusive-list insert at static table 0x1318B20.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859dd0",
+  "end": "0x859E5A",
+  "size": 139,
+  "calls": [
+   "0x859EF0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x144",
+   "0x1a8",
+   "0xc0",
+   "0xc4",
+   "0x208",
+   "0x38",
+   "0x3c"
+  ],
+  "role": "Filtered-removal wrapper with predicate slot 0x1A8 over 0x859EF0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859e60",
+  "end": "0x859EEA",
+  "size": 139,
+  "calls": [
+   "0x859EF0"
+  ],
+  "strings": [],
+  "consts": [
+   "0x144",
+   "0x1b8",
+   "0xc0",
+   "0xc4",
+   "0x208",
+   "0x38",
+   "0x3c"
+  ],
+  "role": "Twin filtered-removal wrapper with predicate slot 0x1B8.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859ef0",
+  "end": "0x859F71",
+  "size": 130,
+  "calls": [
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x144"
+  ],
+  "role": "Predicate-filtered list unlink plus node free via callback.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x859f80",
+  "end": "0x859FFD",
+  "size": 126,
+  "calls": [
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0x10",
+   "0xc"
+  ],
+  "role": "Unconditional list sweep with unlink plus node free.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85a000",
+  "end": "0x85A081",
+  "size": 130,
+  "calls": [
+   "0x4C0FD0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc"
+  ],
+  "role": "Static slot-pair accessor at 0x1318C70 via 0x4C0FD0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85a090",
+  "end": "0x85A111",
+  "size": 130,
+  "calls": [
+   "0x4C0FA0",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc"
+  ],
+  "role": "Twin static slot-pair accessor at 0x1318C80 via 0x4C0FA0.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85a180",
+  "end": "0x85A1BA",
+  "size": 59,
+  "calls": [],
+  "strings": [],
+  "consts": [
+   "0x2d",
+   "0x2d2d",
+   "0x18d",
+   "0xc",
+   "0x14",
+   "0x10"
+  ],
+  "role": "Consideration outcome builder: id 0x18D, zero float, tag bytes.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85a1c0",
+  "end": "0x85A255",
+  "size": 152,
+  "calls": [
+   "0x409350",
+   "0x408ED0",
+   "0xAAE91B"
+  ],
+  "strings": [
+   " s~"
+  ],
+  "consts": [
+   "0x1c",
+   "0x18d",
+   "0xf",
+   "0x20",
+   "0xc",
+   "0x28",
+   "0x14",
+   "0x18",
+   "0x10"
+  ],
+  "role": "SEH logging evaluator: log via 0x409350 plus object build.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85a260",
+  "end": "0x85A2D8",
+  "size": 123,
+  "calls": [
+   "0x408ED0",
+   "0xAAE91B"
+  ],
+  "strings": [
+   " s~"
+  ],
+  "consts": [
+   "0xc",
+   "0x18d",
+   "0x14",
+   "0xf",
+   "0x10",
+   "0x20",
+   "0x28",
+   "0x24"
+  ],
+  "role": "SEH non-logging sibling evaluator: object build plus free.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85a2e0",
+  "end": "0x85A6E4",
+  "size": 1031,
+  "calls": [
+   "0xAAD56B",
+   "0xAB6E30",
+   "0xAAE9AF",
+   "0x8B0060",
+   "0x5C2810",
+   "0x43CB20",
+   "0x54AB90"
+  ],
+  "strings": [],
+  "consts": [
+   "0x18d",
+   "0xc",
+   "0x14",
+   "0x2d2d2d",
+   "0x10",
+   "0x29c55c0",
+   "0x18",
+   "0x1a",
+   "0x1c",
+   "0x20",
+   "0x24",
+   "0x28"
+  ],
+  "role": "Bulk table builder with alloc/fill loops and 0x1FF capacity.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85a6f0",
+  "end": "0x85AA1D",
+  "size": 814,
+  "calls": [
+   "0x85AC70",
+   "0xAAE91B",
+   "0x57AFC0",
+   "0xAAEA59"
+  ],
+  "strings": [],
+  "consts": [
+   "0x10",
+   "0x14",
+   "0x140",
+   "0x144",
+   "0x148",
+   "0x130",
+   "0x134",
+   "0x138",
+   "0x120",
+   "0x114",
+   "0x124",
+   "0x128"
+  ],
+  "role": "Multi-field record assembler via 0x85AC70 and container append.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85aa20",
+  "end": "0x85AC6A",
+  "size": 589,
+  "calls": [
+   "0x85C2B0",
+   "0x85BA40",
+   "0x408ED0",
+   "0x85C350",
+   "0xAAE91B",
+   "0x85BB60",
+   "0x85BC30",
+   "0x85BDE0",
+   "0x85BEE0",
+   "0x85BD10",
+   "0x85C0F0",
+   "0x85C1D0"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x28",
+   "0x30",
+   "0xacc",
+   "0x12c",
+   "0x20",
+   "0x130",
+   "0x1c",
+   "0xf",
+   "0x14",
+   "0x10",
+   "0xffffffff"
+  ],
+  "role": "Fan-out dispatcher over ten 0x85Bx sub-evaluators (plus 0x408ED0/0xAAE91B).",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85ac70",
+  "end": "0x85AE5A",
+  "size": 491,
+  "calls": [
+   "0x8601B0",
+   "0x57AFC0",
+   "0xAAE9AF",
+   "0xAAD56B",
+   "0xAB6E30",
+   "0x5C1A70",
+   "0xAAE91B"
+  ],
+  "strings": [],
+  "consts": [
+   "0xc",
+   "0x20",
+   "0x30",
+   "0x130",
+   "0x50",
+   "0x40",
+   "0x88",
+   "0x78",
+   "0xa4",
+   "0x94",
+   "0xf8",
+   "0xe8"
+  ],
+  "role": "Container-backed evaluator with fixed 0x1FF vector.",
+  "status": "mapped"
+ },
+ {
+  "va": "0x85ae90",
+  "end": "0x85B418",
+  "size": 1419,
+  "calls": [
+   "0x9885D0",
+   "0x43BB10",
+   "0x9A1BB0",
+   "0x9A1C10",
+   "0xAAE9AF",
+   "0x832170",
+   "0x8602C0",
+   "0x85A180",
+   "0x85FA30",
+   "0x85AE60",
+   "0x853E20",
+   "0x85A1C0",
+   "0x8601F0",
+   "0x860100"
+  ],
+  "strings": [],
+  "consts": [
+   "0xfffffff8",
+   "0xc",
+   "0x10",
+   "0x720",
+   "0x336",
+   "0xcc",
+   "0x68",
+   "0x16d",
+   "0x1c",
+   "0x22c",
+   "0x30",
+   "0x19"
+  ],
+  "role": "Strategy consideration-ID dispatcher into per-ID object builders.",
+  "status": "mapped"
+ }
+]
