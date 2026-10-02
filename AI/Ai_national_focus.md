@@ -210,6 +210,16 @@ The exact constants are stored in the binary at `0xe456c0`, `0xe45840`, and
 ```
 
 ```
+Verified 2026-10-01 (7/7 VERIFIED, ledger): there is NO per-focus-type weight —
+both log sites use the identical hardcoded divisor `[0xE45660]=1000.0` for DISPLAY
+only, while the real score stays a fixed-point int accumulator:
+- Railroad: `divsd` @`0x564B13` (file `0x163F13`) + `mov edx,"Railroad score for "` @`0x564B1F` (file `0x163F1F`)
+- Promotion: `divsd` @`0x56579F` (file `0x164B9F`) + `mov edx,"Promotion score for "` @`0x5657AB` (file `0x164BAB`)
+- Constant: file `0xA43C60` = `00 00 00 00 00 40 8F 40` = 1000.0 (double; shared with ~14 float-helper sites in `0x402xxx`, so it is a global constant, not focus-specific)
+- `NATIONAL_FOCUS_DIVIDER` define exists (string file `0x9F5EB8` = VA `0xDF78B8`) and loads via `call 0x42E2A0` (`push` @`0x434ECA`, file `0x342CA`) into `[ebx+0x108]` (store @`0x434EEB`, file `0x342EB`) — its consumer is TBD, but it is NOT the log divisor above. Negative result 2026-10-01: the only two `mov *,[ebx+0x108]` readers in `.text` are pointer-typed (list/node), i.e. different structs sharing the offset — `0x5CC551` (file `0x1CB951`, fn `0x5CC530`: `or [eax+0x74],0x100` + `[ebx+0xDC]` walk) and `0x99BD57` (file `0x59B157`, fn `0x99BD50`: linked-list clear with `0xAAE91B` free). No float-typed consumer found; the define may be dead.
+Differentiation between railroad/promotion lives in the accumulator construction per focus id (`[ecx+0x5C]`), not in any weight constant.
+
+```
 ## Promotion-type dispatch
 ```
 
