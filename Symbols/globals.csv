@@ -36,7 +36,7 @@ va,name,kind,conf,src,note
 0x00F17B54,kSpeedAdvance1,f32,C,cp,2.0 (speed 1)
 0x00F092FC,kOne_f32,f32,C,cp,"1.0; speed 2 in ProcessGameTimeAdvance, also read by FUN_00475150"
 0x00F17898,kHalf_f32,f32,C,cp,0.5 (speed 3)
-0x00E45BB8,kSpeedAdvance4,f32,C,cp,"0.0004 (speed 4); several other xrefs"
+0x00E45BB8,kSpeedAdvance4,f32,C,cp,"0.0001 (speed 4); several other xrefs"
 0x00E0764C,str_VersionLabel,char[],C,cp,"""V2 v3.04"""
 0x00E07D2C,str_ChecksumIs,char[],C,re,"""Checksum is """
 0x00E0AA1C,str_Checksum,char[],C,re,"""Checksum: """
