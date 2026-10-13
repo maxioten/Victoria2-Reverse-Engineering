@@ -129,7 +129,12 @@ va,name,conf,area,src,note
 0x00482610,Market_CalcSupplyMultiplier,I,economy,re,
 0x00487410,Market_AddRealDemand,C,economy,re,demand side
 0x00969760,Economy_AccumulateElement,I,economy,re,shared accumulators; not thread-safe
-0x00523400,Loan_CalculateInterest,I,economy,re,
+0x00522910,CCountry_TakeLoan,C,economy,re,"tries domestic self-creditor then ordinal-zero fallback; see Economy/banking-and-credit.md"
+0x00523400,Loan_CreateOrIncreaseDebt,C,economy,re,"credits treasury/principal and handles rates; named bank-lent stores 0x0052367F-0x005236A2; not just interest calculation"
+0x005238D0,CCountry_RepayLoan,C,economy,re,"reduces treasury/principal and nonzero-ordinal bank lent; removes completed creditors; no reserve credit on ordinary repayment"
+0x00523C30,CCountry_PayDailyInterest,C,economy,re,"caller 0x00508D3E; sufficient named payment debits treasury and credits bank pending; ordinal zero skips bank credit"
+0x004F5BF0,CBank_DistributeInterest,C,economy,re,"caller 0x00685F0F; recapitalizes or allocates to state pools then clears pending; not generally conservative"
+0x0095A5F0,CPop_GiveMoney,C,economy,re,"EAX=POP ESI=flow index; stack int64 amount; RET 8; updates money/flow/total not savings; clamps affect money delta"
 0x0047DCA0,Stockpile_SubtractArtisanFactory,C,economy,re,
 0x0047DC20,Buffer_AccumulateIndexedValue,I,util,re,
 0x0047DE60,Buffer_ScaleValuesInRange,I,util,re,~53 callers

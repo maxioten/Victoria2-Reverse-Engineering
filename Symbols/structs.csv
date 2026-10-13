@@ -7,7 +7,9 @@ World,0xB14,timeAccumulator,f32,C,re,accumulated frame time in ProcessGameTimeAd
 World,0xB20,timeStopped,u32,C,re,non-zero -> ProcessGameTimeAdvance returns
 World,0xB24,uiManager,ptr,I,re,
 World,0xB28,speed,u32,C,cp,"game speed index 0..4"
-World,0xB3C,specialModifiers,list,I,re,walked by AI_GetOpinionScore
+World,0xB3C,wars,list,C,re,"head of CWar* list; node +0 payload / +4 previous / +8 next; ctor 0x00931620 installs RTTI CWar vtable 0x00E35118; payload stored at 0x00681B9E; empty-list head set at 0x00681BE5; walked by AI_GetOpinionScore"
+World,0xB40,warsTail,ptr,C,re,"war-list tail node; append writes at 0x00681BBB"
+World,0xB44,warCount,u32,C,re,"linked war-node count; append increments/stores at 0x00681BB8/0x00681BC1"
 World,0xB5C,playerTag,char[4],C,cp,
 World,0xB60,playerIndex,u32,C,cp,player country index
 World,0xB64,firedOnceEvents,HashTable,C,re,fire_only_once table; insert has no duplicate check and no rehash
@@ -36,8 +38,9 @@ CCountry,0xCF5,isOverlord,u8,I,cp,
 CCountry,0xCFC,overlordIndex,u32,I,re,
 CCountry,0xD08,neighbours,u8[],C,cp,byte per country
 CCountry,0xDA8,vassals,vector,I,re,"+0xDA8/+0xDAC"
-CCountry,0xE44,states,list,I,cp,world market iterates states then +0x18 factories
-CCountry,0xE4C,aiScore,u32,?,cp,AI war-target gate (self <= other * 5)
+CCountry,0xE44,states,list,C,re,"head of CState* list; node +0 payload / +4 previous / +8 next / +0xC pending-removal marker; CCountry ctor 0x004F6A10 zeroes +0xE44/+0xE48/+0xE4C at 0x004F74A2/0x004F74A8/0x004F74AE; CState ctor 0x004CDC60 called at 0x004FC0CB; payload stored at 0x004FC102"
+CCountry,0xE48,statesTail,ptr,C,re,"state-list tail node; append writes at 0x004FC11F; empty-list head set at 0x004FC149"
+CCountry,0xE4C,stateCount,u32,C,re,"linked state-node count; append increments/stores at 0x004FC11C/0x004FC125; unlink/free decrements at 0x00502F5D; clear zeroes at 0x00520EB6; marking node +0xC at 0x00502F1E when country+0xE50 != 0 leaves it counted; AI war-target gate compares counts (self <= other * 5)"
 CCountry,0xE64,primaryCulture,u32,I,re,
 CCountry,0x12D0,civilized,u8,C,cp,
 CCountry,0x142C,overlord,ptr,I,re,

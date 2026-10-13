@@ -75,15 +75,24 @@ graph TD
 | 17 | `0x00840889`–`0x00840944` | Converts the two prior ratios into an "interest" factor: `movss xmm0,[0xE45BF4]` (= `0x461C4200` = **10000.5**, was misnoted ≈9950) then `movss xmm0,[0xE45EE8]` (= `0x459C4400` = **5000.5**) via `call 0x401000 + 0xB31C00`, `imul` magic `0x10624DD3`, clamps `max 10` (`C7 45 F0 0A..` at `0x8408D6`) and `max 5` (`C7 45 14 05..` at `0x84092A`), `SignedInt64_Divide` (`0xAC02A0`) | computes `iStack_14` (max 10) and `param_4` (max 5) | Mechanics **High (code-verified)** — entry file `0x43FC89: F3 0F 10 05 F4 5B E4 00`; `.rdata` floats file `0xA441F4: 00 42 1C 46`, `0xA444E8: 00 44 9C 45`. "Economic/trade" meaning stays **Low** |
 | 18 | `0x00840944`–`0x00840AB0` | Gate `cmp byte [eax+0x67c],0; je 0x840AAD` (civilized); recomputes ratios over `+0xda8`/`+0xd58` via `call 0x55DCF0` (`lea ecx,[esi+0xDA8]` / `lea eax,[esi+0xD58]`), same ×1000 divide shape, then triple gate `mov edx,[0x1317D08]; mov edi,[0x1317D84]; mov esi,[0x1317D28]` (`8B 15 08 7D 31 01 / 8B 3D 84 7D 31 01 / 8B 35 28 7D 31 01` at `0x840A48-54`) with `×5` (`lea ecx,[ecx+ecx*4]`) / `×2` (`add ecx,ecx`) scaling | economic-interest adjustment for civilized nations | Mechanics **High (code-verified)** — entry file `0x43FD44: 80 B8 7C 06 00 00 00`. Threshold *values* again **runtime-only (BSS, no file bytes)**. Economic meaning stays **Low** |
 | 19 | `0x00840AB0`–`0x00840FC1` | Adds the final interest (blocks 17/18) to the score | `*score += interest` | — |
-| 20 | `0x00840FC1`–`0x00841168` | If `other` is "civilized" (`+0x67c`): walks a global list of "special modifiers" (`DAT_012588e8+0xb3c`) calling `FUN_00832dd0(self, other)` for each, accumulating an integer that can be negative | `*score += Σ special modifiers` (only reported in verbose if negative) | Global event/decision modifiers — **Medium** |
+| 20 | `0x00840FC1`–`0x00841168` | If `other` is "civilized" (`+0x67c`): walks the world `CWar*` list (`DAT_012588e8+0xb3c`), passing each war and the country pair to `FUN_00832dd0` with an accumulator | `*score += Σ war contributions` only if the sum is negative; verbose reason `AIREASON_CURRENT_WARS` | War-list identity **High (code-confirmed)**; full per-war scoring semantics unresolved |
 | 21 | `0x00841168`–`0x00841307` | Walks the "reasons" list at `self+0xbe8[other]+0x50` calling a virtual (`+0x1c`) on each; if **any** returns `true` | `*score -= 100` | Penalty from a dynamic "rejection reason" condition (possibly an active casus belli/grievance held by `self` against `other`) — **Medium** |
 | 22 | `0x00841307`–end | Same pattern reversed (`other+0xbe8[self]`) | `*score -= 10` | Symmetric, milder penalty — **Medium** |
 
 ### 2.2 Design notes
 
+The world list is head/tail/count at `+0xB3C/+0xB40/+0xB44`, not a modifier registry.
+`0x00681B5C` calls constructor `0x00931620` (RTTI `CWar`, vtable `0x00E35118`);
+`0x00681B9E` stores that object in a node, and `0x00681BBB`–`0x00681BE5` update the list.
+The opinion loop passes node payloads to `FUN_00832DD0` at `0x00840FFC`; the evaluator
+checks the war's two side arrays (`+0x2C/+0x30`, `+0x3C/+0x40`) against country `+0x20`.
+Pair-score helpers `0x00841870` and `0x00841900` also feed war contributions through
+this evaluator (calls at `0x008418EB` and `0x008419A2`); the latter walks the world war list.
+These anchors identify the war input, not every scoring branch's meaning.
+
 - The function **can always short-circuit**: if `param_4 == 0` (silent mode), any block that hits a hard-cutoff condition `return`s immediately after setting `*param_3`, without generating text. This is an optimization for cases where only the number is needed (e.g., to decide accept/reject) without spending time on `format_and_assign_string_member` calls.
 - Blocks 1–6 are **mutually exclusive, hard-cutoff** (±1000): they represent "hard" vassalage/sphere-of-influence conditions that dominate any other computation.
-- Blocks 7 onward are **cumulative** and represent the "fine-grained" opinion: military, economic, historical (accumulated relation), and one-off event/decision modifiers.
+- Blocks 7 onward are **cumulative** and represent the "fine-grained" opinion: military, economic, historical (accumulated relation), current-war contributions, and dynamic relation reasons.
 - The repeated pattern of `string_assign_from_buffer_member` / `format_and_assign_string_member` + `ResolverORegistrarEvento` + `FUN_009a9880` + `FUN_00448aa0` in every block is the machinery that builds **localized reason strings** (`AIREASON_*`) making up the diplomacy tooltip, exactly like the already-confirmed `AIREASON_OVERLORD` block.
 
 ---
@@ -290,7 +299,7 @@ Exhaustive `.text` scan for all 36 `AIREASON_*` string VAs (authoritative `VA = 
 | `THREATS` (`0xE26B78`) | `0x84076B` | refs only | **computed (block 17 "interest" pair): `i1=clamp(q1−10,max 10)` → `[ebp-0x10]` (`0x8408BB-CE`: `mov eax,0x10624DD3` ÷100 magic @file `0x43FCBB` ✓, `lea edx,[edx+ecx−10]`), `i2=clamp(q2−5,max 5)` → `[ebp+0x14]` (@`0x840922` ✓); `i2=0` if `[country+0xDD0]<1`** |
 | `RELATIVE_ARMY_STRENGTH` (`0xE26B8C`) | `0x840AEF`, `0x840C16` | refs only | **computed: scaled-interest sum — tiered ×10/×5/×1 multipliers on `i1`/`i2` keyed on ratio2 vs `[0x1317D08]/[0x1317D28]/[0x1317D84]` (`mov edx,[0x1317D08]` @`0x840A48`, file `0x43FE48` ✓), `*score += i1'+i2'` via `add [eax],edx` @`0x840AB8` (file `0x43FEB8` ✓)** |
 | `RELATIVE_NAVY_STRENGTH` (`0xE26BAC`) | `0x840D67`, `0x840E97` | refs only | **negative finding: NO score-op in the full stanza window (`0x840E96`–`0x840FC1`, exhaustive add-filter) — value folded into the REL_ARMY combined add; NAVY stanzas are text-only** |
-| `CURRENT_WARS` (`0xE26BCC`) | `0x841048` | refs only | **computed (block 20): `Σ FUN_00832DD0` over global list `[0x12588E8+0xB3C]` (civilized-gated @`0x840FC1`: `mov esi,[ebp+0x0C]` file `0x4403C1` ✓), added via `add [eax],edi` @`0x841019` (file `0x440419` ✓) ONLY if sum negative (`jns skip`)** |
+| `CURRENT_WARS` (`0xE26BCC`) | `0x841048` | refs only | **computed (block 20): `Σ FUN_00832DD0` over the world `CWar*` list `[0x12588E8+0xB3C]` (civilized-gated @`0x840FC1`: `mov esi,[ebp+0x0C]` file `0x4403C1` ✓), added via `add [eax],edi` @`0x841019` (file `0x440419` ✓) ONLY if sum negative (`jns skip`)** |
 | `OUR_CASUS_BELLI` (`0xE26BE4`) | `0x8411E4` | refs only | **`mov ecx,0xFFFFFF9C` (−100 @`0x8411FB`, file `0x4405FB` ✓)** |
 | `YOUR_CASUS_BELLI` (`0xE26C00`) | `0x841393` | refs only | **`mov ecx,0xFFFFFF9C` (−100 @`0x8413AD`, file `0x4407AD` ✓)** |
 | `CONSTRUCTING_CB` (`0xE26AAC`) | `0x8414F3` | refs only | **`mov [edi],0xFFFFFC18` (−1000 ASSIGN @`0x8414BF`, file `0x4408BF` ✓)** |

@@ -380,7 +380,9 @@ artisan struct
 	0xF8	production_income					int64/(10^3 * 2^15) (in savegame stored as int64/(2^15))
 
 factory (CStateBuilding) struct
-	total size unknown
+	payload size 544 (0x220); linked-node allocation 560 (0x230)
+	payload and node share the same base; nodes are separately allocated, not an array
+	see ../Economy/object-storage.md for native evidence and limits
 	offset	field									conversion
 	0x000	CStateBuilding.vtable.0					ptr32
 	0x004	???										???
@@ -453,7 +455,7 @@ factory (CStateBuilding) struct
 	0x1B8	profit_history[5]						int64/(2^15)
 	0x1C0	profit_history_days						int32
 	0x1C8	profit_history_current					int32
-	0x1D0	???										int64?
+	0x1D0	CGoodsProject ptr						ptr32
 	0x1D8	subsidies								int64/(2^15)
 	0x1E0	???										int64/(2^15)
 	0x1E8	???										int64/(2^15)
@@ -462,10 +464,18 @@ factory (CStateBuilding) struct
 	0x200	leftover								int64/(2^15)
 	0x208	maintenance goods fraction				int64/(2^15)
 	0x210	injected_money							int64/(2^15)
-	0x218	???										int32?
+	0x218	injected_days (remaining)				int32 (days)
 	0x21C	???										int32?
-	0x220	???										int32?
+
+	linked-node fields outside the payload (offsets from the same base)
+	0x220	previous factory in state ptr			ptr32
 	0x224	next factory in state ptr				ptr32
+	0x228	node marker (lifecycle unknown)			byte
+	trailing node bytes not characterized
+
+	VA 0x004F56B0 takes remaining injected_money / remaining injected_days,
+	subtracts the tranche from money and decrements days; the final day consumes
+	the whole remainder. This does not establish general funding policy.
 
 employed pop struct (CPopEmployment)
 	total size 16 (0x10)
@@ -560,7 +570,9 @@ pop type struct (CPopType)
 	0x3D9	is slave						bool (byte)
 
 POP struct (CPop) (stored as linked list)
-	total size 680 (0x2A8)
+	payload size 632 (0x278); linked-node allocation 648 (0x288)
+	payload and node share the same base; nodes are separately allocated, not an array
+	see ../Economy/object-storage.md for native evidence and limits
 	offset	field						conversion
 	0x000	CPop.vtable					ptr32
 	0x004	??? 397						int32
@@ -680,8 +692,12 @@ POP struct (CPop) (stored as linked list)
 	0x260	???							int64?
 	
 	0x274	??? ptr						ptr32
+
+	linked-node fields outside the payload (offsets from the same base)
 	0x278	previous pop pointer		ptr32
 	0x27C	next pop pointer			ptr32
+	0x280	node marker (lifecycle unknown)	byte
+	trailing node bytes not characterized
 
 army struct
 	total size unknown

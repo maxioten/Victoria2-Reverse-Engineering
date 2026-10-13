@@ -57,10 +57,17 @@ and `is_triggered_only` are not consulted. `is_triggered_only` does not affect t
 Country_DailyUpdate -> AI_DailyUpdate (0x0085CCB0)
    gates: has provinces, tag != REB, country+0x37C == 0, +0x37D == 0, FUN_0050E450() != 0
    AI_DiplomacyUpdate (0x0085D270), if ai+0x19 == 0
-     AI_ScoreWarTargets (0x0085DB40)        per D: self+0xE4C <= D+0xE4C * 5, strength >= g_aiWarStrengthRatio
+     AI_ScoreWarTargets (0x0085DB40)        per D: self.stateCount <= D.stateCount * 5 (+0xE4C), strength >= g_aiWarStrengthRatio
                                             -> IsAnyCBUsable at 0x0085DCDA
      AI_ScoreDiplomaticTargets (0x0085E0E0) per D not overlord/vassal -> IsAnyCBUsable at 0x0085E5FB
 ```
+
+`CCountry+0xE44/+0xE48/+0xE4C` are the state-list head, tail, and linked-node count
+(see [field map](../Symbols/structs.csv)), not an AI score or war-status field.
+The count increments at `0x004FC11C/0x004FC125` and decrements on physical unlink/free
+at `0x00502F5D`. The mark-only path at `0x00502F1E` leaves pending-removal nodes linked
+and counted, so this gate need not compare only unmarked/live states. The meaning of
+country byte `+0xE50` and deferred-removal timing remain unresolved.
 
 Other callers, lower frequency: monthly from `Update_World_and_Advance_Time` (`0x00683B36`, through
 `FUN_00687E30 -> FUN_0050C2A0 -> FUN_005183F0`); AI war planning (`AI_EvaluateCommandChance`,
@@ -76,6 +83,6 @@ per pair (32 in TGC), so trigger order matters less than the overhead of `IsCBUs
 
 ## Open questions
 
-1. Meaning of `country+0x37C/+0x37D`, `ai+0x19`, `country+0xE4C`, `g_aiWarStrengthRatio`.
+1. Meaning of `country+0x37C/+0x37D`, `ai+0x19`, `g_aiWarStrengthRatio`.
 2. Order of the seven ×1000 factors at `+0xF4..+0x10C`.
 3. Whether `CNullCasusBelliType` instances are in the manager vector.

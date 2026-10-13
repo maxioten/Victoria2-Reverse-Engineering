@@ -48,7 +48,7 @@ Verified structure (32/32 byte claims; ledger goal "CAIProductionMinister Execut
   - `0x858670` (file `0x457A70`): via enumerator pair `0x857430`+`0x857530`, tests `[ebx+0x6E]` — Medium-High.
   - `0x8582D0` (file `0x4576D0`): per-unit validation on slot `+0x78` via `0x8580E0` — Medium.
   - `0x8589B0` (file `0x457DB0`): batched variant sharing the `0x857430`+`0x857530` pair — Medium.
-  - `0x859180` (file `0x458580`): per-item type-switched loop (`[eax+0xE44]` list, `[esi+0x244]` dispatch) — Medium.
+  - `0x859180` (file `0x458580`): per-item type-switched loop (country state list at `[eax+0xE44]`, `[esi+0x244]` dispatch) — Medium.
 - **Factory-scan loop + placement tail** (`0x8570FF–0x857180`): calls local `0x8571A0` (file `0x4565A0`), `0x57CC60` (record ctor, file `0x17C060`), two virtual calls.
 - **Helpers**: `0x9B7610` RNG next-word (file `0x5B6A10`, xorshift masks; High), `0x9B7700` RNG refill (file `0x5B6B00`; High), `0x4DAD40` lazy container accessor (file `0xDA140`; High), `0x4DADA0` fixed-capacity (0x1FF) vector init (file `0xDA1A0`; High), `0x4DADF0` element release (file `0xDA1F0`; Medium), `0xAAD56B` allocator trampoline (file `0x6AC96B`; High), `0xAB6E30` fill/memset (file `0x6B6230`; High), `0xAAE9AF` allocator (file `0x6ADDAF`; Medium), `0xAAE91B` free trampoline (file `0x6ADD1B`; Medium).
 

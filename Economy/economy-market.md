@@ -1183,35 +1183,18 @@ while the periodic economic accounting path is centered around:
 
 # MAP 30 — LOAN / INTEREST SYSTEM
 
-Function:
+`0x00523400` creates or increases creditor debt, credits debtor treasury and
+handles loan rates; it is not just an interest calculator. For named borrowing,
+it also increases lender-bank lent principal without debiting bank reserves
+(stores at `0x0052367F`–`0x005236A2`). Proposed role name: `Loan_CreateOrIncreaseDebt`.
 
-```text
-00523400
-```
+Daily interest payment is a separate routine, `0x00523C30`. Bank allocation to
+state pools occurs at `0x004F5BF0`. See [Banking and credit](banking-and-credit.md)
+for origination, repayment, ordinal-zero branches, units and payout limits.
 
-Proposed name:
-
-```text
-CalculateLoanInterest
-```
-
-Responsibilities include:
-
-```text
-loan interest calculation
-base interest
-minimum interest
-```
-
-Vanilla base interest is associated with:
-
-```text
-LOAN_BASE_INTEREST
-```
-
-A previously identified section corresponds to the minimum/1% interest logic.
-
-Experimental changes to the base interest should be treated separately from the market-price system.
+`LOAN_BASE_INTEREST` and the minimum-interest logic belong to rate handling,
+not the market-price system. Experimental rate patches remain separate from
+these native transfer contracts.
 
 
 # MAP 31 — MARKET / ECONOMY FUNCTION INDEX
@@ -1235,7 +1218,7 @@ Experimental changes to the base interest should be treated separately from the 
 │ 0043A880   │ vector_resize                                 │
 │ 004DD470   │ Multiply goods + clamp 0..99999              │
 │ 00485E40   │ POP daily economic update                    │
-│ 00523400   │ Loan interest                                │
+│ 00523400   │ Loan origination and rate handling           │
 │ 0054C600   │ intro_sort                                   │
 └────────────┴───────────────────────────────────────────────┘
 ```
