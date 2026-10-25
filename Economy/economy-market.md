@@ -1,5 +1,13 @@
 # PART VI — DETAILED MARKET / ECONOMY SYSTEM
 
+See [Default & Debt Cleanup](default-and-debt-cleanup.md) for the separate
+interest-shortfall handler and debt-removal paths, conditional construction
+refunds, and unresolved default/write-off boundaries.
+
+See [Production Identity & Clearing](production-identity-and-clearing.md) for
+RGO capacity/owner arithmetic, limited factory-transfer outcomes, and why
+clearing values do not establish producer-attributed domestic/export sales.
+
 ## MAP 14 — COMPLETE ECONOMIC MANAGER FLOW
 
 The economic manager is substantially larger than the simple `WorldMarket_Update` path.

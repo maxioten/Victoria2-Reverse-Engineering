@@ -31652,7 +31652,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>533</ID>
-          <Description>"total pops copy?"</Description>
+          <Description>"RGO employment capacity"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>+1AC</Address>

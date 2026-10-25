@@ -10,7 +10,7 @@ struct CWorldMarket {
 	void* vtable;
 	uint32_t unknown_0x04;
 	CGoodsPool supply_pool_0x08;
-	CGoodsPool unknown_CGoodsPool_0x60;
+	CGoodsPool last_supply_pool_0x60; // Narrow save correlation; see ../Economy/production-identity-and-clearing.md
 	CGoodsPool actual_sold_world_0xB8;
 	std_vector_CGoodsPool actual_sold_domestic_per_country_0x110;
 	uint32_t unknown_0x11C;

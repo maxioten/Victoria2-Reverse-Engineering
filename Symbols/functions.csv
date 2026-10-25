@@ -1,4 +1,11 @@
 va,name,conf,area,src,note
+0x005241F0,CCountry_InterestShortfallHandler,C,economy,sm,"RVA 0x001241F0; historical runtime invocation only; static body applies bad_debtor (native literal bad_debter)/in_bankrupcy and notification/construction/factory cleanup; no RemoveDebts call or established principal write-off"
+0x005246F7,Default_ConstructionRefund_site,C,economy,sm,"Instruction label not entry; conditional canceled-construction refund to treasury and daily ledger+0x40; static only not universal bankruptcy refund; see Economy/default-and-debt-cleanup.md"
+0x00511340,CCountry_RemoveDebts,C,economy,sm,"RVA 0x00111340; static creditor destruction/vector cleanup and eligible named-principal bank money/lent reductions; direct callers VA 0x00508ACE/0x00518EE6 not shortfall handler"
+0x00508ACE,CCountry_DailyDebtCleanup_site,C,economy,sm,"Callsite not entry; RemoveDebts(true) only if absent from two membership searches with unresolved semantics; not established automatic default write-off"
+0x00518EE6,CCountry_AnnexDebtCleanup_site,C,economy,sm,"Callsite not entry; CCountry::Annex calls RemoveDebts(false); static evidence; see Economy/default-and-debt-cleanup.md"
+0x004DE350,RGO_CalculateOutput,C,economy,sm,"RVA 0x000DE350; efficiency * throughput * recipe base output * record size with >>15 after each multiplication; see Economy/production-identity-and-clearing.md"
+0x00740F8D,RGO_OwnerModifier_UI_site,C,economy,sm,"Instruction label not entry; province+0x188 state; recipe+0xF0 owner type+0x28 indexes state+0x118 population; divided by state+0xC8 RGO capacity; historical UI correlation; see Economy/production-identity-and-clearing.md"
 0x00AB0F91,entry,C,engine,re,PE entry point
 0x009796B0,WinMain,I,engine,re,
 0x009DF550,App_MainLoop,I,engine,re,
@@ -17,6 +24,7 @@ va,name,conf,area,src,note
 0x0068F390,Entity_RegisterSpatial,I,tick,cp,"entity / spatial registration with a TBB parallel_for inside; 19 047 calls/day"
 0x00957EA0,Pop_MonthlyUpdate,I,pops,re,"called from Country_DailyUpdate when pop.id % month_length == day_of_month"
 0x004B9250,Pop_MergeEmpty,I,pops,re,merges a pop that reached size 0 into another of the same type
+0x004CDC60,CState_ctor,C,states,sm,"verified-static-callsites; allocations at callsites VAs 0x004FC0CB/0x00521785/0x005218FB establish 0x290 extent; not full layout verification; Engine/entity-identity.md"
 0x004BA430,Migration_Distribute,I,pops,re,
 0x0054B200,std_sort,I,util,re,MSVC std::sort instance used by migration
 0x0092E290,CountryRelation_DailyPurge,I,diplomacy,re,"called from Country_DailyUpdate for every pair (0x0050ABF0); purges relation lists +0x50/+0x2C/+0x30/+0x28/+0x20"
@@ -36,9 +44,29 @@ va,name,conf,area,src,note
 0x00540A70,Country_ScheduleEvent,I,events,re,
 0x008A7CD0,EventManager_DailyScan,C,events,cp,"odd days countries, even days provinces; trigger -> MTTH -> MT roll -> Event_Fire"
 0x008AE380,Event_ComputeMTTHProbability,C,events,re,"probability per million: mode * 1e6 / days, clamped [1, 1e6]"
-0x008A8120,Event_Fire,C,events,re,"thiscall(state, ctx), RET 8; 17 callers"
+0x0042BC68,MessageDispatch_PopupPolicySite_1,C,messages,sm,"instruction site; verified-runtime (historical); policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x0042BE42; not a function entry"
+0x0042BE42,MessageDispatch_NoPopupContinuationSite_1,C,messages,sm,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x004934F8,MessageDispatch_PopupPolicySite_2,C,messages,sm,"instruction site; verified-static-callsites; policy EBX popup +0x0E/pausepopup +0x10; continuation VA 0x00493663; not a function entry"
+0x00493663,MessageDispatch_NoPopupContinuationSite_2,C,messages,sm,"instruction site; verified-static-callsites; icon handling; not a function entry"
+0x004E9678,MessageDispatch_PopupPolicySite_3,C,messages,sm,"instruction site; verified-static-callsites; policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x004E9852; Great War/status notifications; not a function entry"
+0x004E9852,MessageDispatch_NoPopupContinuationSite_3,C,messages,sm,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x00549C68,MessageDispatch_PopupPolicySite_4,C,messages,sm,"instruction site; verified-static-callsites; policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x00549E42; not a function entry"
+0x00549E42,MessageDispatch_NoPopupContinuationSite_4,C,messages,sm,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x005ABAA8,MessageDispatch_PopupPolicySite_5,C,messages,sm,"instruction site; verified-static-callsites; policy EBX popup +0x0E/pausepopup +0x10; continuation VA 0x005ABC13; not a function entry"
+0x005ABC13,MessageDispatch_NoPopupContinuationSite_5,C,messages,sm,"instruction site; verified-static-callsites; icon handling; not a function entry"
+0x0072DFB8,MessageDispatch_PopupPolicySite_6,C,messages,sm,"instruction site; verified-static-callsites; policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x0072E192; not a function entry"
+0x0072E192,MessageDispatch_NoPopupContinuationSite_6,C,messages,sm,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x00907038,MessageDispatch_PopupPolicySite_7,C,messages,sm,"instruction site; verified-static-callsites; policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x00907212; not a function entry"
+0x00907212,MessageDispatch_NoPopupContinuationSite_7,C,messages,sm,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x00909168,MessageDispatch_PopupPolicySite_8,C,messages,sm,"instruction site; verified-static-callsites; policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x00909342; not a function entry"
+0x00909342,MessageDispatch_NoPopupContinuationSite_8,C,messages,sm,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x0093D818,MessageDispatch_PopupPolicySite_9,C,messages,sm,"instruction site; verified-static-callsites; policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x0093D9F2; not a function entry"
+0x0093D9F2,MessageDispatch_NoPopupContinuationSite_9,C,messages,sm,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x008A8120,Event_Fire,C,events,re,"thiscall(state, ctx), RET 8; 17 callers; delivery/setup and immediate effects; distinct from selected-option action 0x00907E00; delivery semantics not rejected by its absence on observed option path; Engine/script-execution-boundaries.md"
 0x008AEB00,EventOption_EvaluateAIChance,C,events,re,pure
 0x00907D40,EventOptionCommand_ctor,I,events,re,0xB0-byte chosen-option command
+0x00907E00,SelectedEventOptionAction_Execute,C,events,sm,"thiscall ECX action; synchronous call 0x008A61F0; +0x64 selected index +0x68 snapshot +0x40/+0x44 resolver; two country actions only; no universal attribution; Engine/script-execution-boundaries.md"
+0x008A61F0,EventOption_Execute,C,events,sm,"register-based helper: EDI event ESI selected index one stack scope; RET 4; static call at 0x009089CC; runtime correlation belongs to action boundary only; Engine/script-execution-boundaries.md"
 0x008A8F30,EventWindow_ctor,C,events,re,"RET 0x50; dead pop loop at 0x008A9434..0x008A9562"
 0x008A88D0,EventScope_Copy,C,events,re,copies the 0x48-byte scope
 0x006480E0,Window_Show,I,ui,re,
@@ -55,6 +83,12 @@ va,name,conf,area,src,note
 0x008D28C0,CCasusBelliTrigger_Evaluate,C,triggers,cp,calls CBManager_IsAnyCBUsable
 0x008D3F50,Trigger_ParseCountryRef,C,triggers,cp,"THIS = 0x405, FROM = 0x3DE"
 0x008B93B0,Trigger_ParseBool,C,triggers,cp,yes = token 0x29F
+0x008C5DA0,CRegionScopeTrigger_Evaluate,C,triggers,sm,"ECX this; one stack scope; RET 4; region this+0x1C; first matching province true exhaustion false; static only; Engine/script-execution-boundaries.md"
+0x00888BA0,CRegionScopeEffect_Execute,C,effects,sm,"ECX this; two stack args; RET 8; region this+0x3C list +0x8 filter this+0x20 children this+0x8; static only not source-site attribution; Engine/script-execution-boundaries.md"
+0x008C4A70,CIssueGroupTrigger_ParseOption,C,triggers,sm,"registry 0x01258A48 in EAX; calls 0x00975ED0 with stack MSVC-string pointer; accepts option+0x54 == this+0x20 group and stores this+0x24; Engine/political-reform-selection.md"
+0x008C4DA0,CIssueGroupTrigger_Evaluate,C,triggers,sm,"thiscall(scope); RET 4; category 2 indexes array pointed to by CCountry+0x860 using group+0x50; narrow current-owner correlation only; Engine/political-reform-selection.md"
+0x008950B0,CSetPoliticalReformEffect_Execute,C,effects,sm,"thiscall(scope arg2); RET 8; target option this+0x20 -> group+0x54 -> index+0x50; writes array pointed to by CCountry+0x860; static only; Engine/political-reform-selection.md"
+0x00975ED0,IssueOption_Lookup,C,parser,sm,"registry in EAX; one stack MSVC-string pointer; returns option; narrow active-GFM no_slavery correlation not general lifecycle safety; Engine/political-reform-selection.md"
 0x00882A40,CClrCountryFlagEffect_Execute,C,effects,cp,"vtable 0x00E2ACC0 slot 11; thiscall(scope, arg2), RET 8"
 0x00882BA0,CClrGlobalFlagEffect_Execute,C,effects,cp,vtable 0x00E2ADA0 slot 11; RET 8
 0x008829E0,CSetCountryFlagEffect_Execute,C,effects,cp,vtable 0x00E2AC88 slot 11
@@ -132,7 +166,7 @@ va,name,conf,area,src,note
 0x00522910,CCountry_TakeLoan,C,economy,re,"tries domestic self-creditor then ordinal-zero fallback; see Economy/banking-and-credit.md"
 0x00523400,Loan_CreateOrIncreaseDebt,C,economy,re,"credits treasury/principal and handles rates; named bank-lent stores 0x0052367F-0x005236A2; not just interest calculation"
 0x005238D0,CCountry_RepayLoan,C,economy,re,"reduces treasury/principal and nonzero-ordinal bank lent; removes completed creditors; no reserve credit on ordinary repayment"
-0x00523C30,CCountry_PayDailyInterest,C,economy,re,"caller 0x00508D3E; sufficient named payment debits treasury and credits bank pending; ordinal zero skips bank credit"
+0x00523C30,CCountry_PayDailyInterest,C,economy,re,"caller 0x00508D3E; sufficient named payment debits treasury and credits bank pending; ordinal zero skips bank credit; accumulated shortfall threshold calls handler at VA 0x005241CD; narrow historical runtime correlation; see Economy/default-and-debt-cleanup.md"
 0x004F5BF0,CBank_DistributeInterest,C,economy,re,"caller 0x00685F0F; recapitalizes or allocates to state pools then clears pending; not generally conservative"
 0x0095A5F0,CPop_GiveMoney,C,economy,re,"EAX=POP ESI=flow index; stack int64 amount; RET 8; updates money/flow/total not savings; clamps affect money delta"
 0x0047DCA0,Stockpile_SubtractArtisanFactory,C,economy,re,
@@ -150,21 +184,21 @@ va,name,conf,area,src,note
 0x00A7B0C0,WorkerThread_Entry,I,threads,re,
 0x00A7B090,WorkerThread_Dispatch,C,threads,re,calls [this+0x18]->vt[1]
 0x00A7AE80,WorkerThread_Cleanup,I,threads,re,
-0x0072EE90,GameSpeed_Increase,I,speed,re,
-0x0072EFE0,GameSpeed_Decrease,I,speed,re,
+0x0072EE90,GameSpeed_Increase,C,speed,re,"message handler; increments world+0xB28 and clamps to 0..4; runtime-correlated; see Engine/native-ui-and-frontend.md"
+0x0072EFE0,GameSpeed_Decrease,C,speed,re,"message handler; decrements world+0xB28 and clamps to 0..4; runtime coverage includes selecting index 1 from higher speed"
 0x006377A0,HistoryDb_Init,C,checksum,re,
 0x009DA4B0,HistoryDb_LoadDirRecursive,C,checksum,re,
 0x009DA400,File_Checksum,C,checksum,re,
 0x009939A0,FileStream_ChecksumFletcher,C,checksum,re,
 0x0068F340,Vector_Equals,I,util,re,
-0x00676500,ResignCommand_Handle,C,ui,re,"compares the command with ""RESIGN""; calls [this+8]->vt[0x114/4]"
+0x00676500,QuitResignDialog_Accept,C,ui,re,"RESIGN invokes controller virtual +0x114; accepted QUIT uses +0x110; idler target 0x0064EDB0 requests native exit; return-to-menu unverified"
 0x0067D940,Engine_Shutdown,I,engine,re,
-0x00420EB0,Console_Execute,C,console,re,"central console dispatcher; debug cb_use / cb_countries / cb_state"
+0x00420EB0,Console_DebugHandler,C,console,sm,"registered debug descriptor 0x00F0A748; accepts fow; universal dispatcher role not established; see Engine/console.md"
 0x0099DA20,Render_InitRestore,I,render,re,
 0x006592F0,Render_MapFrame,I,render,re,
 0x006DFE80,Westernize_OnClick,C,ui,re,
 0x00541B90,Westernize_CanClick,C,ui,re,
-0x00772300,Play_OnClick,I,ui,re,
+0x00772300,SinglePlayer_PlayListener,C,ui,re,"bound to play_button by frontend constructor; native signal dispatch runtime-correlated; MP role unestablished; see Engine/native-ui-and-frontend.md"
 0x00AAE91B,operator_delete,C,util,cp,calls free; 33 509 call sites
 0x00408AD0,std_string_dtor,C,util,cp,"__fastcall; frees the buffer when capacity > 15, resets to the empty SSO state; 38 527 call sites"
 0x00409350,std_string_assign,I,util,cp,"(const char*, length); 14 124 call sites"
@@ -182,3 +216,22 @@ va,name,conf,area,src,note
 0x007E1DC0,FlagAtlas_Index,I,flags,cp,"references flagfiles.txt/.tga strings; no D3DX calls"
 0x0084B690,AI_CountryDailyJob_Update,I,ai,cp,"vtable slot 0x00E27738; AI object +0x38 country index; per AI country per day from AI_CountryFrameJob (~9.7 ms/day); sums child values, updates sub-AIs, 8x FUN_0084EF30"
 0x0084B0F0,AI_TargetScan,I,ai,cp,"vtable slot 0x00E2773C; loops every country, tests self+0xBE8[other]+0x34 (relation miss, 90% of its samples at 0x0084B29D); ~5.5 ms/day"
+0x00423990,ConsoleManager_PopulateCommands,C,console,sm,"static initializer; EAX manager retained in ESI; appends descriptor pointers with native stride 0x4C; see Engine/console.md"
+0x00423A43,ConsoleManager_InitEpilogueSite,C,console,sm,"instruction site NOT function entry; ESI still holds populated manager; verified-current capture boundary"
+0x0042217E,Console_DebugFowToggleSite,C,console,sm,"instruction site NOT function entry; stores toggled AL to 0x00F092FB; registered debug fow branch"
+0x0041F720,Console_TagHandler,C,console,sm,"registered descriptor 0x00F0A2D4; historical runtime transition asynchronous; return is not view/ownership completion"
+0x00754A00,MainMenuController_ctor,C,ui,sm,"installs primary vtable 0x00E13DBC; GUI registry +0x704; runtime-correlated capture; see Engine/native-ui-and-frontend.md"
+0x00754DF0,MainMenuController_scalar_dtor,C,ui,sm,"primary vtable slot 0; captured controller invalidated before storage release"
+0x00754F90,MainMenuController_Update,C,ui,sm,"static lookup chain: registry +0x704 virtual +0x6C mainmenu_panel; panel virtual +0x34 single_player_button"
+0x0076A2F0,SinglePlayerFrontend_ctor,C,ui,sm,"installs primary vtable 0x00E14ED0; GUI registry +0x278; binds Play listener; runtime-correlated capture"
+0x0076B030,SinglePlayerFrontend_scalar_dtor,C,ui,sm,"primary vtable slot 0; captured controller invalidated before storage release"
+0x0067F1D0,CCurrentGameState_LoadSave,C,loading,sm,"successful SP load path calls at 0x0076F8B3; load-completion +0x5BD is distinct from gameplay entry"
+0x009EE510,GuiSignal_DispatchPress,C,ui,sm,"EAX=signal at resolved control+0x54; listener virtual +0x8; runtime-correlated for Single Player and Play"
+0x009EE550,GuiSignal_DispatchRelease,C,ui,sm,"EAX=signal after press; listener virtual +0x10; runtime-correlated for Single Player and Play"
+0x00718CE0,Topbar_SpeedUpCallback,C,ui,sm,"invokes CInGameIdler virtual +0x164; runtime-correlated native chain"
+0x00718CF0,Topbar_SpeedDownCallback,C,ui,sm,"invokes CInGameIdler virtual +0x168; runtime-correlated native chain"
+0x0066A0D0,CInGameIdler_SpeedUp,C,ui,sm,"virtual +0x164; native speed-increase route to 0x0072EE90"
+0x0066A1B0,CInGameIdler_SpeedDown,C,ui,sm,"virtual +0x168; native speed-decrease route to 0x0072EFE0"
+0x0066A2C0,CInGameIdler_TogglePause,C,ui,sm,"ECX=idler; toggles byte +0x1538; manual Space and native invocation runtime-correlated"
+0x0064EDB0,CInGameIdler_RequestQuit,C,ui,sm,"ECX=idler; virtual +0x110; sets +0x1D20=1; requests exit without save/drain guarantee"
+0x00687A70,Country_ReturnToAI,C,ui,sm,"clears human control and constructs/registers CCountryAI; checked route verifies pointer and scheduler membership"
