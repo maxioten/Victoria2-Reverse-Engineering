@@ -2,7 +2,7 @@ struct,offset,name,type,conf,src,note
 World,0xACC,provinces,CMapProvince**,C,cp,province pointer array
 World,0xADC,dayTickCountries,vector,C,cp,"+0xADC/+0xAE0 country vector of the day tick"
 World,0xAEC,humanPlayers,vector<u32>,C,cp,"+0xAEC begin, +0xAF0 end; entry 0 = AI-controlled"
-World,0xB0C,dateHours,u32,C,cp,"date in hours, base 0x029C55C0 = year -5000; +0x18 per day; 365-day years, no leap years"
+World,0xB0C,dateHours,u32,C,cp,"24 units/day; raw0 epoch year -5000; 0x029C55C0 offset reaches year0; decode floor(raw/24/365)-5000; 365-day years; see Engine/daily-tick.md#calendar-c"
 World,0xB14,timeAccumulator,f32,C,re,accumulated frame time in ProcessGameTimeAdvance
 World,0xB20,timeStopped,u32,C,re,non-zero -> ProcessGameTimeAdvance returns
 World,0xB24,uiManager,ptr,I,re,
