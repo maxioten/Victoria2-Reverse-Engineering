@@ -421,6 +421,8 @@ When ≥ 1, the exe's import `tbb.dll!?initialize@task_scheduler_init@tbb@@QAEXH
 * **Site:** `0x85E40` (VA `0x485E40`) — 9 bytes `55 8B EC 64 A1 00 00 00 00` (`push ebp; mov ebp,esp; mov eax,fs:[0]`), entry of the daily POP coordinator `FUN_00485E40`. Trampoline (copy + `jmp +9`) is allocated with `VirtualAlloc`; the entry is `E9 → PopDailyEntryThunk` + 4 NOPs.
 * After the original returns, the thunk walks the passed pop container (stride `0x2A8`, type id 46) and rounds the int64 fixed-point (2¹⁵) fields at offsets `0x118, 0x120, 0x128, 0x130, 0x138, 0x140, 0x180 (money), 0x1B0, 0x1C8, 0x1D8–0x218 (step 8), 0x250 (savings)` down to `KEEP_BITS` fractional bits (12 → step 8 units of 2⁻¹⁵), so low bits cannot diverge between clients.
 
+* **Native-layout reconciliation:** the reviewed native POP payload is `0x278` and its separately allocated linked node is `0x288`, neither the claimed `0x2A8` stride above; see [object storage](../Economy/object-storage.md). This documentation review did not validate the patch implementation or its container traversal; the algorithm claim is retained pending that check.
+
 ### 7.8 `PATCH_MP_CLIENT_SLEEP`, `MP_CLIENT_SLEEP_MS` — 1 code patch + IAT hooks, on / 1
 | Part | Address | Effect |
 |---|---|---|

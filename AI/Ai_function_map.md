@@ -178,7 +178,7 @@
 | `0x832c80` | body | Increase-relation string-holder (INCREASERELATION); embeds 0xE9/0xEA getters. |
 | `0x832cd0` | body | CDecreaseRelationAction (0x8D6) initializer; embeds 0x8D6 ID getter. |
 | `0x832d90` | body | Decrease-relation string-holder (DECREASERELATION); embeds 0xEB getter. |
-| `0x832dd0` | body | Global special-modifier evaluator: strength queries plus per-node scoring; feeds opinion core. |
+| `0x832dd0` | body | War-related evaluator: checks CWar side arrays +0x2C/+0x30 and +0x3C/+0x40 against country +0x20; feeds opinion war contributions; full scoring semantics unresolved. |
 | `0x833410` | body | Date/modulus-gated list walker (0x8483F0, 0x9B7700 — corrected 2026-10-01); diplomatic-queue tick helper. |
 | `0x833650` | body | CAIForeignMinister initializer: vtable 0xE274FC, game-clock stamp, float fields. |
 | `0x8336c0` | body | Minister cleanup: installs vtable, runs 0x825EC0, conditional delete. |
@@ -203,8 +203,8 @@
 | `0x83ec10` | known | SKIP: opinion-score core, fully documented in Ai_relations.md. |
 | `0x841640` | known | SKIP: opinion wrapper (raw score), documented in Ai_relations.md. |
 | `0x8416b0` | known | SKIP: persuasion-difficulty wrapper (50-score), documented in Ai_relations.md. |
-| `0x841870` | body | Pair-score helper: base 0x834150 result plus global modifiers 0x832DD0. |
-| `0x841900` | body | Call-ally (0x8CB) evaluator: base score plus civilized-gated modifier-list walk. |
+| `0x841870` | body | Pair-score helper: base 0x834150 result plus a war contribution through 0x832DD0. |
+| `0x841900` | body | Call-ally (0x8CB) evaluator: base score plus civilized-gated CWar* list walk at world +0xB3C through 0x832DD0. |
 | `0x8419c0` | known | SKIP: AskMilitaryAccess case function, documented in Ai_relations.md. |
 | `0x842a00` | known | SKIP: CancelAskMilitaryAccess case function, documented in Ai_relations.md. |
 | `0x842a50` | known | SKIP: GiveMilitaryAccess case function, documented in Ai_relations.md. |
@@ -228,7 +228,7 @@
 | `0x846c40` | body | Switched range probe over +0x9D8/+0x9DC elements (jump table @0x847A64); refs europe/africa. |
 | `0x847b60` | body | Sorted-merge walker over [ecx+0x48/0x4C] lists; computed jump table @0x8483D8. |
 | `0x8483f0` | body | Indexed-table guard (+0xAEC/+0xAF0/+0xB0C), xmm-zero early return; no calls. |
-| `0x848540` | body | War-state branch on [edx+0xE4C] with +0xE44 object fetch; no calls. |
+| `0x848540` | body | Branch on country linked state-node count [edx+0xE4C] with +0xE44 list-head fetch; no calls; exact purpose unresolved. |
 | `0x8485f0` | body | Peace lookup via 0x92F630 on +0xBE8 object; posts 0xAC02A0/0xAC9F20. |
 | `0x8486b0` | trampoline | trampoline forwarder to 0x848830 (packs edx/eax/ecx counts + pushes args) |
 | `0x8486e0` | body | Recursive range dispatcher (self-call) fanning to 0x848930/0x8491A0/0x8490B0/0x849120. |
@@ -367,7 +367,7 @@
 | `0x8571a0` | body | Call-free integer scorer with multiply/divide scaling and validity gates. |
 | `0x857430` | body | Allocator-backed candidate enumerator scoring each via 0x8571A0. |
 | `0x857530` | body | Fixed-point scorer with allmul/alldiv and float conversion. |
-| `0x8577b0` | body | Large candidate enumerator and scorer over +0xE44 lists with RNG. |
+| `0x8577b0` | body | Large candidate enumerator and scorer over country state lists (+0xE44) with RNG. |
 | `0x857e60` | body | Candidate validator scan: +0x9D8 deltas, +0xBE4, flag 0x2A checks. |
 | `0x8580e0` | body | Per-candidate check with early exit; container plus fixed-point math. |
 | `0x8582d0` | body | Per-unit validation on slot +0x78 via 0x8580E0; lazy singleton init. |
@@ -376,7 +376,7 @@
 | `0x858670` | body | Enumerator-pair phase with [ebx+0x6E] gate and 0x5827F0 build. |
 | `0x8589b0` | body | Batched phase chaining 0x858D90, enumerators, and 0x8582D0 tail. |
 | `0x858d90` | body | Capacity and delta precompute feeding batched phase 0x8589B0. |
-| `0x859180` | body | Per-item type-switched loop over +0xE44 list on +0x244 dispatch. |
+| `0x859180` | body | Per-item type-switched loop over country state list (+0xE44) on +0x244 dispatch. |
 | `0x859560` | body | CAIResearch scalar dtor; vtable 0xE286C4, base 0x825EC0. |
 | `0x859590` | body | Research init: flag +0x3C, queue id 0x20, RNG-derived timer. |
 | `0x859610` | known | Research Execute: yearly gate into research brain 0x859710. |
