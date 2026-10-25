@@ -47,6 +47,7 @@ CCountry,0x208,flag208,u32,?,re,AI branch of Event_Fire requires != 0
 CCountry,0x37C,aiGate0,u8,?,cp,AI_DailyUpdate requires 0 (human?)
 CCountry,0x37D,aiGate1,u8,?,cp,AI_DailyUpdate requires 0 (disabled?)
 CCountry,0x7B4,armies,list,I,re,military strength source
+CCountry,0x860,politicalReformOptions,CIssueOption**,C,cp,"POINTER to selected options not inline array; category 2 uses group+0x50 index; live transitions unverified; Engine/political-reform-selection.md"
 CCountry,0x9D8,ownedProvinces,vector,C,cp,"+0x9D8/+0x9DC; empty = country does not exist"
 CCountry,0xBCC,technology,ptr,C,re,"+0x2B8 tech state array indexed by tech+0x2E4"
 CCountry,0xBD4,leaders,list,I,re,daily roll for leader deaths
@@ -74,6 +75,7 @@ Relation,0x50,heldCBs,list,C,cp,"node +0 CCasusBelli*, +8 next"
 CCasusBelli,0x24,typeIndex,u32,C,cp,
 CMapProvince,0x14,eventCandidates,vector<CEvent*>,C,re,"+0x14/+0x18"
 CMapProvince,0x58,id,u32,C,re,
+CMapProvince,0x128,ownerKey,u32,C,cp,"current-owner key read by CIssueGroupTrigger; index +0x12C resolves database 0x012587E4 array +0x4; Engine/political-reform-selection.md"
 CMapProvince,0x12C,ownerIndex,u32,C,re,0 = unowned (skipped by the event scan)
 CMapProvince,0x188,state,CState*,C,re,
 CMapProvince,0x194,popLists,ptr,C,re,per-pop-type lists
@@ -190,3 +192,9 @@ CRegionScopeEffect,0x20,filter,TriggerBlock,C,cp,"embedded per-province filter; 
 CRegionScopeEffect,0x3C,region,CRegion*,C,cp,"region list at +0x8; static only; Engine/script-execution-boundaries.md"
 CRegionScopeTrigger,0x1C,region,CRegion*,C,cp,"short-circuit at first matching province; static only; Engine/script-execution-boundaries.md"
 CRegion,0x08,provinces,list,C,cp,"province IDs consumed by generic region effect and trigger; no runtime visit counts; Engine/script-execution-boundaries.md"
+CIssueGroupTrigger,0x20,group,CIssueGroup*,C,cp,"parser ownership check and evaluator; Engine/political-reform-selection.md"
+CIssueGroupTrigger,0x24,expectedOption,CIssueOption*,C,cp,"accepted parser result compared with country selection; Engine/political-reform-selection.md"
+CIssueGroup,0x50,index,u32,C,cp,"indexes selected political options for category 2; GFM slavery index 1 only; Engine/political-reform-selection.md"
+CIssueGroup,0x5C,category,u32,C,cp,"2 selects CCountry+0x860 pointer; GFM slavery correlation only; Engine/political-reform-selection.md"
+CIssueOption,0x54,group,CIssueGroup*,C,cp,"owning group; parser requires group match; static effect follows to index; Engine/political-reform-selection.md"
+CSetPoliticalReformEffect,0x20,targetOption,CIssueOption*,C,cp,"static store only; no arbitrary-write safety or live-transition evidence; Engine/political-reform-selection.md"

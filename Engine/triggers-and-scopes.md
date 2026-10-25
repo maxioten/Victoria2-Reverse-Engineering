@@ -61,6 +61,16 @@ that point inside the source into the copy (or build the copy with the ctor). **
   eq `+0x10`, value `+0`), one node per character. Each node is a separate allocation, so long flag names
   cost one cache miss per character. **[C][M]**
 
+## Political reform selection
+
+`CIssueGroupTrigger::Evaluate` at preferred VA `0x008C4DA0` compares the expected
+option with a country's selected option. For category 2, group `+0x50` indexes
+the option array **pointed to** by `CCountry+0x860`; group `+0x5C` is the category,
+and option `+0x54` is its group. Parser `0x008C4A70` uses the issue-option registry
+at `0x01258A48`, not a unit manager. See [Political reform selection](political-reform-selection.md)
+for the static parser/effect paths, executable pin, and narrow GFM correlation;
+no live reform transition or arbitrary-write safety is established.
+
 ## Classification of the 236 classes **[C]**
 
 By decompiling every `Evaluate` and looking for `scope+0x24`, `scope+0x30/+0x34`, child evaluation or

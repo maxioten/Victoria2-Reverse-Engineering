@@ -4,7 +4,7 @@ va,name,kind,conf,src,note
 0x0131ACAC,g_cbManager,ptr,C,cp,"+0xC/+0x10 vector<CCasusBelliType*>; getter 0x0090CC40"
 0x01319730,g_decisionManager,ptr,C,cp,"lists +0xC/+0x10 and +0x28/+0x2C; getter 0x00875040"
 0x01258A74,g_renderDevice,ptr,I,cp,"+0x6BCA0 has-focus byte; +0x6BC44 mirrors the fog-of-war flag"
-0x01258A48,g_issueOptionRegistry,ptr,C,re,"name-indexed CIssue options; lookup 0x00975ED0 / register 0x00975E60; ctor 0x00974CF0; initializer 0x00975DD0 publishes at 0x00975E30; CIssueGroupTrigger parser 0x008C4A70 checks option+0x54 group; complete registry class/contents unknown"
+0x01258A48,g_issueOptionRegistry,ptr,C,re,"name-indexed CIssue options; lookup 0x00975ED0 / register 0x00975E60; ctor 0x00974CF0; initializer 0x00975DD0 publishes at 0x00975E30; CIssueGroupTrigger parser 0x008C4A70 loads it at 0x008C4AD4 and checks option+0x54 group; complete registry class/contents unknown; Engine/political-reform-selection.md"
 0x012586DC,g_economyDefines,ptr,?,cp,+0x50 market totals; +0x08 date-like value
 0x0125870C,g_provinceSource,ptr,I,re,vt[0x24] returns the province count
 0x01258A98,g_registryLow,ptr,C,re,object registry for type <= 0x1268; events are type 0x27

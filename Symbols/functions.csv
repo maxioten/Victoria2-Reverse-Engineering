@@ -86,6 +86,10 @@ va,name,conf,area,src,note
 0x008B93B0,Trigger_ParseBool,C,triggers,cp,yes = token 0x29F
 0x008C5DA0,CRegionScopeTrigger_Evaluate,C,triggers,cp,"ECX this; one stack scope; RET 4; region this+0x1C; first matching province true exhaustion false; static only; Engine/script-execution-boundaries.md"
 0x00888BA0,CRegionScopeEffect_Execute,C,effects,cp,"ECX this; two stack args; RET 8; region this+0x3C list +0x8 filter this+0x20 children this+0x8; static only not source-site attribution; Engine/script-execution-boundaries.md"
+0x008C4A70,CIssueGroupTrigger_ParseOption,C,triggers,cp,"registry 0x01258A48 in EAX; calls 0x00975ED0 with stack MSVC-string pointer; accepts option+0x54 == this+0x20 group and stores this+0x24; Engine/political-reform-selection.md"
+0x008C4DA0,CIssueGroupTrigger_Evaluate,C,triggers,cp,"thiscall(scope); RET 4; category 2 indexes array pointed to by CCountry+0x860 using group+0x50; narrow current-owner correlation only; Engine/political-reform-selection.md"
+0x008950B0,CSetPoliticalReformEffect_Execute,C,effects,cp,"thiscall(scope arg2); RET 8; target option this+0x20 -> group+0x54 -> index+0x50; writes array pointed to by CCountry+0x860; static only; Engine/political-reform-selection.md"
+0x00975ED0,IssueOption_Lookup,C,parser,cp,"registry in EAX; one stack MSVC-string pointer; returns option; narrow active-GFM no_slavery correlation not general lifecycle safety; Engine/political-reform-selection.md"
 0x00882A40,CClrCountryFlagEffect_Execute,C,effects,cp,"vtable 0x00E2ACC0 slot 11; thiscall(scope, arg2), RET 8"
 0x00882BA0,CClrGlobalFlagEffect_Execute,C,effects,cp,vtable 0x00E2ADA0 slot 11; RET 8
 0x008829E0,CSetCountryFlagEffect_Execute,C,effects,cp,vtable 0x00E2AC88 slot 11

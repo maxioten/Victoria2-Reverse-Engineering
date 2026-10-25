@@ -24,6 +24,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [Network (ENet)](Engine/network.md) — statically linked ENet, the session's 15/35 ms blocking poll every frame (also in single player).
 - [Threads](Engine/threads.md) — the TBB `parallel_for` sites and why the big daily loops are not parallel-safe.
 - [Triggers & Scopes](Engine/triggers-and-scopes.md) — trigger classes, `CEventScope` layout (self-pointer at +0x24), effects, keywords, thread safety of evaluation.
+- [Political Reform Selection](Engine/political-reform-selection.md) — category-2 issue groups, country selection-array pointer, option registry, and narrow GFM current-selection evidence.
 - [Decisions](Engine/decisions.md) — `CDecision`, the AI's daily decision loop and its CRT `rand()` roll, other evaluation sites.
 - [Casus Belli Evaluation](Engine/Casus_Belli_Evaluation.md) — `cb_types.txt` loading, `IsAnyCBUsable` / `IsCBUsable`, who calls them daily.
 - [Flag Atlases](Engine/flags.md) — how `flagfiles*.tga` are built, cached (TGA) and loaded (format from content), and their memory cost.
