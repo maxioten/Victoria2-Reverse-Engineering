@@ -185,21 +185,21 @@ va,name,conf,area,src,note
 0x00A7B0C0,WorkerThread_Entry,I,threads,re,
 0x00A7B090,WorkerThread_Dispatch,C,threads,re,calls [this+0x18]->vt[1]
 0x00A7AE80,WorkerThread_Cleanup,I,threads,re,
-0x0072EE90,GameSpeed_Increase,I,speed,re,
-0x0072EFE0,GameSpeed_Decrease,I,speed,re,
+0x0072EE90,GameSpeed_Increase,C,speed,re,"message handler; increments world+0xB28 and clamps to 0..4; runtime-correlated; see Engine/native-ui-and-frontend.md"
+0x0072EFE0,GameSpeed_Decrease,C,speed,re,"message handler; decrements world+0xB28 and clamps to 0..4; runtime coverage includes selecting index 1 from higher speed"
 0x006377A0,HistoryDb_Init,C,checksum,re,
 0x009DA4B0,HistoryDb_LoadDirRecursive,C,checksum,re,
 0x009DA400,File_Checksum,C,checksum,re,
 0x009939A0,FileStream_ChecksumFletcher,C,checksum,re,
 0x0068F340,Vector_Equals,I,util,re,
-0x00676500,ResignCommand_Handle,C,ui,re,"compares the command with ""RESIGN""; calls [this+8]->vt[0x114/4]"
+0x00676500,QuitResignDialog_Accept,C,ui,re,"RESIGN invokes controller virtual +0x114; accepted QUIT uses +0x110; idler target 0x0064EDB0 requests native exit; return-to-menu unverified"
 0x0067D940,Engine_Shutdown,I,engine,re,
 0x00420EB0,Console_DebugHandler,C,console,sm,"registered debug descriptor 0x00F0A748; accepts fow; universal dispatcher role not established; see Engine/console.md"
 0x0099DA20,Render_InitRestore,I,render,re,
 0x006592F0,Render_MapFrame,I,render,re,
 0x006DFE80,Westernize_OnClick,C,ui,re,
 0x00541B90,Westernize_CanClick,C,ui,re,
-0x00772300,Play_OnClick,I,ui,re,
+0x00772300,SinglePlayer_PlayListener,C,ui,re,"bound to play_button by frontend constructor; native signal dispatch runtime-correlated; MP role unestablished; see Engine/native-ui-and-frontend.md"
 0x00AAE91B,operator_delete,C,util,cp,calls free; 33 509 call sites
 0x00408AD0,std_string_dtor,C,util,cp,"__fastcall; frees the buffer when capacity > 15, resets to the empty SSO state; 38 527 call sites"
 0x00409350,std_string_assign,I,util,cp,"(const char*, length); 14 124 call sites"
@@ -221,3 +221,18 @@ va,name,conf,area,src,note
 0x00423A43,ConsoleManager_InitEpilogueSite,C,console,sm,"instruction site NOT function entry; ESI still holds populated manager; verified-current capture boundary"
 0x0042217E,Console_DebugFowToggleSite,C,console,sm,"instruction site NOT function entry; stores toggled AL to 0x00F092FB; registered debug fow branch"
 0x0041F720,Console_TagHandler,C,console,sm,"registered descriptor 0x00F0A2D4; historical runtime transition asynchronous; return is not view/ownership completion"
+0x00754A00,MainMenuController_ctor,C,ui,re,"installs primary vtable 0x00E13DBC; GUI registry +0x704; runtime-correlated capture; see Engine/native-ui-and-frontend.md"
+0x00754DF0,MainMenuController_scalar_dtor,C,ui,re,"primary vtable slot 0; captured controller invalidated before storage release"
+0x00754F90,MainMenuController_Update,C,ui,re,"static lookup chain: registry +0x704 virtual +0x6C mainmenu_panel; panel virtual +0x34 single_player_button"
+0x0076A2F0,SinglePlayerFrontend_ctor,C,ui,re,"installs primary vtable 0x00E14ED0; GUI registry +0x278; binds Play listener; runtime-correlated capture"
+0x0076B030,SinglePlayerFrontend_scalar_dtor,C,ui,re,"primary vtable slot 0; captured controller invalidated before storage release"
+0x0067F1D0,CCurrentGameState_LoadSave,C,loading,re,"successful SP load path calls at 0x0076F8B3; load-completion +0x5BD is distinct from gameplay entry"
+0x009EE510,GuiSignal_DispatchPress,C,ui,re,"EAX=signal at resolved control+0x54; listener virtual +0x8; runtime-correlated for Single Player and Play"
+0x009EE550,GuiSignal_DispatchRelease,C,ui,re,"EAX=signal after press; listener virtual +0x10; runtime-correlated for Single Player and Play"
+0x00718CE0,Topbar_SpeedUpCallback,C,ui,re,"invokes CInGameIdler virtual +0x164; runtime-correlated native chain"
+0x00718CF0,Topbar_SpeedDownCallback,C,ui,re,"invokes CInGameIdler virtual +0x168; runtime-correlated native chain"
+0x0066A0D0,CInGameIdler_SpeedUp,C,ui,re,"virtual +0x164; native speed-increase route to 0x0072EE90"
+0x0066A1B0,CInGameIdler_SpeedDown,C,ui,re,"virtual +0x168; native speed-decrease route to 0x0072EFE0"
+0x0066A2C0,CInGameIdler_TogglePause,C,ui,re,"ECX=idler; toggles byte +0x1538; manual Space and native invocation runtime-correlated"
+0x0064EDB0,CInGameIdler_RequestQuit,C,ui,re,"ECX=idler; virtual +0x110; sets +0x1D20=1; requests exit without save/drain guarantee"
+0x00687A70,Country_ReturnToAI,C,ui,re,"clears human control and constructs/registers CCountryAI; checked route verifies pointer and scheduler membership"

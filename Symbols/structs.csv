@@ -24,13 +24,13 @@ World,0xAEC,humanPlayers,vector<u32>,C,cp,"+0xAEC begin, +0xAF0 end; entry 0 = A
 World,0xB0C,dateHours,u32,C,cp,"24 units/day; raw0 epoch year -5000; 0x029C55C0 offset reaches year0; decode floor(raw/24/365)-5000; 365-day years; see Engine/daily-tick.md#calendar-c"
 World,0xB14,timeAccumulator,f32,C,re,accumulated frame time in ProcessGameTimeAdvance
 World,0xB20,timeStopped,u32,C,re,non-zero -> ProcessGameTimeAdvance returns
-World,0xB24,uiManager,ptr,I,re,
+World,0xB24,activeController,ptr,C,re,"phase-dependent CFrontEnd / CInGameIdler RTTI; SP gameplay-entry readback; not a durable idler pointer"
 World,0xB28,speed,u32,C,cp,"game speed index 0..4"
 World,0xB3C,wars,list,C,re,"head of CWar* list; node +0 payload / +4 previous / +8 next; ctor 0x00931620 installs RTTI CWar vtable 0x00E35118; payload stored at 0x00681B9E; empty-list head set at 0x00681BE5; walked by AI_GetOpinionScore"
 World,0xB40,warsTail,ptr,C,re,"war-list tail node; append writes at 0x00681BBB"
 World,0xB44,warCount,u32,C,re,"linked war-node count; append increments/stores at 0x00681BB8/0x00681BC1"
-World,0xB5C,playerTag,char[4],C,cp,
-World,0xB60,playerIndex,u32,C,cp,player country index
+World,0xB5C,playerTag,char[4],C,cp,"UI perspective; view tag alone does not establish human ownership or AI scheduling"
+World,0xB60,playerIndex,u32,C,cp,"view country ordinal; human control is separately at world+0xAEC"
 World,0xB64,firedOnceEvents,HashTable,C,re,fire_only_once table; insert has no duplicate check and no rehash
 World,0xB94,flagB94,u8,?,re,changes the GP vassal branch of AI_GetOpinionScore
 World,0xBB8,timeBarrier,u8,C,re,"CMP at 0x00682D05; JZ 0x00682D0C skips temporal processing"
@@ -43,7 +43,7 @@ CCountry,0x1C,tag,char[4],C,cp,
 CCountry,0x20,index,u32,C,cp,
 CCountry,0x31,isGreatPower,u8,I,re,
 CCountry,0x68,delayedEvents,vector,C,re,"+0x68/+0x6C; item+0x54 counts days down"
-CCountry,0x208,flag208,u32,?,re,AI branch of Event_Fire requires != 0
+CCountry,0x208,aiObject,CCountryAI*,C,re,"checked observer route requires non-null plus membership in world+0xA4 scheduler; pointer alone is insufficient"
 CCountry,0x37C,aiGate0,u8,?,cp,AI_DailyUpdate requires 0 (human?)
 CCountry,0x37D,aiGate1,u8,?,cp,AI_DailyUpdate requires 0 (disabled?)
 CCountry,0x7B4,armies,list,I,re,military strength source
@@ -198,3 +198,14 @@ CIssueGroup,0x50,index,u32,C,cp,"indexes selected political options for category
 CIssueGroup,0x5C,category,u32,C,cp,"2 selects CCountry+0x860 pointer; GFM slavery correlation only; Engine/political-reform-selection.md"
 CIssueOption,0x54,group,CIssueGroup*,C,cp,"owning group; parser requires group match; static effect follows to index; Engine/political-reform-selection.md"
 CSetPoliticalReformEffect,0x20,targetOption,CIssueOption*,C,cp,"static store only; no arbitrary-write safety or live-transition evidence; Engine/political-reform-selection.md"
+World,0xA4,countryAiScheduler,vector<CCountryAI*>,C,re,"checked observer membership; not a complete AI-definition contract; see Engine/native-ui-and-frontend.md"
+MainMenuController,0x704,guiRegistry,ptr,C,re,"registry virtual +0x6C resolves mainmenu_panel; panel virtual +0x34 resolves single_player_button"
+SinglePlayerFrontend,0x278,guiRegistry,ptr,C,re,"virtual +0x34 resolves play_button in the checked route"
+SinglePlayerFrontend,0x590,selectedSave,string,C,re,"save basename; do not overwrite arbitrary live string storage"
+SinglePlayerFrontend,0x5BC,saveRequest,u8,C,re,"requested load 1; exercised successful update clears it"
+SinglePlayerFrontend,0x5BD,saveComplete,u8,C,re,"exercised successful load sets 1 before Play; not proof of gameplay entry"
+FrontendControl,0x54,signal,embedded,C,re,"narrow resolved Single Player/Play boundary; EAX argument to press/release; not a full GUI layout"
+CInGameIdler,0x1538,paused,u8,C,re,"0/1; TogglePause 0x0066A2C0 runtime-correlated"
+CInGameIdler,0x1D20,quitRequested,u8,C,re,"RequestQuit 0x0064EDB0 sets 1; no save or drain guarantee"
+CInGameIdler,0x1D6C,endgameDialog,ptr,C,re,"matching window visibility +0x67 plus date beyond configured end establishes checked game-over case"
+GuiWindow,0x67,visible,u8,C,re,"narrow endgame-dialog observation; hidden matching window can exist during ordinary pause"

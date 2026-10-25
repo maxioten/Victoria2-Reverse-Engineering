@@ -5,7 +5,7 @@ va,name,kind,conf,src,note
 0x01319730,g_decisionManager,ptr,C,cp,"lists +0xC/+0x10 and +0x28/+0x2C; getter 0x00875040"
 0x01258A74,g_renderDevice,ptr,I,cp,"+0x6BCA0 has-focus byte; +0x6BC44 mirrors the fog-of-war flag"
 0x01258A48,g_issueOptionRegistry,ptr,C,re,"name-indexed CIssue options; lookup 0x00975ED0 / register 0x00975E60; ctor 0x00974CF0; initializer 0x00975DD0 publishes at 0x00975E30; CIssueGroupTrigger parser 0x008C4A70 loads it at 0x008C4AD4 and checks option+0x54 group; complete registry class/contents unknown; Engine/political-reform-selection.md"
-0x012586DC,g_economyDefines,ptr,?,cp,+0x50 market totals; +0x08 date-like value
+0x012586DC,g_economyDefines,ptr,?,cp,"historical name; endgame branch 0x0065548D reads +0xC as configured end date (runtime-correlated); +0x50 market totals / +0x08 date-like interpretation not resolved here"
 0x0125870C,g_provinceSource,ptr,I,re,vt[0x24] returns the province count
 0x01258A98,g_registryLow,ptr,C,re,object registry for type <= 0x1268; events are type 0x27
 0x01258A94,g_registryHigh,ptr,C,re,object registry for type > 0x1268
@@ -85,3 +85,6 @@ va,name,kind,conf,src,note
 0x00F0A2D4,kConsoleTagDescriptor,descriptor,C,sm,"name tag; handler +0x1C=0x0041F720; one country_TAG argument"
 0x00F0A748,kConsoleDebugDescriptor,descriptor,C,sm,"name debug; handler +0x1C=0x00420EB0; one debug-subcommand argument including fow"
 0x00F092FB,g_fogEnabled,u8,C,sm,"debug fow directly toggles; historical runtime 0 reveals map / 1 normal fog; unrelated renderer-state mapping unresolved"
+0x00E13DBC,MainMenuController_vftable,vtable,C,re,"ctor 0x00754A00; slot 0 scalar destructor 0x00754DF0; live identity only; see Engine/native-ui-and-frontend.md"
+0x00E14ED0,SinglePlayerFrontend_vftable,vtable,C,re,"ctor 0x0076A2F0; slot 0 scalar destructor 0x0076B030; live identity only"
+0x00E3C0D8,GuiWindow_vftable,vtable,C,re,"correlated endgame dialog; vtable alone does not establish game over; also require visibility and date"

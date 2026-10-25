@@ -17,6 +17,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [Loading & Initialization](Engine/loading-initialization.md) — game-load finalization, state initialization, subsystem startup, and gameplay entry.
 - [Buttons & Callbacks](Engine/buttons.md) — identified UI/button callbacks and their confidence levels.
 - [Native Console](Engine/console.md) — command registration, bounded descriptor/call layouts, debug/FOW and dispatcher-identity limits.
+- [Native UI & Frontend](Engine/native-ui-and-frontend.md) — named GUI lookup/signals, single-player save/load/Play, speed/pause, observer ownership, game-over detection and native exit.
 - [Utility Functions](Engine/utilities.md) — renamed/reconstructed helper functions.
 - [Reverse Engineering Conclusions](Engine/conclusions.md) — consolidated findings, limitations, and unresolved areas.
 - [Daily Tick](Engine/daily-tick.md) — frame / hourly / daily call chain, `DayTick`, calendar, `Country_DailyUpdate` steps, the AI job queue and why a day spans several frames.
