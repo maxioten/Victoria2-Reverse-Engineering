@@ -5,6 +5,8 @@ va,name,conf,area,src,note
 0x00511340,CCountry_RemoveDebts,C,economy,sm,"RVA 0x00111340; static creditor destruction/vector cleanup and eligible named-principal bank money/lent reductions; direct callers VA 0x00508ACE/0x00518EE6 not shortfall handler"
 0x00508ACE,CCountry_DailyDebtCleanup_site,C,economy,sm,"Callsite not entry; RemoveDebts(true) only if absent from two membership searches with unresolved semantics; not established automatic default write-off"
 0x00518EE6,CCountry_AnnexDebtCleanup_site,C,economy,sm,"Callsite not entry; CCountry::Annex calls RemoveDebts(false); static evidence; see Economy/default-and-debt-cleanup.md"
+0x004DE350,RGO_CalculateOutput,C,economy,sm,"RVA 0x000DE350; efficiency * throughput * recipe base output * record size with >>15 after each multiplication; see Economy/production-identity-and-clearing.md"
+0x00740F8D,RGO_OwnerModifier_UI_site,C,economy,sm,"Instruction label not entry; province+0x188 state; recipe+0xF0 owner type+0x28 indexes state+0x118 population; divided by state+0xC8 RGO capacity; historical UI correlation; see Economy/production-identity-and-clearing.md"
 0x00AB0F91,entry,C,engine,re,PE entry point
 0x009796B0,WinMain,I,engine,re,
 0x009DF550,App_MainLoop,I,engine,re,

@@ -9,6 +9,15 @@ CCreditor,0x0C,destinationOrdinal,u32,C,sm,"Zero skips lender-bank reductions in
 CCreditor,0x18,principal,i64,C,sm,"/32768; no direct principal write identified in reviewed shortfall handler; removal is a separate path"
 CCreditor,0x20,wasPaid,u8,C,sm,"RemoveDebts(true) skips bank reductions for paid entries but still destroys creditors"
 CountryDailyAccounting,0x40,constructionRefunds,i64,C,sm,"Ledger-relative not CCountry+0x40; conditional refund co-credit at VA 0x00524715/0x00524718; static path not universal category coverage"
+CState,0xC8,rgoEmploymentCapacity,u32,C,sm,"Total state RGO capacity; denominator at VA 0x00740F99; see Economy/production-identity-and-clearing.md"
+CState,0x118,populationByType,u32*,C,sm,"Owner POP type index selects 32-bit population at VA 0x00740F9F/0x00740FA8; narrow owner-modifier path"
+CProductionType,0xF0,ownerPopType,ptr,C,sm,"Owner type+0x28 supplies population index; VA 0x00740F39; not province owner country"
+Pop,0x1D4,artisanEconomy,CPopArtisanEconomy*,C,sm,"CPop alias; narrow historical runtime/save correlation; see Economy/production-identity-and-clearing.md"
+CPopArtisanEconomy,0xD0,domesticClearing,i64,C,sm,"/32768 clearing value; not a bounded fraction or established producer-attributed sales"
+CPopArtisanEconomy,0xD8,exportClearing,i64,C,sm,"/32768; historical nonnegative raws 32931-118028 exceed 32768; not a bounded fraction"
+CWorldMarket,0x60,lastSupplyPool,CGoodsPool,C,sm,"Save-correlated last_supply_pool; goods /32768 using mod-load ordinals; not producer sales"
+CStateBuilding,0x150,budget,i64,C,sm,"/32768000; historical equal-level duplicate transfer retained recipient budget; no general merge rule"
+CStateBuilding,0x180,subsidized,u8,C,sm,"Historical toggle correlation; equal-level duplicate transfer retained recipient flag; no unequal-level claim"
 World,0xACC,provinces,CMapProvince**,C,cp,province pointer array
 World,0xADC,dayTickCountries,vector,C,cp,"+0xADC/+0xAE0 country vector of the day tick"
 World,0xAEC,humanPlayers,vector<u32>,C,cp,"+0xAEC begin, +0xAF0 end; entry 0 = AI-controlled"
@@ -69,6 +78,7 @@ CMapProvince,0x12C,ownerIndex,u32,C,re,0 = unowned (skipped by the event scan)
 CMapProvince,0x188,state,CState*,C,re,
 CMapProvince,0x194,popLists,ptr,C,re,per-pop-type lists
 CMapProvince,0x1A8,totalPops,u32,C,re,
+CMapProvince,0x1AC,rgoEmploymentCapacity,u32,C,sm,"CProvince alias; historical runtime/UI correlation; not totalPops copy; see Economy/production-identity-and-clearing.md"
 CMapProvince,0x1BC,clergy,u32,I,re,
 CMapProvince,0x384,delayedEvents,vector,C,re,"+0x384/+0x388"
 CState,0x08,objectType,u32,C,smd,"historical runtime/save correlation: value 47 is a type discriminator; not state or region ID"
