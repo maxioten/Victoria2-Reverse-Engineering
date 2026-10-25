@@ -10,6 +10,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [Checksum](Engine/checksum.md) — how the game calculates the checksum.
 - [Event](Engine/Event_System.md) — How the game creates and manages events
 - [Message Dispatch](Engine/message-dispatch.md) — configurable popup/pause policy, nine instruction-site pairs, and notification/effect boundaries.
+- [Script Execution Boundaries](Engine/script-execution-boundaries.md) — selected-option action execution versus event delivery, static region iteration, and attribution limits.
 - [Game Speed System](Engine/game-speed.md) — speed index, update throttle, temporal processing, and B28 mapping.
 - [RNG System](Engine/rng.md) — random-number list and Mersenne Twister regeneration path.
 - [Country Daily Update](Engine/Country_Daily_Update.md) — How (developing) countries work.

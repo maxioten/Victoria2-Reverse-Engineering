@@ -45,7 +45,6 @@ va,name,conf,area,src,note
 0x00540A70,Country_ScheduleEvent,I,events,re,
 0x008A7CD0,EventManager_DailyScan,C,events,cp,"odd days countries, even days provinces; trigger -> MTTH -> MT roll -> Event_Fire"
 0x008AE380,Event_ComputeMTTHProbability,C,events,re,"probability per million: mode * 1e6 / days, clamped [1, 1e6]"
-0x008A8120,Event_Fire,C,events,re,"thiscall(state, ctx), RET 8; 17 callers"
 0x0042BC68,MessageDispatch_PopupPolicySite_1,C,messages,smd,"instruction site; verified-runtime (historical); policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x0042BE42; not a function entry"
 0x0042BE42,MessageDispatch_NoPopupContinuationSite_1,C,messages,smd,"instruction site; verified-static-callsites; later notification handling; not a function entry"
 0x004934F8,MessageDispatch_PopupPolicySite_2,C,messages,smd,"instruction site; verified-static-callsites; policy EBX popup +0x0E/pausepopup +0x10; continuation VA 0x00493663; not a function entry"
@@ -64,8 +63,11 @@ va,name,conf,area,src,note
 0x00909342,MessageDispatch_NoPopupContinuationSite_8,C,messages,smd,"instruction site; verified-static-callsites; later notification handling; not a function entry"
 0x0093D818,MessageDispatch_PopupPolicySite_9,C,messages,smd,"instruction site; verified-static-callsites; policy EDI popup +0x0E/pausepopup +0x10; continuation VA 0x0093D9F2; not a function entry"
 0x0093D9F2,MessageDispatch_NoPopupContinuationSite_9,C,messages,smd,"instruction site; verified-static-callsites; later notification handling; not a function entry"
+0x008A8120,Event_Fire,C,events,re,"thiscall(state, ctx), RET 8; 17 callers; delivery/setup and immediate effects; distinct from selected-option action 0x00907E00; delivery semantics not rejected by its absence on observed option path; Engine/script-execution-boundaries.md"
 0x008AEB00,EventOption_EvaluateAIChance,C,events,re,pure
 0x00907D40,EventOptionCommand_ctor,I,events,re,0xB0-byte chosen-option command
+0x00907E00,SelectedEventOptionAction_Execute,C,events,cp,"thiscall ECX action; synchronous call 0x008A61F0; +0x64 selected index +0x68 snapshot +0x40/+0x44 resolver; two country actions only; no universal attribution; Engine/script-execution-boundaries.md"
+0x008A61F0,EventOption_Execute,C,events,cp,"register-based helper: EDI event ESI selected index one stack scope; RET 4; static call at 0x009089CC; runtime correlation belongs to action boundary only; Engine/script-execution-boundaries.md"
 0x008A8F30,EventWindow_ctor,C,events,re,"RET 0x50; dead pop loop at 0x008A9434..0x008A9562"
 0x008A88D0,EventScope_Copy,C,events,re,copies the 0x48-byte scope
 0x006480E0,Window_Show,I,ui,re,
@@ -82,6 +84,8 @@ va,name,conf,area,src,note
 0x008D28C0,CCasusBelliTrigger_Evaluate,C,triggers,cp,calls CBManager_IsAnyCBUsable
 0x008D3F50,Trigger_ParseCountryRef,C,triggers,cp,"THIS = 0x405, FROM = 0x3DE"
 0x008B93B0,Trigger_ParseBool,C,triggers,cp,yes = token 0x29F
+0x008C5DA0,CRegionScopeTrigger_Evaluate,C,triggers,cp,"ECX this; one stack scope; RET 4; region this+0x1C; first matching province true exhaustion false; static only; Engine/script-execution-boundaries.md"
+0x00888BA0,CRegionScopeEffect_Execute,C,effects,cp,"ECX this; two stack args; RET 8; region this+0x3C list +0x8 filter this+0x20 children this+0x8; static only not source-site attribution; Engine/script-execution-boundaries.md"
 0x00882A40,CClrCountryFlagEffect_Execute,C,effects,cp,"vtable 0x00E2ACC0 slot 11; thiscall(scope, arg2), RET 8"
 0x00882BA0,CClrGlobalFlagEffect_Execute,C,effects,cp,vtable 0x00E2ADA0 slot 11; RET 8
 0x008829E0,CSetCountryFlagEffect_Execute,C,effects,cp,vtable 0x00E2AC88 slot 11

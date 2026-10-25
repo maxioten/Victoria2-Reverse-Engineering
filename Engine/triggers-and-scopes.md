@@ -97,6 +97,20 @@ stack arguments, `RET 0x8`. Ghidra's parameter count follows usage, not the conv
 | `CSetGlobalFlagEffect` | `0x00E2AD68` | `0x00882B60` |
 | `CClrGlobalFlagEffect` | `0x00E2ADA0` | `0x00882BA0` |
 
+## Region scope iteration
+
+Preferred VA `0x00888BA0` (`CRegionScopeEffect::Execute`) receives `this` in `ECX`
+and two stack arguments (`ret 8`): region `this+0x3C`, province list `region+0x8`,
+filter `this+0x20`, child effect chain `this+0x8`. `CRegionScopeTrigger::Evaluate`
+at `0x008C5DA0` receives `this` in `ECX` and one stack argument (`ret 4`), uses
+region `this+0x1C`, and returns on the first matching province.
+
+These are static mechanisms, not verified runtime attribution boundaries.
+GFM's `any_land_province` names a custom region, not a native engine operator;
+region cardinality does not equal a short-circuited visit count. See
+[Script execution boundaries](script-execution-boundaries.md#region-scope-iteration-static-only)
+for the executable/source pins, signatures, and limits.
+
 ## Keywords **[C]**
 
 All script keywords get a token id in `Tokens_RegisterKeywords` (`0x00C381C0`), pattern
