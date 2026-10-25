@@ -80,6 +80,8 @@ CNationalFocus,0x54,railroad,u32,I,re,
 CNationalFocus,0x7C,promotions,vector,I,re,"+0x7C/+0x80"
 CEventScope,0x08,countryTag,u32,C,cp,
 CEventScope,0x0C,countryIndex,u32,C,cp,
+CEventScope,0x1C,selectionActive,u8,C,cp,"+0x1C stays 1 until a filter exit of 0x00876240 clears it"
+CEventScope,0x1D,selectionChosen,u8,C,cp,"set to 1 by 0x00876240 on the success path"
 CEventScope,0x24,thisScope,CEventScope*,C,cp,initialised to self
 CEventScope,0x30,fromRef,u64,C,cp,"+0x30/+0x34"
 TriggerBlock,0x00,vftable,ptr,C,cp,"CAndTrigger / COrTrigger / CNotTrigger; size 0x1C"

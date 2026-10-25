@@ -42,12 +42,16 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [National Focus AI](AI/Ai_national_focus.md) — The factors that lead the AI ​​to focus national attention on its country (soldiers, capital, etc.)
 - [Relations AI](AI/Ai_relations.md) — Factors influencing an AI to accept an alliance, military access, etc
 - [AI Daily Jobs](AI/Ai_daily_jobs.md) — the AI queue at `world+0xB84`, the 20 ms per-frame budget, `AI_CountryDailyJob_Update` and `AI_TargetScan`.
+- [Random selection over an effect list](AI/Ai_random_selection.md) — `FUN_00876240`: the `rand() % count` pick over 8-byte pairs, its eleven filter exits and the two result bytes of `CEventScope`.
 
 ### 📁 Patches
 - [Patch Registry](Patch/patch.md) — **all currently documented patch targets**, kept separate from vanilla behavior.
 
 ### 📁 Symbols
 - [Symbols (CSV)](Symbols/README.md) — function names, globals and struct offsets as CSV (`va, name, conf, area, src, note`).
+
+### 📁 Tools
+- [v2probe](tools/v2probe/README.md) — The Grand Loader plugin with read-only hooks for the AI job; resolves live object types through MSVC RTTI instead of guessing offsets.
 
 ### 📁 CheatEngineTable 
 - Cheat Engine Table — memory tables, dynamic analysis, and runtime address mapping.
