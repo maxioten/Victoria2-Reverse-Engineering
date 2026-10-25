@@ -1,0 +1,7 @@
+pefile>=2024.8.26
+capstone>=5,<6
+lief>=0.17
+unicorn>=2.1.4,<3
+frida>=17.24.3,<18
+pyghidra>=3,<4
+jsonschema>=4,<5

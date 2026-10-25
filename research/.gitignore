@@ -1,0 +1,16 @@
+.venv/
+.cache/
+projects/
+evidence/generated/
+__pycache__/
+*.pyc
+*.exe
+*.dll
+*.gpr
+*.rep/
+
+# Keep generated/private material local
+.reverify/
+evidence/
+docs/OPERACION.md
+scripts/poweroff_when_usage_exhausted.py

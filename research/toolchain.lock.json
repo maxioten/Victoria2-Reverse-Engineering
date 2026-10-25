@@ -1,0 +1,47 @@
+{
+  "ghidra": {
+    "tag": "Ghidra_12.1.4_build",
+    "published_at": "2026-09-21T17:38:59Z",
+    "release": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.1.4_build",
+    "url": "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip",
+    "sha256": "ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db",
+    "asset": "tools/downloads/ghidra_12.1.4_PUBLIC_20260921.zip",
+    "verified": true
+  },
+  "jdk": {
+    "tag": "jdk-25.0.4.1+1",
+    "published_at": "2026-08-19T14:49:26Z",
+    "release": "https://github.com/adoptium/temurin25-binaries/releases/tag/jdk-25.0.4.1%2B1",
+    "url": "https://github.com/adoptium/temurin25-binaries/releases/download/jdk-25.0.4.1%2B1/OpenJDK25U-jdk_x64_linux_hotspot_25.0.4.1_1.tar.gz",
+    "sha256": "dbb698396d478e7fa2b1e50f4103324b2a99b90569ee27c33f2261f9215cf41e",
+    "asset": "tools/downloads/OpenJDK25U-jdk_x64_linux_hotspot_25.0.4.1_1.tar.gz",
+    "verified": true
+  },
+  "rizin": {
+    "tag": "v0.9.1",
+    "published_at": "2026-06-29T17:48:24Z",
+    "release": "https://github.com/rizinorg/rizin/releases/tag/v0.9.1",
+    "url": "https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz",
+    "sha256": "9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf",
+    "asset": "tools/downloads/rizin-v0.9.1-static-x86_64.tar.xz",
+    "verified": true
+  },
+  "x64dbg": {
+    "tag": "2026.05.27",
+    "published_at": "2026-05-27T13:04:55Z",
+    "release": "https://github.com/x64dbg/x64dbg/releases/tag/2026.05.27",
+    "url": "https://github.com/x64dbg/x64dbg/releases/download/2026.05.27/snapshot_2026-05-27_12-11.zip",
+    "sha256": "d41966dfc5b435a372798245300ca0ab7bb8e48bdbf48512c6fb20fcca427697",
+    "asset": "tools/downloads/snapshot_2026-05-27_12-11.zip",
+    "verified": true
+  },
+  "uv": {
+    "tag": "0.13.4",
+    "published_at": "2026-10-20T15:24:59Z",
+    "release": "https://github.com/astral-sh/uv/releases/tag/0.13.4",
+    "url": "https://github.com/astral-sh/uv/releases/download/0.13.4/uv-x86_64-unknown-linux-gnu.tar.gz",
+    "sha256": "2b428396f12572d4429cf210ca234dd599a33b3af0958a4d5ed569d63e3f344f",
+    "asset": "tools/downloads/uv-x86_64-unknown-linux-gnu.tar.gz",
+    "verified": true
+  }
+}

@@ -66,3 +66,13 @@ Experimental modifications are explicitly separated from confirmed vanilla behav
 
 - These documents are derived from the reverse-engineering notes supplied for this project. Unconfirmed interpretations remain labeled as such.
 - **Cheat Engine Credits:** Special thanks to **Vesper** for the research, tables, and memory structures included in the `CheatEngineTable Version` directory.
+
+
+## Laboratorio de investigación reproducible
+
+Los avances contrastados, modelos, verificadores, harnesses y scripts Ghidra están
+en [research/](research/README.md). Incluye contratos de POPs, economía, IA, eventos
+y combate con alcance, contraejemplos y procedimientos de reproducción explícitos.
+Los binarios del juego, proyectos Ghidra, volcados y recibos generados permanecen
+locales. Ver [alcance y preparación](research/docs/PUBLICATION.md) y
+[resumen de la última validación local](research/validation-summary.json).

@@ -1,0 +1,15 @@
+attrs==26.1.0
+capstone==5.0.9
+frida==17.24.3
+jpype1==1.5.2
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+lief==1.0.0
+packaging==26.3
+pefile==2024.8.26
+pyghidra==3.1.0
+referencing==0.37.0
+reverify @ git+https://github.com/2akouwu/reverify.git@f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923
+rpds-py==2026.9.1
+unicorn==2.1.4
+z3-solver==5.3.1.0
