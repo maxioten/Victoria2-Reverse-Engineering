@@ -141,7 +141,7 @@
                          B28=3                       B28=4
                             │                           │
                             ▼                           ▼
-                          0.5f                       0.0004f
+                          0.5f                       0.0001f
                             │                           │
                             ▼                           ▼
                        00F17898                    00E45BB8
@@ -152,7 +152,7 @@
                             COMPLETE VANILLA TABLE
                                           │
                                           ▼
-                         4.0 / 2.0 / 1.0 / 0.5 / 0.0004
+                         4.0 / 2.0 / 1.0 / 0.5 / 0.0001
 ```
 
 ## MAP 1A — VANILLA UPDATE TIME THROTTLE TABLE
@@ -347,7 +347,7 @@ FUN_00682BD0
 │      ├── B28=1 → 2.0f
 │      ├── B28=2 → 1.0f
 │      ├── B28=3 → 0.5f
-│      └── B28=4 → 0.0004f
+│      └── B28=4 → 0.0001f
 │
 ├── 5. Selects TABLE[B28]
 │
@@ -382,7 +382,7 @@ MOVSS XMM0,[DAT_00F17898]
 
 00682C59
 MOVSS XMM0,[DAT_00E45BB8]
-→ [EBP-0x14] = 0.0004f
+→ [EBP-0x14] = 0.0001f
 ```
 
 ## MAP 2B — EXACT TABLE ORDER
@@ -434,7 +434,7 @@ MOVSS XMM0,[DAT_00E45BB8]
                        [EBP-0x14]
                             │
                             ▼
-                        0.0004f
+                        0.0001f
                             │
                             ▼
                        DAT_00E45BB8
@@ -450,7 +450,7 @@ MOVSS XMM0,[DAT_00E45BB8]
 │  1  │ EBP-0x20   │ 00F17B54   │ 2.0f                     │
 │  2  │ EBP-0x1C   │ 00F092FC   │ 1.0f                     │
 │  3  │ EBP-0x18   │ 00F17898   │ 0.5f                     │
-│  4  │ EBP-0x14   │ 00E45BB8   │ 0.0004f                  │
+│  4  │ EBP-0x14   │ 00E45BB8   │ 0.0001f                  │
 └─────┴────────────┴────────────┴──────────────────────────┘
 ```
 
@@ -461,7 +461,7 @@ IEEE-754:
 2.0f      = 00 00 00 40
 1.0f      = 00 00 80 3F
 0.5f      = 00 00 00 3F
-0.0004f   = 17 B7 D1 38
+0.0001f   = 17 B7 D1 38
 ```
 
 ## MAP 2D — ACCUMULATOR COMPARISON
@@ -598,7 +598,7 @@ This is an important connection between the two temporal systems.
 │ DAT_00E45BB8                                            │
 ├─────────────────────────────────────────────────────────┤
 │ Address: 00E45BB8                                       │
-│ Vanilla value: 0.0004f                                 │
+│ Vanilla value: 0.0001f                                 │
 │ Bytes: 17 B7 D1 38                                      │
 │ Speed usage: B28=4                                     │
 └─────────────────────────────────────────────────────────┘
@@ -611,7 +611,7 @@ B28=4
    ↓
 DAT_00E45BB8
    ↓
-0.0004f
+0.0001f
 ```
 
 Important:
@@ -725,7 +725,7 @@ DAT_00F092FC
         TABLE 1 — THROTTLE          TABLE 2 — TEMPORAL
         DAT_00F0956C                FUN_00682BD0
                 │                           │
-       0.03/0.03/0.03/0.04/0.06     4.0/2.0/1.0/0.5/0.0004
+       0.03/0.03/0.03/0.04/0.06     4.0/2.0/1.0/0.5/0.0001
                 │                           │
                 └─────────────┬─────────────┘
                               │
@@ -753,7 +753,7 @@ B28
 │  1  │ SLOW_SPEED       │ SLOW         │ 0.03f                │ 2.0f         │
 │  2  │ NORMAL_SPEED     │ NORMAL       │ 0.03f                │ 1.0f         │
 │  3  │ FAST_SPEED       │ FAST         │ 0.04f                │ 0.5f         │
-│  4  │ FASTEST_SPEED    │ FASTEST      │ 0.06f                │ 0.0004f      │
+│  4  │ FASTEST_SPEED    │ FASTEST      │ 0.06f                │ 0.0001f      │
 └─────┴──────────────────┴──────────────┴──────────────────────┴──────────────┘
 ```
 
@@ -833,7 +833,7 @@ B28
 │ 00F17B54           │ B28=1 entry → 2.0f                        │
 │ 00F092FC           │ B28=2 entry → 1.0f                        │
 │ 00F17898           │ B28=3 entry → 0.5f                        │
-│ 00E45BB8           │ B28=4 entry → 0.0004f                     │
+│ 00E45BB8           │ B28=4 entry → 0.0001f                     │
 │ 012588F0           │ Shared temporal factor                    │
 │ [ESI+0xB14]        │ Temporal accumulator                      │
 │ [ESI+0xB20]        │ State that can stop the function          │
@@ -856,7 +856,7 @@ The Victoria II speed system uses:
              00685620                  00682BD0
                 │                           │
                 ▼                           ▼
-       0.03/0.03/0.03/0.04/0.06   4.0/2.0/1.0/0.5/0.0004
+       0.03/0.03/0.03/0.04/0.06   4.0/2.0/1.0/0.5/0.0001
                 │                           │
                 ▼                           ▼
        DAT_013F2AE8                [ESI+0xB14]
@@ -888,7 +888,7 @@ must be considered experimental patches, not vanilla behavior.
 
 # MAP 11 — WHY MAX SPEED RENDERS AT ~20 FPS (2026-10)
 
-At the fastest speed the `FUN_00682BD0` threshold is 0.0004 s, so a new day starts on practically every
+At the fastest speed the `FUN_00682BD0` threshold is 0.0001 s, so a new day starts on practically every
 frame and the game spends almost all its time inside the daily tick. During a tick, the only frames drawn
 are the ones `UpdateTimeThrottle` (`0x00685620`, ~1400 calls a day from 14 sites in `DayTick`,
 `Economy_Update` and `WorldMarketUpdate`) allows: one every

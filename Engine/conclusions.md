@@ -88,17 +88,12 @@ Desired:
 
 ## PERIODIC ECONOMIC PROCESSING
 
-`FUN_006859C0` appears to be a periodic calendar/economic accounting routine.
+`FUN_006859C0` is `DayTick`, the daily world tick. `Update_World_and_Advance_Time`
+advances the date by 24 hours and calls it at `0x00683AB1`.
+See [daily-tick.md](daily-tick.md) and
+[../Economy/economy-daily-path.md](../Economy/economy-daily-path.md).
 
-Working name:
-
-```text
-Economy_ProcessMonthlyTick
-```
-
-but the exact period still requires final calendar confirmation.
-
-It appears to:
+Its economic/calendar work includes:
 
 ```text
 determine calendar period
@@ -229,8 +224,8 @@ Private accumulators followed by a merge are the safer long-term design.
 +-- The worker-thread framework exists, but the actual expensive worker
 |   body is still being traced through the object at [ESI+0x18].
 |
-+-- FUN_006859C0 is currently best understood as a periodic economic /
-|   calendar processing routine. "Monthly" is still a working name.
++-- FUN_006859C0 is DayTick, called once per game day after the
+|   world date advances by 24 hours.
 |
 +-- FUN_00662010 is currently best understood as a one-time game-load
 |   finalization and gameplay-entry routine.

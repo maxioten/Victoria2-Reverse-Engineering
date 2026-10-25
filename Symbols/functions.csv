@@ -6,7 +6,7 @@ va,name,conf,area,src,note
 0x00633800,App_ctor,C,engine,cp,"version string std::string(""V2 v3.04"", 8) built at 0x00633826"
 0x00654D80,CInGameIdler_Update,C,tick,cp,"per-frame in-game function; CInGameIdler vtable slot at 0x00E0A350; contains ProcessGameTimeAdvance"
 0x00662010,Game_FinalizeLoadAndEnterGameplay,I,loading,re,"one-time load finalisation; CInGameIdler vtable slot 0x00E0A358; ends with state transition to 0xB"
-0x00682BD0,ProcessGameTimeAdvance,C,speed,re,"accumulates frame time at world+0xB14 and compares it with a per-speed table (4.0/2.0/1.0/0.5/0.0004)"
+0x00682BD0,ProcessGameTimeAdvance,C,speed,re,"accumulates frame time at world+0xB14 and compares it with a per-speed table (4.0/2.0/1.0/0.5/0.0001)"
 0x00682EC0,Update_World_and_Advance_Time,C,tick,cp,"one game hour per call: ADD [world+0xB0C],0x18 at 0x00682FA5; DayTick at 0x00683AB1"
 0x0072ECF0,CHourlyTickCommand_Execute,C,tick,cp,"vtable 0x00E12414 slot 6 (+0x18); calls Update_World_and_Advance_Time at 0x0072ECFA"
 0x006859C0,DayTick,C,tick,cp,"once per game day: provinces loop (0x00685B40), countries loop from index 1 (0x00685EC0), events (0x006861E8); old name Economy_ProcessMonthlyTick is wrong"
