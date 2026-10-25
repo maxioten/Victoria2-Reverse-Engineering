@@ -32,6 +32,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 * [Banking and Credit](Economy/banking-and-credit.md) — loan principal, reserves, interest transfers and the unidentified state-to-POP payout path.
 * [POP and Factory Storage](Economy/object-storage.md) — payload versus linked-node extents, traversal and factory injection fields.
 * [Factory Construction](Economy/factory-construction.md) — factory construction validation, UI gates, state/type restrictions, and civilization checks.
+* [Default & Debt Cleanup](Economy/default-and-debt-cleanup.md) — separates interest-shortfall handling, conditional construction refunds, and guarded creditor removal.
 * [Economy Daily Path](Economy/economy-daily-path.md) — the daily economy call path, per-pop list walks, shared state, fixed-point price bounds (2^15) and corrections.
 
 

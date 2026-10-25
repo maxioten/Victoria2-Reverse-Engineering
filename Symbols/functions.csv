@@ -1,4 +1,10 @@
 va,name,conf,area,src,note
+0x00523C30,CCountry_PayDailyInterest,C,economy,sm,"RVA 0x00123C30; accumulated shortfall threshold calls handler at VA 0x005241CD; narrow historical runtime correlation; see Economy/default-and-debt-cleanup.md"
+0x005241F0,CCountry_InterestShortfallHandler,C,economy,sm,"RVA 0x001241F0; historical runtime invocation only; static body applies bad_debtor (native literal bad_debter)/in_bankrupcy and notification/construction/factory cleanup; no RemoveDebts call or established principal write-off"
+0x005246F7,Default_ConstructionRefund_site,C,economy,sm,"Instruction label not entry; conditional canceled-construction refund to treasury and daily ledger+0x40; static only not universal bankruptcy refund; see Economy/default-and-debt-cleanup.md"
+0x00511340,CCountry_RemoveDebts,C,economy,sm,"RVA 0x00111340; static creditor destruction/vector cleanup and eligible named-principal bank money/lent reductions; direct callers VA 0x00508ACE/0x00518EE6 not shortfall handler"
+0x00508ACE,CCountry_DailyDebtCleanup_site,C,economy,sm,"Callsite not entry; RemoveDebts(true) only if absent from two membership searches with unresolved semantics; not established automatic default write-off"
+0x00518EE6,CCountry_AnnexDebtCleanup_site,C,economy,sm,"Callsite not entry; CCountry::Annex calls RemoveDebts(false); static evidence; see Economy/default-and-debt-cleanup.md"
 0x00AB0F91,entry,C,engine,re,PE entry point
 0x009796B0,WinMain,I,engine,re,
 0x009DF550,App_MainLoop,I,engine,re,

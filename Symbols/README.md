@@ -21,3 +21,10 @@ were found in that work. Copied here as of 2026-10-11.
 - Console initializer/epilogue and descriptor entries are detailed in [Engine/console.md](../Engine/console.md). An epilogue or toggle site is not a function entry. Console record rows marked `I` retain current implementation layouts without a complete native ABI/ownership audit.
 - File offsets: `.text` = VA − 0x400C00, `.rdata` = VA − 0x401A00, `.data` = VA − 0x402600.
 
+Rows marked `sm` are the independent [Default & Debt Cleanup](../Economy/default-and-debt-cleanup.md)
+export from [Smedley a87832e](https://github.com/adrunkhuman/smedley_kernel/blob/a87832e6196168b6b6ac82701dc3f1dd95732848/mappings/v2game-3.04.toml).
+That note pins the supported executable SHA-256 and distinguishes historical
+runtime invocation from static body/callsite evidence. A `C` row confirms only
+its narrow field or code site, not complete default outcomes; rows named
+`*_site` are labels, not function entry points.
+

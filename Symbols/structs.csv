@@ -1,4 +1,14 @@
 struct,offset,name,type,conf,src,note
+CCountry,0xE78,treasury,i64,C,sm,"/32768; conditional refund at VA 0x005246F7/0x00524701; not universal bankruptcy recovery"
+CCountry,0xE88,bank,CBank*,C,sm,"Narrow historical runtime correlation; see Economy/default-and-debt-cleanup.md"
+CCountry,0xE8C,creditorsBegin,CCreditor**,C,sm,"Creditor vector begin; RemoveDebts walks this vector; not general default write-off evidence"
+CCountry,0xE90,creditorsEnd,CCreditor**,C,sm,"Creditor vector end reset by RemoveDebts at VA 0x00511424"
+CBank,0x10,money,i64,C,sm,"/32768; eligible named-principal reduction in RemoveDebts with zero clamp; not normal repayment"
+CBank,0x18,moneyLent,i64,C,sm,"/32768; eligible named-principal reduction in RemoveDebts with zero clamp"
+CCreditor,0x0C,destinationOrdinal,u32,C,sm,"Zero skips lender-bank reductions in RemoveDebts; does not prevent creditor destruction"
+CCreditor,0x18,principal,i64,C,sm,"/32768; no direct principal write identified in reviewed shortfall handler; removal is a separate path"
+CCreditor,0x20,wasPaid,u8,C,sm,"RemoveDebts(true) skips bank reductions for paid entries but still destroys creditors"
+CountryDailyAccounting,0x40,constructionRefunds,i64,C,sm,"Ledger-relative not CCountry+0x40; conditional refund co-credit at VA 0x00524715/0x00524718; static path not universal category coverage"
 World,0xACC,provinces,CMapProvince**,C,cp,province pointer array
 World,0xADC,dayTickCountries,vector,C,cp,"+0xADC/+0xAE0 country vector of the day tick"
 World,0xAEC,humanPlayers,vector<u32>,C,cp,"+0xAEC begin, +0xAF0 end; entry 0 = AI-controlled"
