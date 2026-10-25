@@ -28,6 +28,10 @@ tagged with how sure we are.
 
 ## 1. Big picture
 
+The configurable notification popup/pause paths are documented separately in
+[Message dispatch](message-dispatch.md). Skipping those presentation blocks does not suppress
+scripted effects or AI option choices, and does not cover every event window.
+
 ```
 LOAD TIME
   LoadingStartScreen (loading screen)

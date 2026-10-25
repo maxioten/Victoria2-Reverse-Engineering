@@ -9,6 +9,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [Entity Identity](Engine/entity-identity.md) — serialized state IDs, shared regions, and limits of POP identity across transitions.
 - [Checksum](Engine/checksum.md) — how the game calculates the checksum.
 - [Event](Engine/Event_System.md) — How the game creates and manages events
+- [Message Dispatch](Engine/message-dispatch.md) — configurable popup/pause policy, nine instruction-site pairs, and notification/effect boundaries.
 - [Game Speed System](Engine/game-speed.md) — speed index, update throttle, temporal processing, and B28 mapping.
 - [RNG System](Engine/rng.md) — random-number list and Mersenne Twister regeneration path.
 - [Country Daily Update](Engine/Country_Daily_Update.md) — How (developing) countries work.
