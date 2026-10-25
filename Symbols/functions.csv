@@ -23,6 +23,7 @@ va,name,conf,area,src,note
 0x0068F390,Entity_RegisterSpatial,I,tick,cp,"entity / spatial registration with a TBB parallel_for inside; 19 047 calls/day"
 0x00957EA0,Pop_MonthlyUpdate,I,pops,re,"called from Country_DailyUpdate when pop.id % month_length == day_of_month"
 0x004B9250,Pop_MergeEmpty,I,pops,re,merges a pop that reached size 0 into another of the same type
+0x004CDC60,CState_ctor,C,states,smd,"verified-static-callsites; allocations at callsites VAs 0x004FC0CB/0x00521785/0x005218FB establish 0x290 extent; not full layout verification; Engine/entity-identity.md"
 0x004BA430,Migration_Distribute,I,pops,re,
 0x0054B200,std_sort,I,util,re,MSVC std::sort instance used by migration
 0x0092E290,CountryRelation_DailyPurge,I,diplomacy,re,"called from Country_DailyUpdate for every pair (0x0050ABF0); purges relation lists +0x50/+0x2C/+0x30/+0x28/+0x20"

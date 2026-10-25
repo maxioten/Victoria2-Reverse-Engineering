@@ -71,15 +71,24 @@ CMapProvince,0x194,popLists,ptr,C,re,per-pop-type lists
 CMapProvince,0x1A8,totalPops,u32,C,re,
 CMapProvince,0x1BC,clergy,u32,I,re,
 CMapProvince,0x384,delayedEvents,vector,C,re,"+0x384/+0x388"
+CState,0x08,objectType,u32,C,smd,"historical runtime/save correlation: value 47 is a type discriminator; not state or region ID"
+CState,0x0C,persistentStateId,u32,C,smd,"serialized state ID; historical runtime/save correlation (Brandenburg 750); not durable across all transitions"
 CState,0x48,provinceIds,vector,I,re,
 CState,0x60,buildings,ptr,I,re,
 CState,0x68,factoryCount,u32,C,re,< 8 to build
 CState,0x84,colonyStatus,u32,C,re,> 0 = colonial
+CState,0x250,region,CRegion*,C,smd,"historical runtime correlation; owner-specific states can share region pointer/key"
+CRegion,0x18,key,std::string,C,smd,"historical runtime correlation: PRU_549; region definition key not current owner/state identity"
+CRegion,0x34,displayName,std::string,C,smd,"historical runtime correlation: Brandenburg; RTTI/contiguous instances give observed extent 0x108; not a full layout"
 CStateBuilding,0x20,level,u32,I,re,
 CStateBuilding,0x188,closed,u8,I,re,
 CStateBuilding,0x224,nextInState,ptr,I,re,
+Pop,0x0C,id,u32,C,smd,"CPop current in-process/serialized ID; historical correlations do not prove permanent identity; Engine/entity-identity.md"
 Pop,0x58,size,u32,C,re,
-Pop,0x6C,culture,u32,C,re,
+Pop,0x64,province,CProvince*,I,smd,"current reader/candidate scope dimension; referenced province ID at +0x58; not unique identity"
+Pop,0x68,popType,ptr,I,smd,"current reader/candidate descriptive dimension; referenced type ID at +0x28; not unique identity"
+Pop,0x6C,culture,ptr,C,smd,"narrow static/save correlation; culture key at referenced object +0x18; not unique identity"
+Pop,0x70,religion,ptr,C,smd,"narrow static/save correlation; religion key at referenced object +0x10; not +0x2C; not unique identity"
 Pop,0x27C,next,Pop*,C,re,
 StockpileHolder,0x08,goodPresent,u8[],C,re,index by good
 StockpileHolder,0x48,stockpile,vector<i64>,C,re,"+0x48/+0x4C; 8-byte entries"

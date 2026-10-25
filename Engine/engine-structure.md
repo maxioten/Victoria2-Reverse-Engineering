@@ -1,5 +1,8 @@
 # PART II — GENERAL ENGINE STRUCTURE, ECONOMY, CONSOLE AND FOG OF WAR
 
+For state IDs, shared region definitions, and POP identity limits, see
+[Entity identity](entity-identity.md). These narrow findings do not establish full object layouts.
+
 ```text
 00AB0F91
   ENTRY

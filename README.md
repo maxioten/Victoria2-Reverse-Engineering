@@ -6,6 +6,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 
 ### 📁 Engine
 - [Engine Structure](Engine/engine-structure.md) — main loop, subsystem relationships, console, events, rendering, loans, and general engine architecture.
+- [Entity Identity](Engine/entity-identity.md) — serialized state IDs, shared regions, and limits of POP identity across transitions.
 - [Checksum](Engine/checksum.md) — how the game calculates the checksum.
 - [Event](Engine/Event_System.md) — How the game creates and manages events
 - [Game Speed System](Engine/game-speed.md) — speed index, update throttle, temporal processing, and B28 mapping.
