@@ -159,7 +159,7 @@ va,name,conf,area,src,note
 0x0068F340,Vector_Equals,I,util,re,
 0x00676500,ResignCommand_Handle,C,ui,re,"compares the command with ""RESIGN""; calls [this+8]->vt[0x114/4]"
 0x0067D940,Engine_Shutdown,I,engine,re,
-0x00420EB0,Console_Execute,C,console,re,"central console dispatcher; debug cb_use / cb_countries / cb_state"
+0x00420EB0,Console_DebugHandler,C,console,sm,"registered debug descriptor 0x00F0A748; accepts fow; universal dispatcher role not established; see Engine/console.md"
 0x0099DA20,Render_InitRestore,I,render,re,
 0x006592F0,Render_MapFrame,I,render,re,
 0x006DFE80,Westernize_OnClick,C,ui,re,
@@ -182,3 +182,7 @@ va,name,conf,area,src,note
 0x007E1DC0,FlagAtlas_Index,I,flags,cp,"references flagfiles.txt/.tga strings; no D3DX calls"
 0x0084B690,AI_CountryDailyJob_Update,I,ai,cp,"vtable slot 0x00E27738; AI object +0x38 country index; per AI country per day from AI_CountryFrameJob (~9.7 ms/day); sums child values, updates sub-AIs, 8x FUN_0084EF30"
 0x0084B0F0,AI_TargetScan,I,ai,cp,"vtable slot 0x00E2773C; loops every country, tests self+0xBE8[other]+0x34 (relation miss, 90% of its samples at 0x0084B29D); ~5.5 ms/day"
+0x00423990,ConsoleManager_PopulateCommands,C,console,sm,"static initializer; EAX manager retained in ESI; appends descriptor pointers with native stride 0x4C; see Engine/console.md"
+0x00423A43,ConsoleManager_InitEpilogueSite,C,console,sm,"instruction site NOT function entry; ESI still holds populated manager; verified-current capture boundary"
+0x0042217E,Console_DebugFowToggleSite,C,console,sm,"instruction site NOT function entry; stores toggled AL to 0x00F092FB; registered debug fow branch"
+0x0041F720,Console_TagHandler,C,console,sm,"registered descriptor 0x00F0A2D4; historical runtime transition asynchronous; return is not view/ownership completion"

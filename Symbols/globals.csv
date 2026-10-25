@@ -18,7 +18,7 @@ va,name,kind,conf,src,note
 0x012588EC,g_timeState1,?,I,re,written by ProcessGameTimeAdvance
 0x012588F0,g_timeFactor,f32,I,re,"x0.95 / x0.9 / +0.5 in ProcessGameTimeAdvance; UpdateTimeThrottle uses (g_timeFactor + 1.0)"
 0x013F2AE8,g_throttleScale,f32,I,re,multiplies the throttle table entry
-0x013F080C,g_fogOfWar,u8,C,re,toggled by the console command fow
+0x013F080C,g_fogOfWar,u8,I,re,"historical rendering-state label; registered debug fow directly writes 0x00F092FB; relationship unresolved; see Engine/console.md"
 0x012586D7,g_aiLogging,u8,I,re,gates AI debug log lines
 0x01318E5C,g_aiWarStrengthRatio,?,?,cp,strength-ratio gate in AI_ScoreWarTargets (an AI define)
 0x00F0ECF0,g_mtState,u32[624],C,re,Mersenne Twister state
@@ -81,3 +81,7 @@ va,name,kind,conf,src,note
 0x00E439F8,CWorkerThread_vftable,vtable,C,re,
 0x00E38B28,CRngEngine_vftable,vtable,C,re,
 0x00E0A7E4,CResignTarget_vftable,vtable,?,re,"set by FUN_00676240; slot 0x114/4 = 0x009C4300 (not proven to be the resign action)"
+0x00F09740,kConsoleCommandDescriptors,table,C,sm,"native static descriptor table; initializer advances by 0x4C; no registration ownership contract"
+0x00F0A2D4,kConsoleTagDescriptor,descriptor,C,sm,"name tag; handler +0x1C=0x0041F720; one country_TAG argument"
+0x00F0A748,kConsoleDebugDescriptor,descriptor,C,sm,"name debug; handler +0x1C=0x00420EB0; one debug-subcommand argument including fow"
+0x00F092FB,g_fogEnabled,u8,C,sm,"debug fow directly toggles; historical runtime 0 reveals map / 1 normal fog; unrelated renderer-state mapping unresolved"

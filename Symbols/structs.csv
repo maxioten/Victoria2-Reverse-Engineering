@@ -133,3 +133,20 @@ CEvent,0x1A1,flag1A1,u8,C,re,0 -> window may be suppressed by the UI manager
 CEvent,0x1A2,flag1A2,u8,C,re,window variant
 CEvent,0x1A3,fireOnlyOnce,u8,I,re,behaviour confirmed; name inferred
 CEvent,0x1A4,flag1A4,u8,C,re,full-window variant
+ConsoleCommandManager,0x0,commandsBegin,Command**,C,sm,"static initializer 0x00423990; bounded command-pointer vector prefix; see Engine/console.md"
+ConsoleCommandManager,0x4,commandsEnd,Command**,C,sm,"native initializer advances by four bytes per descriptor pointer"
+ConsoleCommandManager,0x8,commandsCapacity,Command**,C,sm,"native initializer checks against end before append"
+ConsoleCommand,0x0,isAllowed,u8,I,sm,"current descriptor layout; exact permission semantics and ownership not audited"
+ConsoleCommand,0x4,name,const char*,C,sm,"static debug/tag descriptors corroborate names"
+ConsoleCommand,0x8,aliasCount,i32,I,sm,"current implementation layout; not a generic mutation contract"
+ConsoleCommand,0xC,aliases,const char*[3],I,sm,"current implementation layout"
+ConsoleCommand,0x18,description,const char*,I,sm,"current implementation layout"
+ConsoleCommand,0x1C,handler,ptr,C,sm,"static debug/tag descriptor pointers; x86 result-by-value ABI not bool(char*)"
+ConsoleCommand,0x20,argumentCount,i32,C,sm,"static debug/tag descriptors have one argument"
+ConsoleCommand,0x24,argumentNames,const char*[10],I,sm,"current layout; static tag/debug metadata selectively corroborated"
+ConsoleArguments,0x0,begin,EngineString*,I,sm,"current checked invocation layout; string elements 0x1C"
+ConsoleArguments,0x4,end,EngineString*,I,sm,"current checked invocation layout; no arbitrary-vector ABI audit"
+ConsoleArguments,0x8,capacity,EngineString*,I,sm,"current checked invocation layout"
+ConsoleArguments,0xC,allocator,u32,I,sm,"current checked invocation layout"
+ConsoleResult,0x0,success,u8,I,sm,"current checked result layout; result extent0x20"
+ConsoleResult,0x4,message,EngineString,I,sm,"current checked result layout; heap-message ownership is boundary-specific"

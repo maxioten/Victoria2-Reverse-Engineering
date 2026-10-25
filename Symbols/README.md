@@ -17,6 +17,7 @@ were found in that work. Copied here as of 2026-10-11.
   `DYNAMIC_BASE`, so Windows may load it elsewhere (it was seen at `0x00080000`): at runtime use
   `base + (va - 0x00400000)`.
 - `conf`: `C` confirmed in the code, `I` inferred, `?` unknown.
-- `src`: `re` = from this repository, re-checked; `cp` = new findings (October 2026).
+- `src`: `re` = from this repository, re-checked; `cp` = new findings (October 2026); `sm` = Smedley-derived evidence, with claim-specific limits in the linked note.
+- Console initializer/epilogue and descriptor entries are detailed in [Engine/console.md](../Engine/console.md). An epilogue or toggle site is not a function entry. Console record rows marked `I` retain current implementation layouts without a complete native ABI/ownership audit.
 - File offsets: `.text` = VA − 0x400C00, `.rdata` = VA − 0x401A00, `.data` = VA − 0x402600.
 

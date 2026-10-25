@@ -24,7 +24,7 @@
     |
     +-- CONSOLE COMMANDS 
     |     |
-    |     +-- console_commands (00420eb0)
+    |     +-- debug command handler (00420eb0)
     |
     +-- RENDERING / FOG OF WAR
     |     |
@@ -123,29 +123,16 @@ EVENT RESOURCE / EVENT MANAGER SYSTEM
               
 ## CONSOLE
 
-`console_commands` was formerly identified as `FUN_00420EB0`.
+The native descriptor table registers `FUN_00420EB0` as the `debug` handler,
+not an established universal console dispatcher. Its arguments include `fow`;
+the reviewed branch directly toggles `0x00F092FB`, with zero meaning revealed
+map in the checked runtime route.
 
-It receives tokenized console input and performs a comparison cascade through command strings.
-
-Empirical result:
-
-```text
-DISABLE console_commands
-        ↓
-ALL CONSOLE COMMANDS DISAPPEAR
-```
-
-The `"fow"` command was confirmed to toggle:
-
-```text
-DAT_013f080c
-```
-
-and mirror the value into:
-
-```text
-[DAT_01258a74 + 0x6bc44]
-```
+[Console registration and native commands](console.md) documents the manager,
+descriptors, invocation records and primary toggle sites. The earlier disabling
+experiment does not establish a generic dispatch ABI. The relationship to the
+historically labelled renderer flag `0x013F080C` and mirror
+`[0x01258A74 + 0x6BC44]` remains unresolved.
 
 ## FOG OF WAR
 
