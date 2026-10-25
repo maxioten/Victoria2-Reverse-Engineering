@@ -47,7 +47,7 @@ CCountry,0x208,aiObject,CCountryAI*,C,re,"checked observer route requires non-nu
 CCountry,0x37C,aiGate0,u8,?,cp,AI_DailyUpdate requires 0 (human?)
 CCountry,0x37D,aiGate1,u8,?,cp,AI_DailyUpdate requires 0 (disabled?)
 CCountry,0x7B4,armies,list,I,re,military strength source
-CCountry,0x860,politicalReformOptions,CIssueOption**,C,cp,"POINTER to selected options not inline array; category 2 uses group+0x50 index; live transitions unverified; Engine/political-reform-selection.md"
+CCountry,0x860,politicalReformOptions,CIssueOption**,C,sm,"POINTER to selected options not inline array; category 2 uses group+0x50 index; live transitions unverified; Engine/political-reform-selection.md"
 CCountry,0x9D8,ownedProvinces,vector,C,cp,"+0x9D8/+0x9DC; empty = country does not exist"
 CCountry,0xBCC,technology,ptr,C,re,"+0x2B8 tech state array indexed by tech+0x2E4"
 CCountry,0xBD4,leaders,list,I,re,daily roll for leader deaths
@@ -75,7 +75,7 @@ Relation,0x50,heldCBs,list,C,cp,"node +0 CCasusBelli*, +8 next"
 CCasusBelli,0x24,typeIndex,u32,C,cp,
 CMapProvince,0x14,eventCandidates,vector<CEvent*>,C,re,"+0x14/+0x18"
 CMapProvince,0x58,id,u32,C,re,
-CMapProvince,0x128,ownerKey,u32,C,cp,"current-owner key read by CIssueGroupTrigger; index +0x12C resolves database 0x012587E4 array +0x4; Engine/political-reform-selection.md"
+CMapProvince,0x128,ownerKey,u32,C,sm,"current-owner key read by CIssueGroupTrigger; index +0x12C resolves database 0x012587E4 array +0x4; Engine/political-reform-selection.md"
 CMapProvince,0x12C,ownerIndex,u32,C,re,0 = unowned (skipped by the event scan)
 CMapProvince,0x188,state,CState*,C,re,
 CMapProvince,0x194,popLists,ptr,C,re,per-pop-type lists
@@ -83,24 +83,24 @@ CMapProvince,0x1A8,totalPops,u32,C,re,
 CMapProvince,0x1AC,rgoEmploymentCapacity,u32,C,sm,"CProvince alias; historical runtime/UI correlation; not totalPops copy; see Economy/production-identity-and-clearing.md"
 CMapProvince,0x1BC,clergy,u32,I,re,
 CMapProvince,0x384,delayedEvents,vector,C,re,"+0x384/+0x388"
-CState,0x08,objectType,u32,C,smd,"historical runtime/save correlation: value 47 is a type discriminator; not state or region ID"
-CState,0x0C,persistentStateId,u32,C,smd,"serialized state ID; historical runtime/save correlation (Brandenburg 750); not durable across all transitions"
+CState,0x08,objectType,u32,C,sm,"historical runtime/save correlation: value 47 is a type discriminator; not state or region ID"
+CState,0x0C,persistentStateId,u32,C,sm,"serialized state ID; historical runtime/save correlation (Brandenburg 750); not durable across all transitions"
 CState,0x48,provinceIds,vector,I,re,
 CState,0x60,buildings,ptr,I,re,
 CState,0x68,factoryCount,u32,C,re,< 8 to build
 CState,0x84,colonyStatus,u32,C,re,> 0 = colonial
-CState,0x250,region,CRegion*,C,smd,"historical runtime correlation; owner-specific states can share region pointer/key"
-CRegion,0x18,key,std::string,C,smd,"historical runtime correlation: PRU_549; region definition key not current owner/state identity"
-CRegion,0x34,displayName,std::string,C,smd,"historical runtime correlation: Brandenburg; RTTI/contiguous instances give observed extent 0x108; not a full layout"
+CState,0x250,region,CRegion*,C,sm,"historical runtime correlation; owner-specific states can share region pointer/key"
+CRegion,0x18,key,std::string,C,sm,"historical runtime correlation: PRU_549; region definition key not current owner/state identity"
+CRegion,0x34,displayName,std::string,C,sm,"historical runtime correlation: Brandenburg; RTTI/contiguous instances give observed extent 0x108; not a full layout"
 CStateBuilding,0x20,level,u32,I,re,
 CStateBuilding,0x188,closed,u8,I,re,
 CStateBuilding,0x224,nextInState,ptr,I,re,
-Pop,0x0C,id,u32,C,smd,"CPop current in-process/serialized ID; historical correlations do not prove permanent identity; Engine/entity-identity.md"
+Pop,0x0C,id,u32,C,sm,"CPop current in-process/serialized ID; historical correlations do not prove permanent identity; Engine/entity-identity.md"
 Pop,0x58,size,u32,C,re,
-Pop,0x64,province,CProvince*,I,smd,"current reader/candidate scope dimension; referenced province ID at +0x58; not unique identity"
-Pop,0x68,popType,ptr,I,smd,"current reader/candidate descriptive dimension; referenced type ID at +0x28; not unique identity"
-Pop,0x6C,culture,ptr,C,smd,"narrow static/save correlation; culture key at referenced object +0x18; not unique identity"
-Pop,0x70,religion,ptr,C,smd,"narrow static/save correlation; religion key at referenced object +0x10; not +0x2C; not unique identity"
+Pop,0x64,province,CProvince*,I,sm,"current reader/candidate scope dimension; referenced province ID at +0x58; not unique identity"
+Pop,0x68,popType,ptr,I,sm,"current reader/candidate descriptive dimension; referenced type ID at +0x28; not unique identity"
+Pop,0x6C,culture,ptr,C,sm,"narrow static/save correlation; culture key at referenced object +0x18; not unique identity"
+Pop,0x70,religion,ptr,C,sm,"narrow static/save correlation; religion key at referenced object +0x10; not +0x2C; not unique identity"
 Pop,0x27C,next,Pop*,C,re,
 StockpileHolder,0x08,goodPresent,u8[],C,re,index by good
 StockpileHolder,0x48,stockpile,vector<i64>,C,re,"+0x48/+0x4C; 8-byte entries"
@@ -181,31 +181,31 @@ ConsoleArguments,0x8,capacity,EngineString*,I,sm,"current checked invocation lay
 ConsoleArguments,0xC,allocator,u32,I,sm,"current checked invocation layout"
 ConsoleResult,0x0,success,u8,I,sm,"current checked result layout; result extent0x20"
 ConsoleResult,0x4,message,EngineString,I,sm,"current checked result layout; heap-message ownership is boundary-specific"
-EventOptionCommand,0x40,resolverWord0,u32,C,cp,"action executor 0x00907E00 uses with +0x44; not source words; full command layout unverified; Engine/script-execution-boundaries.md"
-EventOptionCommand,0x44,resolverWord1,u32,C,cp,"matched country-event ID in two actions only; other scopes unresolved; Engine/script-execution-boundaries.md"
-EventOptionCommand,0x64,selectedOptionIndex,i32,C,cp,"selected index in two country-event actions only; Engine/script-execution-boundaries.md"
-EventOptionCommand,0x68,eventSnapshot,opaque,C,cp,"embedded snapshot; no general ownership extent or lifetime guarantee; Engine/script-execution-boundaries.md"
-EventOptionCommand,0x70,opaqueSourceWord0,u32,?,cp,"source-key semantics unresolved; not event resolver; Engine/script-execution-boundaries.md"
-EventOptionCommand,0x74,opaqueSourceWord1,u32,?,cp,"source-key semantics unresolved; not event resolver; Engine/script-execution-boundaries.md"
-CRegionScopeEffect,0x08,childEffects,list,C,cp,"child effect chain for matching provinces; static only; Engine/script-execution-boundaries.md"
-CRegionScopeEffect,0x20,filter,TriggerBlock,C,cp,"embedded per-province filter; static only; Engine/script-execution-boundaries.md"
-CRegionScopeEffect,0x3C,region,CRegion*,C,cp,"region list at +0x8; static only; Engine/script-execution-boundaries.md"
-CRegionScopeTrigger,0x1C,region,CRegion*,C,cp,"short-circuit at first matching province; static only; Engine/script-execution-boundaries.md"
-CRegion,0x08,provinces,list,C,cp,"province IDs consumed by generic region effect and trigger; no runtime visit counts; Engine/script-execution-boundaries.md"
-CIssueGroupTrigger,0x20,group,CIssueGroup*,C,cp,"parser ownership check and evaluator; Engine/political-reform-selection.md"
-CIssueGroupTrigger,0x24,expectedOption,CIssueOption*,C,cp,"accepted parser result compared with country selection; Engine/political-reform-selection.md"
-CIssueGroup,0x50,index,u32,C,cp,"indexes selected political options for category 2; GFM slavery index 1 only; Engine/political-reform-selection.md"
-CIssueGroup,0x5C,category,u32,C,cp,"2 selects CCountry+0x860 pointer; GFM slavery correlation only; Engine/political-reform-selection.md"
-CIssueOption,0x54,group,CIssueGroup*,C,cp,"owning group; parser requires group match; static effect follows to index; Engine/political-reform-selection.md"
-CSetPoliticalReformEffect,0x20,targetOption,CIssueOption*,C,cp,"static store only; no arbitrary-write safety or live-transition evidence; Engine/political-reform-selection.md"
-World,0xA4,countryAiScheduler,vector<CCountryAI*>,C,re,"checked observer membership; not a complete AI-definition contract; see Engine/native-ui-and-frontend.md"
-MainMenuController,0x704,guiRegistry,ptr,C,re,"registry virtual +0x6C resolves mainmenu_panel; panel virtual +0x34 resolves single_player_button"
-SinglePlayerFrontend,0x278,guiRegistry,ptr,C,re,"virtual +0x34 resolves play_button in the checked route"
-SinglePlayerFrontend,0x590,selectedSave,string,C,re,"save basename; do not overwrite arbitrary live string storage"
-SinglePlayerFrontend,0x5BC,saveRequest,u8,C,re,"requested load 1; exercised successful update clears it"
-SinglePlayerFrontend,0x5BD,saveComplete,u8,C,re,"exercised successful load sets 1 before Play; not proof of gameplay entry"
-FrontendControl,0x54,signal,embedded,C,re,"narrow resolved Single Player/Play boundary; EAX argument to press/release; not a full GUI layout"
-CInGameIdler,0x1538,paused,u8,C,re,"0/1; TogglePause 0x0066A2C0 runtime-correlated"
-CInGameIdler,0x1D20,quitRequested,u8,C,re,"RequestQuit 0x0064EDB0 sets 1; no save or drain guarantee"
-CInGameIdler,0x1D6C,endgameDialog,ptr,C,re,"matching window visibility +0x67 plus date beyond configured end establishes checked game-over case"
-GuiWindow,0x67,visible,u8,C,re,"narrow endgame-dialog observation; hidden matching window can exist during ordinary pause"
+EventOptionCommand,0x40,resolverWord0,u32,C,sm,"action executor 0x00907E00 uses with +0x44; not source words; full command layout unverified; Engine/script-execution-boundaries.md"
+EventOptionCommand,0x44,resolverWord1,u32,C,sm,"matched country-event ID in two actions only; other scopes unresolved; Engine/script-execution-boundaries.md"
+EventOptionCommand,0x64,selectedOptionIndex,i32,C,sm,"selected index in two country-event actions only; Engine/script-execution-boundaries.md"
+EventOptionCommand,0x68,eventSnapshot,opaque,C,sm,"embedded snapshot; no general ownership extent or lifetime guarantee; Engine/script-execution-boundaries.md"
+EventOptionCommand,0x70,opaqueSourceWord0,u32,?,sm,"source-key semantics unresolved; not event resolver; Engine/script-execution-boundaries.md"
+EventOptionCommand,0x74,opaqueSourceWord1,u32,?,sm,"source-key semantics unresolved; not event resolver; Engine/script-execution-boundaries.md"
+CRegionScopeEffect,0x08,childEffects,list,C,sm,"child effect chain for matching provinces; static only; Engine/script-execution-boundaries.md"
+CRegionScopeEffect,0x20,filter,TriggerBlock,C,sm,"embedded per-province filter; static only; Engine/script-execution-boundaries.md"
+CRegionScopeEffect,0x3C,region,CRegion*,C,sm,"region list at +0x8; static only; Engine/script-execution-boundaries.md"
+CRegionScopeTrigger,0x1C,region,CRegion*,C,sm,"short-circuit at first matching province; static only; Engine/script-execution-boundaries.md"
+CRegion,0x08,provinces,list,C,sm,"province IDs consumed by generic region effect and trigger; no runtime visit counts; Engine/script-execution-boundaries.md"
+CIssueGroupTrigger,0x20,group,CIssueGroup*,C,sm,"parser ownership check and evaluator; Engine/political-reform-selection.md"
+CIssueGroupTrigger,0x24,expectedOption,CIssueOption*,C,sm,"accepted parser result compared with country selection; Engine/political-reform-selection.md"
+CIssueGroup,0x50,index,u32,C,sm,"indexes selected political options for category 2; GFM slavery index 1 only; Engine/political-reform-selection.md"
+CIssueGroup,0x5C,category,u32,C,sm,"2 selects CCountry+0x860 pointer; GFM slavery correlation only; Engine/political-reform-selection.md"
+CIssueOption,0x54,group,CIssueGroup*,C,sm,"owning group; parser requires group match; static effect follows to index; Engine/political-reform-selection.md"
+CSetPoliticalReformEffect,0x20,targetOption,CIssueOption*,C,sm,"static store only; no arbitrary-write safety or live-transition evidence; Engine/political-reform-selection.md"
+World,0xA4,countryAiScheduler,vector<CCountryAI*>,C,sm,"checked observer membership; not a complete AI-definition contract; see Engine/native-ui-and-frontend.md"
+MainMenuController,0x704,guiRegistry,ptr,C,sm,"registry virtual +0x6C resolves mainmenu_panel; panel virtual +0x34 resolves single_player_button"
+SinglePlayerFrontend,0x278,guiRegistry,ptr,C,sm,"virtual +0x34 resolves play_button in the checked route"
+SinglePlayerFrontend,0x590,selectedSave,string,C,sm,"save basename; do not overwrite arbitrary live string storage"
+SinglePlayerFrontend,0x5BC,saveRequest,u8,C,sm,"requested load 1; exercised successful update clears it"
+SinglePlayerFrontend,0x5BD,saveComplete,u8,C,sm,"exercised successful load sets 1 before Play; not proof of gameplay entry"
+FrontendControl,0x54,signal,embedded,C,sm,"narrow resolved Single Player/Play boundary; EAX argument to press/release; not a full GUI layout"
+CInGameIdler,0x1538,paused,u8,C,sm,"0/1; TogglePause 0x0066A2C0 runtime-correlated"
+CInGameIdler,0x1D20,quitRequested,u8,C,sm,"RequestQuit 0x0064EDB0 sets 1; no save or drain guarantee"
+CInGameIdler,0x1D6C,endgameDialog,ptr,C,sm,"matching window visibility +0x67 plus date beyond configured end establishes checked game-over case"
+GuiWindow,0x67,visible,u8,C,sm,"narrow endgame-dialog observation; hidden matching window can exist during ordinary pause"
