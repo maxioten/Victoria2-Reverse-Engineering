@@ -61,6 +61,16 @@ that point inside the source into the copy (or build the copy with the ctor). **
   eq `+0x10`, value `+0`), one node per character. Each node is a separate allocation, so long flag names
   cost one cache miss per character. **[C][M]**
 
+## Political reform selection
+
+`CIssueGroupTrigger::Evaluate` at preferred VA `0x008C4DA0` compares the expected
+option with a country's selected option. For category 2, group `+0x50` indexes
+the option array **pointed to** by `CCountry+0x860`; group `+0x5C` is the category,
+and option `+0x54` is its group. Parser `0x008C4A70` uses the issue-option registry
+at `0x01258A48`, not a unit manager. See [Political reform selection](political-reform-selection.md)
+for the static parser/effect paths, executable pin, and narrow GFM correlation;
+no live reform transition or arbitrary-write safety is established.
+
 ## Classification of the 236 classes **[C]**
 
 By decompiling every `Evaluate` and looking for `scope+0x24`, `scope+0x30/+0x34`, child evaluation or
@@ -96,6 +106,20 @@ stack arguments, `RET 0x8`. Ghidra's parameter count follows usage, not the conv
 | `CClrCountryFlagEffect` | `0x00E2ACC0` | `0x00882A40` (flag name std::string at `+0x20`, country = `scope+0x0C`) |
 | `CSetGlobalFlagEffect` | `0x00E2AD68` | `0x00882B60` |
 | `CClrGlobalFlagEffect` | `0x00E2ADA0` | `0x00882BA0` |
+
+## Region scope iteration
+
+Preferred VA `0x00888BA0` (`CRegionScopeEffect::Execute`) receives `this` in `ECX`
+and two stack arguments (`ret 8`): region `this+0x3C`, province list `region+0x8`,
+filter `this+0x20`, child effect chain `this+0x8`. `CRegionScopeTrigger::Evaluate`
+at `0x008C5DA0` receives `this` in `ECX` and one stack argument (`ret 4`), uses
+region `this+0x1C`, and returns on the first matching province.
+
+These are static mechanisms, not verified runtime attribution boundaries.
+GFM's `any_land_province` names a custom region, not a native engine operator;
+region cardinality does not equal a short-circuited visit count. See
+[Script execution boundaries](script-execution-boundaries.md#region-scope-iteration-static-only)
+for the executable/source pins, signatures, and limits.
 
 ## Keywords **[C]**
 

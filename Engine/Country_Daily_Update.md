@@ -1,6 +1,9 @@
 # Victoria II — Analysis Summary (Events, Daily Tick, and Patches)
 
-Everything here comes from the Ghidra listings shared in the conversation. No debugger has been used yet.
+The original analysis below comes from the Ghidra listings shared in the conversation.
+For later static debt-cleanup anchors and the limited historical runtime
+correlation of interest-shortfall handling, see
+[Default & Debt Cleanup](../Economy/default-and-debt-cleanup.md).
 
 **Marks:** **[C]** confirmed in the disassembly · **[I]** inferred · **[?]** unknown.  
 Addresses are VAs (image base `0x00400000`). English names are proposed names (user names are marked *(user)*).
@@ -57,7 +60,11 @@ Economy_ProcessMonthlyTick (once per day; the name "Monthly" is misleading)
 4. `country+0xBD4` list: daily roll that appears to handle leader deaths by age **[I]**.
 5. Military AI blocks and lists `country+0x7B4`, `+0x149C`, `+0x148C` **[?]**.
 6. O(countries²) loop (0x0050ABF0): for every country with provinces, calls `FUN_0092E290` with the `country+0xBE8[other]` relation.
-7. Goods, prices, unit updates, and rank.
+7. Goods, prices, unit updates, and rank. A separate conditional creditor cleanup
+   calls `RemoveDebts(true)` at VA `0x00508ACE` only when absent from two
+   preceding membership searches; their semantics are unresolved. This is not
+   an established automatic bankruptcy write-off boundary (see
+   [Default & Debt Cleanup](../Economy/default-and-debt-cleanup.md)).
 8. Events: `on_action` pulses and delayed events.
 
 **`FUN_0092E290`** (`CountryRelation_DailyPurge`): purges relation lists (`+0x50`, `+0x2C`, `+0x30`, `+0x28`, `+0x20`) using a `vtable[0x18]` condition and generates messages **[I]**. Each block is skipped if its list is empty, so with little active diplomacy each pair costs roughly 5–6 null-pointer checks.

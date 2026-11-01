@@ -1,8 +1,9 @@
 # Victoria 2 — Event System (Reverse-Engineering Notes)
 
-**Status:** work in progress. Everything below comes from Ghidra listings of the 32-bit Victoria II executable
-(MSVC build, fixed image base, no ASLR). Nothing was run under a debugger yet, so every behavioural claim is
-tagged with how sure we are.
+**Status:** work in progress. These notes began with Ghidra listings of the 32-bit Victoria II executable
+(MSVC build). The original analysis was static; behavioural claims are tagged with how sure we are.
+Later narrow selected-option runtime evidence is kept separate in
+[Script execution boundaries](script-execution-boundaries.md), with its executable/source pins and limits.
 
 > **Correction (2026-10):** the image base is not fixed. 3.04 has a
 > relocation table and `DYNAMIC_BASE`, and Windows loaded it at `0x00080000` in the measured runs.
@@ -27,6 +28,10 @@ tagged with how sure we are.
 ---
 
 ## 1. Big picture
+
+The configurable notification popup/pause paths are documented separately in
+[Message dispatch](message-dispatch.md). Skipping those presentation blocks does not suppress
+scripted effects or AI option choices, and does not cover every event window.
 
 ```
 LOAD TIME
@@ -310,6 +315,22 @@ About 20 callers. **[C]**
    - when `[this+0x1A1] == 0` and `UIManager->vtable[0xF4](event)` is true, the window is suppressed
    - otherwise allocates a 0xD0-byte window object, calls `FUN_008A8F30` to construct it, then `FUN_006480E0` to show it
 5. **Always:** executes the immediate effect block: `[this+0x74]->vtable[0x2C](ctx, 0)`. **[C]**
+
+#### Selected-option action execution (separate boundary)
+
+Preferred VA `0x00907E00` is the selected-event-option action executor (`ECX` =
+action), which synchronously calls option executor `0x008A61F0`. Action `+0x64`
+is the selected index and `+0x68` an embedded event snapshot. Resolver words are
+`+0x40` / `+0x44`, **not** opaque source words `+0x70` / `+0x74`.
+
+Only two country-event actions have runtime index/ID correlation. Their
+selected-option execution, including observed nested country-event execution,
+did not call `Event_Fire` at `0x008A8120`. This distinguishes selection execution
+from delivery/setup; it does **not** reject the static `Event_Fire` delivery
+semantics above. Broader scopes, lifetime, stable source sites, nested
+reentrancy, and accepted-delivery runtime correlation remain unresolved. See
+[Script execution boundaries](script-execution-boundaries.md#selected-event-option-execution)
+for provenance and ABI details; this is not universal script attribution.
 
 #### `FUN_008AEB00` — 0x008AEB00 (proposed: `EventOption_EvaluateAIChance`)
 `stdcall(aiChanceBlock, out, ctx)`, `RET 0xC`. Pure function. **[C]**

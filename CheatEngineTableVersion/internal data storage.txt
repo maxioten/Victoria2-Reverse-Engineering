@@ -210,7 +210,7 @@ province struct (CMapProvince) (stored seemingly randomly)
 
 	0x1A4	life_rating					int32
 	0x1A8	total pops (display)		uint32
-	0x1AC	total pops copy?			uint32
+	0x1AC	RGO employment capacity		uint32 (see ../Economy/production-identity-and-clearing.md)
 
 	0x1B4	total pops copy?			uint32
 	0x1B8	total employed				uint32

@@ -6,13 +6,18 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 
 ### 📁 Engine
 - [Engine Structure](Engine/engine-structure.md) — main loop, subsystem relationships, console, events, rendering, loans, and general engine architecture.
+- [Entity Identity](Engine/entity-identity.md) — serialized state IDs, shared regions, and limits of POP identity across transitions.
 - [Checksum](Engine/checksum.md) — how the game calculates the checksum.
 - [Event](Engine/Event_System.md) — How the game creates and manages events
+- [Message Dispatch](Engine/message-dispatch.md) — configurable popup/pause policy, nine instruction-site pairs, and notification/effect boundaries.
+- [Script Execution Boundaries](Engine/script-execution-boundaries.md) — selected-option action execution versus event delivery, static region iteration, and attribution limits.
 - [Game Speed System](Engine/game-speed.md) — speed index, update throttle, temporal processing, and B28 mapping.
 - [RNG System](Engine/rng.md) — random-number list and Mersenne Twister regeneration path.
 - [Country Daily Update](Engine/Country_Daily_Update.md) — How (developing) countries work.
 - [Loading & Initialization](Engine/loading-initialization.md) — game-load finalization, state initialization, subsystem startup, and gameplay entry.
 - [Buttons & Callbacks](Engine/buttons.md) — identified UI/button callbacks and their confidence levels.
+- [Native Console](Engine/console.md) — command registration, bounded descriptor/call layouts, debug/FOW and dispatcher-identity limits.
+- [Native UI & Frontend](Engine/native-ui-and-frontend.md) — named GUI lookup/signals, single-player save/load/Play, speed/pause, observer ownership, game-over detection and native exit.
 - [Utility Functions](Engine/utilities.md) — renamed/reconstructed helper functions.
 - [Reverse Engineering Conclusions](Engine/conclusions.md) — consolidated findings, limitations, and unresolved areas.
 - [Daily Tick](Engine/daily-tick.md) — frame / hourly / daily call chain, `DayTick`, calendar, `Country_DailyUpdate` steps, the AI job queue and why a day spans several frames.
@@ -20,6 +25,7 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 - [Network (ENet)](Engine/network.md) — statically linked ENet, the session's 15/35 ms blocking poll every frame (also in single player).
 - [Threads](Engine/threads.md) — the TBB `parallel_for` sites and why the big daily loops are not parallel-safe.
 - [Triggers & Scopes](Engine/triggers-and-scopes.md) — trigger classes, `CEventScope` layout (self-pointer at +0x24), effects, keywords, thread safety of evaluation.
+- [Political Reform Selection](Engine/political-reform-selection.md) — category-2 issue groups, country selection-array pointer, option registry, and narrow GFM current-selection evidence.
 - [Decisions](Engine/decisions.md) — `CDecision`, the AI's daily decision loop and its CRT `rand()` roll, other evaluation sites.
 - [Casus Belli Evaluation](Engine/Casus_Belli_Evaluation.md) — `cb_types.txt` loading, `IsAnyCBUsable` / `IsCBUsable`, who calls them daily.
 - [Flag Atlases](Engine/flags.md) — how `flagfiles*.tga` are built, cached (TGA) and loaded (format from content), and their memory cost.
@@ -31,6 +37,8 @@ This repository documents static reverse engineering of `v2game.exe`, primarily 
 * [Banking and Credit](Economy/banking-and-credit.md) — loan principal, reserves, interest transfers and the unidentified state-to-POP payout path.
 * [POP and Factory Storage](Economy/object-storage.md) — payload versus linked-node extents, traversal and factory injection fields.
 * [Factory Construction](Economy/factory-construction.md) — factory construction validation, UI gates, state/type restrictions, and civilization checks.
+* [Default & Debt Cleanup](Economy/default-and-debt-cleanup.md) — separates interest-shortfall handling, conditional construction refunds, and guarded creditor removal.
+* [Production Identity & Clearing](Economy/production-identity-and-clearing.md) — RGO capacity/owner modifiers, narrow factory transfer identity, and clearing/attribution limits.
 * [Economy Daily Path](Economy/economy-daily-path.md) — the daily economy call path, per-pop list walks, shared state, fixed-point price bounds (2^15) and corrections.
 
 

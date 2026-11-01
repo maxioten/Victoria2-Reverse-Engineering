@@ -193,11 +193,11 @@ Private accumulators followed by a merge are the safer long-term design.
 |      Supply → Demand → Comparison → Division →
 |      Multiplier → Price → Limits
 |
-+-- console_commands is empirically confirmed as the central console
-|   dispatcher. Disabling it removes all console commands.
++-- FUN_00420EB0 is registered as the debug command handler, not a
+|   proven universal console dispatcher. See Engine/console.md.
 |
-+-- The "fow" command toggles DAT_013f080c, but changing the global flag
-|   alone is insufficient to force FoW permanently off.
++-- Its fow branch directly toggles DAT_00F092FB and invalidates map state;
+|   the relationship to the historically labelled DAT_013F080C is unresolved.
 |
 +-- Direct JZ→NOP patches in the rendering functions break their
 |   respective rendering layers.

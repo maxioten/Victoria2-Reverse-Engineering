@@ -1,5 +1,9 @@
 # PART VII — GAME LOAD / INITIALIZATION SYSTEM
 
+For the separately verified single-player save-selection, load-completion and
+Play route, see [Native UI and frontend](native-ui-and-frontend.md#save-selection-loading-and-play).
+Frontend load completion is not itself entry into gameplay.
+
 ## MAP 32 — `FUN_00662010`
 
 Proposed name:

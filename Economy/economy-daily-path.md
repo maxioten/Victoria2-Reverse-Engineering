@@ -47,6 +47,9 @@ it runs daily inside the TBB `parallel_for` `ProcessPopStatisticsFunctor` (`FUN_
 
 ## How the per-pop loops walk memory **[C]**
 
+Traversal position and descriptive POP dimensions are not unique identities. See
+[Entity identity](../Engine/entity-identity.md) for current IDs and cross-transition limits.
+
 `Market_UpdateCountryPops(market, country, ...)` (four stack arguments; `market` = `EDI`, `country` = `EBX`
 at the call):
 

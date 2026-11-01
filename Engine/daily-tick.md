@@ -50,9 +50,41 @@ re-entered from inside the tick. **[C]** Measured in 1836: about one such frame 
 
 ## Calendar **[C]**
 
-`world+0xB0C` is the date in hours. Base `0x029C55C0` = 43 800 000 h = year −5000.
-Days = `(date − base) / 24`, year = `days / 365 − 5000`; no leap years. Month lengths are the table at
-`0x00F1027C`.
+`world+0xB0C` stores the raw date at 24 units per day, with fixed 365-day
+years and no leap years. Raw zero is the epoch at year −5000; the offset
+`0x029C55C0` = 43,800,000 units = `24 * 365 * 5000` reaches year 0,
+not year −5000.
+
+For positive campaign dates, use either equivalent decoding:
+
+```text
+absolute_days = floor(raw / 24)
+year = floor(absolute_days / 365) - 5000
+zero_based_day_of_year = absolute_days % 365
+
+# Alternatively, subtract the epoch offset before decoding the year:
+days_from_year_zero = floor((raw - 0x029C55C0) / 24)
+year = floor(days_from_year_zero / 365)  # do not subtract 5000 again
+```
+
+Encoding a date is
+`raw = 24 * (365 * (year + 5000) + zero_based_day_of_year)`.
+Month lengths come from `0x00F1027C`.
+
+| Date | Raw value | Evidence |
+| --- | ---: | --- |
+| 1836.1.1 | 59,883,360 | Derived from the encoding |
+| 1836.1.2 | 59,883,384 | Historical runtime-correlated anchor |
+
+The old expression subtracted the 5000-year offset twice. Smedley's
+[date evidence](https://github.com/adrunkhuman/smedley_kernel/blob/a87832e6196168b6b6ac82701dc3f1dd95732848/mappings/evidence/telemetry.md#dates-and-world-snapshots)
+provides the independent anchor and 24-unit daily progression for the English
+Windows 3.04 executable, SHA-256
+`62d48c204364dd706584777c2e2b3c7ab3c5f1dd0170872554943575d53d6648`.
+Addresses above are preferred-base VAs using image base `0x00400000`; `+0xB0C`
+is an object offset. The retained runtime evidence lacks exact-built-commit
+provenance and does not promote the surrounding world layout or establish
+pre-epoch/negative-date engine behavior.
 
 ## `Country_DailyUpdate` (0x005091A0)
 

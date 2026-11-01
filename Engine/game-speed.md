@@ -1,5 +1,9 @@
 # PART I — GAME SPEED SYSTEM
 
+The [native UI control map](native-ui-and-frontend.md#in-game-speed-and-pause)
+separately documents topbar callbacks, idler methods, message handlers and pause
+state. Selecting a speed is distinct from the pacing mechanisms below.
+
 ## MAP 1 — GAME SPEED SYSTEM (OVERVIEW)
 
 ```text
