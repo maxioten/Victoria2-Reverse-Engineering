@@ -288,3 +288,10 @@ con 45 fixtures emulados sin discrepancias.
 
 
 
+
+## Reconstructed C tick phases
+
+[Clean-checkout reproduction](../experiments/three-phases/README.md) builds and
+compares country preparation, province/POP preparation and 1,000 RNG extractions
+against the locally supplied, hash-checked PE32. This is bounded differential
+verification, not a complete recompiled engine or a native campaign replay.

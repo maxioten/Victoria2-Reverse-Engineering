@@ -1,5 +1,9 @@
 /base-game/
-/experiments/
+/experiments/*
+!/experiments/three-phases/
+!/experiments/tick-recompile-lab/
+!/experiments/tick-country-prepare-lab/
+!/experiments/tick-pop-prepare-lab/
 /references/
 /tools/downloads/
 /tools/ghidra/
@@ -8,3 +12,6 @@
 /tools/uv/
 /tools/reverify/
 /tools/mingw-local/
+
+# Isolated three-phase reproduction
+/.venv-three-phases/
