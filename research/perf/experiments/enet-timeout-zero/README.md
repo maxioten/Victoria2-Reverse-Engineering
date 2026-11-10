@@ -107,6 +107,45 @@ event-driven wait (or a quieter host) is needed before retesting; the current
 data are consistent with the block yielding CPU to the simulation/render
 threads rather than being pure waste.
 
+## Result — 2026-11-10 (load-gated rerun, same day)
+
+Same save, executables, display and 60 fps video method. Each of the five new
+pairs launched only when the 1-minute load average was below 3.0; load
+before/after is stamped into each run record.
+
+| Pair | Baseline ms/day | ENet ms/day | ENet − baseline |
+|---|---:|---:|---:|
+| 1 | 288.066 | 232.778 | −55.288 |
+| 2 | 172.951 | 171.838 | −1.113 |
+| 3 | 167.946 | 125.000 | −42.946 |
+| 4 | 122.222 | 123.333 | +1.111 |
+| 5 | 332.222 | 187.409 | −144.813 |
+| **median** | **172.951** | **171.838** | **−42.946** |
+
+- `parse_results.py` unpaired median delta: **−0.64 %** (identical).
+- Paired mean −48.6 ms/day, 95 % CI **−122.2 to +25.0** (includes zero).
+- Median per-pair ratio 0.808 (−19.2 %).
+- CPU utilisation median 3.625 vs 3.646: identical, no busy-loop.
+- Save SHA-256 unchanged.
+
+Caveats, kept in the record:
+
+- Both arms got ~2× faster from pair 1 to pair 4, an environmental drift, not
+  a patch effect. Both arms share one Wine prefix, so a warming wineserver is
+  suspected but unproven.
+- The first baseline-5 attempt failed (7 date changes in 40 s, game process
+  gone, no crash evidence in logs) and was retried. The retry rode a load
+  spike (1-minute load 2.09 → 8.13) and its video captured at an effective
+  119.6 fps; wall time still comes from real frame timestamps. Pair 5
+  dominates the paired mean; without it the median paired difference is
+  −22 ms/day (n=4).
+- Pooled over both campaigns (10 interleaved pairs): median paired difference
+  **−1.7 ms/day**, mean **+3.6 ms/day** — no effect.
+
+**Conclusion stands:** the global patch is not adopted. Next step is a direct
+`select()` timing or a guarded, event-driven wait, not more wall-clock A/B in
+this environment.
+
 ## Acceptance
 
 - Single-player median wall ms/day is lower than baseline by more than run
