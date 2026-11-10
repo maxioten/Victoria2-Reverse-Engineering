@@ -1,10 +1,8 @@
 # Catalog
 
-`summary.json` contains aggregate metadata only: coverage, entry kinds,
-size distribution and lift counters.
+- `summary.json`: aggregate coverage, entry kinds, size distribution and lift
+  counters.
+- `functions.csv`: function metadata only: `address`, `size`, `entry_kind`,
+  `blocks`, `instructions`, `is_thunk`, `calls` (number of direct call edges).
 
-A full function catalog (`address`, `size`, `entry_kind`, `blocks`,
-`instructions`, `thunk`) can be generated locally from the pcrecomp
-`functions.json`. It is not included in this baseline PR to keep the review
-focused and to avoid publishing a large, derived artifact before the metadata
-schema is agreed.
+No instruction bytes, lifted bodies or call-graph targets are included.

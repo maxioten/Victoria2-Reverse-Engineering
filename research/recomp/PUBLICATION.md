@@ -10,6 +10,10 @@ first pcrecomp pass. It does not publish the game or a reconstructed engine.
 - Sanitized analysis JSON: PE metadata, coverage, function statistics,
   `UNIMPLEMENTED` review, differential-test results and compile summary.
 - `catalog/summary.json`: aggregate function/coverage metadata.
+- `catalog/functions.csv`: function metadata only (address, size, entry kind,
+  block/instruction counts, thunk flag, direct-call count).
+- `tools/`: reproduction scripts with paths supplied through environment
+  variables.
 
 ## Not included
 
