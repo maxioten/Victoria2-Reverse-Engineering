@@ -108,6 +108,10 @@ zero-caller data blob before it compiled. No full executable was linked.
 
 - [analysis/](analysis/): sanitized metrics and test results.
 - [catalog/summary.json](catalog/summary.json): coverage and function summary.
+- [catalog/functions.csv](catalog/functions.csv): function metadata only (no
+  instruction bytes or lifted bodies).
+- [tools/README.md](tools/README.md): reproduction scripts and environment
+  variables.
 - [docs/METHOD.md](docs/METHOD.md): exact pipeline and tool versions.
 - [docs/LIMITS.md](docs/LIMITS.md): what these numbers do and do not prove.
 - [docs/PERFORMANCE-PLAN.md](docs/PERFORMANCE-PLAN.md): performance work based

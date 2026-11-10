@@ -1,0 +1,28 @@
+name: research-recomp
+
+on:
+  pull_request:
+    paths:
+      - 'research/recomp/**'
+      - '.github/workflows/research-recomp.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'research/recomp/**'
+      - '.github/workflows/research-recomp.yml'
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax check
+        run: python -m py_compile research/recomp/tools/*.py
+      - name: Validate public metadata
+        run: python research/recomp/tools/verify_public.py
+      - name: Whitespace check
+        run: git diff --check
