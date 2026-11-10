@@ -71,6 +71,42 @@ patched copy, and emits a JSON receipt with both hashes and the file offset.
 4. Verify save hash after 30 days.
 5. Multiplayer smoke test: host + join, 5 minutes, no disconnect.
 
+## Result — 2026-11-10
+
+Environment: Wine under Xvfb 1280×720 (software rendering), 6-core i5-8600K,
+host load average around 9 during the campaign. Fixed save
+`a3885cc5…` (Spain, 1837.1.1), 30 game days per run, five baseline and five
+patched runs interleaved B/E and E/B. The date was counted from a 60 fps
+capture of the date text (30 intervals between the first and the 31st change),
+not from a screenshot hash.
+
+| Run | Baseline ms/day | ENet ms/day |
+|---|---:|---:|
+| 1 | 518.889 | 516.627 |
+| 2 | 373.889 | 417.222 |
+| 3 | 256.667 | 590.556 |
+| 4 | 352.778 | 233.889 |
+| 5 | 326.111 | 349.444 |
+| **median** | **352.778** | **417.222** |
+| p95 | 489.889 | 575.770 |
+
+- Unpaired median delta from `parse_results.py`: **+18.27 %** (ENet slower).
+- Paired differences (ENet − baseline): −2.3, +43.3, +333.9, −118.9, +23.3
+  ms/day; median paired difference **+23.3 ms/day**, median per-pair ratio
+  **+7.2 %**, mean +55.9 ms/day, 95 % CI **−152 to +264 ms/day**.
+- CPU utilisation over the recording: median 2.95 (baseline) vs 3.05 (ENet),
+  about +3 %; no large busy-loop explosion, but no saving either.
+- Save SHA-256 after the campaign: `a3885cc5…` (unchanged).
+- Patched executable SHA-256: `1caa7953…`; original `62d48c20…`.
+
+**Conclusion:** this campaign does not show a win from the global timeout-zero
+patch. The point estimate is slightly worse and the confidence interval is
+wide; the host was too loaded to resolve the ~46–51 ms/day attributed to the
+wait in the profile. The global patch is not adopted. A single-player-guarded,
+event-driven wait (or a quieter host) is needed before retesting; the current
+data are consistent with the block yielding CPU to the simulation/render
+threads rather than being pure waste.
+
 ## Acceptance
 
 - Single-player median wall ms/day is lower than baseline by more than run
