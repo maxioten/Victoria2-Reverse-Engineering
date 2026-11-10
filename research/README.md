@@ -7,6 +7,10 @@ El baseline de recompilación estática con pcrecomp está en
 [recomp/](recomp/README.md): cobertura, límites y resultados de los primeros
 tests diferenciales.
 
+El protocolo de benchmark y los dos primeros experimentos de rendimiento
+(ENet en single-player y relaciones contiguas/SoA) están en
+[perf/](perf/README.md).
+
 ```bash
 source env.sh
 python scripts/doctor.py
