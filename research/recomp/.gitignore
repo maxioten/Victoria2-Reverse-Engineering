@@ -1,0 +1,7 @@
+# Local work products from pcrecomp runs. Never commit game files or generated C.
+/work/
+/build/
+*.o
+*.obj
+*.exe
+*.dll

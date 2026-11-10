@@ -1,0 +1,17 @@
+{
+ "total_calls": 1001815,
+ "bad_calls": 2,
+ "by_file": {
+  "recomp_0031.c": 2
+ },
+ "examples": [
+  {
+   "file": "recomp_0031.c",
+   "address": "0xE97D20B3"
+  },
+  {
+   "file": "recomp_0031.c",
+   "address": "0xE99B20BF"
+  }
+ ]
+}

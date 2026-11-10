@@ -1,0 +1,1302 @@
+[
+ {
+  "address": "0x004FF000",
+  "name": "sub_004FF000",
+  "size": 171,
+  "entry_kind": "start",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 1,
+  "prologue": false,
+  "first_bytes": "11111111111111111111111111111111",
+  "first_insns": [
+   "adc dword ptr [ecx], edx",
+   "adc dword ptr [ecx], edx",
+   "adc dword ptr [ecx], edx",
+   "adc dword ptr [ecx], edx",
+   "adc dword ptr [ecx], edx",
+   "adc dword ptr [ecx], edx",
+   "adc dword ptr [ecx], edx",
+   "adc dword ptr [ecx], edx"
+  ],
+  "weird_insns": 5,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 5.8,
+   "x11_pct": 68.4,
+   "cc_pct": 0.0,
+   "printable_pct": 7.0,
+   "entropy": 2.2
+  },
+  "unimplemented": [
+   {
+    "address": "0x004FF089",
+    "insn": "fisttp qword ptr [edi]"
+   },
+   {
+    "address": "0x004FF091",
+    "insn": "fisttp qword ptr [edi]"
+   },
+   {
+    "address": "0x004FF09D",
+    "insn": "fisttp qword ptr [edi]"
+   },
+   {
+    "address": "0x004FF0A1",
+    "insn": "fisttp word ptr [edi]"
+   },
+   {
+    "address": "0x004FF0A4",
+    "insn": "pavgb mm1, qword ptr [edi]"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "fisttp": 4,
+   "pavgb": 1
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x009C12D0",
+  "name": "sub_009C12D0",
+  "size": 102,
+  "entry_kind": "start",
+  "callers": 66,
+  "caller_sample": [
+   "0x0057B560",
+   "0x0057B640",
+   "0x0057D1B0",
+   "0x005E3A60",
+   "0x006B8960"
+  ],
+  "data_refs": 0,
+  "prologue": true,
+  "first_bytes": "558bec83ec0c578bf8897df88b55f8b1",
+  "first_insns": [
+   "push ebp",
+   "mov ebp, esp",
+   "sub esp, 0xc",
+   "push edi",
+   "mov edi, eax",
+   "mov dword ptr [ebp - 8], edi",
+   "mov edx, dword ptr [ebp - 8]",
+   "mov cl, 1"
+  ],
+  "weird_insns": 1,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 7.8,
+   "x11_pct": 1.0,
+   "cc_pct": 0.0,
+   "printable_pct": 22.5,
+   "entropy": 5.24
+  },
+  "unimplemented": [
+   {
+    "address": "0x009C130A",
+    "insn": "pause"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "pause": 1
+  },
+  "verdict": "code-reachable, pause benign"
+ },
+ {
+  "address": "0x00A18000",
+  "name": "sub_00A18000",
+  "size": 247,
+  "entry_kind": "start",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 1,
+  "prologue": false,
+  "first_bytes": "cd7fa100000b0b0b0b0b0b0b0b0b0b0b",
+  "first_insns": [
+   "int 0x7f",
+   "mov eax, dword ptr [0xb0b0000]",
+   "or ecx, dword ptr [ebx]",
+   "or ecx, dword ptr [ebx]",
+   "or ecx, dword ptr [ebx]",
+   "or ecx, dword ptr [ebx]",
+   "or ecx, dword ptr [ebx]",
+   "or ecx, dword ptr [ebx]"
+  ],
+  "weird_insns": 1,
+  "ptr_like_words_in_first_64": 1,
+  "byte_stats": {
+   "zero_pct": 0.8,
+   "x11_pct": 0.0,
+   "cc_pct": 0.8,
+   "printable_pct": 0.0,
+   "entropy": 0.63
+  },
+  "unimplemented": [
+   {
+    "address": "0x00A18000",
+    "insn": "int 0x7f"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "int": 1
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x00A6B230",
+  "name": "sub_00A6B230",
+  "size": 104,
+  "entry_kind": "start",
+  "callers": 1,
+  "caller_sample": [
+   "0x00A6A9F0"
+  ],
+  "data_refs": 0,
+  "prologue": true,
+  "first_bytes": "558bec83ec0c538b1d9ca5c80057bf01",
+  "first_insns": [
+   "push ebp",
+   "mov ebp, esp",
+   "sub esp, 0xc",
+   "push ebx",
+   "mov ebx, dword ptr [0xc8a59c]",
+   "push edi",
+   "mov edi, 1",
+   "mov dword ptr [ebp - 4], edi"
+  ],
+  "weird_insns": 1,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 10.6,
+   "x11_pct": 1.0,
+   "cc_pct": 0.0,
+   "printable_pct": 19.2,
+   "entropy": 5.36
+  },
+  "unimplemented": [
+   {
+    "address": "0x00A6B24E",
+    "insn": "pause"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "pause": 1
+  },
+  "verdict": "code-reachable, pause benign"
+ },
+ {
+  "address": "0x00A6B650",
+  "name": "sub_00A6B650",
+  "size": 60,
+  "entry_kind": "start",
+  "callers": 1,
+  "caller_sample": [
+   "0x00A6B2A0"
+  ],
+  "data_refs": 0,
+  "prologue": true,
+  "first_bytes": "558bec538b5d088b0356be0100000089",
+  "first_insns": [
+   "push ebp",
+   "mov ebp, esp",
+   "push ebx",
+   "mov ebx, dword ptr [ebp + 8]",
+   "mov eax, dword ptr [ebx]",
+   "push esi",
+   "mov esi, 1",
+   "mov dword ptr [ebp + 8], esi"
+  ],
+  "weird_insns": 1,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 6.7,
+   "x11_pct": 1.7,
+   "cc_pct": 0.0,
+   "printable_pct": 26.7,
+   "entropy": 5.03
+  },
+  "unimplemented": [
+   {
+    "address": "0x00A6B66E",
+    "insn": "pause"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "pause": 1
+  },
+  "verdict": "code-reachable, pause benign"
+ },
+ {
+  "address": "0x00A6B690",
+  "name": "sub_00A6B690",
+  "size": 60,
+  "entry_kind": "start",
+  "callers": 1,
+  "caller_sample": [
+   "0x00A6B2A0"
+  ],
+  "data_refs": 0,
+  "prologue": true,
+  "first_bytes": "558bec538b5d088b0356be0100000089",
+  "first_insns": [
+   "push ebp",
+   "mov ebp, esp",
+   "push ebx",
+   "mov ebx, dword ptr [ebp + 8]",
+   "mov eax, dword ptr [ebx]",
+   "push esi",
+   "mov esi, 1",
+   "mov dword ptr [ebp + 8], esi"
+  ],
+  "weird_insns": 1,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 6.7,
+   "x11_pct": 1.7,
+   "cc_pct": 0.0,
+   "printable_pct": 26.7,
+   "entropy": 5.03
+  },
+  "unimplemented": [
+   {
+    "address": "0x00A6B6AE",
+    "insn": "pause"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "pause": 1
+  },
+  "verdict": "code-reachable, pause benign"
+ },
+ {
+  "address": "0x00A9F4B2",
+  "name": "sub_00A9F4B2",
+  "size": 7086,
+  "entry_kind": "start",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 0,
+  "prologue": false,
+  "first_bytes": "a900cd43a900d743a900e143a900eb43",
+  "first_insns": [
+   "test eax, 0xa943cd00",
+   "add bh, dl",
+   "inc ebx",
+   "test eax, 0xa943e100",
+   "add bl, ch",
+   "inc ebx",
+   "test eax, 0xa943f500",
+   "add bh, bh"
+  ],
+  "weird_insns": 0,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 23.2,
+   "x11_pct": 0.0,
+   "cc_pct": 0.0,
+   "printable_pct": 26.4,
+   "entropy": 4.66
+  },
+  "unimplemented": [
+   {
+    "address": "0x00A9F75E",
+    "insn": "daa"
+   },
+   {
+    "address": "0x00A9F9AE",
+    "insn": "daa"
+   },
+   {
+    "address": "0x00A9F9B6",
+    "insn": "das"
+   },
+   {
+    "address": "0x00A9F9BE",
+    "insn": "aaa"
+   },
+   {
+    "address": "0x00A9F9C6",
+    "insn": "aas"
+   },
+   {
+    "address": "0x00A9FE6D",
+    "insn": "bound ebp, qword ptr [ecx - 0x569dbb00]"
+   },
+   {
+    "address": "0x00A9FE8D",
+    "insn": "bound ebp, qword ptr [ecx - 0x56614700]"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "daa": 2,
+   "das": 1,
+   "aaa": 1,
+   "aas": 1,
+   "bound": 2
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x00AA05AA",
+  "name": "sub_00AA05AA",
+  "size": 2742,
+  "entry_kind": "alias",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 0,
+  "prologue": false,
+  "first_bytes": "a90035aea9003faea90049aea90053ae",
+  "first_insns": [
+   "test eax, 0xa9ae3500",
+   "add byte ptr [edi], bh",
+   "scasb al, byte ptr es:[edi]",
+   "test eax, 0xa9ae4900",
+   "add byte ptr [ebx - 0x52], dl",
+   "test eax, 0xa9ae5d00",
+   "add byte ptr [edi - 0x52], ah",
+   "test eax, 0xa9ae7100"
+  ],
+  "weird_insns": 0,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 25.0,
+   "x11_pct": 0.2,
+   "cc_pct": 0.0,
+   "printable_pct": 7.0,
+   "entropy": 4.02
+  },
+  "unimplemented": [
+   {
+    "address": "0x00AA0EF8",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0EFA",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0EFC",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0EFE",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F00",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F02",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F04",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F06",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F08",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F0A",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F0C",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F0E",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F10",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F12",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F14",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F16",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F18",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F1A",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F1C",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F1E",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F20",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F22",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F24",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F26",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F28",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F2A",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F2C",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0F2E",
+    "insn": "aad 0x1c"
+   },
+   {
+    "address": "0x00AA0F39",
+    "insn": "daa"
+   },
+   {
+    "address": "0x00AA0F41",
+    "insn": "das"
+   },
+   {
+    "address": "0x00AA0F49",
+    "insn": "aaa"
+   },
+   {
+    "address": "0x00AA0F53",
+    "insn": "aas"
+   },
+   {
+    "address": "0x00AA0F55",
+    "insn": "aad 0x40"
+   },
+   {
+    "address": "0x00AA0F78",
+    "insn": "bound esp, qword ptr [ebx + 0x64]"
+   },
+   {
+    "address": "0x00AA0F7B",
+    "insn": "aad 0x65"
+   },
+   {
+    "address": "0x00AA0FB1",
+    "insn": "lcall 0xd5d5, 0xd5d59c9b"
+   },
+   {
+    "address": "0x00AA0FB8",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FBA",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FBC",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FBE",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FC0",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FC2",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FC4",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FC6",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FC8",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FCA",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FCC",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FCE",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FD0",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FD2",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FD4",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FD6",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FD8",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FDA",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FDC",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FDE",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FE0",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FE2",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FE4",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FE6",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FE8",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FEA",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FEC",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FEE",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FF0",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FF2",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA0FF4",
+    "insn": "aad 0x9d"
+   },
+   {
+    "address": "0x00AA1017",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1019",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA101A",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA101B",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA101C",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA101D",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA101E",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA101F",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1020",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1021",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1022",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1023",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1024",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1025",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1026",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1027",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1028",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1029",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA102A",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA102B",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA102C",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA102D",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA102E",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA102F",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1030",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1031",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1032",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1033",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1034",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1035",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1036",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1037",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1038",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1039",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA103A",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA103B",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA103C",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA103D",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA103E",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA103F",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1040",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1041",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1042",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1043",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1044",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1045",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1046",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1047",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1048",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1049",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA104A",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA104B",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA104C",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA104D",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA104E",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA104F",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1050",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1051",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1052",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1053",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1054",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1055",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1056",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1057",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1058",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA1059",
+    "insn": "aad 0xd5"
+   },
+   {
+    "address": "0x00AA105A",
+    "insn": "aad 0xbf"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "aad": 128,
+   "daa": 1,
+   "das": 1,
+   "aaa": 1,
+   "aas": 1,
+   "bound": 1,
+   "lcall": 1
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x00AA3A49",
+  "name": "sub_00AA3A49",
+  "size": 1119,
+  "entry_kind": "alias",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 0,
+  "prologue": false,
+  "first_bytes": "baa90028baa90032baa9003cbaa90046",
+  "first_insns": [
+   "mov edx, 0xba2800a9",
+   "test eax, 0xa9ba3200",
+   "add byte ptr [edx + edi*4], bh",
+   "test eax, 0xa9ba4600",
+   "add byte ptr [eax - 0x46], dl",
+   "test eax, 0xa9ba5a00",
+   "add byte ptr [edx + edi*4 - 0x57], ah",
+   "add byte ptr [esi - 0x46], ch"
+  ],
+  "weird_insns": 0,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 25.2,
+   "x11_pct": 0.0,
+   "cc_pct": 0.2,
+   "printable_pct": 9.4,
+   "entropy": 4.31
+  },
+  "unimplemented": [
+   {
+    "address": "0x00AA3C7A",
+    "insn": "daa"
+   },
+   {
+    "address": "0x00AA3C81",
+    "insn": "das"
+   },
+   {
+    "address": "0x00AA3C89",
+    "insn": "aaa"
+   },
+   {
+    "address": "0x00AA3C91",
+    "insn": "aas"
+   },
+   {
+    "address": "0x00AA3CB6",
+    "insn": "bound esp, qword ptr [ebx + 0x64]"
+   },
+   {
+    "address": "0x00AA3D2F",
+    "insn": "lcall 0xa09f, 0x9e9d9c9b"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "daa": 1,
+   "das": 1,
+   "aaa": 1,
+   "aas": 1,
+   "bound": 1,
+   "lcall": 1
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x00AA4416",
+  "name": "sub_00AA4416",
+  "size": 1199,
+  "entry_kind": "start",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 0,
+  "prologue": false,
+  "first_bytes": "a900c8d0a900d2d0a900dcd0a900e6d0",
+  "first_insns": [
+   "test eax, 0xa9d0c800",
+   "add dl, dl",
+   "shr byte ptr [ecx - 0x562f2400], 1",
+   "add dh, ah",
+   "shr byte ptr [ecx - 0x562f1000], 1",
+   "add dl, bh",
+   "shr byte ptr [ecx - 0x562efc00], 1",
+   "add byte ptr [esi + 0xe00a9d6], al"
+  ],
+  "weird_insns": 17,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 25.2,
+   "x11_pct": 0.0,
+   "cc_pct": 0.2,
+   "printable_pct": 9.4,
+   "entropy": 4.32
+  },
+  "unimplemented": [
+   {
+    "address": "0x00AA4569",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA456D",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA4571",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA457D",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45A5",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45AD",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45B5",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45B9",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45BD",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45C1",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45C5",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45C9",
+    "insn": "aam 0xa9"
+   },
+   {
+    "address": "0x00AA45CD",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA45D1",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA45E1",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA4605",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA460D",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA4615",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA461D",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA4621",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA4625",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA4629",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA462D",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA4631",
+    "insn": "aad 0xa9"
+   },
+   {
+    "address": "0x00AA463D",
+    "insn": "salc"
+   },
+   {
+    "address": "0x00AA4665",
+    "insn": "salc"
+   },
+   {
+    "address": "0x00AA4671",
+    "insn": "salc"
+   },
+   {
+    "address": "0x00AA4679",
+    "insn": "salc"
+   },
+   {
+    "address": "0x00AA4681",
+    "insn": "salc"
+   },
+   {
+    "address": "0x00AA4689",
+    "insn": "salc"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "aam": 12,
+   "aad": 12,
+   "salc": 6
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x00AA4FF8",
+  "name": "sub_00AA4FF8",
+  "size": 8,
+  "entry_kind": "alias",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 0,
+  "prologue": false,
+  "first_bytes": "45eaa9004feaa900",
+  "first_insns": [
+   "inc ebp",
+   "ljmp 0xa9:0xea4f00a9"
+  ],
+  "weird_insns": 1,
+  "ptr_like_words_in_first_64": 2,
+  "byte_stats": {
+   "zero_pct": 25.0,
+   "x11_pct": 0.0,
+   "cc_pct": 0.0,
+   "printable_pct": 25.0,
+   "entropy": 2.25
+  },
+  "unimplemented": [
+   {
+    "address": "0x00AA4FF9",
+    "insn": "ljmp 0xa9:0xea4f00a9"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "ljmp": 1
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x00AA5000",
+  "name": "sub_00AA5000",
+  "size": 79,
+  "entry_kind": "start",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 1,
+  "prologue": false,
+  "first_bytes": "59eaa90063eaa9006deaa90077eaa900",
+  "first_insns": [
+   "pop ecx",
+   "ljmp 0xa9:0xea6300a9",
+   "insd dword ptr es:[edi], dx",
+   "ljmp 0xa9:0xea7700a9",
+   "sub edx, 0xea8b00a9",
+   "test eax, 0xa9ea9500",
+   "add byte ptr [edi - 0x56ff5616], bl",
+   "ljmp 0xa9:0xeab300a9"
+  ],
+  "weird_insns": 6,
+  "ptr_like_words_in_first_64": 16,
+  "byte_stats": {
+   "zero_pct": 24.1,
+   "x11_pct": 0.0,
+   "cc_pct": 0.0,
+   "printable_pct": 5.1,
+   "entropy": 3.17
+  },
+  "unimplemented": [
+   {
+    "address": "0x00AA5001",
+    "insn": "ljmp 0xa9:0xea6300a9"
+   },
+   {
+    "address": "0x00AA5008",
+    "insn": "insd dword ptr es:[edi], dx"
+   },
+   {
+    "address": "0x00AA5009",
+    "insn": "ljmp 0xa9:0xea7700a9"
+   },
+   {
+    "address": "0x00AA5021",
+    "insn": "ljmp 0xa9:0xeab300a9"
+   },
+   {
+    "address": "0x00AA502D",
+    "insn": "ljmp 0xa9:0xead100a9"
+   },
+   {
+    "address": "0x00AA503D",
+    "insn": "ljmp 0xa9:0xeaf900a9"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "ljmp": 5,
+   "insd": 1
+  },
+  "verdict": "data-like (probable)"
+ },
+ {
+  "address": "0x00AA323E",
+  "name": "sub_00AA323E",
+  "size": 3178,
+  "entry_kind": "start",
+  "callers": 0,
+  "caller_sample": [],
+  "data_refs": 0,
+  "prologue": false,
+  "first_bytes": "baa90028baa90032baa9003cbaa90046",
+  "first_insns": [
+   "mov edx, 0xba2800a9",
+   "test eax, 0xa9ba3200",
+   "add byte ptr [edx + edi*4], bh",
+   "test eax, 0xa9ba4600",
+   "add byte ptr [eax - 0x46], dl",
+   "test eax, 0xa9ba5a00",
+   "add byte ptr [edx + edi*4 - 0x57], ah",
+   "add byte ptr [esi - 0x46], ch"
+  ],
+  "weird_insns": 0,
+  "ptr_like_words_in_first_64": 0,
+  "byte_stats": {
+   "zero_pct": 25.2,
+   "x11_pct": 0.0,
+   "cc_pct": 0.2,
+   "printable_pct": 9.4,
+   "entropy": 4.31
+  },
+  "unimplemented": [
+   {
+    "address": "0x00AA3C7A",
+    "insn": "daa"
+   },
+   {
+    "address": "0x00AA3C81",
+    "insn": "das"
+   },
+   {
+    "address": "0x00AA3C89",
+    "insn": "aaa"
+   },
+   {
+    "address": "0x00AA3C91",
+    "insn": "aas"
+   },
+   {
+    "address": "0x00AA3CB6",
+    "insn": "bound esp, qword ptr [ebx + 0x64]"
+   },
+   {
+    "address": "0x00AA3D2F",
+    "insn": "lcall 0xa09f, 0x9e9d9c9b"
+   }
+  ],
+  "unimplemented_mnemonics": {
+   "daa": 1,
+   "das": 1,
+   "aaa": 1,
+   "aas": 1,
+   "bound": 1,
+   "lcall": 1
+  },
+  "verdict": "data-like (probable), alias de sub_00AA3A49",
+  "duplicate_of": "sub_00AA3A49",
+  "unique_sites": false
+ }
+]

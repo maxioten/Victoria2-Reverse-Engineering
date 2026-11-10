@@ -1,0 +1,50 @@
+{
+ "generated_c_files": 101,
+ "generated_bytes": 1167020597,
+ "generated_lines": 23313327,
+ "counts": {
+  "error_lifting": 0,
+  "failed_comment": 0,
+  "unimplemented": 411,
+  "rt_unimpl": 0,
+  "stub_calls": 0,
+  "function_defs": 99740
+ },
+ "header_declarations": 99740,
+ "dispatch_count": 99740,
+ "disasm_stats": {
+  "functions": 99740,
+  "thunks": 91,
+  "leaves": 46029,
+  "instructions": 11680186,
+  "covered_bytes": 8525292,
+  "code_bytes": 8946176,
+  "coverage_pct": 95.3,
+  "source": "functions.json"
+ },
+ "samples": {
+  "error_lifting": [],
+  "unimplemented": [
+   "; /* UNIMPLEMENTED: fisttp qword ptr [edi] */ /* 0x004FF089: fisttp qword ptr [edi] */",
+   "; /* UNIMPLEMENTED: fisttp qword ptr [edi] */ /* 0x004FF091: fisttp qword ptr [edi] */",
+   "; /* UNIMPLEMENTED: fisttp qword ptr [edi] */ /* 0x004FF09D: fisttp qword ptr [edi] */",
+   "; /* UNIMPLEMENTED: fisttp word ptr [edi] */ /* 0x004FF0A1: fisttp word ptr [edi] */",
+   "; /* UNIMPLEMENTED: pavgb mm1, qword ptr [edi] */ /* 0x004FF0A4: pavgb mm1, qword ptr [edi] */",
+   "; /* UNIMPLEMENTED: pause  */ /* 0x009C130A: pause  */",
+   "; /* UNIMPLEMENTED: int 0x7f */ /* 0x00A18000: int 0x7f */",
+   "; /* UNIMPLEMENTED: pause  */ /* 0x00A6B24E: pause  */",
+   "; /* UNIMPLEMENTED: pause  */ /* 0x00A6B66E: pause  */",
+   "; /* UNIMPLEMENTED: pause  */ /* 0x00A6B6AE: pause  */",
+   "; /* UNIMPLEMENTED: daa  */ /* 0x00A9F75E: daa  */",
+   "; /* UNIMPLEMENTED: daa  */ /* 0x00A9F9AE: daa  */",
+   "; /* UNIMPLEMENTED: das  */ /* 0x00A9F9B6: das  */",
+   "; /* UNIMPLEMENTED: aaa  */ /* 0x00A9F9BE: aaa  */",
+   "; /* UNIMPLEMENTED: aas  */ /* 0x00A9F9C6: aas  */",
+   "; /* UNIMPLEMENTED: das  */ /* 0x00A9F9B6: das  */",
+   "; /* UNIMPLEMENTED: aaa  */ /* 0x00A9F9BE: aaa  */",
+   "; /* UNIMPLEMENTED: aas  */ /* 0x00A9F9C6: aas  */",
+   "; /* UNIMPLEMENTED: das  */ /* 0x00A9F9B6: das  */",
+   "; /* UNIMPLEMENTED: aaa  */ /* 0x00A9F9BE: aaa  */"
+  ]
+ }
+}

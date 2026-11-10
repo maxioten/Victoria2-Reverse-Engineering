@@ -1,0 +1,628 @@
+{
+ "files": 101,
+ "ok": 101,
+ "total_cpu_ms": 4189799,
+ "total_cpu_s": 4189.8,
+ "wall_span_s": 996.3,
+ "total_object_bytes": 1924496992,
+ "largest_object": {
+  "file": "recomp_0007",
+  "rc": 0,
+  "ms": 408613,
+  "object_bytes": 238264168
+ },
+ "slowest": {
+  "file": "recomp_0007",
+  "rc": 0,
+  "ms": 408613,
+  "object_bytes": 238264168
+ },
+ "statuses": [
+  {
+   "file": "recomp_0001",
+   "rc": 0,
+   "ms": 79993,
+   "object_bytes": 25217488
+  },
+  {
+   "file": "recomp_0000",
+   "rc": 0,
+   "ms": 105770,
+   "object_bytes": 30865736
+  },
+  {
+   "file": "recomp_0003",
+   "rc": 0,
+   "ms": 122754,
+   "object_bytes": 33968048
+  },
+  {
+   "file": "recomp_0006",
+   "rc": 0,
+   "ms": 173296,
+   "object_bytes": 48785904
+  },
+  {
+   "file": "recomp_0005",
+   "rc": 0,
+   "ms": 180144,
+   "object_bytes": 48169656
+  },
+  {
+   "file": "recomp_0008",
+   "rc": 0,
+   "ms": 136940,
+   "object_bytes": 41721192
+  },
+  {
+   "file": "recomp_0002",
+   "rc": 0,
+   "ms": 217257,
+   "object_bytes": 54331816
+  },
+  {
+   "file": "recomp_0007",
+   "rc": 0,
+   "ms": 408613,
+   "object_bytes": 238264168
+  },
+  {
+   "file": "recomp_0009",
+   "rc": 0,
+   "ms": 225585,
+   "object_bytes": 50776992
+  },
+  {
+   "file": "recomp_0010",
+   "rc": 0,
+   "ms": 299863,
+   "object_bytes": 146021416
+  },
+  {
+   "file": "recomp_0011",
+   "rc": 0,
+   "ms": 215649,
+   "object_bytes": 51556704
+  },
+  {
+   "file": "recomp_0004",
+   "rc": 0,
+   "ms": 393776,
+   "object_bytes": 75885888
+  },
+  {
+   "file": "recomp_0015",
+   "rc": 0,
+   "ms": 119761,
+   "object_bytes": 63237376
+  },
+  {
+   "file": "recomp_0013",
+   "rc": 0,
+   "ms": 75190,
+   "object_bytes": 47553032
+  },
+  {
+   "file": "recomp_0012",
+   "rc": 0,
+   "ms": 180697,
+   "object_bytes": 87329384
+  },
+  {
+   "file": "recomp_0016",
+   "rc": 0,
+   "ms": 72818,
+   "object_bytes": 43600576
+  },
+  {
+   "file": "recomp_0014",
+   "rc": 0,
+   "ms": 225183,
+   "object_bytes": 116801904
+  },
+  {
+   "file": "recomp_0017",
+   "rc": 0,
+   "ms": 84482,
+   "object_bytes": 60672616
+  },
+  {
+   "file": "recomp_0020",
+   "rc": 0,
+   "ms": 17836,
+   "object_bytes": 14619320
+  },
+  {
+   "file": "recomp_0019",
+   "rc": 0,
+   "ms": 72741,
+   "object_bytes": 54836808
+  },
+  {
+   "file": "recomp_0021",
+   "rc": 0,
+   "ms": 32816,
+   "object_bytes": 26790416
+  },
+  {
+   "file": "recomp_0018",
+   "rc": 0,
+   "ms": 95582,
+   "object_bytes": 67400136
+  },
+  {
+   "file": "recomp_0022",
+   "rc": 0,
+   "ms": 47241,
+   "object_bytes": 41568232
+  },
+  {
+   "file": "recomp_0025",
+   "rc": 0,
+   "ms": 18177,
+   "object_bytes": 15311504
+  },
+  {
+   "file": "recomp_0023",
+   "rc": 0,
+   "ms": 45334,
+   "object_bytes": 41186232
+  },
+  {
+   "file": "recomp_0024",
+   "rc": 0,
+   "ms": 39490,
+   "object_bytes": 35329144
+  },
+  {
+   "file": "recomp_0026",
+   "rc": 0,
+   "ms": 20580,
+   "object_bytes": 18396592
+  },
+  {
+   "file": "recomp_0027",
+   "rc": 0,
+   "ms": 37691,
+   "object_bytes": 31589040
+  },
+  {
+   "file": "recomp_0028",
+   "rc": 0,
+   "ms": 31562,
+   "object_bytes": 26073624
+  },
+  {
+   "file": "recomp_0031",
+   "rc": 0,
+   "ms": 4285,
+   "object_bytes": 2926192
+  },
+  {
+   "file": "recomp_0029",
+   "rc": 0,
+   "ms": 36919,
+   "object_bytes": 32755600
+  },
+  {
+   "file": "recomp_0032",
+   "rc": 0,
+   "ms": 27183,
+   "object_bytes": 19298320
+  },
+  {
+   "file": "recomp_0033",
+   "rc": 0,
+   "ms": 24116,
+   "object_bytes": 18126456
+  },
+  {
+   "file": "recomp_0036",
+   "rc": 0,
+   "ms": 9272,
+   "object_bytes": 6423736
+  },
+  {
+   "file": "recomp_0037",
+   "rc": 0,
+   "ms": 3785,
+   "object_bytes": 2604152
+  },
+  {
+   "file": "recomp_0038",
+   "rc": 0,
+   "ms": 3408,
+   "object_bytes": 2309864
+  },
+  {
+   "file": "recomp_0039",
+   "rc": 0,
+   "ms": 3045,
+   "object_bytes": 1961280
+  },
+  {
+   "file": "recomp_0040",
+   "rc": 0,
+   "ms": 2944,
+   "object_bytes": 1657472
+  },
+  {
+   "file": "recomp_0041",
+   "rc": 0,
+   "ms": 2932,
+   "object_bytes": 1943368
+  },
+  {
+   "file": "recomp_0034",
+   "rc": 0,
+   "ms": 48471,
+   "object_bytes": 36094248
+  },
+  {
+   "file": "recomp_0042",
+   "rc": 0,
+   "ms": 2874,
+   "object_bytes": 1768488
+  },
+  {
+   "file": "recomp_0043",
+   "rc": 0,
+   "ms": 2892,
+   "object_bytes": 1848184
+  },
+  {
+   "file": "recomp_0044",
+   "rc": 0,
+   "ms": 2786,
+   "object_bytes": 1721184
+  },
+  {
+   "file": "recomp_0045",
+   "rc": 0,
+   "ms": 2384,
+   "object_bytes": 1702656
+  },
+  {
+   "file": "recomp_0046",
+   "rc": 0,
+   "ms": 2011,
+   "object_bytes": 1388320
+  },
+  {
+   "file": "recomp_0047",
+   "rc": 0,
+   "ms": 1978,
+   "object_bytes": 1538328
+  },
+  {
+   "file": "recomp_0048",
+   "rc": 0,
+   "ms": 1987,
+   "object_bytes": 1581064
+  },
+  {
+   "file": "recomp_0035",
+   "rc": 0,
+   "ms": 35514,
+   "object_bytes": 26520816
+  },
+  {
+   "file": "recomp_0049",
+   "rc": 0,
+   "ms": 1920,
+   "object_bytes": 1444280
+  },
+  {
+   "file": "recomp_0050",
+   "rc": 0,
+   "ms": 1974,
+   "object_bytes": 1504352
+  },
+  {
+   "file": "recomp_0051",
+   "rc": 0,
+   "ms": 1919,
+   "object_bytes": 1458792
+  },
+  {
+   "file": "recomp_0052",
+   "rc": 0,
+   "ms": 1841,
+   "object_bytes": 1363704
+  },
+  {
+   "file": "recomp_0053",
+   "rc": 0,
+   "ms": 1852,
+   "object_bytes": 1408520
+  },
+  {
+   "file": "recomp_0054",
+   "rc": 0,
+   "ms": 1817,
+   "object_bytes": 1337488
+  },
+  {
+   "file": "recomp_0055",
+   "rc": 0,
+   "ms": 1819,
+   "object_bytes": 1355232
+  },
+  {
+   "file": "recomp_0056",
+   "rc": 0,
+   "ms": 1789,
+   "object_bytes": 1319816
+  },
+  {
+   "file": "recomp_0057",
+   "rc": 0,
+   "ms": 1752,
+   "object_bytes": 1322288
+  },
+  {
+   "file": "recomp_0058",
+   "rc": 0,
+   "ms": 1833,
+   "object_bytes": 1370064
+  },
+  {
+   "file": "recomp_0030",
+   "rc": 0,
+   "ms": 94388,
+   "object_bytes": 31260608
+  },
+  {
+   "file": "recomp_0059",
+   "rc": 0,
+   "ms": 1776,
+   "object_bytes": 1320656
+  },
+  {
+   "file": "recomp_0060",
+   "rc": 0,
+   "ms": 1780,
+   "object_bytes": 1293784
+  },
+  {
+   "file": "recomp_0061",
+   "rc": 0,
+   "ms": 1794,
+   "object_bytes": 1311368
+  },
+  {
+   "file": "recomp_0062",
+   "rc": 0,
+   "ms": 1740,
+   "object_bytes": 1269456
+  },
+  {
+   "file": "recomp_0063",
+   "rc": 0,
+   "ms": 1786,
+   "object_bytes": 1345016
+  },
+  {
+   "file": "recomp_0064",
+   "rc": 0,
+   "ms": 1780,
+   "object_bytes": 1325504
+  },
+  {
+   "file": "recomp_0065",
+   "rc": 0,
+   "ms": 1786,
+   "object_bytes": 1323544
+  },
+  {
+   "file": "recomp_0066",
+   "rc": 0,
+   "ms": 1763,
+   "object_bytes": 1277672
+  },
+  {
+   "file": "recomp_0067",
+   "rc": 0,
+   "ms": 1787,
+   "object_bytes": 1312832
+  },
+  {
+   "file": "recomp_0068",
+   "rc": 0,
+   "ms": 1831,
+   "object_bytes": 1393048
+  },
+  {
+   "file": "recomp_0069",
+   "rc": 0,
+   "ms": 1803,
+   "object_bytes": 1372768
+  },
+  {
+   "file": "recomp_0070",
+   "rc": 0,
+   "ms": 1814,
+   "object_bytes": 1358200
+  },
+  {
+   "file": "recomp_0071",
+   "rc": 0,
+   "ms": 1710,
+   "object_bytes": 1225968
+  },
+  {
+   "file": "recomp_0072",
+   "rc": 0,
+   "ms": 1757,
+   "object_bytes": 1293800
+  },
+  {
+   "file": "recomp_0073",
+   "rc": 0,
+   "ms": 1841,
+   "object_bytes": 1410912
+  },
+  {
+   "file": "recomp_0075",
+   "rc": 0,
+   "ms": 1703,
+   "object_bytes": 1269960
+  },
+  {
+   "file": "recomp_0074",
+   "rc": 0,
+   "ms": 1830,
+   "object_bytes": 1395656
+  },
+  {
+   "file": "recomp_0076",
+   "rc": 0,
+   "ms": 1795,
+   "object_bytes": 1335544
+  },
+  {
+   "file": "recomp_0077",
+   "rc": 0,
+   "ms": 1782,
+   "object_bytes": 1291752
+  },
+  {
+   "file": "recomp_0078",
+   "rc": 0,
+   "ms": 1740,
+   "object_bytes": 1229264
+  },
+  {
+   "file": "recomp_0079",
+   "rc": 0,
+   "ms": 1709,
+   "object_bytes": 1242264
+  },
+  {
+   "file": "recomp_0080",
+   "rc": 0,
+   "ms": 1681,
+   "object_bytes": 1182664
+  },
+  {
+   "file": "recomp_0081",
+   "rc": 0,
+   "ms": 1643,
+   "object_bytes": 1154000
+  },
+  {
+   "file": "recomp_0082",
+   "rc": 0,
+   "ms": 1677,
+   "object_bytes": 1187688
+  },
+  {
+   "file": "recomp_0083",
+   "rc": 0,
+   "ms": 1687,
+   "object_bytes": 1195712
+  },
+  {
+   "file": "recomp_0084",
+   "rc": 0,
+   "ms": 1976,
+   "object_bytes": 1907288
+  },
+  {
+   "file": "recomp_0085",
+   "rc": 0,
+   "ms": 1993,
+   "object_bytes": 1956144
+  },
+  {
+   "file": "recomp_0086",
+   "rc": 0,
+   "ms": 2027,
+   "object_bytes": 1996448
+  },
+  {
+   "file": "recomp_0087",
+   "rc": 0,
+   "ms": 2006,
+   "object_bytes": 1993560
+  },
+  {
+   "file": "recomp_0090",
+   "rc": 0,
+   "ms": 1971,
+   "object_bytes": 1946368
+  },
+  {
+   "file": "recomp_0094",
+   "rc": 0,
+   "ms": 2034,
+   "object_bytes": 2029576
+  },
+  {
+   "file": "recomp_0098",
+   "rc": 0,
+   "ms": 2069,
+   "object_bytes": 2073464
+  },
+  {
+   "file": "recomp_0099",
+   "rc": 0,
+   "ms": 1595,
+   "object_bytes": 1257544
+  },
+  {
+   "file": "recomp_0095",
+   "rc": 0,
+   "ms": 6042,
+   "object_bytes": 8314152
+  },
+  {
+   "file": "recomp_0088",
+   "rc": 0,
+   "ms": 1965,
+   "object_bytes": 1931912
+  },
+  {
+   "file": "recomp_0089",
+   "rc": 0,
+   "ms": 2086,
+   "object_bytes": 2107720
+  },
+  {
+   "file": "recomp_0091",
+   "rc": 0,
+   "ms": 2022,
+   "object_bytes": 2046304
+  },
+  {
+   "file": "recomp_0092",
+   "rc": 0,
+   "ms": 1959,
+   "object_bytes": 1945416
+  },
+  {
+   "file": "recomp_0093",
+   "rc": 0,
+   "ms": 1956,
+   "object_bytes": 1938928
+  },
+  {
+   "file": "recomp_0096",
+   "rc": 0,
+   "ms": 1989,
+   "object_bytes": 1946032
+  },
+  {
+   "file": "recomp_0097",
+   "rc": 0,
+   "ms": 1973,
+   "object_bytes": 1929592
+  },
+  {
+   "file": "recomp_dispatch",
+   "rc": 0,
+   "ms": 1630,
+   "object_bytes": 7681696
+  }
+ ]
+}
