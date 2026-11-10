@@ -1,0 +1,602 @@
+[
+ {
+  "address": 4198576,
+  "address_hex": "0x004010B0",
+  "size": 8,
+  "insns": 5,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "558bec8b450c5dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 4198624,
+  "address_hex": "0x004010E0",
+  "size": 22,
+  "insns": 10,
+  "mnemonics": [
+   "fdiv",
+   "fild",
+   "fld",
+   "fstp",
+   "mov",
+   "pop",
+   "push",
+   "ret"
+  ],
+  "features": [
+   "x87"
+  ],
+  "bytes": "558bec51db01dc356056e400d95dfcd945fc8be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 4240448,
+  "address_hex": "0x0040B440",
+  "size": 20,
+  "insns": 5,
+  "mnemonics": [
+   "movq",
+   "ret"
+  ],
+  "features": [
+   "sse/mmx"
+  ],
+  "bytes": "f30f7e416c660fd600f30f7e4174660fd64008c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 4301728,
+  "address_hex": "0x0041A3A0",
+  "size": 18,
+  "insns": 5,
+  "mnemonics": [
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "8b91780e00008b897c0e00008910894804c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 4493568,
+  "address_hex": "0x00449100",
+  "size": 29,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c9c740048d01000089480889480c89481066894818c7009499df00c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 4883040,
+  "address_hex": "0x004A8260",
+  "size": 12,
+  "insns": 5,
+  "mnemonics": [
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "8b51088b490c8910894804c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 5333952,
+  "address_hex": "0x005163C0",
+  "size": 99,
+  "insns": 29,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret",
+   "sub",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "558bec83ec085633d2c745f82d2d2d008b75f8897008c700044be30033c9894814c740048d01000089500cc745f82d2d2d008b75f8897010b9c0559c028948188b35bc9a250189701889481c8b0dbc9a250189481c885020c7000cfbdf005e8be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 5819744,
+  "address_hex": "0x0058CD60",
+  "size": 40,
+  "insns": 14,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret",
+   "sub"
+  ],
+  "features": [],
+  "bytes": "558bec83ec088b413c8b15e48725018b52048945f88b41408b04828a494488889c1200008be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 6185776,
+  "address_hex": "0x005E6330",
+  "size": 16,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "558bec51894dfcb8070300008be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 6186096,
+  "address_hex": "0x005E6470",
+  "size": 16,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "558bec51894dfcb8670a00008be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 6237408,
+  "address_hex": "0x005F2CE0",
+  "size": 16,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "558bec51894dfcb8b40200008be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 6501856,
+  "address_hex": "0x006335E0",
+  "size": 18,
+  "insns": 4,
+  "mnemonics": [
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "c7400410270000c6400901c7009c84e000c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 6916224,
+  "address_hex": "0x00698880",
+  "size": 142,
+  "insns": 35,
+  "mnemonics": [
+   "mov",
+   "movss",
+   "pop",
+   "push",
+   "ret",
+   "sub",
+   "xor"
+  ],
+  "features": [
+   "string"
+  ],
+  "bytes": "558bec83ec08f30f1005fc92f000c7000f00000033c9894804b201885008885024c740108d010000c7400c7cbadf00f30f114014f30f114018f30f11401cf30f114020c7403c0f000000894838884828894848c745f82d2d2d008b55f889504489484c894850894854894858c7405cc0559c028b0dbc9a250189485cc740600f000000c740640f0000008be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 7121776,
+  "address_hex": "0x006CAB70",
+  "size": 51,
+  "insns": 16,
+  "mnemonics": [
+   "lea",
+   "mov",
+   "pop",
+   "push",
+   "ret",
+   "sub"
+  ],
+  "features": [],
+  "bytes": "558bec83ec10894df08d45f78945f88b4df0c701000000008b55f0c74204000000008b45f0c74008000000008b45f08be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 7737072,
+  "address_hex": "0x00760EF0",
+  "size": 17,
+  "insns": 4,
+  "mnemonics": [
+   "cmp",
+   "mov",
+   "ret",
+   "sete"
+  ],
+  "features": [],
+  "bytes": "80b925030000000f94c0888125030000c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 8408992,
+  "address_hex": "0x00804FA0",
+  "size": 107,
+  "insns": 37,
+  "mnemonics": [
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "8b1189108b51048950048b51088950088b510c89500c8b51108950108b51148950148b51188950188b511c89501c8b51208950208b51248950248b51288950288b512c89502c8b51308950308b51348950348b51388950388b513c89503c8b51408950408b4944894844c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 8816624,
+  "address_hex": "0x008687F0",
+  "size": 22,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "558beca1e88825018b88cc0a00008b55088b04915dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 8886688,
+  "address_hex": "0x008799A0",
+  "size": 45,
+  "insns": 12,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c989480889480c894810884814c740048d0100006689481cc70000b6e200c740340f000000894830884820c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 8887888,
+  "address_hex": "0x00879E50",
+  "size": 35,
+  "insns": 10,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c989480889480c894810884814c740048d0100006689481c894820c7006cc0e200c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 8888912,
+  "address_hex": "0x0087A250",
+  "size": 69,
+  "insns": 19,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c989480889480c8948108848146689481cc700d8c7e200ba8d010000895004c740340f00000089483088482089504089484489484889484c66894854c7403c9499df00c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9137248,
+  "address_hex": "0x008B6C60",
+  "size": 54,
+  "insns": 17,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret",
+   "sub",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "558bec83ec0833c9c740048d01000089480889480c894810c745f82d2d2d008b55f86689481889501c894820c700680be3008be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9138368,
+  "address_hex": "0x008B70C0",
+  "size": 29,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c9c740048d01000089480889480c89481066894818c700d014e300c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9139200,
+  "address_hex": "0x008B7400",
+  "size": 29,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c9c740048d01000089480889480c89481066894818c700f01ae300c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9139952,
+  "address_hex": "0x008B76F0",
+  "size": 29,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c9c740048d01000089480889480c89481066894818c7008021e300c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9140704,
+  "address_hex": "0x008B79E0",
+  "size": 35,
+  "insns": 10,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c9c740048d01000089480889480c89481066894818894820894824c7007025e300c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9141408,
+  "address_hex": "0x008B7CA0",
+  "size": 29,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c9c740048d01000089480889480c89481066894818c7006029e300c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9282960,
+  "address_hex": "0x008DA590",
+  "size": 45,
+  "insns": 12,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "33c9c740048d01000089480889480c89481066894818c7005011e300c740300f00000089482c88481c894838c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9453536,
+  "address_hex": "0x00903FE0",
+  "size": 64,
+  "insns": 20,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret",
+   "sub",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "558bec83ec0833c9c740048d01000089480889480c894810c745f82d2d2d008b55f866894818c700482fe30089481c8948208950248948286689482c8be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9619968,
+  "address_hex": "0x0092CA00",
+  "size": 99,
+  "insns": 29,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret",
+   "sub",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "558bec83ec085633d2c745f82d2d2d008b75f8897008c700044be30033c9894814c740048d01000089500cc745f82d2d2d008b75f8897010b9c0559c028948188b35bc9a250189701889481c8b0dbc9a250189481c885020c7006c4be3005e8be55dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 9995568,
+  "address_hex": "0x00988530",
+  "size": 20,
+  "insns": 5,
+  "mnemonics": [
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "8bc1c740140f000000c7401000000000c60000c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 10244544,
+  "address_hex": "0x009C51C0",
+  "size": 12,
+  "insns": 3,
+  "mnemonics": [
+   "add",
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "8b8154010000057c010000c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 10637744,
+  "address_hex": "0x00A251B0",
+  "size": 39,
+  "insns": 11,
+  "mnemonics": [
+   "mov",
+   "movq",
+   "ret"
+  ],
+  "features": [
+   "sse/mmx"
+  ],
+  "bytes": "8b413c8941388b5160895144f30f7e4164660fd64148f30f7e416c660fd641508a4174884158c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 10920464,
+  "address_hex": "0x00A6A210",
+  "size": 14,
+  "insns": 3,
+  "mnemonics": [
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "c70000000000c7400400000000c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 11217220,
+  "address_hex": "0x00AB2944",
+  "size": 22,
+  "insns": 7,
+  "mnemonics": [
+   "cmp",
+   "mov",
+   "or",
+   "ret",
+   "sete",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "a19c25ef0083c80133c9390570fcf1000f94c18bc1c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 11312615,
+  "address_hex": "0x00AC9DE7",
+  "size": 8,
+  "insns": 2,
+  "mnemonics": [
+   "and",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "8325bc3a3f0100c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 11577360,
+  "address_hex": "0x00B0A810",
+  "size": 26,
+  "insns": 9,
+  "mnemonics": [
+   "mov",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "8bc133c98908894804894808c74010ffffffff89480c884814c3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 11679264,
+  "address_hex": "0x00B23620",
+  "size": 16,
+  "insns": 8,
+  "mnemonics": [
+   "mov",
+   "pop",
+   "push",
+   "ret",
+   "xor"
+  ],
+  "features": [],
+  "bytes": "558bec8b45088b48048b411833d25dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 11711776,
+  "address_hex": "0x00B2B520",
+  "size": 38,
+  "insns": 16,
+  "mnemonics": [
+   "adc",
+   "add",
+   "mov",
+   "pop",
+   "push",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "558bec8b4d0c568b75088b46308b0c88034d108b56348b04ca0346288b54ca0413562c5e5dc3",
+  "entry_kind": "start"
+ },
+ {
+  "address": 11804704,
+  "address_hex": "0x00B42020",
+  "size": 14,
+  "insns": 4,
+  "mnemonics": [
+   "and",
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "a1e81c3f0183e0fea3e81c3f01c3",
+  "entry_kind": "alias"
+ },
+ {
+  "address": 12106876,
+  "address_hex": "0x00B8BC7C",
+  "size": 14,
+  "insns": 4,
+  "mnemonics": [
+   "and",
+   "mov",
+   "ret"
+  ],
+  "features": [],
+  "bytes": "a194303f0183e0fba394303f01c3",
+  "entry_kind": "alias"
+ }
+]

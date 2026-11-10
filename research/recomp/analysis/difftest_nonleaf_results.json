@@ -1,0 +1,212 @@
+[
+ {
+  "index": 0,
+  "address": "0x009F8E80",
+  "state": 0,
+  "closure": [
+   "0x005DA1E0",
+   "0x009F8E80"
+  ],
+  "size": 186,
+  "fields": [],
+  "mem_count_c": 52,
+  "mem_count_u": 53,
+  "status": "ok"
+ },
+ {
+  "index": 0,
+  "address": "0x009F8E80",
+  "state": 1,
+  "closure": [
+   "0x005DA1E0",
+   "0x009F8E80"
+  ],
+  "size": 186,
+  "fields": [],
+  "mem_count_c": 52,
+  "mem_count_u": 53,
+  "status": "ok"
+ },
+ {
+  "index": 0,
+  "address": "0x009F8E80",
+  "state": 2,
+  "closure": [
+   "0x005DA1E0",
+   "0x009F8E80"
+  ],
+  "size": 186,
+  "fields": [],
+  "mem_count_c": 52,
+  "mem_count_u": 53,
+  "status": "ok"
+ },
+ {
+  "index": 1,
+  "address": "0x00B1A740",
+  "state": 0,
+  "closure": [
+   "0x00B1A740",
+   "0x00B1BED0"
+  ],
+  "size": 144,
+  "fields": [],
+  "mem_count_c": 70,
+  "mem_count_u": 71,
+  "status": "ok"
+ },
+ {
+  "index": 1,
+  "address": "0x00B1A740",
+  "state": 1,
+  "closure": [
+   "0x00B1A740",
+   "0x00B1BED0"
+  ],
+  "size": 144,
+  "fields": [],
+  "mem_count_c": 71,
+  "mem_count_u": 72,
+  "status": "ok"
+ },
+ {
+  "index": 1,
+  "address": "0x00B1A740",
+  "state": 2,
+  "closure": [
+   "0x00B1A740",
+   "0x00B1BED0"
+  ],
+  "size": 144,
+  "fields": [],
+  "mem_count_c": 71,
+  "mem_count_u": 72,
+  "status": "ok"
+ },
+ {
+  "index": 2,
+  "address": "0x00913320",
+  "state": 0,
+  "closure": [
+   "0x00913320",
+   "0x0094BE20"
+  ],
+  "size": 79,
+  "fields": [],
+  "mem_count_c": 12,
+  "mem_count_u": 13,
+  "status": "ok"
+ },
+ {
+  "index": 2,
+  "address": "0x00913320",
+  "state": 1,
+  "closure": [
+   "0x00913320",
+   "0x0094BE20"
+  ],
+  "size": 79,
+  "fields": [],
+  "mem_count_c": 12,
+  "mem_count_u": 13,
+  "status": "ok"
+ },
+ {
+  "index": 2,
+  "address": "0x00913320",
+  "state": 2,
+  "closure": [
+   "0x00913320",
+   "0x0094BE20"
+  ],
+  "size": 79,
+  "fields": [],
+  "mem_count_c": 12,
+  "mem_count_u": 13,
+  "status": "ok"
+ },
+ {
+  "index": 3,
+  "address": "0x00504700",
+  "state": 0,
+  "closure": [
+   "0x00504700",
+   "0x00504750"
+  ],
+  "size": 73,
+  "fields": [],
+  "mem_count_c": 2,
+  "mem_count_u": 3,
+  "status": "ok"
+ },
+ {
+  "index": 3,
+  "address": "0x00504700",
+  "state": 1,
+  "closure": [
+   "0x00504700",
+   "0x00504750"
+  ],
+  "size": 73,
+  "fields": [],
+  "mem_count_c": 2,
+  "mem_count_u": 3,
+  "status": "ok"
+ },
+ {
+  "index": 3,
+  "address": "0x00504700",
+  "state": 2,
+  "closure": [
+   "0x00504700",
+   "0x00504750"
+  ],
+  "size": 73,
+  "fields": [],
+  "mem_count_c": 2,
+  "mem_count_u": 3,
+  "status": "ok"
+ },
+ {
+  "index": 4,
+  "address": "0x005F73C0",
+  "state": 0,
+  "closure": [
+   "0x005F73C0",
+   "0x0094BD40"
+  ],
+  "size": 56,
+  "fields": [],
+  "mem_count_c": 31,
+  "mem_count_u": 32,
+  "status": "ok"
+ },
+ {
+  "index": 4,
+  "address": "0x005F73C0",
+  "state": 1,
+  "closure": [
+   "0x005F73C0",
+   "0x0094BD40"
+  ],
+  "size": 56,
+  "fields": [],
+  "mem_count_c": 32,
+  "mem_count_u": 33,
+  "status": "ok"
+ },
+ {
+  "index": 4,
+  "address": "0x005F73C0",
+  "state": 2,
+  "closure": [
+   "0x005F73C0",
+   "0x0094BD40"
+  ],
+  "size": 56,
+  "fields": [],
+  "mem_count_c": 32,
+  "mem_count_u": 33,
+  "status": "ok"
+ }
+]

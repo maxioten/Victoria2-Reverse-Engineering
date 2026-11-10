@@ -7,6 +7,10 @@ el contenido anterior del repositorio en sus directorios originales.
 No se incluyen el ejecutable ni otros archivos del juego, partidas, proyectos
 Ghidra, exportaciones extensas de pseudocódigo/desensamblado, recibos generados,
 ledgers locales, runtimes descargados o configuración personal de apagado.
+
+El subdirectorio [`recomp/`](../recomp/README.md) publica solo metodología y
+métricas agregadas del lift con pcrecomp. El C generado, los objetos y los
+binarios permanecen locales; ver su [alcance](../recomp/PUBLICATION.md).
 Los enlaces a `evidence/generated/` describen salidas locales que debe regenerar
 quien reproduzca los ensayos; no son archivos distribuidos con el repositorio.
 

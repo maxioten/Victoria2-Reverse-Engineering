@@ -1,0 +1,49 @@
+{
+ "target": {
+  "file": "v2game.exe",
+  "sha256": "62d48c204364dd706584777c2e2b3c7ab3c5f1dd0170872554943575d53d6648",
+  "format": "PE32/i386",
+  "linker": "10.0",
+  "image_base": "0x00400000"
+ },
+ "coverage": {
+  "functions": 99740,
+  "thunks": 91,
+  "leaves": 46029,
+  "instructions": 11680186,
+  "covered_bytes": 8525292,
+  "code_bytes": 8946176,
+  "coverage_pct": 95.3
+ },
+ "function_catalog": {
+  "entry_kinds": {
+   "start": 35601,
+   "alias": 64139
+  },
+  "with_calls": 53711,
+  "leaf_no_calls": 46029,
+  "size_distribution": {
+   "1-16": 49494,
+   "17-32": 11088,
+   "33-64": 11951,
+   "65-128": 5612,
+   "129-256": 6955,
+   "257-512": 4383,
+   "513-1024": 3429,
+   "1025-1000000000": 6828
+  },
+  "size_min": 1,
+  "size_median": 18,
+  "size_max": 120731
+ },
+ "lift": {
+  "generated_c_files": 101,
+  "generated_bytes": 1167020597,
+  "generated_lines": 23313327,
+  "error_lifting": 0,
+  "failed_comment": 0,
+  "unimplemented_comments": 411,
+  "function_defs": 99740,
+  "dispatch_count": 99740
+ }
+}

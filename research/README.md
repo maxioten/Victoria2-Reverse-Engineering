@@ -3,6 +3,10 @@
 Fuentes y contratos del laboratorio. Ver [alcance de la publicación](docs/PUBLICATION.md)
 y [resumen local de validación](validation-summary.json).
 
+El baseline de recompilación estática con pcrecomp está en
+[recomp/](recomp/README.md): cobertura, límites y resultados de los primeros
+tests diferenciales.
+
 ```bash
 source env.sh
 python scripts/doctor.py
