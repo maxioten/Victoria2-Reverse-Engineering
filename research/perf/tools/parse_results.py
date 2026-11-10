@@ -3,6 +3,7 @@
 import argparse
 import csv
 import json
+import math
 import statistics
 import sys
 from collections import defaultdict
@@ -21,6 +22,28 @@ def percentile(sorted_values, p):
     return sorted_values[lo] * (1.0 - frac) + sorted_values[hi] * frac
 
 
+def wall_ms_per_day(record):
+    """Return wall ms/day from either the manual timer or a screen runner.
+
+    The manual timer writes ``wall_ms_per_day``.  The automated Xvfb runner
+    writes ``ms_per_day`` (or ``wall_s`` plus ``days``).  Accept all three so
+    both sources can be aggregated in one file.
+    """
+    if "wall_ms_per_day" in record:
+        return float(record["wall_ms_per_day"])
+    if "ms_per_day" in record:
+        return float(record["ms_per_day"])
+    if "wall_s" in record and "days" in record:
+        return float(record["wall_s"]) * 1000.0 / float(record["days"])
+    raise ValueError(f"run has no wall-time field: {sorted(record)}")
+
+
+def fmt(value, digits=2):
+    if value is None or (isinstance(value, float) and math.isnan(value)):
+        return "n/a"
+    return f"{value:.{digits}f}"
+
+
 def load_runs(path):
     text = Path(path).read_text().strip()
     if not text:
@@ -36,16 +59,18 @@ def summarize(records):
         groups[r["label"]].append(r)
     out = {}
     for label, runs in sorted(groups.items()):
-        wall = sorted(float(r.get("wall_ms_per_day", 0)) for r in runs)
-        cpu = sorted(float(r.get("cpu_ms_per_day", 0)) for r in runs)
-        rss = sorted(float(r.get("max_rss_mb", 0)) for r in runs)
+        wall = sorted(wall_ms_per_day(r) for r in runs)
+        cpu = sorted(float(r["cpu_ms_per_day"]) for r in runs
+                     if "cpu_ms_per_day" in r)
+        rss = sorted(float(r["max_rss_mb"]) for r in runs
+                     if "max_rss_mb" in r)
         out[label] = {
             "n": len(runs),
             "wall_median": statistics.median(wall),
             "wall_p95": percentile(wall, 95),
-            "cpu_median": statistics.median(cpu),
+            "cpu_median": statistics.median(cpu) if cpu else float("nan"),
             "cpu_p95": percentile(cpu, 95),
-            "rss_median": statistics.median(rss),
+            "rss_median": statistics.median(rss) if rss else float("nan"),
         }
     return out
 
@@ -59,22 +84,27 @@ def markdown(summary, baseline=None, experiment=None):
     ]
     for label, s in summary.items():
         lines.append(
-            f"| {label} | {s['n']} | {s['wall_median']:.2f} | {s['wall_p95']:.2f} | "
-            f"{s['cpu_median']:.2f} | {s['cpu_p95']:.2f} | {s['rss_median']:.1f} |"
+            f"| {label} | {s['n']} | {fmt(s['wall_median'])} | "
+            f"{fmt(s['wall_p95'])} | {fmt(s['cpu_median'])} | "
+            f"{fmt(s['cpu_p95'])} | {fmt(s['rss_median'], 1)} |"
         )
     if baseline and experiment and baseline in summary and experiment in summary:
         b, e = summary[baseline], summary[experiment]
-        dw = 100.0 * (e["wall_median"] - b["wall_median"]) / b["wall_median"] if b["wall_median"] else 0
-        dc = 100.0 * (e["cpu_median"] - b["cpu_median"]) / b["cpu_median"] if b["cpu_median"] else 0
-        lines += [
-            "",
-            f"**{experiment} vs {baseline}**",
-            "",
-            "| metric | delta |",
-            "|---|---:|",
-            f"| wall median | {dw:+.2f} % |",
-            f"| CPU median | {dc:+.2f} % |",
-        ]
+        if b["wall_median"] and not math.isnan(b["wall_median"]) \
+                and not math.isnan(e["wall_median"]):
+            dw = 100.0 * (e["wall_median"] - b["wall_median"]) / b["wall_median"]
+            lines += [
+                "",
+                f"**{experiment} vs {baseline}**",
+                "",
+                "| metric | delta |",
+                "|---|---:|",
+                f"| wall median | {dw:+.2f} % |",
+            ]
+        if b["cpu_median"] and not math.isnan(b["cpu_median"]) \
+                and not math.isnan(e["cpu_median"]):
+            dc = 100.0 * (e["cpu_median"] - b["cpu_median"]) / b["cpu_median"]
+            lines.append(f"| CPU median | {dc:+.2f} % |")
     return "\n".join(lines) + "\n"
 
 
@@ -84,9 +114,9 @@ def write_csv(summary, path):
         w.writerow(["label", "n", "wall_median_ms_day", "wall_p95_ms_day",
                     "cpu_median_ms_day", "cpu_p95_ms_day", "rss_median_mb"])
         for label, s in summary.items():
-            w.writerow([label, s["n"], f"{s['wall_median']:.3f}", f"{s['wall_p95']:.3f}",
-                        f"{s['cpu_median']:.3f}", f"{s['cpu_p95']:.3f}",
-                        f"{s['rss_median']:.3f}"])
+            w.writerow([label, s["n"], fmt(s["wall_median"], 3),
+                        fmt(s["wall_p95"], 3), fmt(s["cpu_median"], 3),
+                        fmt(s["cpu_p95"], 3), fmt(s["rss_median"], 3)])
 
 
 def selftest():
@@ -106,6 +136,15 @@ def selftest():
     assert summary["experiment"]["wall_median"] == 162.0
     text = markdown(summary, "baseline", "experiment")
     assert "-19.80 %" in text or "-19.8" in text
+
+    # Screen-runner records use ms_per_day or wall_s+days and omit CPU/RSS.
+    records.append({"label": "screen", "ms_per_day": 321.5})
+    records.append({"label": "screen", "wall_s": 9.0, "days": 30})
+    summary = summarize(records)
+    assert summary["screen"]["n"] == 2
+    assert abs(summary["screen"]["wall_median"] - 310.75) < 1e-9
+    assert math.isnan(summary["screen"]["cpu_median"])
+    assert "n/a" in markdown(summary)
     print("selftest ok")
     print(text)
 

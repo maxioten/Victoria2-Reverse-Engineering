@@ -28,5 +28,14 @@ jobs:
         run: |
           gcc -O2 -o /tmp/relations-microbench research/perf/experiments/relations-soa/microbench.c
           /tmp/relations-microbench
+      - name: Relation fixture (optimized)
+        run: |
+          gcc -std=c11 -O2 -o /tmp/relations-fixture research/perf/experiments/relations-soa/fixture.c
+          /tmp/relations-fixture --correctness-only
+      - name: Relation fixture (ASan/UBSan)
+        run: |
+          gcc -std=c11 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer \
+            -o /tmp/relations-fixture-asan research/perf/experiments/relations-soa/fixture.c
+          ASAN_OPTIONS=detect_leaks=0 /tmp/relations-fixture-asan --correctness-only
       - name: Whitespace check
         run: git diff --check

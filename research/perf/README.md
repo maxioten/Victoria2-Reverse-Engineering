@@ -21,7 +21,7 @@ The starting point is the measured profile in
 | [`tools/parse_results.py`](tools/parse_results.py) | aggregate runs, median/p95, baseline vs experiment |
 | [`schema/benchmark.schema.json`](schema/benchmark.schema.json) | JSON schema for a run |
 | [`experiments/enet-timeout-zero/`](experiments/enet-timeout-zero/) | binary-patch experiment for the ENet wait |
-| [`experiments/relations-soa/`](experiments/relations-soa/) | layout design and synthetic microbenchmark |
+| [`experiments/relations-soa/`](experiments/relations-soa/) | layout design, microbenchmark and native 683 × 683 fixture |
 
 ## Rules
 
