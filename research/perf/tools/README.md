@@ -41,7 +41,9 @@ python research/perf/tools/parse_results.py \
 ```
 
 It reports count, median and p95 for wall ms/day, CPU ms/day and peak RSS, plus
-the delta of the experiment against the baseline.
+the delta of the experiment against the baseline. Records from the manual timer
+use `wall_ms_per_day`; automated screen-runner records may use `ms_per_day` or
+`wall_s` plus `days`. CPU and RSS are shown as `n/a` when a record omits them.
 
 ```bash
 python research/perf/tools/parse_results.py --selftest

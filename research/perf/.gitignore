@@ -1,6 +1,9 @@
 benchmarks/runs.jsonl
 benchmarks/summary.csv
 experiments/relations-soa/microbench
+experiments/relations-soa/fixture
+experiments/relations-soa/fixture-asan
+experiments/relations-soa/fixture-results.json
 *.patch.json
 
 __pycache__/

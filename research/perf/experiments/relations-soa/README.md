@@ -109,9 +109,58 @@ runs are noisy and the SoA result was not consistently better than AoS; the
 range only shows that pointer chasing can be more expensive. The engine may
 have different field widths, aliasing and write patterns.
 
+## Native 683 × 683 fixture
+
+[`fixture.c`](fixture.c) builds the full matrix in four layouts and runs the
+same deterministic daily pass on each:
+
+| Layout | Storage |
+|---|---|
+| `ptrs` | 466,489 separately allocated objects + pointer array (baseline) |
+| `aos` | one contiguous block, indexed directly |
+| `aos_ptr` | the same block reached through the original pointer array (layout A) |
+| `soa` | eight contiguous arrays, one per field |
+
+The pass reads five hot fields, writes one field on the current pair and one on
+a neighbouring country, and uses a shuffled country order. It checks:
+
+- identical field values after the pass (full comparison and FNV-1a digests);
+- pointer arrays are byte-identical before and after (no invalidation);
+- layout A keeps `relations[i] == &block[i]` and adjacency;
+- canaries before and after every allocation survive, including the 466,489
+  guarded per-pair allocations of the baseline.
+
+Build and run:
+
+```bash
+./run_fixture.sh
+```
+
+The script first runs an ASan/UBSan build with `--correctness-only`, then an
+optimized build with `--json`; the JSON is written to `fixture-results.json`
+(ignored by git). Timing is ns per pair, median and p95 over rounds, with the
+layout order rotated every round.
+
+Results on the development machine (synthetic, not the game; the host was
+loaded, so absolute values are only indicative):
+
+| Layout | ns/pair median (range of 3 runs) |
+|---|---:|
+| `ptrs` | 28.0 (26.4–40.5) |
+| `aos` | 10.5 (10.5–12.6) |
+| `aos_ptr` | 12.6 (12.2–17.6) |
+| `soa` | 7.0 (6.9–10.0) |
+
+The ordering is stable across runs: the pointer chase is ~2.1–2.7× slower than
+the contiguous block, and the SoA pass is ~1.5× faster than AoS. The `aos_ptr`
+result shows the cost of keeping the original pointer array. This fixture
+validates layout mechanics and gives an upper bound; it does not prove a game
+speedup.
+
 ## Prototype plan
 
-1. Build a native fixture with a 683 × 683 relation matrix.
+1. Native fixture: done in [`fixture.c`](fixture.c); it checks values, pointer
+   identity, pointer stability and canaries for all four layouts.
 2. Implement layout A (contiguous backing store) behind a compile-time switch.
 3. Run the existing relation loops against A and compare:
    - return values;
