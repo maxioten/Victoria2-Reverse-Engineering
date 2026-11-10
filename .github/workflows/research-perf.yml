@@ -1,0 +1,32 @@
+name: research-perf
+
+on:
+  pull_request:
+    paths:
+      - 'research/perf/**'
+      - '.github/workflows/research-perf.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'research/perf/**'
+      - '.github/workflows/research-perf.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Syntax check
+        run: python -m py_compile research/perf/tools/*.py research/perf/experiments/enet-timeout-zero/patch.py
+      - name: Parser self-test
+        run: python research/perf/tools/parse_results.py --selftest
+      - name: Microbenchmark build and run
+        run: |
+          gcc -O2 -o /tmp/relations-microbench research/perf/experiments/relations-soa/microbench.c
+          /tmp/relations-microbench
+      - name: Whitespace check
+        run: git diff --check
