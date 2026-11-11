@@ -22,6 +22,7 @@ The starting point is the measured profile in
 | [`schema/benchmark.schema.json`](schema/benchmark.schema.json) | JSON schema for a run |
 | [`experiments/enet-timeout-zero/`](experiments/enet-timeout-zero/) | binary-patch experiment for the ENet wait |
 | [`experiments/relations-soa/`](experiments/relations-soa/) | layout design, microbenchmark and native 683 × 683 fixture |
+| [`experiments/enet-wait-sample/`](experiments/enet-wait-sample/) | direct EIP-sampling measurement of the ENet socket wait |
 
 ## Rules
 
