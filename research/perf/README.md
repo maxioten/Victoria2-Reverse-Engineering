@@ -23,6 +23,7 @@ The starting point is the measured profile in
 | [`experiments/enet-timeout-zero/`](experiments/enet-timeout-zero/) | binary-patch experiment for the ENet wait |
 | [`experiments/relations-soa/`](experiments/relations-soa/) | layout design, microbenchmark and native 683 × 683 fixture |
 | [`experiments/enet-wait-sample/`](experiments/enet-wait-sample/) | direct EIP-sampling measurement of the ENet socket wait |
+| [`experiments/enet-wait-count/`](experiments/enet-wait-count/) | debugger breakpoint count: the wait never fires in single player |
 
 ## Rules
 
