@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Syntax check
-        run: python -m py_compile research/perf/tools/*.py research/perf/experiments/enet-timeout-zero/patch.py research/perf/experiments/enet-wait-sample/*.py
+        run: python -m py_compile research/perf/tools/*.py research/perf/experiments/enet-timeout-zero/patch.py research/perf/experiments/enet-wait-sample/*.py research/perf/experiments/enet-wait-count/*.py
       - name: Parser self-test
         run: python research/perf/tools/parse_results.py --selftest
       - name: Microbenchmark build and run
