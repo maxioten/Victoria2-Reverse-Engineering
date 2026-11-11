@@ -279,6 +279,7 @@ subordinate list nodes.
 | `AI_TargetScan` `0x0084B0F0` | none (two relation loads, both read-only) | `+0x34` (`0x84B299`), `+0x3C` (`0x84B3BD`) |
 | `CountryRelation_DailyPurge` `0x0092E290` | none to the relation (frees subordinate list nodes only) | `+0x50`, `+0xA8`, `+0x2C`, `+0x30`, `+0x28` (+0x20 in tail) |
 | `FUN_00522CF0` | none — **correction**: this function is a 29-instruction date-guard helper (`[esi+0xE9C]` vs world clock, zeroes `[eax]/[eax+4]`), with no relation contact. The `+0x34` market-capacity read attributed to it was not found here or at its sampled caller `0x00831CF9` (FP market code); that attribution needs re-verification. Its 6 callers: `0x487483 0x5FE67E 0x6025BB 0x60C695 0x60CA7B 0x831CF9`. |
+| `+0x34` writer map | reset-only: constructor tail (`0x0092D590` → reset `0x0092D620`, zeroes `+0x20/+0x24/+0x28/+0x34/+0x3C/+0x2C/+0xA8/+0x38/+0x30`), country-wide reset loop (`0x00504340`), reset callers `0x00517250`/`0x00518620` (war/peace-transition shape). No nonzero writer in: 5 hot loops, ctor, reset, fill loop, purge, all 6 vtable methods, `0x0092F570`. Dynamic: [`values_watch.py`](values_watch.py) read `+0x34` of 8 sampled relations at every calendar tick for 30 live SP days (Carlist war active): 240/240 zero, 0 transitions |
 
 SoA consequences:
 
@@ -291,13 +292,15 @@ SoA consequences:
   `+0x70`, `+0xA8` — none of the five loops stores to them. (Callee-side
   effects through vtables were scoped out except `0x0092F570`; a full
   callee audit is still open.)
-- `+0x34` is written nowhere in these five loops; whoever writes it is still
-  unmapped — required before caching `+0x34`.
+- `+0x34` is written nowhere in these five loops; live watch
+  ([`values_watch.py`](values_watch.py), needs `client.py` from
+  `../enet-wait-count/` alongside it; bridge token stays local) shows it
+  constant 0 across 30 SP days — cache as reset-dominated, refresh on the
+  reset paths above.
 
 ## Open questions (remaining)
 
-- Per-loop write sets: done above (direct stores; callee audit partial).
 - Exact teardown path of the matrix at scenario exit (bulk free vs leak).
 - A full country deep-copy path, if one exists, and what it copies.
 - True owner of the `+0x34` market-capacity read (mis-attributed to
-  `0x00522CF0`).
+  `0x00522CF0`); the field itself is reset-dominated per the watch above.
