@@ -265,6 +265,26 @@ reallocation of the pointer array) intact, construct in place with
 fixed-save protocol) because save-key coverage of pair fields is unmapped
 statically.
 
+## Layout-A implementation — 2026-11-11 (`tools/v2migrate`)
+
+Implemented as a TGL plugin rather than the drafted bulk pass: the single
+relation new-site (`push 0xAC` at `0x005047F7`) is redirected to a bump
+allocator over one 683×683×176B block, so the constructor, `push_back` and
+later growth all work unchanged with block pointers (nothing to free
+afterwards). Supersedes the bulk-migration draft, which would have missed
+relations created after load (live matrix at 1837.1.1 is 272×272, growing).
+
+Results (`experiments/migrate-lab/evidence/`):
+
+- Day-0 paused state **bit-identical** (12×0xAC, 516/516 words, off vs on).
+- ~10 sessions / 300+ days, zero crashes; input save intact.
+- Timing neutral on this host (154.4 vs 156.5 ms/day, n=2/arm, load 6–8).
+- Save-compare acceptance infeasible here: two identical-config runs differ
+  by 21.8M bytes (environmental nondeterminism); the migration effect is
+  below that noise floor, and the day-0 identity is the load-path proof.
+- Status: **experimental, not accepted** — needs a quiet host (timing) or a
+  deterministic harness (values) for full acceptance.
+
 ## Write sets — static, 2026-11-11 (for SoA invalidation)
 
 Direct stores to relation objects per hot loop (register-attributed;

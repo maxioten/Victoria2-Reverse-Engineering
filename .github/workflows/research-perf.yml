@@ -24,6 +24,13 @@ jobs:
         run: python -m py_compile research/perf/tools/*.py research/perf/experiments/enet-timeout-zero/patch.py research/perf/experiments/enet-wait-sample/*.py research/perf/experiments/enet-wait-count/*.py
       - name: Parser self-test
         run: python research/perf/tools/parse_results.py --selftest
+      - name: v2migrate build (mingw, if present)
+        run: |
+          if command -v i686-w64-mingw32-gcc; then
+            V2MIGRATE_CC=i686-w64-mingw32-gcc bash tools/v2migrate/build.sh
+          else
+            echo "no mingw cross-compiler on runner; build covered locally"
+          fi
       - name: Microbenchmark build and run
         run: |
           gcc -O2 -o /tmp/relations-microbench research/perf/experiments/relations-soa/microbench.c
