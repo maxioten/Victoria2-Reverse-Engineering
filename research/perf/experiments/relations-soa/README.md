@@ -24,11 +24,11 @@ Hot loops and fields:
 
 | Function | Address | Fields read |
 |---|---|---|
-| `Country_Recalculate` | `0x00515490` | `+0x08 +0x0C +0x20 +0x24 +0x28 +0x34 +0x38 +0x70` |
-| `FUN_00522CF0` (market capacity) | — | `+0x34` |
-| `CountryRelation_DailyPurge` | `0x0092E290` | `+0x50 +0xA8 +0x2C +0x30 +0x28 +0x20` |
-| `Country_PrePass` | `0x00508590` | `+0x2C +0x30` |
-| `AI_TargetScan` | `0x0084B0F0` | `+0x34 +0x3C` |
+| `Country_Recalculate` | `0x00515490` | `+0x08 +0x0C +0x20 +0x24 +0x28 +0x34 +0x38 +0x70` (confirmed; also writes `+0x38 +0x71`) |
+| `FUN_00522CF0` (date guard, ex-market capacity) | — | no relation contact (see correction below) |
+| `CountryRelation_DailyPurge` | `0x0092E290` | `+0x50 +0xA8 +0x2C +0x30 +0x28 +0x20` (reads; frees subordinate list nodes, no relation stores) |
+| `Country_PrePass` | `0x00508590` | `+0x2C +0x30` (reads; also writes `+0x40 +0x44 +0x48 +0x4C`) |
+| `AI_TargetScan` | `0x0084B0F0` | `+0x34 +0x3C` (reads; no writes) |
 
 The loops also write other countries (`Country_PrePass` moves money into
 `other+0xE78`), so a read-only summary is not enough for every caller.
@@ -265,8 +265,39 @@ reallocation of the pointer array) intact, construct in place with
 fixed-save protocol) because save-key coverage of pair fields is unmapped
 statically.
 
+## Write sets — static, 2026-11-11 (for SoA invalidation)
+
+Direct stores to relation objects per hot loop (register-attributed;
+instruction addresses given so every claim is checkable). Everything else
+found in these functions targets stack, other objects, fresh allocations, or
+subordinate list nodes.
+
+| Loop | Relation writes | Relation reads (confirmed) |
+|---|---|---|
+| `Country_PrePass` `0x00508590` | `+0x40`, `+0x44` (timestamp pair at `0x50874B/0x50874E`); `+0x48`, `+0x4C` (thiscall `0x0092F570`, clamped accumulator) | `+0x2C`, `+0x30`, `+0x40`, `+0x08`, `+0x0C` (list walks) |
+| `Country_Recalculate` `0x00515490` | `+0x38` (`=0` at `0x5161B3`, after deleting the owned `+0x38` child via its vtable dtor at `0x5161BC`); `+0x71` (`=1` at `0x5161AF`) | `+0x08`, `+0x0C`, `+0x20`, `+0x24`, `+0x28`, `+0x34` (via `ECX` at `0x51615B`), `+0x38`, `+0x70` |
+| `AI_TargetScan` `0x0084B0F0` | none (two relation loads, both read-only) | `+0x34` (`0x84B299`), `+0x3C` (`0x84B3BD`) |
+| `CountryRelation_DailyPurge` `0x0092E290` | none to the relation (frees subordinate list nodes only) | `+0x50`, `+0xA8`, `+0x2C`, `+0x30`, `+0x28` (+0x20 in tail) |
+| `FUN_00522CF0` | none — **correction**: this function is a 29-instruction date-guard helper (`[esi+0xE9C]` vs world clock, zeroes `[eax]/[eax+4]`), with no relation contact. The `+0x34` market-capacity read attributed to it was not found here or at its sampled caller `0x00831CF9` (FP market code); that attribution needs re-verification. Its 6 callers: `0x487483 0x5FE67E 0x6025BB 0x60C695 0x60CA7B 0x831CF9`. |
+
+SoA consequences:
+
+- Cacheable for reads with invalidation: `+0x40/+0x44/+0x48/+0x4C`
+  (PrePass, every pass), `+0x38/+0x71` (Recalculate).
+- Never cached: `+0x38` is an owned-child pointer (deleted + nulled in
+  Recalculate); caching it would dangle.
+- Read-mostly, safe to cache with no invalidation found: `+0x08`, `+0x0C`,
+  `+0x20`, `+0x24`, `+0x28`, `+0x2C`, `+0x30`, `+0x34`, `+0x3C`, `+0x50`,
+  `+0x70`, `+0xA8` — none of the five loops stores to them. (Callee-side
+  effects through vtables were scoped out except `0x0092F570`; a full
+  callee audit is still open.)
+- `+0x34` is written nowhere in these five loops; whoever writes it is still
+  unmapped — required before caching `+0x34`.
+
 ## Open questions (remaining)
 
-- Per-loop write sets for the hot fields (needed for layout B only).
+- Per-loop write sets: done above (direct stores; callee audit partial).
 - Exact teardown path of the matrix at scenario exit (bulk free vs leak).
 - A full country deep-copy path, if one exists, and what it copies.
+- True owner of the `+0x34` market-capacity read (mis-attributed to
+  `0x00522CF0`).
