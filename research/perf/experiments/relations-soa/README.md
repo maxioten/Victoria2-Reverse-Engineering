@@ -1,11 +1,23 @@
 # Experiment: contiguous relations / SoA
 
+## Storage correction (2026-11-11, static)
+
+`country+0xBE8` is not a fixed array: it is a **`std::vector<Relation*>`**
+with begin/end/capacity at `+0xBE8/+0xBEC/+0xBF0`. It grows to 683 entries
+via `push_back` (reallocation through the shared grow helper `0x00A513F0`,
+which copies pointers, never objects). All examined readers reload
+`[country+0xBE8]` per access, so the moving pointer array is safe; the
+pointed-to objects never move. The "466,489 allocations" figure stands
+(count getter returns `0x2AB` = 683), but the container finding below
+replaces "fixed array" wherever it appears in this document.
+
 ## Problem
 
-`country+0xBE8` is an array of 683 pointers, one per country tag. Each pointer
-targets a separately allocated relation object, so a full matrix is about
-**683 × 683 = 466,489** allocations. Several daily loops read one or two fields
-from every pair; the pointer chase is the cache-miss source measured in
+Each of the ~683 country slots targets a separately allocated 0xAC-byte
+relation object (vtable `0x00E34C3C`, type tag `0x18D` at `+0x04`), so a full
+matrix is about **683 × 683 = 466,489** allocations. Several daily loops read
+one or two fields from every pair; the pointer chase is the cache-miss source
+measured in
 [`Engine/performance-profile.md`](../../../../Engine/performance-profile.md).
 
 Hot loops and fields:
@@ -179,12 +191,82 @@ speedup.
 - Lower median wall ms/day than baseline, with p95 not worse.
 - No change in multiplayer state exchange.
 
-## Open questions
+## Open questions — answered 2026-11-11 (static, v2game.exe 3.04)
 
-- Are relation objects ever reallocated or replaced after `country+0xBE8` is
-  populated?
-- Are relation pointers stored anywhere else (vtables, caches, save code)?
-- Are the hot fields written by the same loops that read them?
-- What is the exact lifetime of the 683 × 683 matrix across save/load?
+All addresses are VAs (base `0x00400000`). Verified by disassembly and by
+full-`.text` scans (E8-target scan, immediate scan, proximity scan).
 
-These must be answered before changing allocation.
+### 1. Reallocated or replaced after population? No (objects); yes (pointer array)
+
+- Single construction path: `operator new(0xAC)` + constructor `0x0092D490`
+  (vtable `0x00E34C3C`, `[+0x04]=0x18D`) at `0x005047F2`, inside creator
+  `0x005047C0`, itself called once from a pair loop at `0x0055C21D`. The
+  constructor is called from exactly one site; the creator from exactly one
+  site (full-`.text` E8 scans).
+- Each object is appended via `push_back` into the `+0xBE8` vector. Growth
+  reallocates the **pointer array** (`0x00A513F0`, pointer copy
+  `mov edx,[ecx+esi*4]` / `mov [eax],edx`); objects never move.
+- No vector erase/pop exists: zero `sub [X+0xBEC],4` in `.text`.
+- No individual delete of array elements: zero `operator delete`
+  (`0x00AAE91B`) calls within 200 bytes of any `+0xBE8/BEC/BF0` reference in
+  `.text` (33,734 delete sites checked by proximity scan).
+- The country member-destructor (`0x004F8340`) never touches `+0xBE8/BEC`.
+
+So: objects are created once, never freed individually, never replaced in
+their slots. The pointer array may move during growth; every examined reader
+reloads `[country+0xBE8]` per access, so that is safe.
+
+### 2. Pointers stored anywhere else? No aliasing owners found
+
+- `CountryRelation_DailyPurge` (`0x0092E290`) is called per relation
+  (`0x0050AC3A`: `array[idx]` → push → call) and frees **subordinate list
+  nodes** from intrusive lists rooted at `[rel+0x50/0xA8/0x2C/0x30/0x28]`
+  (unlink + `operator delete` + count--). It never frees the relation object
+  and never writes array slots: no dangling slots are created here.
+- The 0xAC copy helper (`0x00504700`) is a *partial* copy (lists at
+  `+0x0C/+0x54` deep-copied, plain fields `+0x04/+0x08/+0x9C/+0xA0/+0xA4`;
+  vtable and most data fields untouched): it is not a relation duplicate.
+  Its two callers copy into a stack temporary (`0x00519F80`, PrePass path)
+  and into the inline container at `country+0xBF8` (`0x00503020`, a separate
+  vector 8 bytes past the relations vector). Neither aliases relation
+  objects.
+- Purged nodes carry vtables and `next/prev` at `+0x08/+0x04`; the purge
+  passes relations only transiently (thiscall `ECX`).
+
+Residual risk (stated, not blocking layout A): a full copy of a country
+object graph was not audited; if one exists it would duplicate the vector
+shallowly by construction. No such path was found.
+
+### 3. Hot fields written by the same loops? Deferred — SoA-only
+
+Layout A keeps the same objects and the same code, so write patterns are
+irrelevant to it. This question stays open for layout B (SoA cache
+invalidation) and must be answered per loop before B.
+
+### 4. Lifetime across save/load: rebuilt at load, values runtime-only
+
+- The matrix is populated by the single fill path above during scenario
+  setup/load (pair loop `0x0055C216` → creator per element).
+- The save file carries no per-pair relation matrix: `diplomacy=` holds only
+  `vassal`/`alliance` entries, per-country `influence=` blocks hold sphere
+  influence, and the keyword `relation` is absent. Pair-field values are
+  runtime state, rebuilt to loader defaults on every load.
+- Teardown of individual relations was not found (see 1); the backing store
+  for layout A must therefore outlive the scenario and needs no per-object
+  free path — but this must be confirmed behaviorally.
+
+### Layout-A verdict
+
+Feasible with the facts above: back all 0xAC objects contiguously at fill
+time, keep the `std::vector<Relation*>` mechanics (including growth
+reallocation of the pointer array) intact, construct in place with
+`0x0092D490`, never free individually. Acceptance stays behavioral
+(unchanged 30-day save hash, same relation values after load/daily/save,
+fixed-save protocol) because save-key coverage of pair fields is unmapped
+statically.
+
+## Open questions (remaining)
+
+- Per-loop write sets for the hot fields (needed for layout B only).
+- Exact teardown path of the matrix at scenario exit (bulk free vs leak).
+- A full country deep-copy path, if one exists, and what it copies.
