@@ -278,7 +278,14 @@ Results (`experiments/migrate-lab/evidence/`):
 
 - Day-0 paused state **bit-identical** (12×0xAC, 516/516 words, off vs on).
 - ~10 sessions / 300+ days, zero crashes; input save intact.
-- Timing neutral on this host (154.4 vs 156.5 ms/day, n=2/arm, load 6–8).
+- Timing neutral on loaded host (154.4 vs 156.5 ms/day, n=2/arm, load 6-8)
+  and on quiet :0 with Intel GL (median off 187.2 vs on 185.0 ms/day,
+  n=5/4, load ~2; baselines 180-186, CPU ~1.2 both arms, input save
+  unchanged): delta -2.2 ms/day (-1.2 %), within noise. Three slow runs
+  (221/237/233) plus one failed run across both arms show the same
+  environmental intermittency with and without the plugin, so no
+  exclusion was applied (medians are robust). Full 10-run JSON in
+  `experiments/migrate-lab/evidence/d0-*.json`.
 - Save-compare acceptance infeasible here: two identical-config runs differ
   by 21.8M bytes (environmental nondeterminism); the migration effect is
   below that noise floor, and the day-0 identity is the load-path proof.
