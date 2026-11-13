@@ -5,6 +5,7 @@ experiments/relations-soa/fixture
 experiments/relations-soa/fixture-asan
 experiments/relations-soa/fixture-results.json
 *.patch.json
+raw/
 
 __pycache__/
 *.pyc

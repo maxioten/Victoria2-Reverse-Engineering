@@ -24,6 +24,8 @@ The starting point is the measured profile in
 | [`experiments/relations-soa/`](experiments/relations-soa/) | layout design, microbenchmark and native 683 × 683 fixture |
 | [`experiments/enet-wait-sample/`](experiments/enet-wait-sample/) | direct EIP-sampling measurement of the ENet socket wait |
 | [`experiments/enet-wait-count/`](experiments/enet-wait-count/) | debugger breakpoint count: the wait never fires in single player |
+| [`P0-P2-LAB.md`](P0-P2-LAB.md) | P0-P2 isolated headless Wine baseline, triage, `HighPerfWinClock` & `Country_Recalculate` variant (c) A/B lab |
+| [`../docs/perf/VERIFICATION-REPORT.md`](../docs/perf/VERIFICATION-REPORT.md) | P0-P2 triage & verification report (`PASS` across 9 hot functions) |
 
 ## Rules
 
