@@ -299,7 +299,7 @@ subordinate list nodes.
 | `AI_TargetScan` `0x0084B0F0` | none (two relation loads, both read-only) | `+0x34` (`0x84B299`), `+0x3C` (`0x84B3BD`) |
 | `CountryRelation_DailyPurge` `0x0092E290` | none to the relation (frees subordinate list nodes only) | `+0x50`, `+0xA8`, `+0x2C`, `+0x30`, `+0x28` (+0x20 in tail) |
 | `FUN_00522CF0` | none — **correction**: this function is a 29-instruction date-guard helper (`[esi+0xE9C]` vs world clock, zeroes `[eax]/[eax+4]`), with no relation contact. The `+0x34` market-capacity read attributed to it was not found here or at its sampled caller `0x00831CF9` (FP market code); that attribution needs re-verification. Its 6 callers: `0x487483 0x5FE67E 0x6025BB 0x60C695 0x60CA7B 0x831CF9`. |
-| `+0x34` writer map | reset-only: constructor tail (`0x0092D590` → reset `0x0092D620`, zeroes `+0x20/+0x24/+0x28/+0x34/+0x3C/+0x2C/+0xA8/+0x38/+0x30`), country-wide reset loop (`0x00504340`), reset callers `0x00517250`/`0x00518620` (war/peace-transition shape). No nonzero writer in: 5 hot loops, ctor, reset, fill loop, purge, all 6 vtable methods, `0x0092F570`. Dynamic: [`values_watch.py`](values_watch.py) read `+0x34` of 8 sampled relations at every calendar tick for 30 live SP days (Carlist war active): 240/240 zero, 0 transitions |
+| `+0x34` writer map | Zeroing: constructor tail (`0x0092D590` → reset `0x0092D620`), country-wide loop (`0x00504340`), transition callers `0x00517250`/`0x00518620`, in-event zeroing (`0x009352EA/0x00935306`). Nonzero: `0x00935123/0x0093513F` store caller-saved `ESI` into `[rel+0x34]` inside the detail-attach routine `0x009351C0` (10 callers, e.g. AI `0x8910FB/0x891663`), which manages 0x18-byte detail objects (vtable `0x00E04670`, chained via their `+0x0C`). Dynamic: [`values_watch.py`](values_watch.py) read `+0x34` of 8 sampled relations per calendar tick for 30 live SP days: 240/240 zero, 0 transitions — no detail-attach event fired for the sampled pairs. |
 
 SoA consequences:
 
@@ -316,7 +316,31 @@ SoA consequences:
   ([`values_watch.py`](values_watch.py), needs `client.py` from
   `../enet-wait-count/` alongside it; bridge token stays local) shows it
   constant 0 across 30 SP days — cache as reset-dominated, refresh on the
-  reset paths above.
+  reset paths above, and invalidate on detail-attach (`0x009351C0` family).
+  A bulk-copy helper (`0x00849680`, 0x64-byte header copies into stack temps
+  for AI scoring) and an operator=-shaped routine (`0x00849B60`, one caller)
+  duplicate relation bytes but never write into live relations.
+
+## Migration pre-check (layout A) — 2026-11-11, static
+
+For a post-load `memcpy` migration of relation objects into a contiguous
+block, the blocker would be pointers **into** moved objects held elsewhere:
+
+- Relation→child (`+0x34`, `+0x38`): forward, values preserved by copy. Safe.
+- Child→child (`+0x0C` chains of 0x18 detail objects): separate heap
+  objects, unmoved, links intact. Safe.
+- Child→relation back-pointer: **none found** in any examined path (purge
+  lists, PrePass walks, Recalculate region, creator, ctor, reset, detail
+  machinery). The observed edges all point away from relations or between
+  siblings.
+- Stack-temp copies (`0x00849680`): short-lived, no persistent references
+  into or out of them.
+- Vector pointer array: re-read per access everywhere examined; repointing
+  it after migration is safe.
+
+Verdict: no structural blocker found; proceed to the migration plugin with
+the fixed-save acceptance protocol (same hash, values, RNG) as the backstop,
+which is designed to catch exactly an unobserved edge.
 
 ## Open questions (remaining)
 
