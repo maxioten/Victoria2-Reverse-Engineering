@@ -1,6 +1,19 @@
 # Victoria II Reverse Engineering Documentation
 
-This repository documents static reverse engineering of `v2game.exe`, primarily using Ghidra.
+This repository documents evidence-based static and runtime reverse engineering of `v2game.exe` (SHA-256 `62d48c204364dd706584777c2e2b3c7ab3c5f1dd0170872554943575d53d6648`), primarily using Ghidra, Unicorn emulation, and controlled Wine instrumentation.
+
+> **Scope & Legal Disclaimer:** This is an independent, clean-room reverse-engineering and performance research project. It is **not affiliated with or endorsed by Paradox Interactive**. Victoria II is a trademark of Paradox Interactive AB. No proprietary game binaries (`.exe`, `.dll`), game assets, save files (`.v2`), or extensive decompilations are distributed here. The [MIT License](LICENSE) applies solely to original documentation, analysis scripts, and clean-room prototypes authored in this repository.
+
+## Repository Map & Maturity Status
+
+| Area | Status | Purpose |
+|---|---|---|
+| [`Engine/`](Engine/), [`Economy/`](Economy/), [`AI/`](AI/), [`Technology/`](Technology/), [`Symbols/`](Symbols/) | **Reference docs** (`[confirmed]` / `[inferred]` tagged) | Architecture, subsystem semantics, symbols, and known patch targets ([`Patch/`](Patch/patch.md)). |
+| [`research/`](research/README.md) & [`research/docs/contracts/`](research/docs/contracts/) | **Verified contracts** | Evidence-grounded behavioral contracts (POPs, economy, AI, combat, `HighPerfWinClock`, `Country_Recalculate`), Ghidra scripts, and verification harnesses. |
+| [`research/perf/`](research/perf/README.md) & [`research/docs/perf/`](research/docs/perf/VERIFICATION-REPORT.md) | **Reproducible benchmarks & triage** | Fixed-save Wine baseline, 9-function hot-path triage ([`VERIFICATION-REPORT.md`](research/docs/perf/VERIFICATION-REPORT.md)), and A/B lab ([`P0-P2-LAB.md`](research/perf/P0-P2-LAB.md)). |
+| [`experiments/p2-hook-lab/`](experiments/p2-hook-lab/README.md) | **Experimental R&D lab** | Hybrid P2 hook dispatcher (`C_hook`), `HighPerfWinClock` pilot, and `Country_Recalculate` variant (c) prototype (Unicorn + Wine harness validated; not an end-user mod). |
+| [`experiments/three-phases/`](experiments/three-phases/), `experiments/tick-*-lab/` | **Experimental / clean-room R&D** | Reconstructed C tick-phase prototypes and build/verification labs. |
+| [`tools/v2probe/`](tools/v2probe/README.md), [`CheatEngineTableVersion/`](CheatEngineTableVersion/) | **Auxiliary tooling** | Read-only RTTI probe plugin and community Cheat Engine memory tables. |
 
 ## Documentation Structure
 
@@ -76,11 +89,12 @@ Experimental modifications are explicitly separated from confirmed vanilla behav
 - **Cheat Engine Credits:** Special thanks to **Vesper** for the research, tables, and memory structures included in the `CheatEngineTable Version` directory.
 
 
-## Laboratorio de investigación reproducible
+## Reproducible Research & Performance Labs
 
-Los avances contrastados, modelos, verificadores, harnesses y scripts Ghidra están
-en [research/](research/README.md). Incluye contratos de POPs, economía, IA, eventos
-y combate con alcance, contraejemplos y procedimientos de reproducción explícitos.
-Los binarios del juego, proyectos Ghidra, volcados y recibos generados permanecen
-locales. Ver [alcance y preparación](research/docs/PUBLICATION.md) y
-[resumen de la última validación local](research/validation-summary.json).
+Verified findings, invariant contracts, harnesses, and Ghidra scripts live in [`research/`](research/README.md). Game binaries, Ghidra projects, raw memory dumps, and Wine prefixes always remain local (see [publication scope](research/docs/PUBLICATION.md) and [latest local validation summary](research/validation-summary.json)).
+
+Key performance & hybrid-hook entry points:
+- [P0–P2 Verification Report](research/docs/perf/VERIFICATION-REPORT.md) — baseline profiling, 9 hot-function triage dossiers (`PASS`), and `HighPerfWinClock` / `Country_Recalculate` readiness.
+- [P2 Hook Architecture](research/docs/perf/P2-HOOK-ARCHITECTURE.md) — register-safe dispatcher (`C_hook`), `shadow`/`prod`/`bypass` modes, and ENet wait audit.
+- [P0–P2 Benchmark Lab](research/perf/P0-P2-LAB.md) — headless Wine baseline, determinism checks, and A/B measurements.
+- [P2 Hook Lab (`experiments/p2-hook-lab/`)](experiments/p2-hook-lab/README.md) — `llvm-mingw` hook blob, Unicorn equivalence tests, and Wine host harness.
