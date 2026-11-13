@@ -11,6 +11,7 @@ Debugger channel only (x32dbg headless + MCP): no extra stops beyond the
 daily calendar BP. Array bases re-read daily (vector may grow).
 """
 import json
+import os
 import struct
 import subprocess
 import sys

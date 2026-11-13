@@ -11,6 +11,7 @@ import unicorn
 from unicorn.x86_const import (
     UC_X86_REG_EAX, UC_X86_REG_ECX, UC_X86_REG_EDX, UC_X86_REG_EBX,
     UC_X86_REG_ESP, UC_X86_REG_EBP, UC_X86_REG_ESI, UC_X86_REG_EDI,
+    UC_X86_REG_EIP,
 )
 from reverify.ledger import Ledger
 from reverify.verifier import Claim, Verifier
