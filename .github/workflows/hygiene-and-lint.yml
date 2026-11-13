@@ -1,0 +1,60 @@
+name: hygiene-and-lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile-check all tracked Python files
+        run: |
+          python3 - <<'PY'
+          import py_compile, subprocess, sys
+          files = subprocess.check_output(["git", "ls-files", "*.py"], text=True).splitlines()
+          failed = []
+          for f in files:
+              try:
+                  py_compile.compile(f, doraise=True)
+              except py_compile.PyCompileError as exc:
+                  failed.append((f, str(exc)))
+          if failed:
+              for f, err in failed:
+                  print(f"FAIL {f}: {err}", file=sys.stderr)
+              sys.exit(1)
+          print(f"Compiled {len(files)} Python files cleanly.")
+          PY
+      - name: Validate tracked JSON files
+        run: |
+          python3 - <<'PY'
+          import json, subprocess, sys
+          files = subprocess.check_output(["git", "ls-files", "*.json"], text=True).splitlines()
+          for f in files:
+              with open(f, "r", encoding="utf-8") as fh:
+                  json.load(fh)
+          print(f"Validated {len(files)} JSON files cleanly.")
+          PY
+      - name: Check for forbidden binaries or archives
+        run: |
+          if git ls-files | grep -iE '\.(exe|dll|v2|bin|dmp|zip|tar|7z|rar|iso|msi|pdb|lib|a|o|so|pyc)$'; then
+            echo "ERROR: Forbidden binary/archive file tracked in repository." >&2
+            exit 1
+          fi
+          echo "No forbidden binaries tracked."
+      - name: Check for personal home paths in code and docs
+        run: |
+          if git grep -nE '/(home|Users)/[a-zA-Z0-9._-]+/' -- '*.py' '*.md' '*.c' '*.h' '*.S' '*.yml' '*.yaml' ':!CONTRIBUTING.md' ':!.github/PULL_REQUEST_TEMPLATE.md'; then
+            echo "ERROR: Hardcoded personal home path found." >&2
+            exit 1
+          fi
+          echo "No hardcoded personal paths found."

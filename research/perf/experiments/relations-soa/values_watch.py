@@ -18,14 +18,15 @@ import time
 from pathlib import Path
 
 LAB = Path(__file__).resolve().parent
-GAME = Path("/home/daniel/Documentos/v2/experiments/day-tick-lab/game")
-PREFIX = Path("/home/daniel/Documentos/v2/experiments/day-tick-lab/wine")
+ROOT = Path(__file__).resolve().parents[4]
+GAME = Path(os.environ.get("V2_GAME_DIR", ROOT / "experiments/day-tick-lab/game"))
+PREFIX = Path(os.environ.get("WINEPREFIX", ROOT / "experiments/day-tick-lab/wine"))
 DISPLAY = ":99"
 CAL_RVA = 0x282FA5
 CAL_BYTES = bytes.fromhex("83860c0b000018")
 COUNTRIES_VEC = 0x12587E4
-GAMELOG = PREFIX / ("drive_c/users/daniel/Documents/Paradox Interactive/"
-                    "Victoria II/logs/game.log")
+WINE_USER = os.environ.get("WINEUSER", os.environ.get("USER", "user"))
+GAMELOG = PREFIX / f"drive_c/users/{WINE_USER}/Documents/Paradox Interactive/Victoria II/logs/game.log"
 LAUNCH_MARK = "[[ Launching SINGLEPLAYER-game ]]"
 N_COUNTRIES = 2
 N_RELS = 4

@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "Victoria II Reverse Engineering Documentation & Performance Research"
+message: "If you use this documentation, analysis scripts, or benchmark methodology, please cite it as below."
+type: software
+authors:
+  - name: "Victoria II Reverse Engineering Contributors"
+repository-code: "https://github.com/maxioten/Victoria2-Reverse-Engineering"
+license: MIT
+keywords:
+  - reverse-engineering
+  - victoria-2
+  - performance-analysis
+  - ghidra
+  - binary-instrumentation
