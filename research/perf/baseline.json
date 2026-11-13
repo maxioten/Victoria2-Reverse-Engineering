@@ -1,0 +1,1437 @@
+{
+  "schema_version": "p0-baseline-v1",
+  "target_binary": {
+    "path": "base-game/v2game.exe",
+    "sha256": "62d48c204364dd706584777c2e2b3c7ab3c5f1dd0170872554943575d53d6648",
+    "preferred_base": "0x00400000"
+  },
+  "save": {
+    "name": "input-autosave.v2",
+    "scenario": "SPA 1837.1.1",
+    "sha256": "a3885cc5b64328e04b45b92c2329e5cfa7d2d931746110fb750e47475fd39e1b"
+  },
+  "profiler_audit_base_game": {
+    "file": "base-game/performance_patch_samples.tsv",
+    "header": {
+      "interval_ms": 100,
+      "days": 120,
+      "start_day": 2492951,
+      "end_day": 2493071,
+      "year": 1830,
+      "samples": 1311,
+      "ms_per_day_sampled": 546.2,
+      "unique_stacks": 877,
+      "dropped": 0
+    },
+    "parsed_stack_rows": 877,
+    "sum_stack_counts": 1311,
+    "sum_stack_ms_per_day": 546.2732,
+    "expected_at_100ms_per_sample": 1092.5,
+    "actual_at_50ms_clamp_per_sample": 546.25,
+    "confirmed_root_cause": "performance_patch.dll caps sample_profiler interval at 100 ms (0x10036590), sleeps 100 ms per iteration (0x10037494), yet computes max_sample_qpc = (qpc_freq * 50) / 1000 at 0x10037457..0x1003747b and clamps measured delta_qpc to max_sample_qpc at 0x100374cd..0x100374d9. Every 100 ms sleep sample is therefore recorded with 50 ms of QPC weight, halving reported ms/day sampled."
+  },
+  "baseline_runs": [
+    {
+      "tag": "run-01",
+      "skip_network_wait": 0,
+      "skip_network_wait_log": "disabled",
+      "sample_interval_ms": 50,
+      "elapsed_days": 90,
+      "wall_total_ms": 54449.265,
+      "wall_ms_per_day": 604.992,
+      "modal_stall_ms": 0.0,
+      "active_wall_ms_per_day": 604.992,
+      "per_day_median_ms": 558.206,
+      "per_day_mean_ms": 604.992,
+      "per_day_stdev_ms": 181.961,
+      "modal_pauses": 0,
+      "load1_before": 7.19,
+      "load1_after": 12.17,
+      "tsv_header": {
+        "interval_ms": 50,
+        "days": 90,
+        "start_day": 2495506,
+        "end_day": 2495596,
+        "year": 1837,
+        "samples": 1080,
+        "ms_per_day_sampled": 599.8,
+        "unique_stacks": 777,
+        "dropped": 0
+      }
+    },
+    {
+      "tag": "run-02",
+      "skip_network_wait": 0,
+      "skip_network_wait_log": "disabled",
+      "sample_interval_ms": 50,
+      "elapsed_days": 90,
+      "wall_total_ms": 51430.674,
+      "wall_ms_per_day": 571.452,
+      "modal_stall_ms": 0.0,
+      "active_wall_ms_per_day": 571.452,
+      "per_day_median_ms": 547.774,
+      "per_day_mean_ms": 571.452,
+      "per_day_stdev_ms": 88.17,
+      "modal_pauses": 0,
+      "load1_before": 11.27,
+      "load1_after": 10.52,
+      "tsv_header": {
+        "interval_ms": 50,
+        "days": 90,
+        "start_day": 2495506,
+        "end_day": 2495596,
+        "year": 1837,
+        "samples": 1013,
+        "ms_per_day_sampled": 562.6,
+        "unique_stacks": 737,
+        "dropped": 0
+      }
+    },
+    {
+      "tag": "run-03",
+      "skip_network_wait": 0,
+      "skip_network_wait_log": "disabled",
+      "sample_interval_ms": 50,
+      "elapsed_days": 90,
+      "wall_total_ms": 56233.755,
+      "wall_ms_per_day": 624.82,
+      "modal_stall_ms": 7780.68,
+      "active_wall_ms_per_day": 538.368,
+      "per_day_median_ms": 533.992,
+      "per_day_mean_ms": 624.82,
+      "per_day_stdev_ms": 768.721,
+      "modal_pauses": 1,
+      "load1_before": 9.68,
+      "load1_after": 9.7,
+      "tsv_header": {
+        "interval_ms": 50,
+        "days": 90,
+        "start_day": 2495506,
+        "end_day": 2495596,
+        "year": 1837,
+        "samples": 997,
+        "ms_per_day_sampled": 553.7,
+        "unique_stacks": 704,
+        "dropped": 0
+      }
+    },
+    {
+      "tag": "run-04",
+      "skip_network_wait": 0,
+      "skip_network_wait_log": "disabled",
+      "sample_interval_ms": 50,
+      "elapsed_days": 90,
+      "wall_total_ms": 48854.422,
+      "wall_ms_per_day": 542.827,
+      "modal_stall_ms": 0.0,
+      "active_wall_ms_per_day": 542.827,
+      "per_day_median_ms": 537.737,
+      "per_day_mean_ms": 542.827,
+      "per_day_stdev_ms": 77.943,
+      "modal_pauses": 0,
+      "load1_before": 9.89,
+      "load1_after": 11.55,
+      "tsv_header": {
+        "interval_ms": 50,
+        "days": 90,
+        "start_day": 2495506,
+        "end_day": 2495596,
+        "year": 1837,
+        "samples": 967,
+        "ms_per_day_sampled": 537.0,
+        "unique_stacks": 689,
+        "dropped": 0
+      }
+    },
+    {
+      "tag": "run-05",
+      "skip_network_wait": 0,
+      "skip_network_wait_log": "disabled",
+      "sample_interval_ms": 50,
+      "elapsed_days": 90,
+      "wall_total_ms": 49032.733,
+      "wall_ms_per_day": 544.808,
+      "modal_stall_ms": 0.0,
+      "active_wall_ms_per_day": 544.808,
+      "per_day_median_ms": 536.446,
+      "per_day_mean_ms": 544.808,
+      "per_day_stdev_ms": 62.231,
+      "modal_pauses": 0,
+      "load1_before": 10.79,
+      "load1_after": 10.13,
+      "tsv_header": {
+        "interval_ms": 50,
+        "days": 90,
+        "start_day": 2495506,
+        "end_day": 2495596,
+        "year": 1837,
+        "samples": 966,
+        "ms_per_day_sampled": 536.5,
+        "unique_stacks": 702,
+        "dropped": 0
+      }
+    }
+  ],
+  "baseline_statistics": {
+    "wall_ms_per_day_raw": {
+      "n": 5,
+      "values": [
+        604.992,
+        571.452,
+        624.82,
+        542.827,
+        544.808
+      ],
+      "min": 542.827,
+      "max": 624.82,
+      "median": 571.452,
+      "mean": 577.78,
+      "stdev": 36.408,
+      "cv_pct": 6.301,
+      "q1": 544.808,
+      "q3": 604.992,
+      "iqr": 60.184,
+      "iqr_pct_of_median": 10.532,
+      "range_pct_of_median": 14.348,
+      "robust_sigma_iqr": 44.614
+    },
+    "active_wall_ms_per_day": {
+      "n": 5,
+      "values": [
+        604.992,
+        571.452,
+        538.368,
+        542.827,
+        544.808
+      ],
+      "min": 538.368,
+      "max": 604.992,
+      "median": 544.808,
+      "mean": 560.489,
+      "stdev": 28.053,
+      "cv_pct": 5.005,
+      "q1": 542.827,
+      "q3": 571.452,
+      "iqr": 28.625,
+      "iqr_pct_of_median": 5.254,
+      "range_pct_of_median": 12.229,
+      "robust_sigma_iqr": 21.22
+    },
+    "per_day_median_ms": {
+      "n": 5,
+      "values": [
+        558.206,
+        547.774,
+        533.992,
+        537.737,
+        536.446
+      ],
+      "min": 533.992,
+      "max": 558.206,
+      "median": 537.737,
+      "mean": 542.831,
+      "stdev": 10.071,
+      "cv_pct": 1.855,
+      "q1": 536.446,
+      "q3": 547.774,
+      "iqr": 11.328,
+      "iqr_pct_of_median": 2.107,
+      "range_pct_of_median": 4.503,
+      "robust_sigma_iqr": 8.397
+    },
+    "sample_profiler_ms_per_day": {
+      "n": 5,
+      "values": [
+        599.8,
+        562.6,
+        553.7,
+        537.0,
+        536.5
+      ],
+      "min": 536.5,
+      "max": 599.8,
+      "median": 553.7,
+      "mean": 557.92,
+      "stdev": 25.933,
+      "cv_pct": 4.648,
+      "q1": 537.0,
+      "q3": 562.6,
+      "iqr": 25.6,
+      "iqr_pct_of_median": 4.623,
+      "range_pct_of_median": 11.432,
+      "robust_sigma_iqr": 18.977
+    }
+  },
+  "p0_gate": {
+    "threshold_pct": 2.0,
+    "active_wall_cv_pct": 5.005,
+    "active_wall_iqr_pct": 5.254,
+    "per_day_median_cv_pct": 1.855,
+    "per_day_median_iqr_pct": 2.107,
+    "raw_wall_cv_pct": 6.301,
+    "active_wall_pass": false,
+    "per_day_median_pass": false,
+    "raw_wall_pass": false
+  },
+  "baseline_sample_profiler": {
+    "total_samples": 5023,
+    "total_profiled_days": 450,
+    "module_leaf_breakdown": [
+      {
+        "module": "v2game.exe",
+        "samples": 2192,
+        "pct": 43.64
+      },
+      {
+        "module": "ntdll.dll",
+        "samples": 2145,
+        "pct": 42.7
+      },
+      {
+        "module": "win32u.dll",
+        "samples": 528,
+        "pct": 10.51
+      },
+      {
+        "module": "wined3d.dll",
+        "samples": 75,
+        "pct": 1.49
+      },
+      {
+        "module": "d3dx9_41.dll",
+        "samples": 35,
+        "pct": 0.7
+      },
+      {
+        "module": "tbb.dll",
+        "samples": 22,
+        "pct": 0.44
+      },
+      {
+        "module": "d3d9.dll",
+        "samples": 10,
+        "pct": 0.2
+      },
+      {
+        "module": "ucrtbase.dll",
+        "samples": 6,
+        "pct": 0.12
+      },
+      {
+        "module": "kernelbase.dll",
+        "samples": 5,
+        "pct": 0.1
+      },
+      {
+        "module": "user32.dll",
+        "samples": 3,
+        "pct": 0.06
+      },
+      {
+        "module": "?",
+        "samples": 2,
+        "pct": 0.04
+      }
+    ],
+    "top_leaf_frames": [
+      {
+        "frame": "ntdll.dll:ZwWaitForSingleObject",
+        "samples": 1170,
+        "pct": 23.29
+      },
+      {
+        "frame": "ntdll.dll:ZwDelayExecution",
+        "samples": 857,
+        "pct": 17.06
+      },
+      {
+        "frame": "win32u.dll:NtUserGetCursorPos",
+        "samples": 283,
+        "pct": 5.63
+      },
+      {
+        "frame": "win32u.dll:NtUserCallOneParam",
+        "samples": 179,
+        "pct": 3.56
+      },
+      {
+        "frame": "v2game.exe:FUN_00969760 (0x00969760+0x129)",
+        "samples": 63,
+        "pct": 1.25
+      },
+      {
+        "frame": "v2game.exe:__alldiv (0x00AC02A0+0x55)",
+        "samples": 61,
+        "pct": 1.21
+      },
+      {
+        "frame": "ntdll.dll:ZwYieldExecution",
+        "samples": 37,
+        "pct": 0.74
+      },
+      {
+        "frame": "v2game.exe:FUN_00642340 (0x00642340+0x27)",
+        "samples": 31,
+        "pct": 0.62
+      },
+      {
+        "frame": "d3dx9_41.dll:D3DXCreateEffect",
+        "samples": 30,
+        "pct": 0.6
+      },
+      {
+        "frame": "v2game.exe:FUN_004808d0 (0x004808D0+0xF8A)",
+        "samples": 27,
+        "pct": 0.54
+      },
+      {
+        "frame": "v2game.exe:FUN_0095a5f0 (0x0095A5F0+0xA)",
+        "samples": 25,
+        "pct": 0.5
+      },
+      {
+        "frame": "win32u.dll:NtUserGetAsyncKeyState",
+        "samples": 24,
+        "pct": 0.48
+      },
+      {
+        "frame": "win32u.dll:NtUserSetCursor",
+        "samples": 23,
+        "pct": 0.46
+      },
+      {
+        "frame": "tbb.dll:?initialize@task_scheduler_init@tbb@@QAEXH@Z",
+        "samples": 22,
+        "pct": 0.44
+      },
+      {
+        "frame": "v2game.exe:FUN_0050ea30 (0x0050EA30+0x2515)",
+        "samples": 21,
+        "pct": 0.42
+      },
+      {
+        "frame": "v2game.exe:FUN_0084b0f0 (0x0084B0F0+0x1AD)",
+        "samples": 21,
+        "pct": 0.42
+      },
+      {
+        "frame": "v2game.exe:FUN_004bbd60 (0x004BBD60+0x18)",
+        "samples": 20,
+        "pct": 0.4
+      },
+      {
+        "frame": "v2game.exe:FUN_00485e40 (0x00485E40+0xBB6)",
+        "samples": 19,
+        "pct": 0.38
+      },
+      {
+        "frame": "v2game.exe:FUN_009a4ac0 (0x009A4AC0+0x16)",
+        "samples": 19,
+        "pct": 0.38
+      },
+      {
+        "frame": "wined3d.dll:wined3d_create",
+        "samples": 18,
+        "pct": 0.36
+      },
+      {
+        "frame": "v2game.exe:FUN_009a3b40 (0x009A3B40+0x483)",
+        "samples": 18,
+        "pct": 0.36
+      },
+      {
+        "frame": "v2game.exe:FUN_005091a0 (0x005091A0+0x226)",
+        "samples": 16,
+        "pct": 0.32
+      },
+      {
+        "frame": "v2game.exe:FUN_00508590 (0x00508590+0x85E)",
+        "samples": 16,
+        "pct": 0.32
+      },
+      {
+        "frame": "v2game.exe:__alldiv (0x00AC02A0+0x4D)",
+        "samples": 15,
+        "pct": 0.3
+      },
+      {
+        "frame": "v2game.exe:FUN_004b9c60 (0x004B9C60+0x3B)",
+        "samples": 15,
+        "pct": 0.3
+      }
+    ],
+    "top_exe_leaf_functions": [
+      {
+        "func_va": "0x00969760",
+        "func_name": "FUN_00969760",
+        "samples": 103,
+        "pct": 2.05
+      },
+      {
+        "func_va": "0x00AC02A0",
+        "func_name": "__alldiv",
+        "samples": 98,
+        "pct": 1.95
+      },
+      {
+        "func_va": "0x00515490",
+        "func_name": "FUN_00515490",
+        "samples": 76,
+        "pct": 1.51
+      },
+      {
+        "func_va": "0x00642340",
+        "func_name": "FUN_00642340",
+        "samples": 70,
+        "pct": 1.39
+      },
+      {
+        "func_va": "0x00485E40",
+        "func_name": "FUN_00485e40",
+        "samples": 61,
+        "pct": 1.21
+      },
+      {
+        "func_va": "0x004808D0",
+        "func_name": "FUN_004808d0",
+        "samples": 55,
+        "pct": 1.09
+      },
+      {
+        "func_va": "0x0095A5F0",
+        "func_name": "FUN_0095a5f0",
+        "samples": 49,
+        "pct": 0.98
+      },
+      {
+        "func_va": "0x0050EA30",
+        "func_name": "FUN_0050ea30",
+        "samples": 48,
+        "pct": 0.96
+      },
+      {
+        "func_va": "0x0068C040",
+        "func_name": "FUN_0068c040",
+        "samples": 46,
+        "pct": 0.92
+      },
+      {
+        "func_va": "0x005091A0",
+        "func_name": "FUN_005091a0",
+        "samples": 41,
+        "pct": 0.82
+      },
+      {
+        "func_va": "0x0047DCA0",
+        "func_name": "FUN_0047dca0",
+        "samples": 38,
+        "pct": 0.76
+      },
+      {
+        "func_va": "0x004DDE00",
+        "func_name": "FUN_004dde00",
+        "samples": 36,
+        "pct": 0.72
+      },
+      {
+        "func_va": "0x006859C0",
+        "func_name": "FUN_006859c0",
+        "samples": 35,
+        "pct": 0.7
+      },
+      {
+        "func_va": "0x00488080",
+        "func_name": "FUN_00488080",
+        "samples": 33,
+        "pct": 0.66
+      },
+      {
+        "func_va": "0x00508590",
+        "func_name": "FUN_00508590",
+        "samples": 33,
+        "pct": 0.66
+      },
+      {
+        "func_va": "0x004BBD60",
+        "func_name": "FUN_004bbd60",
+        "samples": 32,
+        "pct": 0.64
+      },
+      {
+        "func_va": "0x0051FD10",
+        "func_name": "FUN_0051fd10",
+        "samples": 31,
+        "pct": 0.62
+      },
+      {
+        "func_va": "0x00969BD0",
+        "func_name": "FUN_00969bd0",
+        "samples": 30,
+        "pct": 0.6
+      },
+      {
+        "func_va": "0x00AC9F20",
+        "func_name": "__allmul",
+        "samples": 29,
+        "pct": 0.58
+      },
+      {
+        "func_va": "0x00522CF0",
+        "func_name": "FUN_00522cf0",
+        "samples": 29,
+        "pct": 0.58
+      },
+      {
+        "func_va": "0x009A3B40",
+        "func_name": "FUN_009a3b40",
+        "samples": 28,
+        "pct": 0.56
+      },
+      {
+        "func_va": "0x0047E3E0",
+        "func_name": "FUN_0047e3e0",
+        "samples": 28,
+        "pct": 0.56
+      },
+      {
+        "func_va": "0x00485390",
+        "func_name": "FUN_00485390",
+        "samples": 25,
+        "pct": 0.5
+      },
+      {
+        "func_va": "0x0050B9B0",
+        "func_name": "FUN_0050b9b0",
+        "samples": 24,
+        "pct": 0.48
+      },
+      {
+        "func_va": "0x0092E290",
+        "func_name": "FUN_0092e290",
+        "samples": 24,
+        "pct": 0.48
+      }
+    ],
+    "top_exe_inclusive_functions": [
+      {
+        "func_va": "0x00AB9836",
+        "func_name": "__getptd_noexit",
+        "samples": 3676,
+        "pct": 73.18
+      },
+      {
+        "func_va": "0x00AB7CB4",
+        "func_name": "__whiteout",
+        "samples": 3579,
+        "pct": 71.25
+      },
+      {
+        "func_va": "0x00AB7CDE",
+        "func_name": "__input_l",
+        "samples": 3556,
+        "pct": 70.79
+      },
+      {
+        "func_va": "0x00AAEED7",
+        "func_name": "_free",
+        "samples": 3181,
+        "pct": 63.33
+      },
+      {
+        "func_va": "0x00AB049C",
+        "func_name": "_malloc",
+        "samples": 3063,
+        "pct": 60.98
+      },
+      {
+        "func_va": "0x009DF550",
+        "func_name": "FUN_009df550",
+        "samples": 2728,
+        "pct": 54.31
+      },
+      {
+        "func_va": "0x0097E0CD",
+        "func_name": "Catch@0097e0cd",
+        "samples": 2728,
+        "pct": 54.31
+      },
+      {
+        "func_va": "0x00AB98AF",
+        "func_name": "__getptd",
+        "samples": 2699,
+        "pct": 53.73
+      },
+      {
+        "func_va": "0x00AAE9AF",
+        "func_name": "FUN_00aae9af",
+        "samples": 2675,
+        "pct": 53.26
+      },
+      {
+        "func_va": "0x007055A0",
+        "func_name": "FUN_007055a0",
+        "samples": 2541,
+        "pct": 50.59
+      },
+      {
+        "func_va": "0x00654D80",
+        "func_name": "FUN_00654d80",
+        "samples": 2390,
+        "pct": 47.58
+      },
+      {
+        "func_va": "0x006592F0",
+        "func_name": "FUN_006592f0",
+        "samples": 2275,
+        "pct": 45.29
+      },
+      {
+        "func_va": "0x009AF9F0",
+        "func_name": "FUN_009af9f0",
+        "samples": 2059,
+        "pct": 40.99
+      },
+      {
+        "func_va": "0x0057A690",
+        "func_name": "FUN_0057a690",
+        "samples": 2020,
+        "pct": 40.22
+      },
+      {
+        "func_va": "0x00AB0E24",
+        "func_name": "___tmainCRTStartup",
+        "samples": 1939,
+        "pct": 38.6
+      },
+      {
+        "func_va": "0x0072ECF0",
+        "func_name": "FUN_0072ecf0",
+        "samples": 1819,
+        "pct": 36.21
+      },
+      {
+        "func_va": "0x00418E30",
+        "func_name": "FUN_00418e30",
+        "samples": 1785,
+        "pct": 35.54
+      },
+      {
+        "func_va": "0x00408FD0",
+        "func_name": "FUN_00408fd0",
+        "samples": 1732,
+        "pct": 34.48
+      },
+      {
+        "func_va": "0x0086C050",
+        "func_name": "FUN_0086c050",
+        "samples": 1726,
+        "pct": 34.36
+      },
+      {
+        "func_va": "0x00682EC0",
+        "func_name": "FUN_00682ec0",
+        "samples": 1714,
+        "pct": 34.12
+      },
+      {
+        "func_va": "0x009AA450",
+        "func_name": "FUN_009aa450",
+        "samples": 1706,
+        "pct": 33.96
+      },
+      {
+        "func_va": "0x00A7B7F0",
+        "func_name": "FUN_00a7b7f0",
+        "samples": 1704,
+        "pct": 33.92
+      },
+      {
+        "func_va": "0x00AAD52D",
+        "func_name": "FUN_00aad52d",
+        "samples": 1704,
+        "pct": 33.92
+      },
+      {
+        "func_va": "0x006859C0",
+        "func_name": "FUN_006859c0",
+        "samples": 1629,
+        "pct": 32.43
+      },
+      {
+        "func_va": "0x00408AD0",
+        "func_name": "FUN_00408ad0",
+        "samples": 1617,
+        "pct": 32.19
+      }
+    ],
+    "top_stacks_prefix10": [
+      {
+        "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; _malloc@0x00AB04E7 ; FUN_00aae9af@0x00AAE9CE ; FUN_00408fd0@0x00408FEA ; FUN_0086c050@0x0086C10D ; FUN_00418e30@0x0041900C ; _free@0x00AAEEF3 ; FUN_00aad52d@0x00AAD567",
+        "samples": 879,
+        "pct": 17.5
+      },
+      {
+        "stack": "ntdll.dll:ZwDelayExecution ; FUN_007fa740@0x007FB844 ; FUN_007f75d0@0x007F7A7A ; FUN_00645460@0x0064547C ; FUN_006592f0@0x00659584 ; _malloc@0x00AB04E7 ; FUN_00aae9af@0x00AAE9CE ; FUN_00408fd0@0x00408FEA ; FUN_0086c050@0x0086C10D ; FUN_00418e30@0x0041900C",
+        "samples": 173,
+        "pct": 3.44
+      },
+      {
+        "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; FUN_00a235c0@0x00A23A90",
+        "samples": 136,
+        "pct": 2.71
+      },
+      {
+        "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; FUN_0099ff90@0x009A02D2",
+        "samples": 101,
+        "pct": 2.01
+      },
+      {
+        "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; _malloc@0x00AB04E7",
+        "samples": 78,
+        "pct": 1.55
+      },
+      {
+        "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; FUN_00999d00@0x00999F6D",
+        "samples": 60,
+        "pct": 1.19
+      },
+      {
+        "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; __getptd_noexit@0x00AB98AA",
+        "samples": 53,
+        "pct": 1.06
+      },
+      {
+        "stack": "win32u.dll:NtUserGetCursorPos ; FUN_00a7a970@0x00A7A983 ; FUN_009c37d0@0x009C37EF ; FUN_009c37d0@0x009C3820 ; FUN_009c36f0@0x009C370B ; FUN_009ee470@0x009EE509 ; FUN_009a3b40@0x009A3FD2 ; FUN_00657b60@0x00657D3F ; FUN_009ebf10@0x009EBF65 ; FUN_009ebf10@0x009EBF65",
+        "samples": 52,
+        "pct": 1.04
+      },
+      {
+        "stack": "win32u.dll:NtUserGetCursorPos ; FUN_00a7a970@0x00A7A983 ; FUN_00657b60@0x00657C8D ; FUN_009ebf10@0x009EBF65 ; FUN_009ebf10@0x009EBF65 ; FUN_00654d80@0x006562D2 ; FUN_009df550@0x009DF966 ; Catch@0097e0cd@0x0097E0CD ; __getptd_noexit@0x00AB98AA ; __getptd@0x00AB98B7",
+        "samples": 48,
+        "pct": 0.96
+      },
+      {
+        "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; FUN_00a235c0@0x00A23A90 ; FUN_00999d00@0x00999F6D ; FUN_00999fa0@0x0099A1ED ; FUN_00a7b7f0@0x00A7B825 ; FUN_00a7b7f0@0x00A7B825 ; FUN_006592f0@0x00660F35 ; _malloc@0x00AB04E7",
+        "samples": 46,
+        "pct": 0.92
+      },
+      {
+        "stack": "win32u.dll:NtUserCallOneParam ; FUN_00a7a970@0x00A7A9AE ; FUN_009c36f0@0x009C371B ; FUN_009ee470@0x009EE509 ; FUN_009a3b40@0x009A3FD2 ; FUN_00657b60@0x00657D3F ; FUN_009ebf10@0x009EBF65 ; FUN_009ebf10@0x009EBF65 ; FUN_00654d80@0x006562D2 ; FUN_009df550@0x009DF966",
+        "samples": 39,
+        "pct": 0.78
+      },
+      {
+        "stack": "win32u.dll:NtUserCallOneParam ; FUN_00a7a970@0x00A7A9AE ; FUN_009c36f0@0x009C370B ; FUN_009ee470@0x009EE509 ; FUN_009a3b40@0x009A3FD2 ; FUN_00657b60@0x00657D3F ; FUN_009ebf10@0x009EBF65 ; FUN_009ebf10@0x009EBF65 ; FUN_00654d80@0x006562D2 ; FUN_009df550@0x009DF966",
+        "samples": 35,
+        "pct": 0.7
+      },
+      {
+        "stack": "win32u.dll:NtUserGetCursorPos ; FUN_00a7a970@0x00A7A983 ; FUN_009c36f0@0x009C371B ; FUN_009ee470@0x009EE509 ; FUN_009a3b40@0x009A3FD2 ; FUN_00657b60@0x00657D3F ; FUN_009ebf10@0x009EBF65 ; FUN_009ebf10@0x009EBF65 ; FUN_00654d80@0x006562D2 ; FUN_009df550@0x009DF966",
+        "samples": 35,
+        "pct": 0.7
+      },
+      {
+        "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; FUN_0099ff90@0x009A02D2 ; FUN_00756170@0x00756F6E ; __getptd_noexit@0x00AB98AA ; __whiteout@0x00AB7CD4 ; __input_l@0x00AB8AA5 ; __input_l@0x00AB8CE0 ; FUN_00ab9df1@0x00ABA9D6",
+        "samples": 32,
+        "pct": 0.64
+      },
+      {
+        "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; FUN_00a235c0@0x00A23A90 ; FUN_00414e70@0x00415246 ; FUN_00999d00@0x00999F6D ; FUN_00999fa0@0x0099A1ED ; FUN_00a7b7f0@0x00A7B825 ; FUN_00a7b7f0@0x00A7B825 ; FUN_006592f0@0x00660F35",
+        "samples": 27,
+        "pct": 0.54
+      }
+    ]
+  },
+  "control_runs_excluded_from_baseline": [
+    {
+      "tag": "ctrl-skipnet-1",
+      "skip_network_wait": 1,
+      "skip_network_wait_log": "active, the per-frame network poll no longer blocks",
+      "sample_interval_ms": 50,
+      "elapsed_days": 90,
+      "wall_total_ms": 49287.329,
+      "wall_ms_per_day": 547.637,
+      "modal_stall_ms": 0.0,
+      "active_wall_ms_per_day": 547.637,
+      "per_day_median_ms": 540.213,
+      "per_day_mean_ms": 547.637,
+      "per_day_stdev_ms": 61.343,
+      "modal_pauses": 0,
+      "load1_before": 9.72,
+      "load1_after": 11.08,
+      "tsv_header": {
+        "interval_ms": 50,
+        "days": 90,
+        "start_day": 2495506,
+        "end_day": 2495596,
+        "year": 1837,
+        "samples": 968,
+        "ms_per_day_sampled": 537.6,
+        "unique_stacks": 688,
+        "dropped": 0
+      },
+      "delta_active_wall_ms_per_day_vs_baseline_median": 2.829,
+      "delta_active_wall_pct": 0.52,
+      "delta_per_day_median_ms_vs_baseline_median": 2.476,
+      "sample_profiler_summary": {
+        "total_samples": 968,
+        "total_profiled_days": 90,
+        "module_leaf_breakdown": [
+          {
+            "module": "ntdll.dll",
+            "samples": 433,
+            "pct": 44.73
+          },
+          {
+            "module": "v2game.exe",
+            "samples": 416,
+            "pct": 42.98
+          },
+          {
+            "module": "win32u.dll",
+            "samples": 85,
+            "pct": 8.78
+          },
+          {
+            "module": "wined3d.dll",
+            "samples": 19,
+            "pct": 1.96
+          },
+          {
+            "module": "d3dx9_41.dll",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "module": "d3d9.dll",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "module": "tbb.dll",
+            "samples": 2,
+            "pct": 0.21
+          },
+          {
+            "module": "ucrtbase.dll",
+            "samples": 1,
+            "pct": 0.1
+          },
+          {
+            "module": "kernelbase.dll",
+            "samples": 1,
+            "pct": 0.1
+          }
+        ],
+        "top_leaf_frames": [
+          {
+            "frame": "ntdll.dll:ZwWaitForSingleObject",
+            "samples": 258,
+            "pct": 26.65
+          },
+          {
+            "frame": "ntdll.dll:ZwDelayExecution",
+            "samples": 150,
+            "pct": 15.5
+          },
+          {
+            "frame": "win32u.dll:NtUserGetCursorPos",
+            "samples": 46,
+            "pct": 4.75
+          },
+          {
+            "frame": "win32u.dll:NtUserCallOneParam",
+            "samples": 25,
+            "pct": 2.58
+          },
+          {
+            "frame": "ntdll.dll:ZwYieldExecution",
+            "samples": 12,
+            "pct": 1.24
+          },
+          {
+            "frame": "v2game.exe:FUN_00969760 (0x00969760+0x129)",
+            "samples": 10,
+            "pct": 1.03
+          },
+          {
+            "frame": "v2game.exe:__alldiv (0x00AC02A0+0x55)",
+            "samples": 10,
+            "pct": 1.03
+          },
+          {
+            "frame": "v2game.exe:__alldiv (0x00AC02A0+0x4D)",
+            "samples": 8,
+            "pct": 0.83
+          },
+          {
+            "frame": "v2game.exe:FUN_004bbd60 (0x004BBD60+0x18)",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "frame": "d3dx9_41.dll:D3DXCreateEffect",
+            "samples": 6,
+            "pct": 0.62
+          },
+          {
+            "frame": "win32u.dll:NtUserSetCursor",
+            "samples": 6,
+            "pct": 0.62
+          },
+          {
+            "frame": "v2game.exe:FUN_009a3b40 (0x009A3B40+0x483)",
+            "samples": 6,
+            "pct": 0.62
+          },
+          {
+            "frame": "v2game.exe:FUN_0050ea30 (0x0050EA30+0x2515)",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "frame": "v2game.exe:FUN_004b8870 (0x004B8870+0xB9)",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "frame": "v2game.exe:FUN_0047e3e0 (0x0047E3E0+0x21)",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "frame": "v2game.exe:FUN_004b9c60 (0x004B9C60+0x3B)",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "frame": "v2game.exe:FUN_004808d0 (0x004808D0+0xF8A)",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "frame": "v2game.exe:FUN_0095a5f0 (0x0095A5F0+0x7D)",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "frame": "v2game.exe:__allmul (0x00AC9F20+0x16)",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "frame": "d3d9.dll:Direct3DShaderValidatorCreate9",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "frame": "ntdll.dll:RtlAllocateHeap",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "frame": "v2game.exe:FUN_009a4ac0 (0x009A4AC0+0x16)",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "frame": "v2game.exe:FUN_0084b0f0 (0x0084B0F0+0x1AD)",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "frame": "v2game.exe:FUN_00485e40 (0x00485E40+0xBC3)",
+            "samples": 4,
+            "pct": 0.41
+          },
+          {
+            "frame": "v2game.exe:FUN_00642340 (0x00642340+0x27)",
+            "samples": 4,
+            "pct": 0.41
+          }
+        ],
+        "top_exe_leaf_functions": [
+          {
+            "func_va": "0x00AC02A0",
+            "func_name": "__alldiv",
+            "samples": 26,
+            "pct": 2.69
+          },
+          {
+            "func_va": "0x00969760",
+            "func_name": "FUN_00969760",
+            "samples": 18,
+            "pct": 1.86
+          },
+          {
+            "func_va": "0x00485E40",
+            "func_name": "FUN_00485e40",
+            "samples": 14,
+            "pct": 1.45
+          },
+          {
+            "func_va": "0x004BBD60",
+            "func_name": "FUN_004bbd60",
+            "samples": 12,
+            "pct": 1.24
+          },
+          {
+            "func_va": "0x00515490",
+            "func_name": "FUN_00515490",
+            "samples": 12,
+            "pct": 1.24
+          },
+          {
+            "func_va": "0x00642340",
+            "func_name": "FUN_00642340",
+            "samples": 11,
+            "pct": 1.14
+          },
+          {
+            "func_va": "0x0050EA30",
+            "func_name": "FUN_0050ea30",
+            "samples": 10,
+            "pct": 1.03
+          },
+          {
+            "func_va": "0x009A3B40",
+            "func_name": "FUN_009a3b40",
+            "samples": 10,
+            "pct": 1.03
+          },
+          {
+            "func_va": "0x0047E3E0",
+            "func_name": "FUN_0047e3e0",
+            "samples": 9,
+            "pct": 0.93
+          },
+          {
+            "func_va": "0x0047DCA0",
+            "func_name": "FUN_0047dca0",
+            "samples": 9,
+            "pct": 0.93
+          },
+          {
+            "func_va": "0x00508590",
+            "func_name": "FUN_00508590",
+            "samples": 9,
+            "pct": 0.93
+          },
+          {
+            "func_va": "0x0095A5F0",
+            "func_name": "FUN_0095a5f0",
+            "samples": 8,
+            "pct": 0.83
+          },
+          {
+            "func_va": "0x004808D0",
+            "func_name": "FUN_004808d0",
+            "samples": 8,
+            "pct": 0.83
+          },
+          {
+            "func_va": "0x004DDE00",
+            "func_name": "FUN_004dde00",
+            "samples": 8,
+            "pct": 0.83
+          },
+          {
+            "func_va": "0x00AC9F20",
+            "func_name": "__allmul",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "func_va": "0x004B8870",
+            "func_name": "FUN_004b8870",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "func_va": "0x0068C040",
+            "func_name": "FUN_0068c040",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "func_va": "0x0084B0F0",
+            "func_name": "FUN_0084b0f0",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "func_va": "0x00522CF0",
+            "func_name": "FUN_00522cf0",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "func_va": "0x0050B9B0",
+            "func_name": "FUN_0050b9b0",
+            "samples": 6,
+            "pct": 0.62
+          },
+          {
+            "func_va": "0x0052FCD0",
+            "func_name": "FUN_0052fcd0",
+            "samples": 6,
+            "pct": 0.62
+          },
+          {
+            "func_va": "0x00AC443B",
+            "func_name": "__VEC_memzero",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "func_va": "0x004B9C60",
+            "func_name": "FUN_004b9c60",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "func_va": "0x0051FD10",
+            "func_name": "FUN_0051fd10",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "func_va": "0x006859C0",
+            "func_name": "FUN_006859c0",
+            "samples": 5,
+            "pct": 0.52
+          }
+        ],
+        "top_exe_inclusive_functions": [
+          {
+            "func_va": "0x00AB9836",
+            "func_name": "__getptd_noexit",
+            "samples": 695,
+            "pct": 71.8
+          },
+          {
+            "func_va": "0x00AB7CDE",
+            "func_name": "__input_l",
+            "samples": 674,
+            "pct": 69.63
+          },
+          {
+            "func_va": "0x00AB7CB4",
+            "func_name": "__whiteout",
+            "samples": 672,
+            "pct": 69.42
+          },
+          {
+            "func_va": "0x00AAEED7",
+            "func_name": "_free",
+            "samples": 638,
+            "pct": 65.91
+          },
+          {
+            "func_va": "0x00AB049C",
+            "func_name": "_malloc",
+            "samples": 613,
+            "pct": 63.33
+          },
+          {
+            "func_va": "0x00AAE9AF",
+            "func_name": "FUN_00aae9af",
+            "samples": 550,
+            "pct": 56.82
+          },
+          {
+            "func_va": "0x00AB98AF",
+            "func_name": "__getptd",
+            "samples": 503,
+            "pct": 51.96
+          },
+          {
+            "func_va": "0x009DF550",
+            "func_name": "FUN_009df550",
+            "samples": 503,
+            "pct": 51.96
+          },
+          {
+            "func_va": "0x0097E0CD",
+            "func_name": "Catch@0097e0cd",
+            "samples": 503,
+            "pct": 51.96
+          },
+          {
+            "func_va": "0x007055A0",
+            "func_name": "FUN_007055a0",
+            "samples": 473,
+            "pct": 48.86
+          },
+          {
+            "func_va": "0x006592F0",
+            "func_name": "FUN_006592f0",
+            "samples": 459,
+            "pct": 47.42
+          },
+          {
+            "func_va": "0x00654D80",
+            "func_name": "FUN_00654d80",
+            "samples": 435,
+            "pct": 44.94
+          },
+          {
+            "func_va": "0x00418E30",
+            "func_name": "FUN_00418e30",
+            "samples": 388,
+            "pct": 40.08
+          },
+          {
+            "func_va": "0x009AF9F0",
+            "func_name": "FUN_009af9f0",
+            "samples": 382,
+            "pct": 39.46
+          },
+          {
+            "func_va": "0x0057A690",
+            "func_name": "FUN_0057a690",
+            "samples": 376,
+            "pct": 38.84
+          },
+          {
+            "func_va": "0x00408FD0",
+            "func_name": "FUN_00408fd0",
+            "samples": 373,
+            "pct": 38.53
+          },
+          {
+            "func_va": "0x0086C050",
+            "func_name": "FUN_0086c050",
+            "samples": 371,
+            "pct": 38.33
+          },
+          {
+            "func_va": "0x00AAD52D",
+            "func_name": "FUN_00aad52d",
+            "samples": 368,
+            "pct": 38.02
+          },
+          {
+            "func_va": "0x009AA450",
+            "func_name": "FUN_009aa450",
+            "samples": 368,
+            "pct": 38.02
+          },
+          {
+            "func_va": "0x00AB0E24",
+            "func_name": "___tmainCRTStartup",
+            "samples": 352,
+            "pct": 36.36
+          },
+          {
+            "func_va": "0x00408AD0",
+            "func_name": "FUN_00408ad0",
+            "samples": 347,
+            "pct": 35.85
+          },
+          {
+            "func_va": "0x006C2E50",
+            "func_name": "FUN_006c2e50",
+            "samples": 335,
+            "pct": 34.61
+          },
+          {
+            "func_va": "0x0072ECF0",
+            "func_name": "FUN_0072ecf0",
+            "samples": 334,
+            "pct": 34.5
+          },
+          {
+            "func_va": "0x00682EC0",
+            "func_name": "FUN_00682ec0",
+            "samples": 312,
+            "pct": 32.23
+          },
+          {
+            "func_va": "0x00A7B7F0",
+            "func_name": "FUN_00a7b7f0",
+            "samples": 305,
+            "pct": 31.51
+          }
+        ],
+        "top_stacks_prefix10": [
+          {
+            "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; _malloc@0x00AB04E7 ; FUN_00aae9af@0x00AAE9CE ; FUN_00408fd0@0x00408FEA ; FUN_0086c050@0x0086C10D ; FUN_00418e30@0x0041900C ; _free@0x00AAEEF3 ; FUN_00aad52d@0x00AAD567",
+            "samples": 201,
+            "pct": 20.76
+          },
+          {
+            "stack": "ntdll.dll:ZwDelayExecution ; FUN_007fa740@0x007FB844 ; FUN_007f75d0@0x007F7A7A ; FUN_00645460@0x0064547C ; FUN_006592f0@0x00659584 ; _malloc@0x00AB04E7 ; FUN_00aae9af@0x00AAE9CE ; FUN_00408fd0@0x00408FEA ; FUN_0086c050@0x0086C10D ; FUN_00418e30@0x0041900C",
+            "samples": 50,
+            "pct": 5.17
+          },
+          {
+            "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; _malloc@0x00AB04E7",
+            "samples": 17,
+            "pct": 1.76
+          },
+          {
+            "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; FUN_0099ff90@0x009A02D2",
+            "samples": 16,
+            "pct": 1.65
+          },
+          {
+            "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; FUN_00a235c0@0x00A23A90",
+            "samples": 16,
+            "pct": 1.65
+          },
+          {
+            "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; FUN_00a235c0@0x00A23A90 ; FUN_00999d00@0x00999F6D ; FUN_00999fa0@0x0099A1ED ; FUN_00a7b7f0@0x00A7B825 ; FUN_00a7b7f0@0x00A7B825 ; FUN_006592f0@0x00660F35 ; _malloc@0x00AB04E7",
+            "samples": 14,
+            "pct": 1.45
+          },
+          {
+            "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; FUN_0099ff90@0x009A02D2 ; FUN_00756170@0x00756F6E ; __getptd_noexit@0x00AB98AA ; __whiteout@0x00AB7CD4 ; __input_l@0x00AB8AA5 ; __input_l@0x00AB8CE0 ; FUN_00ab9df1@0x00ABA9D6",
+            "samples": 10,
+            "pct": 1.03
+          },
+          {
+            "stack": "win32u.dll:NtUserGetCursorPos ; FUN_00a7a970@0x00A7A983 ; FUN_00657b60@0x00657C8D ; FUN_009ebf10@0x009EBF65 ; FUN_009ebf10@0x009EBF65 ; FUN_00654d80@0x006562D2 ; FUN_009df550@0x009DF966 ; Catch@0097e0cd@0x0097E0CD ; __getptd_noexit@0x00AB98AA ; __getptd@0x00AB98B7",
+            "samples": 10,
+            "pct": 1.03
+          },
+          {
+            "stack": "ntdll.dll:ZwYieldExecution ; FUN_0068f3f0@0x0068F498 ; FUN_00a7b7f0@0x00A7B825 ; FUN_00685620@0x00685701 ; FUN_0072ecf0@0x0072ECFF ; FUN_009af9f0@0x009AFD32 ; FUN_0057a690@0x0057A732 ; FUN_009eb350@0x009EB3F5 ; FUN_009df550@0x009DF966 ; Catch@0097e0cd@0x0097E0CD",
+            "samples": 7,
+            "pct": 0.72
+          },
+          {
+            "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; __getptd_noexit@0x00AB98AA",
+            "samples": 6,
+            "pct": 0.62
+          },
+          {
+            "stack": "ntdll.dll:ZwDelayExecution ; FUN_0099a200@0x0099A3D5 ; FUN_00a292a0@0x00A29313 ; FUN_00a20470@0x00A205E7 ; FUN_0099a200@0x0099A3D5 ; FUN_0099a200@0x0099A45F ; FUN_0099a200@0x0099A45F ; FUN_00999bb0@0x00999C60 ; FUN_006592f0@0x006596B6 ; FUN_00999d00@0x00999F6D",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "stack": "win32u.dll:NtUserCallOneParam ; FUN_00a7a970@0x00A7A9AE ; FUN_009c36f0@0x009C370B ; FUN_009ee470@0x009EE509 ; FUN_009a3b40@0x009A3FD2 ; FUN_00657b60@0x00657D3F ; FUN_009ebf10@0x009EBF65 ; FUN_009ebf10@0x009EBF65 ; FUN_00654d80@0x006562D2 ; FUN_009df550@0x009DF966",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "stack": "FUN_00969760@0x00969889 ; FUN_00520150@0x00520768 ; FUN_0068f710@0x0068F7EF ; FUN_0068f4c0@0x0068F586 ; FUN_005953f0@0x0059548C ; _free@0x00AAEEF3 ; FUN_005b5180@0x005B5269 ; FUN_009af9f0@0x009AFD32 ; FUN_0057a690@0x0057A732 ; FUN_009eb350@0x009EB3F5",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "stack": "ntdll.dll:ZwDelayExecution ; FUN_007fa740@0x007FB844 ; FUN_007f75d0@0x007F7A7A ; FUN_00645460@0x0064547C ; FUN_006592f0@0x00659584 ; FUN_00a235c0@0x00A23A90 ; FUN_00999d00@0x00999F6D ; FUN_00999fa0@0x0099A1ED ; FUN_00a7b7f0@0x00A7B825 ; FUN_00a7b7f0@0x00A7B825",
+            "samples": 5,
+            "pct": 0.52
+          },
+          {
+            "stack": "ntdll.dll:ZwWaitForSingleObject ; FUN_0099a520@0x0099A542 ; FUN_006592f0@0x00660F0C ; FUN_00a235c0@0x00A23A90 ; FUN_00414e70@0x00415246 ; FUN_00999d00@0x00999F6D ; FUN_00999fa0@0x0099A1ED ; FUN_00a7b7f0@0x00A7B825 ; FUN_00a7b7f0@0x00A7B825 ; FUN_006592f0@0x00660F35",
+            "samples": 5,
+            "pct": 0.52
+          }
+        ]
+      }
+    }
+  ]
+}

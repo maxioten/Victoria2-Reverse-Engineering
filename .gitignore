@@ -4,6 +4,16 @@
 !/experiments/tick-recompile-lab/
 !/experiments/tick-country-prepare-lab/
 !/experiments/tick-pop-prepare-lab/
+!/experiments/p2-hook-lab/
+/experiments/p2-hook-lab/build/
+/experiments/p2-hook-lab/wine-prefix/
+/experiments/p2-hook-lab/__pycache__/
+**/__pycache__/
+*.exe
+*.dll
+*.v2
+*.bin
+*.pyc
 /references/
 /tools/downloads/
 /tools/ghidra/

@@ -1,0 +1,90 @@
+{
+  "status": "measured",
+  "wine_version": "wine-11.21",
+  "wine_prefix": "experiments/p2-hook-lab/wine-prefix",
+  "compiler": "clang version 23.1.5 (https://github.com/llvm/llvm-project.git 392dfff97d29b59d77e5cac6d4b6ef2585fe7117)",
+  "artifacts": {
+    "hook_bin_sha256": "93ae40a41e202c64cbfb41e5af3ff5fbbbc2c3c76193d623e1da07c316eba5f1",
+    "v2p2_dll_sha256": "a7a427a5d7af2daf29e17eba3a33560726e83e70d9a5fad975bce7887c114dba",
+    "bench_exe_sha256": "e050684e28ef6ebc48258e5d807a5cc86fe65814561e9b8e27606e21a2a9e0f5"
+  },
+  "benchmark": {
+    "warmup": 1000000,
+    "calls_per_batch": 10000000,
+    "batches": 20,
+    "threads_E": 6,
+    "qpc_freq_hz": 10000000,
+    "tsc_ghz": 3.599737,
+    "configs": {
+      "A_baseline_direct": {
+        "median_cycles": 4.3806,
+        "p95_cycles": 4.6102,
+        "median_ns": 1.2175,
+        "p95_ns": 1.2825
+      },
+      "B_pic_nop_trampoline": {
+        "median_cycles": 198.8534,
+        "p95_cycles": 214.1898,
+        "median_ns": 55.2401,
+        "p95_ns": 59.5006
+      },
+      "C_pic_empty_c_handler": {
+        "median_cycles": 206.9051,
+        "p95_cycles": 209.0727,
+        "median_ns": 57.476,
+        "p95_ns": 58.0792
+      },
+      "C_handled_empty_c_handler": {
+        "median_cycles": 176.2667,
+        "p95_cycles": 177.1542,
+        "median_ns": 48.9661,
+        "p95_ns": 49.2117
+      },
+      "D_baseline_vtable": {
+        "median_cycles": 4.5924,
+        "p95_cycles": 4.7343,
+        "median_ns": 1.2761,
+        "p95_ns": 1.3159
+      },
+      "D_vtable_empty_handler": {
+        "median_cycles": 206.4229,
+        "p95_cycles": 212.4729,
+        "median_ns": 57.3428,
+        "p95_ns": 59.0235
+      },
+      "E_tbb_contended_4thr": {
+        "median_cycles": 240.3745,
+        "p95_cycles": 314.076,
+        "median_ns": 66.774,
+        "p95_ns": 87.2466
+      },
+      "E_tbb_contended_6thr": {
+        "median_cycles": 299.1302,
+        "p95_cycles": 414.3483,
+        "median_ns": 83.0954,
+        "p95_ns": 115.102
+      }
+    },
+    "derived": {
+      "C_fx_ns": 54.0226,
+      "C_hook_ns": 56.2585,
+      "C_hook_cycles": 202.5245,
+      "C_hook_handled_ns": 47.7487,
+      "D_vtable_hook_ns": 56.0667,
+      "E4_vs_C_ratio": 1.1618,
+      "E_vs_C_ratio": 1.4457
+    },
+    "sink": 1816940032
+  },
+  "promotion_gate": {
+    "C_hook_ns": 56.2585,
+    "min_T_orig_ns_for_10pct_overhead": 562.585,
+    "min_daily_savings_ms": 0.25,
+    "max_E_vs_C_ratio": 1.1,
+    "E4_vs_C_ratio": 1.1618,
+    "E4_vs_C_pass": false,
+    "E6_vs_C_ratio": 1.4457,
+    "E6_vs_C_pass": false,
+    "E_vs_C_note": "Host CPU is 6C/6T i5-8600K (no HT); 4thr stays within core headroom while 6thr saturates 100% of host cores and captures OS preemption."
+  }
+}

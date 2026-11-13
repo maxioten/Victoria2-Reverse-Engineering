@@ -1,0 +1,583 @@
+{
+  "schema_version": "p0-varc-v3-v2",
+  "v2p2_dll_src_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+  "profiler_attribution_note": "performance_patch.dll emits '?' for VirtualAlloc'd non-PE blob EIPs and its frame walker drops 0x005089E0 when sampling the -O2 EBP-as-GPR cr_sese_varc blob or its .text helpers (0x00511140, 0x004A8300, 0x009692C0, etc.). Accordingly, sese_total_incl_blob and country_recalculate_total include both blob_proxy_q_a7b825 ('?;0x00A7B825;...') and helpers_dropped_5089e0 (SESE helpers above '0x00A7B825;0x00685701' with 0x005089E0 dropped).",
+  "validate_90d": {
+    "tag": "varc-validate-90d",
+    "varc_mode": "validate",
+    "v2p2_dll_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+    "elapsed_days": 90,
+    "wall_ms_per_day": 904.817,
+    "modal_stall_ms": 7611.889,
+    "active_wall_ms_per_day": 820.241,
+    "per_day_median_ms": 792.782,
+    "modal_pauses": 1,
+    "load1_before": 6.18,
+    "load1_after": 10.51,
+    "loader_lines": [
+      "[09:34:41.719] [loader] loading Z:\\home\\daniel\\Documentos\\v2\\experiments\\perf-baseline-lab\\game\\mod\\v2p2\\v2p2.dll",
+      "[09:34:41.720] [v2p2] v2p2: fn_00515ea6_varc Country_Recalculate SESE variant(c) installed (mode=validate, W^X sealed).",
+      "[09:34:41.720] [v2p2] v2p2: TGL_PluginInit ready (PE verified, 1 hooks installed, W^X sealed).",
+      "[09:34:41.720] [loader] 2 plugin(s) loaded"
+    ],
+    "mem_post_90d": {
+      "exe_base": "0x00400000",
+      "sese_patched": true,
+      "site_bytes": "e9 55 ad 81 01 90",
+      "blob_base": "0x01d30000",
+      "blob_end": "0x01d30c4c",
+      "blob_entry": "0x01d30c00",
+      "blob_page_perms": "r-xp",
+      "varc_mode": 1,
+      "initialized": 1,
+      "dirty": 0,
+      "total_tags": 272,
+      "living_tags_bitcount": 130,
+      "validate_mode": 1,
+      "mismatch_count": 0,
+      "last_mismatch_idx": 0,
+      "last_expected": 0,
+      "last_actual": 0
+    },
+    "validate_log_exists": false,
+    "validate_log_lines": 0,
+    "profiler_cr": {
+      "tsv_header": {
+        "interval_ms": 50,
+        "days": 90,
+        "start_day": 2495506,
+        "end_day": 2495596,
+        "year": 1837,
+        "samples": 1477,
+        "ms_per_day_sampled": 820.4,
+        "unique_stacks": 1004,
+        "dropped": 0
+      },
+      "total_samples": 1477,
+      "dead_check_00515ec0_00515f35": {
+        "leaf": 0,
+        "leaf_pct": 0.0,
+        "incl": 0,
+        "incl_pct": 0.0
+      },
+      "sese_total_incl_blob": {
+        "exe_leaf": 0,
+        "exe_incl": 0,
+        "blob_mapped_leaf": 0,
+        "blob_mapped_incl": 0,
+        "blob_proxy_q_a7b825": 7,
+        "helpers_dropped_5089e0": 3,
+        "leaf": 7,
+        "leaf_pct": 0.474,
+        "incl": 10,
+        "incl_pct": 0.677
+      },
+      "country_recalculate_total": {
+        "exe_leaf": 5,
+        "exe_incl": 7,
+        "leaf": 12,
+        "leaf_pct": 0.812,
+        "incl": 17,
+        "incl_pct": 1.151
+      }
+    }
+  },
+  "paired_ab": [
+    {
+      "pair": 1,
+      "off": {
+        "tag": "ab-01-off",
+        "varc_mode": "off",
+        "v2p2_dll_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+        "elapsed_days": 90,
+        "wall_ms_per_day": 673.191,
+        "modal_stall_ms": 0.0,
+        "active_wall_ms_per_day": 673.191,
+        "per_day_median_ms": 586.73,
+        "modal_pauses": 0,
+        "load1_before": 9.98,
+        "load1_after": 10.54,
+        "loader_lines": [
+          "[09:37:16.389] [loader] loading Z:\\home\\daniel\\Documentos\\v2\\experiments\\perf-baseline-lab\\game\\mod\\v2p2\\v2p2.dll",
+          "[09:37:16.390] [v2p2] v2p2: TGL_PluginInit ready (PE verified, 0 hooks installed, W^X sealed).",
+          "[09:37:16.390] [loader] 2 plugin(s) loaded"
+        ],
+        "mem_post_90d": {
+          "exe_base": "0x00400000",
+          "sese_patched": false,
+          "site_bytes": "8b 54 24 28 8b 02"
+        },
+        "validate_log_exists": false,
+        "validate_log_lines": 0,
+        "profiler_cr": {
+          "tsv_header": {
+            "interval_ms": 50,
+            "days": 90,
+            "start_day": 2495506,
+            "end_day": 2495596,
+            "year": 1837,
+            "samples": 1184,
+            "ms_per_day_sampled": 657.5,
+            "unique_stacks": 833,
+            "dropped": 0
+          },
+          "total_samples": 1184,
+          "dead_check_00515ec0_00515f35": {
+            "leaf": 2,
+            "leaf_pct": 0.169,
+            "incl": 2,
+            "incl_pct": 0.169
+          },
+          "sese_total_incl_blob": {
+            "exe_leaf": 10,
+            "exe_incl": 11,
+            "blob_mapped_leaf": 0,
+            "blob_mapped_incl": 0,
+            "blob_proxy_q_a7b825": 0,
+            "helpers_dropped_5089e0": 0,
+            "leaf": 10,
+            "leaf_pct": 0.845,
+            "incl": 11,
+            "incl_pct": 0.929
+          },
+          "country_recalculate_total": {
+            "exe_leaf": 13,
+            "exe_incl": 23,
+            "leaf": 13,
+            "leaf_pct": 1.098,
+            "incl": 23,
+            "incl_pct": 1.943
+          }
+        }
+      },
+      "prod": {
+        "tag": "ab-01-prod",
+        "varc_mode": "prod",
+        "v2p2_dll_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+        "elapsed_days": 90,
+        "wall_ms_per_day": 627.565,
+        "modal_stall_ms": 0.0,
+        "active_wall_ms_per_day": 627.565,
+        "per_day_median_ms": 557.234,
+        "modal_pauses": 0,
+        "load1_before": 10.09,
+        "load1_after": 10.33,
+        "loader_lines": [
+          "[09:39:35.798] [loader] loading Z:\\home\\daniel\\Documentos\\v2\\experiments\\perf-baseline-lab\\game\\mod\\v2p2\\v2p2.dll",
+          "[09:39:35.805] [v2p2] v2p2: fn_00515ea6_varc Country_Recalculate SESE variant(c) installed (mode=prod, W^X sealed).",
+          "[09:39:35.805] [v2p2] v2p2: TGL_PluginInit ready (PE verified, 1 hooks installed, W^X sealed).",
+          "[09:39:35.805] [loader] 2 plugin(s) loaded"
+        ],
+        "mem_post_90d": {
+          "exe_base": "0x00400000",
+          "sese_patched": true,
+          "site_bytes": "e9 55 ad 81 01 90",
+          "blob_base": "0x01d30000",
+          "blob_end": "0x01d30c4c",
+          "blob_entry": "0x01d30c00",
+          "blob_page_perms": "r-xp",
+          "varc_mode": 2,
+          "initialized": 1,
+          "dirty": 0,
+          "total_tags": 272,
+          "living_tags_bitcount": 129,
+          "validate_mode": 0,
+          "mismatch_count": 0,
+          "last_mismatch_idx": 0,
+          "last_expected": 0,
+          "last_actual": 0
+        },
+        "validate_log_exists": false,
+        "validate_log_lines": 0,
+        "profiler_cr": {
+          "tsv_header": {
+            "interval_ms": 50,
+            "days": 90,
+            "start_day": 2495506,
+            "end_day": 2495596,
+            "year": 1837,
+            "samples": 1113,
+            "ms_per_day_sampled": 618.1,
+            "unique_stacks": 787,
+            "dropped": 0
+          },
+          "total_samples": 1113,
+          "dead_check_00515ec0_00515f35": {
+            "leaf": 0,
+            "leaf_pct": 0.0,
+            "incl": 0,
+            "incl_pct": 0.0
+          },
+          "sese_total_incl_blob": {
+            "exe_leaf": 0,
+            "exe_incl": 0,
+            "blob_mapped_leaf": 0,
+            "blob_mapped_incl": 0,
+            "blob_proxy_q_a7b825": 6,
+            "helpers_dropped_5089e0": 1,
+            "leaf": 6,
+            "leaf_pct": 0.539,
+            "incl": 7,
+            "incl_pct": 0.629
+          },
+          "country_recalculate_total": {
+            "exe_leaf": 3,
+            "exe_incl": 11,
+            "leaf": 9,
+            "leaf_pct": 0.809,
+            "incl": 18,
+            "incl_pct": 1.617
+          }
+        }
+      },
+      "delta_per_day_median_ms": -29.496,
+      "delta_active_wall_ms_per_day": -45.626,
+      "delta_dead_check_incl_samples": -2,
+      "delta_sese_incl_samples": -4,
+      "delta_cr_total_incl_samples": -5
+    },
+    {
+      "pair": 2,
+      "off": {
+        "tag": "ab-02-off",
+        "varc_mode": "off",
+        "v2p2_dll_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+        "elapsed_days": 90,
+        "wall_ms_per_day": 884.182,
+        "modal_stall_ms": 0.0,
+        "active_wall_ms_per_day": 884.182,
+        "per_day_median_ms": 819.139,
+        "modal_pauses": 0,
+        "load1_before": 9.82,
+        "load1_after": 10.12,
+        "loader_lines": [
+          "[09:41:52.386] [loader] loading Z:\\home\\daniel\\Documentos\\v2\\experiments\\perf-baseline-lab\\game\\mod\\v2p2\\v2p2.dll",
+          "[09:41:52.388] [v2p2] v2p2: TGL_PluginInit ready (PE verified, 0 hooks installed, W^X sealed).",
+          "[09:41:52.388] [loader] 2 plugin(s) loaded"
+        ],
+        "mem_post_90d": {
+          "exe_base": "0x00400000",
+          "sese_patched": false,
+          "site_bytes": "8b 54 24 28 8b 02"
+        },
+        "validate_log_exists": false,
+        "validate_log_lines": 0,
+        "profiler_cr": {
+          "tsv_header": {
+            "interval_ms": 50,
+            "days": 90,
+            "start_day": 2495506,
+            "end_day": 2495596,
+            "year": 1837,
+            "samples": 1543,
+            "ms_per_day_sampled": 857.1,
+            "unique_stacks": 992,
+            "dropped": 0
+          },
+          "total_samples": 1543,
+          "dead_check_00515ec0_00515f35": {
+            "leaf": 1,
+            "leaf_pct": 0.065,
+            "incl": 1,
+            "incl_pct": 0.065
+          },
+          "sese_total_incl_blob": {
+            "exe_leaf": 10,
+            "exe_incl": 13,
+            "blob_mapped_leaf": 0,
+            "blob_mapped_incl": 0,
+            "blob_proxy_q_a7b825": 0,
+            "helpers_dropped_5089e0": 0,
+            "leaf": 10,
+            "leaf_pct": 0.648,
+            "incl": 13,
+            "incl_pct": 0.843
+          },
+          "country_recalculate_total": {
+            "exe_leaf": 18,
+            "exe_incl": 25,
+            "leaf": 18,
+            "leaf_pct": 1.167,
+            "incl": 25,
+            "incl_pct": 1.62
+          }
+        }
+      },
+      "prod": {
+        "tag": "ab-02-prod",
+        "varc_mode": "prod",
+        "v2p2_dll_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+        "elapsed_days": 90,
+        "wall_ms_per_day": 785.591,
+        "modal_stall_ms": 0.0,
+        "active_wall_ms_per_day": 785.591,
+        "per_day_median_ms": 750.257,
+        "modal_pauses": 0,
+        "load1_before": 10.19,
+        "load1_after": 13.03,
+        "loader_lines": [
+          "[09:44:32.789] [loader] loading Z:\\home\\daniel\\Documentos\\v2\\experiments\\perf-baseline-lab\\game\\mod\\v2p2\\v2p2.dll",
+          "[09:44:32.797] [v2p2] v2p2: fn_00515ea6_varc Country_Recalculate SESE variant(c) installed (mode=prod, W^X sealed).",
+          "[09:44:32.797] [v2p2] v2p2: TGL_PluginInit ready (PE verified, 1 hooks installed, W^X sealed).",
+          "[09:44:32.797] [loader] 2 plugin(s) loaded"
+        ],
+        "mem_post_90d": {
+          "exe_base": "0x00400000",
+          "sese_patched": true,
+          "site_bytes": "e9 55 ad 81 01 90",
+          "blob_base": "0x01d30000",
+          "blob_end": "0x01d30c4c",
+          "blob_entry": "0x01d30c00",
+          "blob_page_perms": "r-xp",
+          "varc_mode": 2,
+          "initialized": 1,
+          "dirty": 0,
+          "total_tags": 272,
+          "living_tags_bitcount": 129,
+          "validate_mode": 0,
+          "mismatch_count": 0,
+          "last_mismatch_idx": 0,
+          "last_expected": 0,
+          "last_actual": 0
+        },
+        "validate_log_exists": false,
+        "validate_log_lines": 0,
+        "profiler_cr": {
+          "tsv_header": {
+            "interval_ms": 50,
+            "days": 90,
+            "start_day": 2495506,
+            "end_day": 2495596,
+            "year": 1837,
+            "samples": 1376,
+            "ms_per_day_sampled": 764.2,
+            "unique_stacks": 1006,
+            "dropped": 0
+          },
+          "total_samples": 1376,
+          "dead_check_00515ec0_00515f35": {
+            "leaf": 0,
+            "leaf_pct": 0.0,
+            "incl": 0,
+            "incl_pct": 0.0
+          },
+          "sese_total_incl_blob": {
+            "exe_leaf": 0,
+            "exe_incl": 0,
+            "blob_mapped_leaf": 0,
+            "blob_mapped_incl": 0,
+            "blob_proxy_q_a7b825": 7,
+            "helpers_dropped_5089e0": 7,
+            "leaf": 7,
+            "leaf_pct": 0.509,
+            "incl": 14,
+            "incl_pct": 1.017
+          },
+          "country_recalculate_total": {
+            "exe_leaf": 3,
+            "exe_incl": 13,
+            "leaf": 10,
+            "leaf_pct": 0.727,
+            "incl": 27,
+            "incl_pct": 1.962
+          }
+        }
+      },
+      "delta_per_day_median_ms": -68.882,
+      "delta_active_wall_ms_per_day": -98.591,
+      "delta_dead_check_incl_samples": -1,
+      "delta_sese_incl_samples": 1,
+      "delta_cr_total_incl_samples": 2
+    },
+    {
+      "pair": 3,
+      "off": {
+        "tag": "ab-03-off",
+        "varc_mode": "off",
+        "v2p2_dll_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+        "elapsed_days": 90,
+        "wall_ms_per_day": 566.184,
+        "modal_stall_ms": 0.0,
+        "active_wall_ms_per_day": 566.184,
+        "per_day_median_ms": 533.302,
+        "modal_pauses": 0,
+        "load1_before": 13.03,
+        "load1_after": 9.45,
+        "loader_lines": [
+          "[09:47:04.463] [loader] loading Z:\\home\\daniel\\Documentos\\v2\\experiments\\perf-baseline-lab\\game\\mod\\v2p2\\v2p2.dll",
+          "[09:47:04.468] [v2p2] v2p2: TGL_PluginInit ready (PE verified, 0 hooks installed, W^X sealed).",
+          "[09:47:04.469] [loader] 2 plugin(s) loaded"
+        ],
+        "mem_post_90d": {
+          "exe_base": "0x00400000",
+          "sese_patched": false,
+          "site_bytes": "8b 54 24 28 8b 02"
+        },
+        "validate_log_exists": false,
+        "validate_log_lines": 0,
+        "profiler_cr": {
+          "tsv_header": {
+            "interval_ms": 50,
+            "days": 90,
+            "start_day": 2495506,
+            "end_day": 2495596,
+            "year": 1837,
+            "samples": 1008,
+            "ms_per_day_sampled": 559.8,
+            "unique_stacks": 677,
+            "dropped": 0
+          },
+          "total_samples": 1008,
+          "dead_check_00515ec0_00515f35": {
+            "leaf": 2,
+            "leaf_pct": 0.198,
+            "incl": 2,
+            "incl_pct": 0.198
+          },
+          "sese_total_incl_blob": {
+            "exe_leaf": 10,
+            "exe_incl": 14,
+            "blob_mapped_leaf": 0,
+            "blob_mapped_incl": 0,
+            "blob_proxy_q_a7b825": 0,
+            "helpers_dropped_5089e0": 0,
+            "leaf": 10,
+            "leaf_pct": 0.992,
+            "incl": 14,
+            "incl_pct": 1.389
+          },
+          "country_recalculate_total": {
+            "exe_leaf": 15,
+            "exe_incl": 23,
+            "leaf": 15,
+            "leaf_pct": 1.488,
+            "incl": 23,
+            "incl_pct": 2.282
+          }
+        }
+      },
+      "prod": {
+        "tag": "ab-03-prod",
+        "varc_mode": "prod",
+        "v2p2_dll_sha256": "7ecaa803f055b90b4c160dd9e6a9c34d535bebff2bd296373ff5944cc986af35",
+        "elapsed_days": 90,
+        "wall_ms_per_day": 518.452,
+        "modal_stall_ms": 0.0,
+        "active_wall_ms_per_day": 518.452,
+        "per_day_median_ms": 517.826,
+        "modal_pauses": 0,
+        "load1_before": 9.18,
+        "load1_after": 9.6,
+        "loader_lines": [
+          "[09:49:16.576] [loader] loading Z:\\home\\daniel\\Documentos\\v2\\experiments\\perf-baseline-lab\\game\\mod\\v2p2\\v2p2.dll",
+          "[09:49:16.582] [v2p2] v2p2: fn_00515ea6_varc Country_Recalculate SESE variant(c) installed (mode=prod, W^X sealed).",
+          "[09:49:16.582] [v2p2] v2p2: TGL_PluginInit ready (PE verified, 1 hooks installed, W^X sealed).",
+          "[09:49:16.582] [loader] 2 plugin(s) loaded"
+        ],
+        "mem_post_90d": {
+          "exe_base": "0x00400000",
+          "sese_patched": true,
+          "site_bytes": "e9 55 ad 81 01 90",
+          "blob_base": "0x01d30000",
+          "blob_end": "0x01d30c4c",
+          "blob_entry": "0x01d30c00",
+          "blob_page_perms": "r-xp",
+          "varc_mode": 2,
+          "initialized": 1,
+          "dirty": 0,
+          "total_tags": 272,
+          "living_tags_bitcount": 129,
+          "validate_mode": 0,
+          "mismatch_count": 0,
+          "last_mismatch_idx": 0,
+          "last_expected": 0,
+          "last_actual": 0
+        },
+        "validate_log_exists": false,
+        "validate_log_lines": 0,
+        "profiler_cr": {
+          "tsv_header": {
+            "interval_ms": 50,
+            "days": 90,
+            "start_day": 2495506,
+            "end_day": 2495596,
+            "year": 1837,
+            "samples": 928,
+            "ms_per_day_sampled": 515.4,
+            "unique_stacks": 548,
+            "dropped": 0
+          },
+          "total_samples": 928,
+          "dead_check_00515ec0_00515f35": {
+            "leaf": 0,
+            "leaf_pct": 0.0,
+            "incl": 0,
+            "incl_pct": 0.0
+          },
+          "sese_total_incl_blob": {
+            "exe_leaf": 0,
+            "exe_incl": 0,
+            "blob_mapped_leaf": 0,
+            "blob_mapped_incl": 0,
+            "blob_proxy_q_a7b825": 7,
+            "helpers_dropped_5089e0": 1,
+            "leaf": 7,
+            "leaf_pct": 0.754,
+            "incl": 8,
+            "incl_pct": 0.862
+          },
+          "country_recalculate_total": {
+            "exe_leaf": 1,
+            "exe_incl": 10,
+            "leaf": 8,
+            "leaf_pct": 0.862,
+            "incl": 18,
+            "incl_pct": 1.94
+          }
+        }
+      },
+      "delta_per_day_median_ms": -15.476,
+      "delta_active_wall_ms_per_day": -47.732,
+      "delta_dead_check_incl_samples": -2,
+      "delta_sese_incl_samples": -6,
+      "delta_cr_total_incl_samples": -5
+    }
+  ],
+  "aggregate_ab": {
+    "n_pairs": 3,
+    "off": {
+      "per_day_median_ms_median": 586.73,
+      "active_wall_ms_per_day_median": 673.191,
+      "total_samples": 3735,
+      "dead_check_leaf_samples": 5,
+      "dead_check_incl_samples": 5,
+      "dead_check_incl_pct": 0.134,
+      "sese_exe_incl_samples": 38,
+      "sese_blob_q_a7b825_samples": 0,
+      "sese_helpers_dropped_5089e0_samples": 0,
+      "sese_leaf_samples": 30,
+      "sese_incl_samples": 38,
+      "sese_incl_pct": 1.017,
+      "cr_total_leaf_samples": 46,
+      "cr_total_incl_samples": 71,
+      "cr_total_incl_pct": 1.901
+    },
+    "prod": {
+      "per_day_median_ms_median": 557.234,
+      "active_wall_ms_per_day_median": 627.565,
+      "total_samples": 3417,
+      "dead_check_leaf_samples": 0,
+      "dead_check_incl_samples": 0,
+      "dead_check_incl_pct": 0.0,
+      "sese_exe_incl_samples": 0,
+      "sese_blob_q_a7b825_samples": 20,
+      "sese_helpers_dropped_5089e0_samples": 9,
+      "sese_leaf_samples": 20,
+      "sese_incl_samples": 29,
+      "sese_incl_pct": 0.849,
+      "cr_total_leaf_samples": 27,
+      "cr_total_incl_samples": 63,
+      "cr_total_incl_pct": 1.844
+    }
+  }
+}

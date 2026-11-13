@@ -1,0 +1,389 @@
+{
+  "schema_version": "p0-determinism-spa90-v1",
+  "scenario": "SPA 1837.1.1 (input-autosave.v2)",
+  "target_day_offset": 90,
+  "runs": [
+    {
+      "tag": "det-run-1",
+      "display": ":95",
+      "clock_day90_offset": 90,
+      "modal_pauses": 1,
+      "clean_exit": false,
+      "exit_returncode": -15,
+      "savegame_path": "research/perf/raw/det-run-1/day90.v2",
+      "savegame_size_bytes": 23114202,
+      "savegame_sha256": "ddff197028104afa382c99c7d639aef15c017684925c515e4cce290a7ea1c3e6",
+      "rng_post_load": {
+        "rng_state_sha256": "d9ee5dc7679c0e9cca5532787a6540a6eb54e0faa07507e8e7a31c404f960abb",
+        "rng_index": 6,
+        "rng_counter": 6,
+        "rng_flag": 30633416,
+        "rng_seed": 0,
+        "rng_words_head8": [
+          "0xa14d195d",
+          "0x5acb07b4",
+          "0xf789fe8d",
+          "0x2b6cdb4d",
+          "0x36c23f43",
+          "0x29f3f7bd",
+          "0x04160b5d",
+          "0xdab02c14"
+        ],
+        "rng_words_tail4": [
+          "0x90766770",
+          "0xb4f8069a",
+          "0xf53f9f3d",
+          "0x8de82145"
+        ]
+      },
+      "rng_day90": {
+        "rng_state_sha256": "7cc618f38348dc5fef9485a05ec885be4cbe10c6e3a5426ef5d218614e0b05a8",
+        "rng_index": 397,
+        "rng_counter": 445933,
+        "rng_flag": 30633416,
+        "rng_seed": 0,
+        "rng_words_head8": [
+          "0xd198d8eb",
+          "0x9f253829",
+          "0x535c103d",
+          "0x59ad54e4",
+          "0xcba57152",
+          "0x8f866200",
+          "0xdf2365de",
+          "0x7ce1f91b"
+        ],
+        "rng_words_tail4": [
+          "0x94e96708",
+          "0xd641bac7",
+          "0x9b8f63a3",
+          "0x2aa8f565"
+        ]
+      }
+    },
+    {
+      "tag": "det-run-2",
+      "display": ":95",
+      "clock_day90_offset": 90,
+      "modal_pauses": 0,
+      "clean_exit": false,
+      "exit_returncode": -15,
+      "savegame_path": "research/perf/raw/det-run-2/day90.v2",
+      "savegame_size_bytes": 23140749,
+      "savegame_sha256": "0e6467f2ec8430c991995f04f229cd42b2c65e6f2d8d8186fb1a31060b62484c",
+      "rng_post_load": {
+        "rng_state_sha256": "d9ee5dc7679c0e9cca5532787a6540a6eb54e0faa07507e8e7a31c404f960abb",
+        "rng_index": 6,
+        "rng_counter": 6,
+        "rng_flag": 30633416,
+        "rng_seed": 0,
+        "rng_words_head8": [
+          "0xa14d195d",
+          "0x5acb07b4",
+          "0xf789fe8d",
+          "0x2b6cdb4d",
+          "0x36c23f43",
+          "0x29f3f7bd",
+          "0x04160b5d",
+          "0xdab02c14"
+        ],
+        "rng_words_tail4": [
+          "0x90766770",
+          "0xb4f8069a",
+          "0xf53f9f3d",
+          "0x8de82145"
+        ]
+      },
+      "rng_day90": {
+        "rng_state_sha256": "af623d7392bd00dd8f633c092c66be573edd7812416d42b93e181305a4aa01da",
+        "rng_index": 300,
+        "rng_counter": 447084,
+        "rng_flag": 30633416,
+        "rng_seed": 0,
+        "rng_words_head8": [
+          "0x270959f0",
+          "0x8827af59",
+          "0xaab2226f",
+          "0x98b167db",
+          "0x7f34bad3",
+          "0xb644b25d",
+          "0x7820615f",
+          "0xcebbe017"
+        ],
+        "rng_words_tail4": [
+          "0x88c39348",
+          "0x4c0584ed",
+          "0x6970dc64",
+          "0x6527d9a1"
+        ]
+      }
+    }
+  ],
+  "comparison": {
+    "clock_day90_match": true,
+    "post_load_rng_exact_match": true,
+    "day90_rng_state_2500B_exact_match": false,
+    "day90_rng_meta_12B_exact_match": false,
+    "savegame_comparison": {
+      "byte_identical": false,
+      "size_1": 23114202,
+      "size_2": 23140749,
+      "line_count_1": 1813151,
+      "line_count_2": 1813730,
+      "diff_bytes_at_same_offset": 21998729,
+      "total_diff_lines_capped_50": 50,
+      "diff_lines_sample": [
+        {
+          "line": 7,
+          "run1": "unit=2068",
+          "run2": "unit=2066"
+        },
+        {
+          "line": 8,
+          "run1": "state=1197",
+          "run2": "state=1198"
+        },
+        {
+          "line": 11,
+          "run1": "\tliberal_revolution_somewhere=yes",
+          "run2": "\tENGRoyalHouseAnglified=yes"
+        },
+        {
+          "line": 12,
+          "run1": "}",
+          "run2": "\tliberal_revolution_somewhere=yes"
+        },
+        {
+          "line": 13,
+          "run1": "gameplaysettings=",
+          "run2": "}"
+        },
+        {
+          "line": 14,
+          "run1": "{",
+          "run2": "gameplaysettings="
+        },
+        {
+          "line": 15,
+          "run1": "\tsetgameplayoptions=",
+          "run2": "{"
+        },
+        {
+          "line": 16,
+          "run1": "\t{",
+          "run2": "\tsetgameplayoptions="
+        },
+        {
+          "line": 17,
+          "run1": "2 \t}",
+          "run2": "\t{"
+        },
+        {
+          "line": 18,
+          "run1": "}",
+          "run2": "2 \t}"
+        },
+        {
+          "line": 19,
+          "run1": "start_date=\"1836.1.1\"",
+          "run2": "}"
+        },
+        {
+          "line": 20,
+          "run1": "start_pop_index=42988",
+          "run2": "start_date=\"1836.1.1\""
+        },
+        {
+          "line": 21,
+          "run1": "worldmarket=",
+          "run2": "start_pop_index=42928"
+        },
+        {
+          "line": 22,
+          "run1": "{",
+          "run2": "worldmarket="
+        },
+        {
+          "line": 23,
+          "run1": "\tworldmarket_pool=",
+          "run2": "{"
+        },
+        {
+          "line": 24,
+          "run1": "\t{",
+          "run2": "\tworldmarket_pool="
+        },
+        {
+          "line": 25,
+          "run1": "\t\tammunition=43.50702",
+          "run2": "\t{"
+        },
+        {
+          "line": 26,
+          "run1": "\t\tsmall_arms=32.75888",
+          "run2": "\t\tammunition=42.85858"
+        },
+        {
+          "line": 27,
+          "run1": "\t\tartillery=2.21570",
+          "run2": "\t\tsmall_arms=31.16187"
+        },
+        {
+          "line": 28,
+          "run1": "\t\tcanned_food=12.95505",
+          "run2": "\t\tartillery=9.75098"
+        },
+        {
+          "line": 29,
+          "run1": "\t\tcotton=405.46152",
+          "run2": "\t\tcanned_food=25.22241"
+        },
+        {
+          "line": 30,
+          "run1": "\t\tdye=34.41022",
+          "run2": "\t\tcotton=303.20450"
+        },
+        {
+          "line": 31,
+          "run1": "\t\twool=638.65744",
+          "run2": "\t\tdye=39.99664"
+        },
+        {
+          "line": 32,
+          "run1": "\t\tcoal=134.57477",
+          "run2": "\t\twool=621.64157"
+        },
+        {
+          "line": 33,
+          "run1": "\t\tsulphur=46.86673",
+          "run2": "\t\tsilk=0.00888"
+        },
+        {
+          "line": 34,
+          "run1": "\t\tiron=227.48535",
+          "run2": "\t\tcoal=141.03781"
+        },
+        {
+          "line": 35,
+          "run1": "\t\ttimber=1116.88342",
+          "run2": "\t\tsulphur=48.85135"
+        },
+        {
+          "line": 36,
+          "run1": "\t\ttropical_wood=17.61658",
+          "run2": "\t\tiron=268.25369"
+        },
+        {
+          "line": 37,
+          "run1": "\t\tprecious_metal=80.57648",
+          "run2": "\t\ttimber=1246.37244"
+        },
+        {
+          "line": 38,
+          "run1": "\t\tsteel=16.27896",
+          "run2": "\t\ttropical_wood=18.01025"
+        },
+        {
+          "line": 39,
+          "run1": "\t\tcement=6.92941",
+          "run2": "\t\tprecious_metal=83.49652"
+        },
+        {
+          "line": 40,
+          "run1": "\t\tmachine_parts=1.36136",
+          "run2": "\t\tsteel=27.84695"
+        },
+        {
+          "line": 41,
+          "run1": "\t\tglass=534.26459",
+          "run2": "\t\tcement=10.50885"
+        },
+        {
+          "line": 42,
+          "run1": "\t\tfertilizer=54.75729",
+          "run2": "\t\tmachine_parts=3.34183"
+        },
+        {
+          "line": 43,
+          "run1": "\t\texplosives=22.75693",
+          "run2": "\t\tglass=607.82477"
+        },
+        {
+          "line": 44,
+          "run1": "\t\tclipper_convoy=18.24057",
+          "run2": "\t\tfertilizer=45.11575"
+        },
+        {
+          "line": 45,
+          "run1": "\t\tsteamer_convoy=2.14151",
+          "run2": "\t\texplosives=22.08582"
+        },
+        {
+          "line": 46,
+          "run1": "\t\tfabric=928.72980",
+          "run2": "\t\tclipper_convoy=20.04626"
+        },
+        {
+          "line": 47,
+          "run1": "\t\tlumber=499.93231",
+          "run2": "\t\tsteamer_convoy=4.19937"
+        },
+        {
+          "line": 48,
+          "run1": "\t\tpaper=245.21103",
+          "run2": "\t\tfabric=1002.66101"
+        },
+        {
+          "line": 49,
+          "run1": "\t\tcattle=284.12140",
+          "run2": "\t\tlumber=244.42542"
+        },
+        {
+          "line": 50,
+          "run1": "\t\tfish=221.95984",
+          "run2": "\t\tpaper=293.69037"
+        },
+        {
+          "line": 51,
+          "run1": "\t\tfruit=611.24609",
+          "run2": "\t\tcattle=280.00311"
+        },
+        {
+          "line": 52,
+          "run1": "\t\tgrain=754.40958",
+          "run2": "\t\tfish=197.69366"
+        },
+        {
+          "line": 53,
+          "run1": "\t\ttobacco=131.79034",
+          "run2": "\t\tfruit=584.52762"
+        },
+        {
+          "line": 54,
+          "run1": "\t\ttea=1264.11603",
+          "run2": "\t\tgrain=751.50702"
+        },
+        {
+          "line": 55,
+          "run1": "\t\tcoffee=60.89328",
+          "run2": "\t\ttobacco=124.89984"
+        },
+        {
+          "line": 56,
+          "run1": "\t\topium=35.68738",
+          "run2": "\t\ttea=1233.73123"
+        },
+        {
+          "line": 57,
+          "run1": "\t\twine=381.88837",
+          "run2": "\t\tcoffee=51.83957"
+        },
+        {
+          "line": 58,
+          "run1": "\t\tliquor=523.63303",
+          "run2": "\t\topium=36.77356"
+        }
+      ]
+    },
+    "deterministic_for_gate2": false
+  }
+}
