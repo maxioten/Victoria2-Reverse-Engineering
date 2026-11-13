@@ -27,8 +27,9 @@ import time
 from pathlib import Path
 
 LAB = Path(__file__).resolve().parent
-GAME = Path("/home/daniel/Documentos/v2/experiments/day-tick-lab/game")
-PREFIX = Path("/home/daniel/Documentos/v2/experiments/day-tick-lab/wine")
+ROOT = Path(__file__).resolve().parents[4]
+GAME = Path(os.environ.get("V2_GAME_DIR", ROOT / "experiments/day-tick-lab/game"))
+PREFIX = Path(os.environ.get("WINEPREFIX", ROOT / "experiments/day-tick-lab/wine"))
 DISPLAY = ":99"
 WAIT_RVA = 0x689E43   # 0xA89E43, call enet_socket_wait
 WAIT_RET = 0x689E48   # 0xA89E48, first insn after the call
@@ -36,8 +37,8 @@ CAL_RVA = 0x282FA5    # 0x682FA5, add [esi+0xb0c], 0x18 (calendar)
 CAL_BYTES = bytes.fromhex("83860c0b000018")
 WAIT_BYTES = bytes.fromhex("e8b8150000")
 RET_BYTES = bytes.fromhex("85c0")
-GAMELOG = PREFIX / ("drive_c/users/daniel/Documents/Paradox Interactive/"
-                    "Victoria II/logs/game.log")
+WINE_USER = os.environ.get("WINEUSER", os.environ.get("USER", "user"))
+GAMELOG = PREFIX / f"drive_c/users/{WINE_USER}/Documents/Paradox Interactive/Victoria II/logs/game.log"
 LAUNCH_MARK = "[[ Launching SINGLEPLAYER-game ]]"
 
 sys.path.insert(0, str(LAB))
@@ -139,7 +140,7 @@ def main():
     ap.add_argument("--label", default="count1")
     args = ap.parse_args()
 
-    dbg_src = Path("/home/daniel/Documentos/v2/experiments/day-tick-lab/debugger")
+    dbg_src = Path(os.environ.get("V2_DBG_DIR", ROOT / "experiments/day-tick-lab/debugger"))
     if not (LAB / "debugger").exists():
         # borrow the proven debugger install; symlink, read-only use
         (LAB / "debugger").symlink_to(dbg_src, target_is_directory=True)

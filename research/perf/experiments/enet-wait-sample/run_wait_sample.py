@@ -25,8 +25,10 @@ import subprocess
 import time
 from pathlib import Path
 
-GAME = "/home/daniel/Documentos/v2/experiments/day-tick-lab/game"
-PREFIX = "/home/daniel/Documentos/v2/experiments/day-tick-lab/wine"
+HERE = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[4]
+GAME = os.environ.get("V2_GAME_DIR", str(ROOT / "experiments/day-tick-lab/game"))
+PREFIX = os.environ.get("WINEPREFIX", str(ROOT / "experiments/day-tick-lab/wine"))
 DISPLAY = ":99"
 INITIAL = 43800000 + 1837 * 365 * 24
 CLOCK_STEP = 24
@@ -41,11 +43,9 @@ ENV = {
     "DISPLAY": DISPLAY,
 }
 
-HERE = Path(__file__).resolve().parent
 OUTDIR = Path("/tmp/opencode/wait-hook")
-GAMELOG = Path("/home/daniel/Documentos/v2/experiments/day-tick-lab/wine/"
-               "drive_c/users/daniel/Documents/Paradox Interactive/"
-               "Victoria II/logs/game.log")
+WINE_USER = os.environ.get("WINEUSER", os.environ.get("USER", "user"))
+GAMELOG = Path(PREFIX) / f"drive_c/users/{WINE_USER}/Documents/Paradox Interactive/Victoria II/logs/game.log"
 LAUNCH_MARK = "[[ Launching SINGLEPLAYER-game ]]"
 
 
